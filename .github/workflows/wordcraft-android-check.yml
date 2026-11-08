@@ -51,6 +51,13 @@ jobs:
           export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
           cargo ndk -t arm64-v8a check --package wordcraft-ui-egui
 
+      # Enable eframe/winit Android GameActivity glue before checking the desktop app crate.
+      # Without this feature android-activity is compiled without its required implementation.
+      - name: Enable Android activity backend
+        working-directory: upstream-wordcraft
+        run: |
+          sed -i 's/"links"/"links", "android-game-activity"/' apps/wordcraft/Cargo.toml
+
       # Check the real desktop binary too before adding Android activity and APK packaging.
       - name: Check complete WordCraft application for Android
         working-directory: upstream-wordcraft
