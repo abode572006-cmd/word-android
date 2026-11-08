@@ -36,8 +36,21 @@ jobs:
         with:
           targets: wasm32-unknown-unknown
 
+      - name: Cache Rust dependencies and build outputs
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: wordcraft-source -> target
+
+      - name: Cache Trunk executable
+        id: trunk-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin/trunk
+          key: trunk-${{ runner.os }}-v0.21.14
+
       - name: Install Trunk
-        run: cargo install trunk --locked
+        if: steps.trunk-cache.outputs.cache-hit != 'true'
+        run: cargo install trunk --locked --version 0.21.14
 
       - name: Get pinned interface and language data
         working-directory: wordcraft-source
