@@ -50,3 +50,10 @@ jobs:
         run: |
           export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
           cargo ndk -t arm64-v8a check --package wordcraft-ui-egui
+
+      # Check the real desktop binary too before adding Android activity and APK packaging.
+      - name: Check complete WordCraft application for Android
+        working-directory: upstream-wordcraft
+        run: |
+          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
+          cargo ndk -t arm64-v8a check --package wordcraft
