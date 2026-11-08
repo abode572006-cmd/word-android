@@ -30,19 +30,18 @@ jobs:
         with:
           targets: aarch64-linux-android
 
-      - name: Install Android SDK and NDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install pinned NDK
-        run: sdkmanager "ndk;29.0.14206865"
+      - name: Install Android NDK
+        run: |
+          yes | sdkmanager --licenses
+          sdkmanager "ndk;29.0.14206865"
 
       - name: Install cargo-ndk
         run: cargo install cargo-ndk --locked
 
-      # This is deliberately a library cross-check first: it proves whether WordCraft's
-      # existing document engine and egui ribbon UI compile for Android before we add
-      # the Android Activity/application shell and package an APK.
+      # First verify that the existing document engine and desktop egui UI compile
+      # for Android. APK packaging follows only after platform compatibility is known.
       - name: Cross-compile WordCraft UI and document engine
         working-directory: upstream-wordcraft
-        run: ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865" cargo ndk -t arm64-v8a check --package wordcraft-ui-egui
-
+        run: |
+          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
+          cargo ndk -t arm64-v8a check --package wordcraft-ui-egui
