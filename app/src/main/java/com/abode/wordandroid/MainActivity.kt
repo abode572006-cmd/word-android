@@ -1,6 +1,6 @@
 package com.abode.wordandroid
 
-import android.app.Activity
+import androidx.activity.ComponentActivity
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -13,7 +13,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.webkit.WebViewAssetLoader
 import androidx.webkit.WebViewClientCompat
 
-class MainActivity : Activity() {
+class MainActivity : ComponentActivity() {
     private var pendingFileCallback: ValueCallback<Array<Uri>>? = null
 
     private val openDocuments =
