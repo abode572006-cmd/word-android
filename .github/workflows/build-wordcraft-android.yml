@@ -1,6 +1,8 @@
 name: Build WordCraft Android APK
 
 on:
+  push:
+    branches: [wordcraft-original-android]
   workflow_dispatch:
 
 permissions:
