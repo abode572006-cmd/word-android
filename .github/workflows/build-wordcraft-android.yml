@@ -1,0 +1,72 @@
+name: Build WordCraft Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - wordcraft-original-android
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out Android wrapper
+        uses: actions/checkout@v4
+
+      - name: Check out original WordCraft source
+        uses: actions/checkout@v4
+        with:
+          repository: storytold/wordcraft
+          ref: main
+          path: wordcraft-source
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Rust and WebAssembly target
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Install Trunk
+        run: cargo install trunk --locked
+
+      - name: Get pinned interface and language data
+        working-directory: wordcraft-source
+        run: |
+          git clone https://github.com/storytold/craft-i18n.git ../craft-i18n
+          git -C ../craft-i18n checkout "$(cat craft-i18n.rev)"
+
+      - name: Build the original WordCraft web app
+        working-directory: wordcraft-source/apps/wordcraft-web
+        env:
+          CRAFT_I18N_DIR: ${{ github.workspace }}/craft-i18n
+        run: trunk build --release
+
+      - name: Package original WordCraft web build into Android assets
+        run: |
+          mkdir -p app/src/main/assets/wordcraft
+          cp -a wordcraft-source/dist/web/. app/src/main/assets/wordcraft/
+          test -s app/src/main/assets/wordcraft/index.html
+          test -n "$(find app/src/main/assets/wordcraft -name '*.wasm' -print -quit)"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build debug APK
+        run: gradle --no-daemon :app:assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: WordCraft-Android-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
