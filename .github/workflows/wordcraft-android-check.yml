@@ -1,0 +1,50 @@
+name: Check WordCraft desktop UI for Android
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [wordcraft-desktop-android-port]
+    paths:
+      - ".github/workflows/wordcraft-android-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  android-ui:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out Android port workspace
+        uses: actions/checkout@v4
+
+      - name: Check out upstream WordCraft source
+        uses: actions/checkout@v4
+        with:
+          repository: storytold/wordcraft
+          path: upstream-wordcraft
+          persist-credentials: false
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android
+
+      - name: Install Android SDK and NDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install pinned NDK
+        run: sdkmanager "ndk;29.0.14206865"
+
+      - name: Install cargo-ndk
+        run: cargo install cargo-ndk --locked
+
+      # This is deliberately a library cross-check first: it proves whether WordCraft's
+      # existing document engine and egui ribbon UI compile for Android before we add
+      # the Android Activity/application shell and package an APK.
+      - name: Cross-compile WordCraft UI and document engine
+        working-directory: upstream-wordcraft
+        env:
+          ANDROID_NDK_HOME: ${{ env.ANDROID_HOME }}/ndk/29.0.14206865
+        run: cargo ndk -t arm64-v8a check --package wordcraft-ui-egui --target aarch64-linux-android
+
