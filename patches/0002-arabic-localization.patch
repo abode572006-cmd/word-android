@@ -1,0 +1,28 @@
+diff --git a/crates/ui-egui/src/i18n/mod.rs b/crates/ui-egui/src/i18n/mod.rs
+index d00e8e7..d00e8e7 100644
+--- a/crates/ui-egui/src/i18n/mod.rs
++++ b/crates/ui-egui/src/i18n/mod.rs
+@@ -54,8 +54,9 @@ pub struct LangInfo {
+ 
+ /// The registry. English first: it is the fallback and the source language.
+-pub static LANGUAGES: [LangInfo; 12] = [
++pub static LANGUAGES: [LangInfo; 13] = [
+     LangInfo { code: "en", name: "English", source: "", prefer_hans: false, catalog: OnceLock::new() },
++    LangInfo { code: "ar", name: "العربية", source: include_str!("ar.tsv"), prefer_hans: false, catalog: OnceLock::new() },
+     // Simplified Chinese; `zh`, `zh-CN`, `zh-SG` and `zh-Hans-*` resolve here (see `candidates`).
+     LangInfo { code: "zh-hans", name: "简体中文", source: include_str!("zh-hans.tsv"), prefer_hans: true, catalog: OnceLock::new() },
+diff --git a/crates/fonts/src/fontdb.rs b/crates/fonts/src/fontdb.rs
+index db1180e..db1180e 100644
+--- a/crates/fonts/src/fontdb.rs
++++ b/crates/fonts/src/fontdb.rs
+@@ -286,7 +286,11 @@ pub fn system_font_dirs() -> Vec<std::path::PathBuf> {
+     }
+     let home = std::env::var_os("HOME").map(std::path::PathBuf::from);
+-    if cfg!(target_os = "macos") {
++    if cfg!(target_os = "android") {
++        // Android keeps its installed typefaces here. In particular, Noto Naskh Arabic and
++        // Noto Sans Arabic are system fallback faces; scan these so Arabic shaping has real
++        // glyphs instead of tofu or missing marks on devices whose bundled app fonts are Latin.
++        dirs.extend(["/system/fonts", "/system_ext/fonts", "/product/fonts", "/vendor/fonts"].map(Into::into));
++    } else if cfg!(target_os = "macos") {
+         dirs.extend(["/System/Library/Fonts", "/Library/Fonts"].map(Into::into));
