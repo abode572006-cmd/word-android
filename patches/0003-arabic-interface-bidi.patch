@@ -241,10 +241,11 @@ diff --git a/crates/layout/src/tests_bidi.rs b/crates/layout/src/tests_bidi.rs
 +    assert_eq!(levels[pdf] % 2, 0, "Latin abbreviation stays LTR");
 +    let doc = doc_of(&[(text, true)]);
 +    let layout = lay(&doc);
-+    let (_, x) = first_line(&layout, 0);
-+    assert!(x > 72.0, "the RTL paragraph starts from the right: {x}");
++    let (_, line_left) = first_line(&layout, 0);
++    // The line box's x is its left edge, not the visual start of RTL text.
++    assert!((line_left - 72.0).abs() < 1.0, "line box retains the page's left margin: {line_left}");
 +    let caret = layout.caret(&Pos::body(0, 0)).unwrap();
-+    assert!(caret.x > x, "the initial caret belongs at the visual start: {caret:?}");
++    assert!((caret.x - (612.0 - 72.0)).abs() < 1.0, "the initial RTL caret belongs at the right margin: {caret:?}");
 +}
 diff --git a/crates/ui-egui/src/i18n/tests.rs b/crates/ui-egui/src/i18n/tests.rs
 --- a/crates/ui-egui/src/i18n/tests.rs
