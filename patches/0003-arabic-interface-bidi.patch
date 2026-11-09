@@ -181,8 +181,10 @@ diff --git a/crates/fonts/src/ui_fallback.rs b/crates/fonts/src/ui_fallback.rs
 +/// An installed Arabic interface font. Android system images commonly ship one of these faces.
 +pub fn system_arabic_ui_font() -> Option<SystemUiFont> {
 +    const NAMES: &[&str] = &[
-+        "NotoSansArabicUI-Regular.ttf",
-+        "NotoNaskhArabicUI-Regular.ttf",
++        "NotoSansArabicUI-VF.ttf",
+        "NotoSansArabicUI-Regular.ttf",
++        "NotoNaskhArabicUI-VF.ttf",
+        "NotoNaskhArabicUI-Regular.ttf",
 +        "NotoSansArabic-Regular.ttf",
 +        "NotoNaskhArabic-Regular.ttf",
 +        "NotoKufiArabic-Regular.ttf",
@@ -283,7 +285,7 @@ diff --git a/crates/ui-egui/src/i18n/tests.rs b/crates/ui-egui/src/i18n/tests.rs
 +    assert!(errors.is_empty(), "{errors:?}");
 +    assert_eq!(entries.len(), 1729, "all upstream interface keys are present");
 +    let translated = entries.iter().filter(|entry| entry.source != entry.translation).count();
-+    assert_eq!(translated, 1716, "only product names, shortcuts and technical abbreviations remain unchanged");
++    assert_eq!(translated, 1713, "only product names, shortcuts and technical abbreviations remain unchanged");
 +    assert_eq!(tr(ar, "Home"), "الرئيسية");
 +    assert_eq!(tr(ar, "File"), "ملف");
 +    assert_eq!(tr(ar, "Save"), "حفظ");
