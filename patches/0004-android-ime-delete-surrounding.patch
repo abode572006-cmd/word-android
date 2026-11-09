@@ -1,7 +1,8 @@
 diff --git a/crates/ui-egui/src/keys.rs b/crates/ui-egui/src/keys.rs
 --- a/crates/ui-egui/src/keys.rs
 +++ b/crates/ui-egui/src/keys.rs
-@@ -209,0 +210,9 @@
+@@ -209,1 +209,10 @@
+                 }
 +                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
 +                    for _ in 0..before_chars.min(256) {
 +                        let _ = app.run("equation.backspace", json!({}));
@@ -11,7 +12,8 @@ diff --git a/crates/ui-egui/src/keys.rs b/crates/ui-egui/src/keys.rs
 +                    }
 +                    continue;
 +                }
-@@ -236,0 +246,8 @@
+@@ -236,1 +245,9 @@
+             }
 +            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
 +                for _ in 0..before_chars.min(256) {
 +                    let _ = app.run("text.backspace", json!({}));
