@@ -50,6 +50,8 @@ winit = { version = "=0.30.13", default-features = false, features = ["android-n
 [package.metadata.android]
 package = "ai.storyteller.wordcraft"
 apk_name = "wordcraft"
+# Tell cargo-apk to compile the package-local Android resources (including styles.xml).
+resources = "res"
 build_targets = ["aarch64-linux-android"]
 strip = "strip"
 # Theme resources — the two edge-to-edge fixes live in res/values/styles.xml.
