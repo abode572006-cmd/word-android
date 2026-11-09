@@ -1302,94 +1302,94 @@
 	Sketchbook	Sketchbook
 	Change Picture…	تغيير الصورة…
 	Font…	الخط…
-	Paragraph…	Paragraph…
-	Link…	Link…
-	Size and Crop…	Size and Crop…
-	Insert Columns to the Left	Insert Columns to the Left
-	Insert Columns to the Right	Insert Columns to the Right
-	Insert Rows Above	Insert Rows Above
-	Insert Rows Below	Insert Rows Below
-	Mon	Mon
-	Tue	Tue
-	Wed	Wed
-	Sum	Sum
-	North	North
-	South	South
-	West	West
-	Total	Total
-	Draw\nTable	Draw\nTable
-	Rotation	Rotation
-	Rotation:	Rotation:
-	Rotate Right 90°	Rotate Right 90°
-	Rotate Left 90°	Rotate Left 90°
-	Flip Vertical	Flip Vertical
-	Flip Horizontal	Flip Horizontal
-	Move Paragraph Up	Move Paragraph Up
-	Move Paragraph Down	Move Paragraph Down
-	Promote	Promote
-	Demote	Demote
-	Go Back	Go Back
-	Toggle Unicode Character	Toggle Unicode Character
-	Toggle Field Codes	Toggle Field Codes
-	Edit Field Code	Edit Field Code
-	Unlink Fields	Unlink Fields
-	Lock Fields	Lock Fields
-	Unlock Fields	Unlock Fields
-	Next Field	Next Field
-	Previous Field	Previous Field
-	Selected Fields	Selected Fields
-	Edit Field…	Edit Field…
-	Formatted	Formatted
-	Interface size:	Interface size:
-	Makes the ribbon, menus and dialogs larger or smaller, on top of your system's display scaling. Document zoom is separate.	Makes the ribbon, menus and dialogs larger or smaller, on top of your system's display scaling. Document zoom is separate.
-	In Line with Text	In Line with Text
-	Square	Square
-	Through	Through
-	Top and Bottom	Top and Bottom
-	Behind Text	Behind Text
-	In Front of Text	In Front of Text
-	Wrap Text Sides	Wrap Text Sides
-	Both Sides	Both Sides
-	Left Only	Left Only
-	Right Only	Right Only
-	Largest Only	Largest Only
-	Customize Keyboard	Customize Keyboard
-	Choose a command	Choose a command
-	Choose a shortcut	Choose a shortcut
-	All Commands	All Commands
-	Commands:	Commands:
-	Keys for this command:	Keys for this command:
-	New shortcut:	New shortcut:
-	Now used by {command}	Now used by {command}
-	Not used by any command	Not used by any command
-	Remove every custom shortcut and restore the built-in keys?	Remove every custom shortcut and restore the built-in keys?
-	Assign	Assign
-	Reset All…	Reset All…
-	Press a key combination	Press a key combination
-	Customize	Customize
-	Keyboard shortcuts:	Keyboard shortcuts:
-	Customize…	Customize…
-	Customize Ribbon	Customize Ribbon
-	Add to Quick Access Toolbar	Add to Quick Access Toolbar
-	Remove from Quick Access Toolbar	Remove from Quick Access Toolbar
-	Customize the Ribbon…	Customize the Ribbon…
-	Customize Quick Access Toolbar…	Customize Quick Access Toolbar…
-	More Commands…	More Commands…
-	Ribbon	Ribbon
-	(Custom)	(Custom)
-	Remove every custom tab and group and show all tabs again?	Remove every custom tab and group and show all tabs again?
-	Put the default commands back on the Quick Access Toolbar?	Put the default commands back on the Quick Access Toolbar?
-	Reset…	Reset…
-	Add >>	Add >>
-	<< Remove	<< Remove
-	Pick a custom group (New Group makes one)	Pick a custom group (New Group makes one)
-	Ribbon tabs	Ribbon tabs
-	New Tab	New Tab
-	New Group	New Group
-	Rename…	Rename…
-	Ribbon and Quick Access Toolbar:	Ribbon and Quick Access Toolbar:
-	Accessibility Pane	Accessibility Pane
-	Alt Text Pane	Alt Text Pane
+	Paragraph…	فقرة…
+	Link…	ارتباط…
+	Size and Crop…	الحجم والاقتصاص…
+	Insert Columns to the Left	إدراج أعمدة إلى اليسار
+	Insert Columns to the Right	إدراج أعمدة إلى اليمين
+	Insert Rows Above	إدراج صفوف أعلى
+	Insert Rows Below	إدراج صفوف أسفل
+	Mon	الاثنين
+	Tue	الثلاثاء
+	Wed	الأربعاء
+	Sum	المجموع
+	North	الشمال
+	South	الجنوب
+	West	الغرب
+	Total	الإجمالي
+	Draw\nTable	رسم\nجدول
+	Rotation	تدوير
+	Rotation:	التدوير:
+	Rotate Right 90°	تدوير 90° إلى اليمين
+	Rotate Left 90°	تدوير 90° إلى اليسار
+	Flip Vertical	قلب عمودي
+	Flip Horizontal	قلب أفقي
+	Move Paragraph Up	نقل الفقرة إلى أعلى
+	Move Paragraph Down	نقل الفقرة إلى أسفل
+	Promote	ترقية المستوى
+	Demote	خفض المستوى
+	Go Back	رجوع
+	Toggle Unicode Character	تبديل محرف يونيكود
+	Toggle Field Codes	تبديل عرض رموز الحقول
+	Edit Field Code	تحرير رمز الحقل
+	Unlink Fields	إلغاء ربط الحقول
+	Lock Fields	تأمين الحقول
+	Unlock Fields	إلغاء تأمين الحقول
+	Next Field	الحقل التالي
+	Previous Field	الحقل السابق
+	Selected Fields	الحقول المحددة
+	Edit Field…	تحرير الحقل…
+	Formatted	منسق
+	Interface size:	حجم الواجهة:
+	Makes the ribbon, menus and dialogs larger or smaller, on top of your system's display scaling. Document zoom is separate.	يغيّر حجم الشريط والقوائم ومربعات الحوار، بالإضافة إلى مقياس العرض في النظام. ويظل تكبير المستند مستقلًا.
+	In Line with Text	ضمن النص
+	Square	مربع
+	Through	من خلال
+	Top and Bottom	أعلى وأسفل
+	Behind Text	خلف النص
+	In Front of Text	أمام النص
+	Wrap Text Sides	التفاف النص حول الجانبين
+	Both Sides	كلا الجانبين
+	Left Only	اليسار فقط
+	Right Only	اليمين فقط
+	Largest Only	الأكبر فقط
+	Customize Keyboard	تخصيص لوحة المفاتيح
+	Choose a command	اختر أمرًا
+	Choose a shortcut	اختر اختصارًا
+	All Commands	جميع الأوامر
+	Commands:	الأوامر:
+	Keys for this command:	مفاتيح هذا الأمر:
+	New shortcut:	اختصار جديد:
+	Now used by {command}	يُستخدم الآن بواسطة {command}
+	Not used by any command	غير مستخدم في أي أمر
+	Remove every custom shortcut and restore the built-in keys?	هل تريد إزالة جميع الاختصارات المخصصة واستعادة المفاتيح الافتراضية؟
+	Assign	تعيين
+	Reset All…	إعادة تعيين الكل…
+	Press a key combination	اضغط مجموعة مفاتيح
+	Customize	تخصيص
+	Keyboard shortcuts:	اختصارات لوحة المفاتيح:
+	Customize…	تخصيص…
+	Customize Ribbon	تخصيص الشريط
+	Add to Quick Access Toolbar	إضافة إلى شريط أدوات الوصول السريع
+	Remove from Quick Access Toolbar	إزالة من شريط أدوات الوصول السريع
+	Customize the Ribbon…	تخصيص الشريط…
+	Customize Quick Access Toolbar…	تخصيص شريط أدوات الوصول السريع…
+	More Commands…	مزيد من الأوامر…
+	Ribbon	الشريط
+	(Custom)	(مخصص)
+	Remove every custom tab and group and show all tabs again?	هل تريد إزالة كل علامات التبويب والمجموعات المخصصة وإظهار جميع علامات التبويب مجددًا؟
+	Put the default commands back on the Quick Access Toolbar?	هل تريد إعادة الأوامر الافتراضية إلى شريط أدوات الوصول السريع؟
+	Reset…	إعادة تعيين…
+	Add >>	إضافة >>
+	<< Remove	<< إزالة
+	Pick a custom group (New Group makes one)	اختر مجموعة مخصصة (ينشئ «مجموعة جديدة» مجموعةً جديدة)
+	Ribbon tabs	علامات تبويب الشريط
+	New Tab	علامة تبويب جديدة
+	New Group	مجموعة جديدة
+	Rename…	إعادة تسمية…
+	Ribbon and Quick Access Toolbar:	الشريط وشريط أدوات الوصول السريع:
+	Accessibility Pane	جزء إمكانية الوصول
+	Alt Text Pane	جزء النص البديل
 	Alt\nText	Alt\nText
 	View Alt Text…	View Alt Text…
 	Mark as decorative	Mark as decorative
