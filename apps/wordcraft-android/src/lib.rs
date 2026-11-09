@@ -386,7 +386,7 @@ fn poll_android_photo_picker() {
         if value.is_null() {
             return Ok(None);
         }
-        let value = JString::from(value);
+        let value = unsafe { JString::from_raw(env, value.into_raw()) };
         let path: String = env.get_string(&value)?.into();
         Ok(Some(path))
     });
