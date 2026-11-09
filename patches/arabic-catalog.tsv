@@ -1205,103 +1205,103 @@
 	Number of the section the field sits in	رقم القسم الذي يوجد فيه الحقل
 	How many words the document holds	عدد الكلمات في المستند
 	Page on which a bookmarked passage falls	رقم الصفحة التي يقع فيها المقطع ذو الإشارة المرجعية
-	Copy of the text a bookmark marks	Copy of the text a bookmark marks
-	This field has no options.	This field has no options.
-	This font has no characters to show.	This font has no characters to show.
-	This point forward	This point forward
-	The date it is today	The date it is today
-	Trademark	Trademark
+	Copy of the text a bookmark marks	نسخة من النص الذي تحدده الإشارة المرجعية
+	This field has no options.	لا توجد خيارات لهذا الحقل.
+	This font has no characters to show.	لا يحتوي هذا الخط على محارف لعرضها.
+	This point forward	من هذه النقطة فصاعدًا
+	The date it is today	تاريخ اليوم
+	Trademark	علامة تجارية
 	Type the field's name and its switches, for example PAGE \\* roman.	Type the field's name and its switches, for example PAGE \\\\* roman.
-	Width and spacing	Width and spacing
-	from Unicode (hex)	from Unicode (hex)
-	Shape Effects	Shape Effects
-	Glow	Glow
-	Soft Edges	Soft Edges
-	No Shadow	No Shadow
-	No Glow	No Glow
-	No Soft Edges	No Soft Edges
-	Glow Colors	Glow Colors
-	Weight	Weight
-	Shadow, glow and soft edges	Shadow, glow and soft edges
-	Offset: Bottom Right	Offset: Bottom Right
-	Offset: Bottom	Offset: Bottom
-	Offset: Bottom Left	Offset: Bottom Left
-	Offset: Right	Offset: Right
-	Offset: Center	Offset: Center
-	Offset: Left	Offset: Left
-	Offset: Top Right	Offset: Top Right
-	Offset: Top	Offset: Top
-	Offset: Top Left	Offset: Top Left
-	Manage Styles	Manage Styles
-	Show or Hide Style	Show or Hide Style
-	Manage Styles…	Manage Styles…
-	Sort order:	Sort order:
-	As Recommended	As Recommended
-	Alphabetical	Alphabetical
-	Font: {font}	Font: {font}
-	{size} pt	{size} pt
-	Color: {color}	Color: {color}
-	Space before: {pt} pt	Space before: {pt} pt
-	Space after: {pt} pt	Space after: {pt} pt
-	Based on: {style}	Based on: {style}
-	Paragraph style	Paragraph style
-	Character style	Character style
-	Linked style (paragraph and character)	Linked style (paragraph and character)
-	Table style	Table style
-	Built-in style	Built-in style
-	Show in the Styles gallery	Show in the Styles gallery
-	Hide from style lists	Hide from style lists
-	Built-in styles can't be deleted.	Built-in styles can't be deleted.
-	Delete Table Style	Delete Table Style
-	Password	Password
-	Password:	Password:
-	Confirm password:	Confirm password:
-	Encrypt with Password…	Encrypt with Password…
-	Change Password…	Change Password…
-	Remove Password	Remove Password
-	A password is required to open this document.	A password is required to open this document.
-	Anyone can open this document. Encrypt it with a password to keep it private.	Anyone can open this document. Encrypt it with a password to keep it private.
-	Anyone who opens the document will need this password.	Anyone who opens the document will need this password.
-	{name} is protected with a password.	{name} is protected with a password.
-	That password isn't right. Check it (passwords are case-sensitive) and try again.	That password isn't right. Check it (passwords are case-sensitive) and try again.
-	The document will be saved with a password. Save it to protect it.	The document will be saved with a password. Save it to protect it.
-	The password is removed. Save the document to keep the change.	The password is removed. Save the document to keep the change.
-	The passwords don't match.	The passwords don't match.
-	Keep the password somewhere safe: without it nobody, WordCraft included, can open the document. Leave both boxes empty to remove the password.	Keep the password somewhere safe: without it nobody, WordCraft included, can open the document. Leave both boxes empty to remove the password.
-	Align Top Left	Align Top Left
-	Align Top Center	Align Top Center
-	Align Top Right	Align Top Right
-	Align Center Left	Align Center Left
-	Align Center	Align Center
-	Align Center Right	Align Center Right
-	Align Bottom Left	Align Bottom Left
-	Align Bottom Center	Align Bottom Center
-	Align Bottom Right	Align Bottom Right
-	{contributors} contributors · {commits} commits	{contributors} contributors · {commits} commits
-	{cols}×{rows} Table	{cols}×{rows} Table
+	Width and spacing	العرض والتباعد
+	from Unicode (hex)	من يونيكود (ست عشري)
+	Shape Effects	تأثيرات الشكل
+	Glow	توهج
+	Soft Edges	حواف ناعمة
+	No Shadow	بلا ظل
+	No Glow	بلا توهج
+	No Soft Edges	بلا حواف ناعمة
+	Glow Colors	ألوان التوهج
+	Weight	السُمك
+	Shadow, glow and soft edges	الظل والتوهج والحواف الناعمة
+	Offset: Bottom Right	الإزاحة: أسفل اليمين
+	Offset: Bottom	الإزاحة: أسفل
+	Offset: Bottom Left	الإزاحة: أسفل اليسار
+	Offset: Right	الإزاحة: اليمين
+	Offset: Center	الإزاحة: الوسط
+	Offset: Left	الإزاحة: اليسار
+	Offset: Top Right	الإزاحة: أعلى اليمين
+	Offset: Top	الإزاحة: أعلى
+	Offset: Top Left	الإزاحة: أعلى اليسار
+	Manage Styles	إدارة الأنماط
+	Show or Hide Style	إظهار النمط أو إخفاؤه
+	Manage Styles…	إدارة الأنماط…
+	Sort order:	ترتيب الفرز:
+	As Recommended	حسب التوصية
+	Alphabetical	أبجدي
+	Font: {font}	الخط: {font}
+	{size} pt	{size} نقطة
+	Color: {color}	اللون: {color}
+	Space before: {pt} pt	المسافة قبل: {pt} نقطة
+	Space after: {pt} pt	المسافة بعد: {pt} نقطة
+	Based on: {style}	مستند إلى: {style}
+	Paragraph style	نمط الفقرة
+	Character style	نمط الأحرف
+	Linked style (paragraph and character)	نمط مرتبط (فقرة وحرف)
+	Table style	نمط الجدول
+	Built-in style	نمط مضمّن
+	Show in the Styles gallery	إظهار في معرض الأنماط
+	Hide from style lists	إخفاء من قوائم الأنماط
+	Built-in styles can't be deleted.	لا يمكن حذف الأنماط المضمّنة.
+	Delete Table Style	حذف نمط الجدول
+	Password	كلمة المرور
+	Password:	كلمة المرور:
+	Confirm password:	تأكيد كلمة المرور:
+	Encrypt with Password…	تشفير بكلمة مرور…
+	Change Password…	تغيير كلمة المرور…
+	Remove Password	إزالة كلمة المرور
+	A password is required to open this document.	يلزم إدخال كلمة مرور لفتح هذا المستند.
+	Anyone can open this document. Encrypt it with a password to keep it private.	يمكن لأي شخص فتح هذا المستند. شفّره بكلمة مرور للحفاظ على خصوصيته.
+	Anyone who opens the document will need this password.	سيحتاج كل من يفتح المستند إلى كلمة المرور هذه.
+	{name} is protected with a password.	المستند {name} محمي بكلمة مرور.
+	That password isn't right. Check it (passwords are case-sensitive) and try again.	كلمة المرور غير صحيحة. تحقق منها (فكلمات المرور تميّز بين الأحرف الكبيرة والصغيرة) ثم حاول مجددًا.
+	The document will be saved with a password. Save it to protect it.	سيُحفظ المستند بكلمة مرور. احفظه لتفعّل الحماية.
+	The password is removed. Save the document to keep the change.	أُزيلت كلمة المرور. احفظ المستند للاحتفاظ بالتغيير.
+	The passwords don't match.	كلمتا المرور غير متطابقتين.
+	Keep the password somewhere safe: without it nobody, WordCraft included, can open the document. Leave both boxes empty to remove the password.	احتفظ بكلمة المرور في مكان آمن؛ فبدونها لن يتمكن أحد، بما في ذلك WordCraft، من فتح المستند. اترك الحقلين فارغين لإزالة كلمة المرور.
+	Align Top Left	محاذاة إلى أعلى اليسار
+	Align Top Center	محاذاة إلى أعلى الوسط
+	Align Top Right	محاذاة إلى أعلى اليمين
+	Align Center Left	محاذاة إلى وسط اليسار
+	Align Center	محاذاة إلى الوسط
+	Align Center Right	محاذاة إلى وسط اليمين
+	Align Bottom Left	محاذاة إلى أسفل اليسار
+	Align Bottom Center	محاذاة إلى أسفل الوسط
+	Align Bottom Right	محاذاة إلى أسفل اليمين
+	{contributors} contributors · {commits} commits	{contributors} مساهمًا · {commits} إيداعًا
+	{cols}×{rows} Table	جدول {cols}×{rows}
 	AaBbYyZz	AaBbYyZz
-	pt	pt
-	Document1	Document1
-	Username	Username
-	Display name	Display name
-	Real name	Real name
+	pt	نقطة
+	Document1	المستند1
+	Username	اسم المستخدم
+	Display name	اسم العرض
+	Real name	الاسم الحقيقي
 	Name	الاسم
-	PRs	PRs
-	Commits	Commits
-	First	First
-	Last	Last
-	Model	Model
-	Version	Version
-	% of all commits	% of all commits
-	Lines +/−	Lines +/−
+	PRs	طلبات السحب
+	Commits	إيداعات
+	First	الأول
+	Last	الأخير
+	Model	النموذج
+	Version	الإصدار
+	% of all commits	٪ من جميع الإيداعات
+	Lines +/−	الأسطر +/−
 	Craft	Craft
 	Studio	Studio
 	Atelier	Atelier
 	Darkroom	Darkroom
 	Gallery	Gallery
 	Sketchbook	Sketchbook
-	Change Picture…	Change Picture…
-	Font…	Font…
+	Change Picture…	تغيير الصورة…
+	Font…	الخط…
 	Paragraph…	Paragraph…
 	Link…	Link…
 	Size and Crop…	Size and Crop…
