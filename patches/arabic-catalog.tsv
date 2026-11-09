@@ -1568,93 +1568,93 @@
 	Label:	التسمية:
 	Last, First; Last, First	اسم العائلة، الاسم الأول؛ اسم العائلة، الاسم الأول
 	Leave the label out of the caption	عدم تضمين التسمية في التسمية التوضيحية
-	Letter headings	Letter headings
-	Levels:	Levels:
-	Link entries to their headings	Link entries to their headings
-	Made from the author and year when empty	Made from the author and year when empty
-	Magazine or newspaper article	Magazine or newspaper article
-	Main entry:	Main entry:
-	Mark	Mark
-	Mark All	Mark All
-	Mark Entry…	Mark Entry…
-	Mark Index Entry	Mark Index Entry
-	Mesosphere	Mesosphere
-	Month	Month
-	New Label	New Label
-	New Label…	New Label…
+	Letter headings	عناوين أبجدية
+	Levels:	المستويات:
+	Link entries to their headings	ربط المدخلات بعناوينها
+	Made from the author and year when empty	يُنشأ من اسم المؤلف والسنة عند تركه فارغًا
+	Magazine or newspaper article	مقال في مجلة أو صحيفة
+	Main entry:	المدخل الرئيسي:
+	Mark	تمييز
+	Mark All	تمييز الكل
+	Mark Entry…	تمييز مدخل…
+	Mark Index Entry	تمييز مدخل الفهرس
+	Mesosphere	الميزوسفير
+	Month	الشهر
+	New Label	تسمية جديدة
+	New Label…	تسمية جديدة…
 	New…	جديد…
-	No sources yet.	No sources yet.
-	Numbering…	Numbering…
-	Options…	Options…
-	Other	Other
-	Other styles and their TOC level:	Other styles and their TOC level:
-	Outline levels	Outline levels
-	Page number style	Page number style
-	Page numbers at the right margin	Page numbers at the right margin
-	Page title	Page title
-	Pages of bookmark:	Pages of bookmark:
-	Periodical	Periodical
-	Position:	Position:
-	Publisher	Publisher
-	Run-in	Run-in
-	See	See
-	Separator:	Separator:
-	Show every bibliography field	Show every bibliography field
-	Site name	Site name
-	Source Manager	Source Manager
-	Source type:	Source type:
-	Sources in this document:	Sources in this document:
-	Styles:	Styles:
-	Subentry:	Subentry:
-	TC entry fields	TC entry fields
-	Tab leader:	Tab leader:
-	Table of Contents Options	Table of Contents Options
-	Table of Contents Styles	Table of Contents Styles
-	This page	This page
-	Type:	Type:
+	No sources yet.	لا توجد مصادر بعد.
+	Numbering…	الترقيم…
+	Options…	الخيارات…
+	Other	أخرى
+	Other styles and their TOC level:	الأنماط الأخرى ومستوى كل منها في جدول المحتويات:
+	Outline levels	مستويات المخطط التفصيلي
+	Page number style	نمط أرقام الصفحات
+	Page numbers at the right margin	أرقام الصفحات عند الهامش الأيمن
+	Page title	عنوان الصفحة
+	Pages of bookmark:	صفحات الإشارة المرجعية:
+	Periodical	دورية
+	Position:	الموضع:
+	Publisher	الناشر
+	Run-in	متصل
+	See	انظر
+	Separator:	الفاصل:
+	Show every bibliography field	إظهار جميع حقول قائمة المراجع
+	Site name	اسم الموقع
+	Source Manager	إدارة المصادر
+	Source type:	نوع المصدر:
+	Sources in this document:	المصادر في هذا المستند:
+	Styles:	الأنماط:
+	Subentry:	مدخل فرعي:
+	TC entry fields	حقول مدخلات جدول المحتويات
+	Tab leader:	قائد علامة الجدولة:
+	Table of Contents Options	خيارات جدول المحتويات
+	Table of Contents Styles	أنماط جدول المحتويات
+	This page	هذه الصفحة
+	Type:	النوع:
 	URL	URL
-	Volume	Volume
-	Website	Website
-	Year	Year
-	a, b, c, …	a, b, c, …
+	Volume	المجلد
+	Website	موقع ويب
+	Year	السنة
+	a, b, c, …	أ، ب، ج، …
 	i, ii, iii, …	i, ii, iii, …
-	{n} entries marked.	{n} entries marked.
-	Lasso Select	Lasso Select
-	Move Selected Ink	Move Selected Ink
-	Delete Selected Ink	Delete Selected Ink
-	Recolor Selected Ink	Recolor Selected Ink
-	Add Pen	Add Pen
-	Remove Pen	Remove Pen
-	Ink to Shape	Ink to Shape
-	Convert to Shapes	Convert to Shapes
-	Ink Replay	Ink Replay
-	Add\nPen	Add\nPen
-	Rewind	Rewind
-	Forward	Forward
-	Stroke {n} of {total}	Stroke {n} of {total}
-	WordArt Styles	WordArt Styles
-	Text Fill	Text Fill
-	Text Outline	Text Outline
-	Transform	Transform
-	No Fill	No Fill
-	No Outline	No Outline
-	Reflection	Reflection
-	No Reflection	No Reflection
-	No Transform	No Transform
-	Connect Shapes	Connect Shapes
-	Straight Connector	Straight Connector
-	Straight Arrow Connector	Straight Arrow Connector
-	Elbow Connector	Elbow Connector
-	Elbow Arrow Connector	Elbow Arrow Connector
-	Curved Connector	Curved Connector
-	Curved Arrow Connector	Curved Arrow Connector
-	Arch Up	Arch Up
-	Arch Down	Arch Down
-	Slant Up	Slant Up
-	Slant Down	Slant Down
-	Inflate	Inflate
-	Deflate	Deflate
-	Chevron Up	Chevron Up
+	{n} entries marked.	تم تمييز {n} مدخلًا.
+	Lasso Select	تحديد باللاسو
+	Move Selected Ink	نقل الحبر المحدد
+	Delete Selected Ink	حذف الحبر المحدد
+	Recolor Selected Ink	إعادة تلوين الحبر المحدد
+	Add Pen	إضافة قلم
+	Remove Pen	إزالة القلم
+	Ink to Shape	تحويل الحبر إلى شكل
+	Convert to Shapes	تحويل إلى أشكال
+	Ink Replay	إعادة تشغيل الحبر
+	Add\nPen	إضافة\nقلم
+	Rewind	إرجاع
+	Forward	تقديم
+	Stroke {n} of {total}	الضربة {n} من {total}
+	WordArt Styles	أنماط WordArt
+	Text Fill	تعبئة النص
+	Text Outline	مخطط النص
+	Transform	تحويل
+	No Fill	بلا تعبئة
+	No Outline	بلا مخطط
+	Reflection	انعكاس
+	No Reflection	بلا انعكاس
+	No Transform	بلا تحويل
+	Connect Shapes	وصل الأشكال
+	Straight Connector	موصل مستقيم
+	Straight Arrow Connector	موصل مستقيم بسهم
+	Elbow Connector	موصل بزوايا قائمة
+	Elbow Arrow Connector	موصل بزوايا قائمة وسهم
+	Curved Connector	موصل منحني
+	Curved Arrow Connector	موصل منحني بسهم
+	Arch Up	قوس لأعلى
+	Arch Down	قوس لأسفل
+	Slant Up	ميل لأعلى
+	Slant Down	ميل لأسفل
+	Inflate	انتفاخ
+	Deflate	انكماش
+	Chevron Up	شيفرون لأعلى
 	Chevron Down	Chevron Down
 	Triangle Up	Triangle Up
 	Triangle Down	Triangle Down
