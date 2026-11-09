@@ -60,12 +60,11 @@ jobs:
           cp patches/arabic-catalog.tsv upstream-wordcraft/crates/ui-egui/src/i18n/ar.tsv
           cp -R apps/wordcraft-android upstream-wordcraft/apps/
           test -f apps/wordcraft-android/res/values/styles.xml
-          # cargo-apk reads the resource directory from package.metadata.android.resources.
-          # Keep the check beside the Android package so aapt receives the exact resource tree.
-          test -f apps/wordcraft-android/res/values/styles.xml
-          grep -F 'style name="WordcraftFullscreen"' apps/wordcraft-android/res/values/styles.xml
-          grep -F 'resources = "res"' apps/wordcraft-android/Cargo.toml
-          grep -F 'theme = "@style/WordcraftFullscreen"' apps/wordcraft-android/Cargo.toml
+          test -f apps/wordcraft-android/game-activity/app/src/main/res/values/styles.xml
+          grep -F 'style name="WordcraftFullscreen"' apps/wordcraft-android/game-activity/app/src/main/res/values/styles.xml
+          grep -F 'androidx.games:games-activity:4.4.0' apps/wordcraft-android/game-activity/app/build.gradle
+          grep -F 'extends GameActivity' apps/wordcraft-android/game-activity/app/src/main/java/ai/storyteller/wordcraft/MainActivity.java
+          grep -F 'android-game-activity' apps/wordcraft-android/Cargo.toml
           python3 - <<'PY'
           from pathlib import Path
 
