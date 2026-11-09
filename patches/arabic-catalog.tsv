@@ -1479,95 +1479,95 @@
 	Chart Layouts	تخطيطات المخطط
 	Add Chart Element	إضافة عنصر إلى المخطط
 	Legend	وسيلة الإيضاح
-	Data Labels	Data Labels
-	Above Chart	Above Chart
-	Insert Chart	Insert Chart
-	Clustered Column	Clustered Column
-	Stacked Column	Stacked Column
-	Clustered Bar	Clustered Bar
-	Stacked Bar	Stacked Bar
-	Area	Area
-	Pie	Pie
-	Doughnut	Doughnut
-	Scatter	Scatter
-	“{text}” ({row}, {series}) isn't a number.	“{text}” ({row}, {series}) isn't a number.
-	Category {n}	Category {n}
-	Series {n}	Series {n}
-	Type the categories down the side and a column of values per series.	Type the categories down the side and a column of values per series.
-	Categories	Categories
-	Series name	Series name
-	Remove series	Remove series
-	Remove row	Remove row
-	Add Row	Add Row
-	Add Series	Add Series
-	Edit\nData	Edit\nData
-	Change\nChart Type	Change\nChart Type
-	Align Text	Align Text
-	Create Link	Create Link
-	Break Link	Break Link
-	Rotate all text 90°	Rotate all text 90°
-	Rotate all text 270°	Rotate all text 270°
-	Stacked	Stacked
-	Middle	Middle
-	Click the empty text box the text should continue in (Esc cancels)	Click the empty text box the text should continue in (Esc cancels)
-	Not linked: click a text box	Not linked: click a text box
-	Location	Location
-	Endnotes	Endnotes
-	Below text	Below text
-	End of section	End of section
-	End of document	End of document
-	Footnotes to endnotes	Footnotes to endnotes
-	Endnotes to footnotes	Endnotes to footnotes
-	Swap footnotes and endnotes	Swap footnotes and endnotes
-	Custom mark:	Custom mark:
-	Continuous numbering	Continuous numbering
+	Data Labels	تسميات البيانات
+	Above Chart	أعلى المخطط
+	Insert Chart	إدراج مخطط
+	Clustered Column	أعمدة مجمّعة
+	Stacked Column	أعمدة مكدّسة
+	Clustered Bar	أشرطة مجمّعة
+	Stacked Bar	أشرطة مكدّسة
+	Area	مساحي
+	Pie	دائري
+	Doughnut	حلقي
+	Scatter	مبعثر
+	“{text}” ({row}, {series}) isn't a number.	القيمة “{text}” في ({row}, {series}) ليست رقمًا.
+	Category {n}	الفئة {n}
+	Series {n}	السلسلة {n}
+	Type the categories down the side and a column of values per series.	أدخل الفئات في العمود الجانبي، وأدخل عمودًا من القيم لكل سلسلة.
+	Categories	الفئات
+	Series name	اسم السلسلة
+	Remove series	إزالة السلسلة
+	Remove row	إزالة الصف
+	Add Row	إضافة صف
+	Add Series	إضافة سلسلة
+	Edit\nData	تحرير\nالبيانات
+	Change\nChart Type	تغيير\nنوع المخطط
+	Align Text	محاذاة النص
+	Create Link	إنشاء ارتباط
+	Break Link	قطع الارتباط
+	Rotate all text 90°	تدوير النص كله 90°
+	Rotate all text 270°	تدوير النص كله 270°
+	Stacked	مكدّس
+	Middle	الوسط
+	Click the empty text box the text should continue in (Esc cancels)	انقر على مربع النص الفارغ الذي تريد متابعة النص فيه (اضغط Esc للإلغاء)
+	Not linked: click a text box	غير مرتبط: انقر على مربع نص
+	Location	الموقع
+	Endnotes	الحواشي الختامية
+	Below text	أسفل النص
+	End of section	نهاية القسم
+	End of document	نهاية المستند
+	Footnotes to endnotes	تحويل الحواشي السفلية إلى حواشي ختامية
+	Endnotes to footnotes	تحويل الحواشي الختامية إلى حواشي سفلية
+	Swap footnotes and endnotes	تبديل الحواشي السفلية والختامية
+	Custom mark:	علامة مخصصة:
+	Continuous numbering	ترقيم متصل
 	Apply	تطبيق
-	Convert Notes	Convert Notes
-	A, B, C, …	A, B, C, …
-	Above the item	Above the item
-	Accessed on	Accessed on
-	Add New Source…	Add New Source…
-	Add the chapter number	Add the chapter number
-	Atmosphere	Atmosphere
-	Below the item	Below the item
-	Book	Book
-	Book title	Book title
-	Caption	Caption
-	Caption Numbering	Caption Numbering
-	Caption text	Caption text
-	Caption:	Caption:
-	Chapter in a book	Chapter in a book
-	Chapters begin at:	Chapters begin at:
-	Collect entries from:	Collect entries from:
-	Columns:	Columns:
-	Conference	Conference
-	Conference paper	Conference paper
-	Container Title	Container Title
-	Create Source	Create Source
-	Cross-reference:	Cross-reference:
-	Custom Table of Contents…	Custom Table of Contents…
+	Convert Notes	تحويل الحواشي
+	A, B, C, …	أ، ب، ج، …
+	Above the item	فوق العنصر
+	Accessed on	تاريخ الاطلاع
+	Add New Source…	إضافة مصدر جديد…
+	Add the chapter number	إضافة رقم الفصل
+	Atmosphere	الغلاف الجوي
+	Below the item	أسفل العنصر
+	Book	كتاب
+	Book title	عنوان الكتاب
+	Caption	تسمية توضيحية
+	Caption Numbering	ترقيم التسميات التوضيحية
+	Caption text	نص التسمية التوضيحية
+	Caption:	التسمية التوضيحية:
+	Chapter in a book	فصل في كتاب
+	Chapters begin at:	تبدأ الفصول عند:
+	Collect entries from:	جمع المدخلات من:
+	Columns:	الأعمدة:
+	Conference	مؤتمر
+	Conference paper	ورقة مؤتمر
+	Container Title	عنوان الوعاء
+	Create Source	إنشاء مصدر
+	Cross-reference:	إحالة مرجعية:
+	Custom Table of Contents…	جدول محتويات مخصص…
 	DOI	DOI
-	Day	Day
-	Delete Label	Delete Label
-	Edit Source	Edit Source
-	Edition	Edition
-	Edit…	Edit…
-	Entry marked.	Entry marked.
-	Example: {sample}	Example: {sample}
-	Figure	Figure
-	Film	Film
-	Heading styles (levels 1–{n})	Heading styles (levels 1–{n})
-	Heading {n}	Heading {n}
+	Day	اليوم
+	Delete Label	حذف التسمية
+	Edit Source	تحرير المصدر
+	Edition	الطبعة
+	Edit…	تحرير…
+	Entry marked.	تم تمييز المدخل.
+	Example: {sample}	مثال: {sample}
+	Figure	شكل
+	Film	فيلم
+	Heading styles (levels 1–{n})	أنماط العناوين (المستويات 1–{n})
+	Heading {n}	العنوان {n}
 	I, II, III, …	I, II, III, …
-	Include page numbers	Include page numbers
-	Indented	Indented
-	Institution	Institution
-	Ionosphere	Ionosphere
-	Issue	Issue
-	Journal	Journal
-	Label:	Label:
-	Last, First; Last, First	Last, First; Last, First
-	Leave the label out of the caption	Leave the label out of the caption
+	Include page numbers	تضمين أرقام الصفحات
+	Indented	بمسافة بادئة
+	Institution	مؤسسة
+	Ionosphere	الأيونوسفير
+	Issue	عدد
+	Journal	مجلة
+	Label:	التسمية:
+	Last, First; Last, First	اسم العائلة، الاسم الأول؛ اسم العائلة، الاسم الأول
+	Leave the label out of the caption	عدم تضمين التسمية في التسمية التوضيحية
 	Letter headings	Letter headings
 	Levels:	Levels:
 	Link entries to their headings	Link entries to their headings
