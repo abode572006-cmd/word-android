@@ -61,6 +61,7 @@ target_sdk_version = 35
 
 [package.metadata.android.application]
 label = "WordCraft"
+theme = "@style/WordcraftFullscreen"
 # Variant B (immersive fullscreen) is what fixed the menu bar sitting under the notification
 # bar on the tablet; variant A is the alternative — see res/values/styles.xml.
 # The engine writes documents through a memory map and formats them; keep the .so uncompressed
