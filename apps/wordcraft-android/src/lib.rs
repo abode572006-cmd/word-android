@@ -435,8 +435,10 @@ struct AndroidImeContext {
     snapshot: ime::ImeSnapshot,
     story: wordcraft_engine::doc::StoryRef,
     path: wordcraft_engine::doc::Path,
-    /// False for cross-paragraph selections and non-canvas fields.
-    map_selection: bool,
+    /// Whether a text range from the IME can replace the document's current selection.
+    map_replacement: bool,
+    /// Whether an IME cursor/selection move can be mapped into the focused paragraph.
+    map_cursor: bool,
     /// Distinguishes egui text fields so a stale GameTextInput buffer cannot leak across them.
     focus_id: Option<egui::Id>,
 }
@@ -448,15 +450,16 @@ impl AndroidImeContext {
         let paragraph = (app.canvas.focused && app.session.math.is_none())
             .then(|| app.session.doc.para_at(focus))
             .flatten();
-        let (text, map_selection) = match paragraph {
+        let (text, map_cursor, map_replacement) = match paragraph {
             Some(paragraph) => (
                 paragraph.text.clone(),
+                true,
                 app.session.sel.anchor.story == focus.story
                     && app.session.sel.anchor.path == focus.path,
             ),
-            None => (String::new(), false),
+            None => (String::new(), false, false),
         };
-        let anchor_off = if map_selection {
+        let anchor_off = if map_replacement {
             app.session.sel.anchor.off.min(text.len())
         } else {
             focus.off.min(text.len())
@@ -470,7 +473,8 @@ impl AndroidImeContext {
             },
             story: focus.story,
             path: focus.path.clone(),
-            map_selection,
+            map_replacement,
+            map_cursor,
             focus_id,
         }
     }
@@ -541,7 +545,7 @@ impl Shell {
             );
             if !is_preedit {
                 if let Some(replacement) = update.replacement {
-                    if context.map_selection {
+                    if context.map_replacement {
                         self.inner.session.sel = wordcraft_engine::Selection {
                             anchor: wordcraft_engine::doc::Pos::new(
                                 context.story,
@@ -556,7 +560,7 @@ impl Shell {
                         };
                     }
                 } else if let Some(selection) = update.selection {
-                    if context.map_selection {
+                    if context.map_cursor {
                         self.inner.session.sel = wordcraft_engine::Selection {
                             anchor: wordcraft_engine::doc::Pos::new(
                                 context.story,
