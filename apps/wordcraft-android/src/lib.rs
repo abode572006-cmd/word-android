@@ -1,5 +1,5 @@
 //! WordCraft on Android (arm64-v8a): the real engine and egui shell, running on winit's
-//! NativeActivity backend.
+//! AndroidX GameActivity backend.
 //!
 //! # What this crate is
 //!
@@ -181,8 +181,7 @@ thread_local! {
 /// Open a second window on this app: a second Activity, so two documents can be put side by side on
 /// the tablet (Android's split screen gives one window per task).
 ///
-/// No manifest metadata does this — `documentLaunchMode` has no home in `cargo-apk`'s schema — and
-/// none is needed if the intent says it instead: `FLAG_ACTIVITY_NEW_DOCUMENT` with
+/// The per-launch flags belong on this intent rather than the manifest: `FLAG_ACTIVITY_NEW_DOCUMENT` with
 /// `FLAG_ACTIVITY_MULTIPLE_TASK` *is* that attribute ("a document of its own, in its own task, even
 /// though an instance is running") and the launch intent has to come from us. The component is
 /// asked of the running Activity (`getComponentName()`) rather than spelled out from a package name
@@ -324,7 +323,7 @@ fn init_logging(dir: &Path) {
 ///
 /// `android-activity` spawns a dedicated thread for this and calls it with the activity handle.
 /// `#[unsafe(no_mangle)]` with the Rust ABI is the required shape (edition 2024 requires the
-/// `unsafe(..)` wrapper around `no_mangle`), and it is the symbol the injected NativeActivity
+/// `unsafe(..)` wrapper around `no_mangle`), and it is the symbol the AndroidX GameActivity native bridge
 /// looks for.
 #[cfg(target_os = "android")]
 #[unsafe(no_mangle)]
@@ -542,7 +541,7 @@ mod tests {
         let manifest = std::fs::read_to_string(
             std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("Cargo.toml")
         ).unwrap();
-        assert!(manifest.contains("\"android-native-activity\""));
+        assert!(manifest.contains("\"android-game-activity\""));
         assert!(manifest.contains("\"x11\""));
     }
 }
