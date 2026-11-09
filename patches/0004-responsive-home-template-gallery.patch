@@ -12,3 +12,5 @@ diff --git a/crates/ui-egui/src/backstage.rs b/crates/ui-egui/src/backstage.rs
          for (label, template) in TEMPLATES.into_iter().take(HOME_TEMPLATES) {
              template_tile(ui, app, label, template);
          }
+     });
+     ui.add_space(8.0);
