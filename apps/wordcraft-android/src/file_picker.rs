@@ -176,6 +176,15 @@ pub fn cancel() {
     });
 }
 
+/// Explain whether the current folder is empty or the search simply has no matches.
+fn empty_listing_message(query: &str) -> &'static str {
+    if query.trim().is_empty() {
+        "(empty folder)"
+    } else {
+        "No files or folders match this search."
+    }
+}
+
 /// Match a folder or file name against the current folder's search query.
 /// Lowercase matching works with Unicode names, including Arabic filenames.
 fn name_matches(path: &Path, query: &str) -> bool {
@@ -388,7 +397,7 @@ pub fn draw(ctx: &egui::Context) {
                     let dirs: Vec<_> = dirs.iter().filter(|p| name_matches(p, query)).collect();
                     let files: Vec<_> = files.iter().filter(|p| name_matches(p, query)).collect();
                     if dirs.is_empty() && files.is_empty() {
-                        ui.label("(empty \u{2014} no matching files)");
+                        ui.label(empty_listing_message(query));
                     }
                     for d in dirs {
                         if ui.button(format!("\u{1F4C1} {}", file_label(d))).clicked() {
@@ -514,6 +523,16 @@ mod tests {
             std::process::id(),
             NEXT.fetch_add(1, Ordering::Relaxed)
         ))
+    }
+
+    #[test]
+    fn empty_listing_message_distinguishes_empty_folder_from_no_search_matches() {
+        assert_eq!(empty_listing_message(""), "(empty folder)");
+        assert_eq!(empty_listing_message("   "), "(empty folder)");
+        assert_eq!(
+            empty_listing_message("مستند"),
+            "No files or folders match this search."
+        );
     }
 
     #[test]
