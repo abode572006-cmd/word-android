@@ -7,6 +7,7 @@ on:
     paths:
       - ".github/workflows/wordcraft-android-check.yml"
       - "patches/android-file-dialogs.rs"
+      - "patches/android-clipboard.rs"
 
 permissions:
   contents: read
@@ -50,11 +51,11 @@ jobs:
           export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
           cargo ndk -t arm64-v8a check --package wordcraft-ui-egui
 
-      # Android uses the system Storage Access Framework rather than rfd's desktop dialogs.
-      # This adapter currently falls back to WordCraft's built-in browser until SAF is connected.
-      - name: Prepare Android host adapter
+      # Android uses native host adapters instead of desktop dialogs and clipboard APIs.
+      - name: Prepare Android host adapters
         run: |
           cp patches/android-file-dialogs.rs upstream-wordcraft/apps/wordcraft/src/file_dialogs_android.rs
+          cp patches/android-clipboard.rs upstream-wordcraft/apps/wordcraft/src/clipboard_android.rs
           cd upstream-wordcraft
           python3 - <<'PY'
           from pathlib import Path
@@ -62,11 +63,16 @@ jobs:
           source = main.read_text()
           source = source.replace(
               "mod file_dialogs;",
-              '#[cfg(not(target_os = "android"))]\nmod file_dialogs;\n#[cfg(target_os = "android")]\n#[path = "file_dialogs_android.rs"]\nmod file_dialogs;'
+              '#[cfg(not(target_os = "android"))]\\nmod file_dialogs;\\n#[cfg(target_os = "android")]\\n#[path = "file_dialogs_android.rs"]\\nmod file_dialogs;'
           )
-          if "file_dialogs_android.rs" not in source:
-              raise SystemExit("Could not install Android file-dialog adapter")
+          source = source.replace(
+              "mod clipboard;",
+              '#[cfg(not(target_os = "android"))]\\nmod clipboard;\\n#[cfg(target_os = "android")]\\n#[path = "clipboard_android.rs"]\\nmod clipboard;'
+          )
+          if "file_dialogs_android.rs" not in source or "clipboard_android.rs" not in source:
+              raise SystemExit("Could not install Android host adapters")
           main.write_text(source)
+
           cargo = Path("apps/wordcraft/Cargo.toml")
           manifest = cargo.read_text()
           manifest = manifest.replace(
@@ -75,7 +81,15 @@ jobs:
           ).replace(
               'pollster = "1"',
               '# pollster is only used by the desktop rfd adapter.'
+          ).replace(
+              'arboard = { workspace = true, features = ["image-data"] }',
+              '# arboard desktop clipboard is replaced by the Android host adapter.'
+          ).replace(
+              '"accesskit", "clipboard", "wayland"',
+              '"accesskit", "wayland"'
           )
+          if 'arboard = { workspace = true' in manifest or '"clipboard"' in manifest:
+              raise SystemExit("Desktop clipboard dependency/feature still enabled for Android")
           cargo.write_text(manifest)
           PY
 
