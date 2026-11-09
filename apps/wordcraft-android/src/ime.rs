@@ -84,7 +84,7 @@ mod tests {
         assert_eq!(diff_text("abcXYZdef", "abcمرحباdef"), Some(TextDelta { replaced: 3..6, inserted: "مرحبا".into() }));
     }
     #[test] fn handles_deletion_and_empty_result() {
-        assert_eq!(diff_text("النص العربي", "النص"), Some(TextDelta { replaced: 8..19, inserted: String::new() }));
+        assert_eq!(diff_text("النص العربي", "النص"), Some(TextDelta { replaced: 8..21, inserted: String::new() }));
         assert_eq!(diff_text("كلمة", ""), Some(TextDelta { replaced: 0..8, inserted: String::new() }));
     }
     #[test] fn keeps_emoji_and_combining_marks_on_utf8_boundaries() {
