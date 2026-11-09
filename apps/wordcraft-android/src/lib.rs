@@ -100,6 +100,10 @@ fn load_prefs(app: &mut WordApp) {
         app.apply_prefs(ui);
     }
     app.ui.window = None;
+    // This Android port targets Arabic-first use; users can still choose another language in Options.
+    if app.ui.language == wordcraft_ui_egui::i18n::AUTO {
+        app.ui.language = "ar".into();
+    }
 }
 
 /// How often the preferences are looked at; a change is written at the next look. Short enough
