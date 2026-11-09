@@ -437,11 +437,13 @@ struct AndroidImeContext {
     path: wordcraft_engine::doc::Path,
     /// False for cross-paragraph selections and non-canvas fields.
     map_selection: bool,
+    /// Distinguishes egui text fields so a stale GameTextInput buffer cannot leak across them.
+    focus_id: Option<egui::Id>,
 }
 
 #[cfg(target_os = "android")]
 impl AndroidImeContext {
-    fn from_word_app(app: &WordApp) -> Self {
+    fn from_word_app(app: &WordApp, focus_id: Option<egui::Id>) -> Self {
         let focus = &app.session.sel.focus;
         let paragraph = (app.canvas.focused && app.session.math.is_none())
             .then(|| app.session.doc.para_at(focus))
@@ -469,6 +471,7 @@ impl AndroidImeContext {
             story: focus.story,
             path: focus.path.clone(),
             map_selection,
+            focus_id,
         }
     }
 
@@ -507,8 +510,13 @@ impl Shell {
     /// changes?" prompt has been answered, so what is left is what `on_exit` would have done —
     /// save the preferences — and it is done here because a process exit runs no `on_exit`.
     #[cfg(target_os = "android")]
-    fn poll_android_ime(&mut self, android: &AndroidApp, raw: &mut egui::RawInput) {
-        let context = AndroidImeContext::from_word_app(&self.inner);
+    fn poll_android_ime(
+        &mut self,
+        android: &AndroidApp,
+        raw: &mut egui::RawInput,
+        focus_id: Option<egui::Id>,
+    ) {
+        let context = AndroidImeContext::from_word_app(&self.inner, focus_id);
         if self.ime_context.as_ref() != Some(&context) {
             android.set_text_input_state(context.android_state());
             self.ime.reset(context.snapshot.clone());
@@ -602,7 +610,7 @@ impl eframe::App for Shell {
         self.quit_if_asked(ctx);
     }
 
-    fn raw_input_hook(&mut self, _ctx: &egui::Context, raw: &mut egui::RawInput) {
+    fn raw_input_hook(&mut self, ctx: &egui::Context, raw: &mut egui::RawInput) {
         // Before the app, so the frame it sees already has the modifiers a desktop backend would
         // have reported (see `modifiers`).
         let modifiers = self.modifiers.apply(raw);
@@ -613,7 +621,8 @@ impl eframe::App for Shell {
         self.inner.raw_input_hook(raw);
         #[cfg(target_os = "android")]
         if let Some(android) = APP.with(|slot| slot.borrow().clone()) {
-            self.poll_android_ime(&android, raw);
+            let focus_id = ctx.memory(|memory| memory.focused());
+            self.poll_android_ime(&android, raw, focus_id);
         }
     }
 
