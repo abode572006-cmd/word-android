@@ -1,4 +1,4 @@
-name: Check WordCraft desktop UI for Android
+name: Build native WordCraft Android APK
 
 on:
   workflow_dispatch:
@@ -6,147 +6,97 @@ on:
     branches: [wordcraft-desktop-android-port]
     paths:
       - ".github/workflows/wordcraft-android-check.yml"
-      - "patches/android-file-dialogs.rs"
-      - "patches/android-clipboard.rs"
+      - "apps/wordcraft-android/**"
+      - "patches/0001-wordcraft-android-port.patch"
 
 permissions:
   contents: read
 
 jobs:
-  android-ui:
+  android:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
       - name: Check out Android port workspace
         uses: actions/checkout@v4
 
-      - name: Check out upstream WordCraft source
+      - name: Check out pinned upstream WordCraft
         uses: actions/checkout@v4
         with:
           repository: storytold/wordcraft
+          ref: 2ffba93b5189410a415970be179dcf481092d756
           path: upstream-wordcraft
           persist-credentials: false
 
-      - name: Install Rust
+      - name: Install Rust and Android target
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: aarch64-linux-android
 
-      - name: Set up Android SDK
+      - name: Set up Android SDK and NDK
         uses: android-actions/setup-android@v3
         with:
-          packages: platform-tools
+          packages: |
+            platform-tools
+            platforms;android-35
+            build-tools;35.0.0
+            ndk;27.2.12479018
 
-      - name: Install Android NDK
+      - name: Install cargo-apk
+        run: cargo install cargo-apk --locked
+
+      - name: Assemble Android shell against pinned upstream
         run: |
-          yes | sdkmanager --licenses
-          sdkmanager "ndk;29.0.14206865"
+          git -C upstream-wordcraft apply --check ../patches/0001-wordcraft-android-port.patch
+          git -C upstream-wordcraft apply ../patches/0001-wordcraft-android-port.patch
+          cp -R apps/wordcraft-android upstream-wordcraft/apps/
 
-      - name: Install cargo-ndk
-        run: cargo install cargo-ndk --locked
+      - name: Cross-compile Android shell
+        working-directory: upstream-wordcraft
+        env:
+          ANDROID_NDK_HOME: ${{ env.ANDROID_HOME }}/ndk/27.2.12479018
+          CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER: aarch64-linux-android26-clang
+          CC_aarch64_linux_android: aarch64-linux-android26-clang
+          CXX_aarch64_linux_android: aarch64-linux-android26-clang++
+          AR_aarch64_linux_android: llvm-ar
+        run: cargo check -p wordcraft-android --target aarch64-linux-android
 
-      - name: Cross-compile WordCraft UI and document engine
+      - name: Run Android shell unit tests on host
+        working-directory: upstream-wordcraft
+        run: cargo test -p wordcraft-android
+
+      - name: Create temporary signing key
+        run: |
+          keytool -genkeypair -keystore "$RUNNER_TEMP/wordcraft-test.jks" -alias wordcraft \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass android -keypass android \
+            -dname "CN=WordCraft CI, O=Local Test, C=US"
+
+      - name: Build signed arm64 APK
+        working-directory: upstream-wordcraft
+        env:
+          ANDROID_NDK_HOME: ${{ env.ANDROID_HOME }}/ndk/27.2.12479018
+          CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER: aarch64-linux-android26-clang
+          CC_aarch64_linux_android: aarch64-linux-android26-clang
+          CXX_aarch64_linux_android: aarch64-linux-android26-clang++
+          AR_aarch64_linux_android: llvm-ar
+          CARGO_APK_RELEASE_KEYSTORE: ${{ runner.temp }}/wordcraft-test.jks
+          CARGO_APK_RELEASE_KEYSTORE_PASSWORD: android
+        run: cargo apk build --release -p wordcraft-android
+
+      - name: Verify APK package and signature
         working-directory: upstream-wordcraft
         run: |
-          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
-          cargo ndk -t arm64-v8a check --package wordcraft-ui-egui
+          APK="$(find target/release/apk -type f -name '*.apk' -print -quit)"
+          test -n "$APK"
+          apksigner verify --verbose "$APK"
+          aapt dump badging "$APK" | grep -E "package: name='ai.storyteller.wordcraft'|native-code: 'arm64-v8a'"
+          mkdir -p ../artifacts
+          cp "$APK" ../artifacts/wordcraft-android-arm64.apk
 
-      # Android uses native host adapters instead of desktop dialogs and clipboard APIs.
-      - name: Prepare Android host adapters
-        run: |
-          cp patches/android-file-dialogs.rs upstream-wordcraft/apps/wordcraft/src/file_dialogs_android.rs
-          cp patches/android-clipboard.rs upstream-wordcraft/apps/wordcraft/src/clipboard_android.rs
-          cd upstream-wordcraft
-          python3 - <<'PY'
-          from pathlib import Path
-          main = Path("apps/wordcraft/src/main.rs")
-          source = main.read_text()
-          source = source.replace(
-              "mod file_dialogs;",
-              '#[cfg(not(target_os = "android"))]\nmod file_dialogs;\n#[cfg(target_os = "android")]\n#[path = "file_dialogs_android.rs"]\nmod file_dialogs;'
-          )
-          source = source.replace(
-              "mod clipboard;",
-              '#[cfg(not(target_os = "android"))]\nmod clipboard;\n#[cfg(target_os = "android")]\n#[path = "clipboard_android.rs"]\nmod clipboard;'
-          )
-          if "file_dialogs_android.rs" not in source or "clipboard_android.rs" not in source:
-              raise SystemExit("Could not install Android host adapters")
-          # X11 event-loop setup is desktop-only; Android has its own activity backend.
-          x11_block_cfg = '    #[cfg(all(unix, not(target_os = "macos")))]\n    {'
-          if x11_block_cfg not in source:
-              raise SystemExit("Could not find the Unix desktop X11 event-loop block")
-          source = source.replace(
-              x11_block_cfg,
-              '    #[cfg(all(unix, not(target_os = "macos"), not(target_os = "android")))]\n    {',
-              1
-          )
-          main.write_text(source)
-
-          cargo = Path("apps/wordcraft/Cargo.toml")
-          manifest = cargo.read_text()
-          manifest = manifest.replace(
-              'rfd = { workspace = true }',
-              '# rfd desktop dialogs are replaced by the Android host adapter.'
-          ).replace(
-              'pollster = "1"',
-              '# pollster is only used by the desktop rfd adapter.'
-          ).replace(
-              'arboard = { workspace = true, features = ["image-data"] }',
-              '# arboard desktop clipboard is replaced by the Android host adapter.'
-          ).replace(
-              '"accesskit", "clipboard", "wayland"',
-              '"accesskit", "wayland"'
-          )
-          if 'arboard = { workspace = true' in manifest or '"clipboard"' in manifest:
-              raise SystemExit("Desktop clipboard dependency/feature still enabled for Android")
-          cargo.write_text(manifest)
-          PY
-
-      - name: Enable Android activity backend
-        working-directory: upstream-wordcraft
-        run: |
-          sed -i 's/"links"/"links", "android-game-activity"/' apps/wordcraft/Cargo.toml
-
-      - name: Prepare native Android library entrypoint
-        run: |
-          cp patches/android-lib.rs upstream-wordcraft/apps/wordcraft/src/android_lib.rs
-          cd upstream-wordcraft
-          python3 - <<'PY'
-          from pathlib import Path
-          cargo = Path("apps/wordcraft/Cargo.toml")
-          manifest = cargo.read_text()
-          manifest += """
-
-          [lib]
-          path = "src/android_lib.rs"
-          crate-type = ["cdylib", "lib"]
-
-          [features]
-          default = ["desktop"]
-          desktop = []
-
-          [[bin]]
-          name = "wordcraft"
-          path = "src/main.rs"
-          required-features = ["desktop"]
-
-          [target.'cfg(target_os = "android")'.dependencies]
-          android_logger = "0.15.1"
-
-          [package.metadata.android]
-          package = "ai.storyteller.wordcraft"
-          label = "WordCraft"
-          build_targets = ["aarch64-linux-android"]
-          min_sdk_version = 23
-          target_sdk_version = 35
-          """
-          if '[lib]' not in manifest or 'android_logger = "0.15.1"' not in manifest:
-              raise SystemExit("Android library target or logger dependency was not configured")
-          cargo.write_text(manifest)
-          PY
-
-      - name: Check native Android library and entrypoint
-        working-directory: upstream-wordcraft
-        run: |
-          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
-          cargo ndk -t arm64-v8a check --no-default-features --lib --package wordcraft
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wordcraft-android-arm64
+          path: artifacts/wordcraft-android-arm64.apk
+          if-no-files-found: error
