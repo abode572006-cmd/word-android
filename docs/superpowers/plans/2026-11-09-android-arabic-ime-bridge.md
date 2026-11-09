@@ -15,7 +15,7 @@
 - Keep upstream WordCraft pinned at `2ffba93b5189410a415970be179dcf481092d756`.
 - No APK deliverable until the user explicitly approves it after feature and device validation.
 - Never claim Arabic IME support without physical-device acceptance tests.
-- Verify Android index units from the pinned GameActivity API before converting offsets.
+- Treat GameActivity selection/composition spans as Java Editable UTF-16 code-unit indices and convert them explicitly to Rust UTF-8 byte boundaries; reject offsets inside surrogate pairs.
 - Keep each task narrowly scoped and independently testable.
 
 ## Review Focus
@@ -37,10 +37,10 @@
 **Interfaces:**
 - Produces: a documented decision for Android TextSpan index units and TextAction mapping.
 
-- [ ] Inspect the exact android-activity 0.6.1 source and AndroidX GameTextInput contract for `TextSpan`, selection, and composing-region offsets.
-- [ ] Add a failing unit test for conversion of a non-ASCII selection boundary using the verified index unit.
+- [ ] Inspect the exact android-activity 0.6.1 and AndroidX GameTextInput source. The Java `InputConnection` routes positions through `Editable`/`BaseInputConnection`, so offsets are UTF-16 code units even though the native text buffer is modified UTF-8.
+- [ ] Add failing unit tests for UTF-16 code-unit to UTF-8 byte conversion: Arabic BMP boundaries, combining marks, emoji surrogate-pair boundaries, and out-of-range offsets.
 - [ ] Run the focused test and confirm it fails for the missing conversion behavior.
-- [ ] Implement the minimal conversion helper and rerun the focused test.
+- [ ] Implement `utf16_offset_to_byte(text: &str, offset: usize) -> Option<usize>`; return `None` for out-of-range offsets and offsets inside a surrogate pair. Rerun the focused test.
 - [ ] Run `cargo test -p wordcraft-android` in the pinned upstream workspace.
 - [ ] Commit the contract/helper change.
 
