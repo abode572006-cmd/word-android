@@ -32,7 +32,7 @@ Make the Android WordCraft editor accept Arabic and other software-keyboard text
 - Keep the existing native editor and document model.
 - Do not claim device support until tests run on a physical Android device.
 - Do not switch to GameActivity by changing Cargo features alone; build packaging and event delivery must be implemented together.
-- Do not treat Android selection/composition offsets as UTF-8 byte offsets until the exact upstream API contract is verified.
+- Android selection/composition offsets are Java Editable indices (UTF-16 code units); the Rust text buffer is UTF-8, so explicit checked conversion is required. The official C struct documents modified-UTF-8 text bytes but not span units; the GameTextInput Java InputConnection passes selection/composition positions through Editable APIs, whose indices are UTF-16 code units.
 
 ## Approaches
 1. **Recommended: GameActivity + narrow winit Android adapter patch + egui synchronization layer.** It uses the Android text-input API intended for game/native apps and keeps WordCraft/egui as the editor. Cost: add a maintained winit patch and a Gradle/GameActivity packaging path; test index units and state synchronization carefully.
@@ -40,7 +40,7 @@ Make the Android WordCraft editor accept Arabic and other software-keyboard text
 3. **Replace the windowing stack or rewrite the editor integration.** Rejected as disproportionate and likely to destabilize rendering, touch, multi-window, and the existing app.
 
 ## Design direction
-Use approach 1. First prove the Activity/build path and event API in a minimal isolated Android test. Then adapt GameActivity text snapshots/actions into egui's supported IME events while synchronizing the active TextEdit selection and composition state. The bridge must have pure platform-neutral conversion logic with unit tests, and the platform adapter must remain small. If winit cannot expose the required Activity methods without an unsafe or brittle patch, stop and revisit the architecture before widening the patch.
+Use approach 1. First prove the Activity/build path and event API in a minimal isolated Android test. Then adapt GameActivity text snapshots/actions into egui's supported IME events while synchronizing the active TextEdit selection and composition state. The bridge must have pure platform-neutral conversion logic with unit tests, including UTF-16-to-UTF-8 boundary conversion, and the platform adapter must remain small. If winit cannot expose the required Activity methods without an unsafe or brittle patch, stop and revisit the architecture before widening the patch.
 
 ## Acceptance criteria
 - Automated tests cover Arabic insertion, mid-string replacement, deletion, preedit updates, commit, selection movement, mixed RTL/LTR, combining marks, and emoji.
