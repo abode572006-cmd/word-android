@@ -15,7 +15,7 @@ The repository includes a minimal Gradle/GameActivity host module for validating
 - **Native editor:** upstream WordCraft document model, egui interface, layout engine and file-format code.
 - **Arabic interface:** 1,729 catalog keys match the pinned upstream catalog; 1,713 are translated. Product names, shortcuts and technical abbreviations may remain in their source form.
 - **Arabic text:** the upstream layout engine includes bidirectional paragraph layout; the Android patch adds Arabic UI run ordering and Android system Arabic-font discovery.
-- **Open / Save As / Export / Insert Picture / mail-merge recipients:** handled by the in-app file picker. Save As now rejects path-like filenames and asks before replacing an existing file.
+- **Open / Save As / Export / Insert Picture / mail-merge recipients:** wired to the in-app file picker and the upstream asynchronous file-dialog path. The image-selection path is covered by extension/filter code, but image insertion has not yet been confirmed on a physical Android device. Save As rejects path-like filenames and asks before replacing an existing file.
 - **User fonts:** place font files in `Android/media/ai.storyteller.wordcraft/Fonts`; restart WordCraft after adding fonts.
 - **Touch and physical keyboard:** two-finger page scrolling, pinch events and modifier-key tracking have host regression tests. GameActivity's text-input snapshots are not yet bridged to the editor; Arabic soft-keyboard input, composition, selected-range replacement, and surrounding-text deletion must not be considered supported until the adapter and physical-device tests are complete. The implementation plan and compatibility notes are tracked in [GameActivity / GameTextInput IME integration](https://github.com/abode572006-cmd/word-android/issues/2).
 - **Multiple windows:** a second Activity is requested through Android intents; this still needs on-device validation.
@@ -24,7 +24,7 @@ The repository includes a minimal Gradle/GameActivity host module for validating
 
 - The file picker is drawn inside the app; Android's Storage Access Framework picker is not integrated.
 - Shared-storage browsing depends on Android permissions. The app's own files folder remains available without broad storage access.
-- System clipboard images, system printing and stylus pressure/tilt are not implemented. Full software-keyboard IME support (including Arabic, composition, and multi-key characters) is also pending migration from NativeActivity to GameActivity.
+- System clipboard images, system printing and stylus pressure/tilt are not implemented. Full software-keyboard IME support (including Arabic, composition, and multi-key characters) is pending completion of the GameActivity-to-egui text-state bridge.
 - Arabic labels are translated and adapted for bidirectional text rendering, but the ribbon, menus and every panel have not yet been comprehensively mirrored into a fully right-to-left layout. The in-app file picker controls are currently English.
 - CI verifies compilation, the GameActivity Gradle host, and automated regression tests. It does **not** package an APK or replace installation and functional testing on a physical Samsung Galaxy Tab S9 FE+.
 
