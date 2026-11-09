@@ -391,7 +391,10 @@ pub fn draw(ctx: &egui::Context) -> bool {
                 Err(e) => {
                     ui.label("Cannot read this folder.");
                     ui.label(egui::RichText::new(e.clone()).monospace().weak().small());
-                    ui.label("Grant \"All files access\" in Settings \u{25B8} Apps \u{25B8} Special access to browse shared storage.");
+                    ui.label("Grant \"All files access\" in Settings to browse shared storage.");
+                    if ui.button("Open storage access settings").clicked() {
+                        open_storage_settings = true;
+                    }
                 }
                 Ok((dirs, files)) => {
                     let query = pending.search.trim();
