@@ -4,7 +4,7 @@
 
 **Goal:** Enable correct Arabic software-keyboard input in the focused WordCraft Android editor through GameActivity and egui.
 
-**Architecture:** Move the Android shell from NativeActivity/cargo-apk assumptions to a GameActivity-capable Android packaging path. Patch the Android winit adapter to expose GameActivity text snapshots/actions as supported IME events, and keep text/selection/composition conversion in a tested platform-neutral module.
+**Architecture:** Move the Android shell from NativeActivity/cargo-apk assumptions to a GameActivity-capable Android packaging path. Poll GameActivity text state from the existing eframe Shell::raw_input_hook, convert snapshots to egui IME events, and keep text/selection/composition conversion in a tested platform-neutral module. Avoid a winit fork unless the shell-level API proves insufficient.
 
 **Tech Stack:** Rust, winit 0.30.13, egui/eframe 0.36, android-activity 0.6.1, AndroidX GameActivity 4.4.0, Gradle, GitHub Actions.
 
@@ -65,9 +65,9 @@
 ### Task 3: Adapt winit GameActivity text snapshots to egui IME events
 
 **Files:**
-- Create: a maintained, pinned winit patch/fork under the repository's Android patching convention.
-- Modify: `apps/wordcraft-android/Cargo.toml` and workspace patch configuration as needed.
+- Modify: `apps/wordcraft-android/src/lib.rs` (Shell::raw_input_hook and AndroidApp text-state polling).
 - Modify: `apps/wordcraft-android/src/ime.rs`.
+- Modify: pinned upstream `crates/ui-egui/src/keys.rs` via a new patch file, to handle DeleteSurrounding.
 - Test: focused IME adapter tests.
 
 **Interfaces:**
@@ -76,7 +76,7 @@
 
 - [ ] Write failing tests for preedit replacement, commit, delete-surrounding, cursor/selection replacement, identical snapshots, and TextAction.
 - [ ] Run tests and verify each fails for the expected missing behavior.
-- [ ] Patch winit's Android event adapter to consume GameActivity TextEvent/TextAction instead of dropping them.
+- [ ] Poll `AndroidApp::text_input_state()` in `Shell::raw_input_hook` after winit has polled platform input; deduplicate snapshots and inject egui IME events. Use `set_text_input_state()` to keep GameActivity's editable buffer synchronized with the current editor's bounded surrounding text and selection.
 - [ ] Map GameActivity text snapshots to egui 0.36 IME events. The pinned WordCraft canvas already consumes Preedit/Commit; add and test its DeleteSurrounding behavior, and synchronize GameActivity's surrounding text/selection with the document caret so deletion and selected-range replacement work on existing document content.
 - [ ] Add explicit handling for focus changes, stale snapshots, editor selection changes, and text-context refresh after each committed edit.
 - [ ] Run focused tests, full host tests, and Android cross-check; commit.
