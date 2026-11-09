@@ -22,22 +22,24 @@ diff --git a/crates/ui-egui/src/i18n/mod.rs b/crates/ui-egui/src/i18n/mod.rs
      fn catalog(&self) -> &Catalog {
          self.catalog.get_or_init(|| {
 -            let (catalog, errors) = Catalog::parse(self.source);
-+            let (catalog, errors) = Catalog::parse(self.source, self.code == "ar");
++            let (catalog, errors) = Catalog::parse_with_rtl(self.source, self.code == "ar");
              for error in errors {
                  log::warn!("{} interface catalog: {error}; that entry shows in English", self.code);
              }
 diff --git a/crates/ui-egui/src/i18n/catalog.rs b/crates/ui-egui/src/i18n/catalog.rs
 --- a/crates/ui-egui/src/i18n/catalog.rs
 +++ b/crates/ui-egui/src/i18n/catalog.rs
-@@ -112,12 +112,15 @@ impl Catalog {
+@@ -112,12 +112,19 @@ impl Catalog {
      /// Build a catalog from its valid entries; the errors of the skipped lines come back too.
--    pub fn parse(text: &str) -> (Catalog, Vec<String>) {
-+    pub fn parse(text: &str, rtl: bool) -> (Catalog, Vec<String>) {
+     pub fn parse(text: &str) -> (Catalog, Vec<String>) {
++        Self::parse_with_rtl(text, false)
++    }
++
++    /// Parse a catalog and, for an RTL interface, reorder translated labels for egui's layout.
++    pub fn parse_with_rtl(text: &str, rtl: bool) -> (Catalog, Vec<String>) {
          let (entries, errors) = parse_entries(text);
          let mut catalog = Catalog::default();
          for e in entries {
-+            // egui 0.36 does not reorder bidirectional runs. Only translations are reordered;
-+            // text typed by the user remains in its original logical order.
 +            let translation = if rtl { super::bidi::visual_rtl(&e.translation) } else { e.translation };
              if e.context.is_empty() {
 -                catalog.plain.insert(e.source, e.translation);
@@ -182,9 +184,9 @@ diff --git a/crates/fonts/src/ui_fallback.rs b/crates/fonts/src/ui_fallback.rs
 +pub fn system_arabic_ui_font() -> Option<SystemUiFont> {
 +    const NAMES: &[&str] = &[
 +        "NotoSansArabicUI-VF.ttf",
-        "NotoSansArabicUI-Regular.ttf",
++        "NotoSansArabicUI-Regular.ttf",
 +        "NotoNaskhArabicUI-VF.ttf",
-        "NotoNaskhArabicUI-Regular.ttf",
++        "NotoNaskhArabicUI-Regular.ttf",
 +        "NotoSansArabic-Regular.ttf",
 +        "NotoNaskhArabic-Regular.ttf",
 +        "NotoKufiArabic-Regular.ttf",
@@ -210,13 +212,9 @@ diff --git a/crates/fonts/src/ui_fallback.rs b/crates/fonts/src/ui_fallback.rs
 diff --git a/crates/fonts/src/lib.rs b/crates/fonts/src/lib.rs
 --- a/crates/fonts/src/lib.rs
 +++ b/crates/fonts/src/lib.rs
-@@ -18,5 +18,5 @@ use skrifa::MetadataProvider;
- use skrifa::instance::Size;
+@@ -21,1 +21,1 @@
 -pub use ui_fallback::{SystemUiFont, system_cjk_ui_font, ui_needs_system_cjk};
 +pub use ui_fallback::{SystemUiFont, system_arabic_ui_font, system_cjk_ui_font, ui_needs_system_cjk};
- 
- /// A font from the optional craft-fonts build input (https://github.com/storytold/craft-fonts;
- /// empty unless built with CRAFT_FONTS_DIR, see build.rs).
 diff --git a/crates/ui-egui/src/theme.rs b/crates/ui-egui/src/theme.rs
 --- a/crates/ui-egui/src/theme.rs
 +++ b/crates/ui-egui/src/theme.rs
@@ -332,16 +330,3 @@ diff --git a/crates/ui-egui/src/lib.rs b/crates/ui-egui/src/lib.rs
 +        assert!(body_text(&a).contains(arabic), "typed Arabic must remain in logical order");
 +    }
  }
-
-diff --git a/crates/ui-egui/src/i18n/tests.rs b/crates/ui-egui/src/i18n/tests.rs
---- a/crates/ui-egui/src/i18n/tests.rs
-+++ b/crates/ui-egui/src/i18n/tests.rs
-@@ -91,3 +91,3 @@
- fn malformed_catalog_lines_are_skipped_not_fatal() {
-     let (c, errors) =
--        Catalog::parse("# c\n\tHello\t你好\nctx\tA\tB\n\tOpen…\t打开\n\tPage {n}\t第 {m} 页\nno tabs\n\tHello\t重复\n\tLine\\nTwo\t一\\n二\n");
-+        Catalog::parse("# c\n\tHello\t你好\nctx\tA\tB\n\tOpen…\t打开\n\tPage {n}\t第 {m} 页\nno tabs\n\tHello\t重复\n\tLine\\nTwo\t一\\n二\n", false);
-@@ -468,2 +468,2 @@
- fn context_entries_override_only_their_context_and_unknown_contexts_are_rejected() {
--    let (c, errors) = Catalog::parse("\tTitle\tЗаголовок\npreview\tTitle\tТитул\n\tFont\tШрифт\nnope\tFont\tX\n");
-+    let (c, errors) = Catalog::parse("\tTitle\tЗаголовок\npreview\tTitle\tТитул\n\tFont\tШрифт\nnope\tFont\tX\n", false);
