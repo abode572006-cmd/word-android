@@ -1107,104 +1107,104 @@
 	Dark	داكن
 	Use system setting	استخدام إعداد النظام
 	A file dialog is already open.	يوجد مربع حوار ملفات مفتوح بالفعل.
-	Height:	Height:
-	Width:	Width:
-	Row	Row
-	Cell	Cell
-	Preferred width:	Preferred width:
-	Alignment:	Alignment:
-	Indent from left:	Indent from left:
-	Specify height:	Specify height:
-	Exactly	Exactly
-	At least	At least
-	Allow row to break across pages	Allow row to break across pages
-	Repeat as header row on each page	Repeat as header row on each page
-	Vertical alignment:	Vertical alignment:
-	Top	Top
+	Height:	الارتفاع:
+	Width:	العرض:
+	Row	صف
+	Cell	خلية
+	Preferred width:	العرض المفضل:
+	Alignment:	المحاذاة:
+	Indent from left:	المسافة البادئة من اليسار:
+	Specify height:	تحديد الارتفاع:
+	Exactly	بالضبط
+	At least	على الأقل
+	Allow row to break across pages	السماح بانقسام الصف بين الصفحات
+	Repeat as header row on each page	تكرار الصف كصف رأس في كل صفحة
+	Vertical alignment:	المحاذاة الرأسية:
+	Top	أعلى
 	Bottom	أسفل
-	Alt text	Alt text
-	Alt:	Alt:
-	W:	W:
-	H:	H:
-	Reset	Reset
-	Reset Crop	Reset Crop
-	Insert a new equation (Alt+=)	Insert a new equation (Alt+=)
-	Leave the equation (Esc)	Leave the equation (Esc)
+	Alt text	النص البديل
+	Alt:	النص البديل:
+	W:	العرض:
+	H:	الارتفاع:
+	Reset	إعادة تعيين
+	Reset Crop	إعادة تعيين الاقتصاص
+	Insert a new equation (Alt+=)	إدراج معادلة جديدة (Alt+=)
+	Leave the equation (Esc)	مغادرة المعادلة (Esc)
 	Preview	معاينة
 	getartcraft.com/apps/wordcraft	getartcraft.com/apps/wordcraft
-	Draw Ink	Draw Ink
-	Erase Ink	Erase Ink
-	Hide Ink	Hide Ink
-	Hide\nInk	Hide\nInk
-	Pens	Pens
-	Thickness	Thickness
-	(All)	(All)
-	(none)	(none)
-	(normal text)	(normal text)
-	1/4 Em Space	1/4 Em Space
-	A mail merge field	A mail merge field
-	A numbered sequence (figures, tables…)	A numbered sequence (figures, tables…)
-	A table of contents	A table of contents
-	Categories:	Categories:
-	Character	Character
-	Character code:	Character code:
-	Col #:	Col #:
-	Copyright	Copyright
-	Date and Time	Date and Time
-	Date formats:	Date formats:
-	Description:	Description:
-	Document Information	Document Information
-	Double Closing Quote	Double Closing Quote
-	Double Opening Quote	Double Opening Quote
-	En Dash	En Dash
-	Em Space	Em Space
-	En Space	En Space
-	Equal column width	Equal column width
-	Field Codes	Field Codes
-	Field code:	Field code:
-	Field codes:	Field codes:
-	Field name:	Field name:
-	Field names:	Field names:
-	Field properties	Field properties
-	Field…	Field…
-	Format:	Format:
-	Hide Codes	Hide Codes
-	Index and Tables	Index and Tables
-	Line between	Line between
-	Links and References	Links and References
-	Mail Merge	Mail Merge
-	More Columns…	More Columns…
-	More Symbols…	More Symbols…
-	No-Width Non Break	No-Width Non Break
-	No-Width Optional Break	No-Width Optional Break
-	Paragraph Mark	Paragraph Mark
-	Pick a field from the list	Pick a field from the list
-	Preserve formatting during updates	Preserve formatting during updates
-	Presets	Presets
-	Recently used symbols:	Recently used symbols:
-	Registered	Registered
-	Section Mark	Section Mark
-	Sequence name:	Sequence name:
-	Shortcut key:	Shortcut key:
-	Single Closing Quote	Single Closing Quote
-	Single Opening Quote	Single Opening Quote
-	Spacing:	Spacing:
-	Special Characters	Special Characters
-	Subset:	Subset:
-	The time right now	The time right now
-	When this document was first created	When this document was first created
-	When this document was most recently printed	When this document was most recently printed
-	When this document was most recently saved	When this document was most recently saved
-	The document has no bookmarks yet.	The document has no bookmarks yet.
-	Who the document properties name as author	Who the document properties name as author
-	Name of the file this document is saved as	Name of the file this document is saved as
-	Title from the document properties	Title from the document properties
-	How many pages the whole document has	How many pages the whole document has
-	How many pages this section has	How many pages this section has
-	Number of the page the field sits on	Number of the page the field sits on
-	Number of the section the field sits in	Number of the section the field sits in
-	How many words the document holds	How many words the document holds
-	Page on which a bookmarked passage falls	Page on which a bookmarked passage falls
+	Draw Ink	الرسم بالحبر
+	Erase Ink	محو الحبر
+	Hide Ink	إخفاء الحبر
+	Hide\nInk	إخفاء\nالحبر
+	Pens	أقلام
+	Thickness	السُمك
+	(All)	(الكل)
+	(none)	(لا شيء)
+	(normal text)	(نص عادي)
+	1/4 Em Space	ربع مسافة Em
+	A mail merge field	حقل دمج مراسلات
+	A numbered sequence (figures, tables…)	تسلسل مرقم (الأشكال والجداول…)
+	A table of contents	جدول محتويات
+	Categories:	الفئات:
+	Character	محرف
+	Character code:	رمز المحرف:
+	Col #:	رقم العمود:
+	Copyright	حقوق النشر
+	Date and Time	التاريخ والوقت
+	Date formats:	تنسيقات التاريخ:
+	Description:	الوصف:
+	Document Information	معلومات المستند
+	Double Closing Quote	علامة اقتباس إغلاق مزدوجة
+	Double Opening Quote	علامة اقتباس فتح مزدوجة
+	En Dash	شرطة متوسطة
+	Em Space	مسافة Em كاملة
+	En Space	مسافة En
+	Equal column width	تساوي عرض الأعمدة
+	Field Codes	رموز الحقول
+	Field code:	رمز الحقل:
+	Field codes:	رموز الحقول:
+	Field name:	اسم الحقل:
+	Field names:	أسماء الحقول:
+	Field properties	خصائص الحقل
+	Field…	حقل…
+	Format:	التنسيق:
+	Hide Codes	إخفاء الرموز
+	Index and Tables	الفهرس والجداول
+	Line between	خط فاصل بين الأعمدة
+	Links and References	الروابط والمراجع
+	Mail Merge	دمج المراسلات
+	More Columns…	مزيد من الأعمدة…
+	More Symbols…	مزيد من الرموز…
+	No-Width Non Break	فاصل غير قابل للكسر بعرض صفري
+	No-Width Optional Break	فاصل اختياري بعرض صفري
+	Paragraph Mark	علامة الفقرة
+	Pick a field from the list	اختر حقلًا من القائمة
+	Preserve formatting during updates	الحفاظ على التنسيق أثناء التحديثات
+	Presets	إعدادات مسبقة
+	Recently used symbols:	الرموز المستخدمة مؤخرًا:
+	Registered	مسجل
+	Section Mark	علامة القسم
+	Sequence name:	اسم التسلسل:
+	Shortcut key:	مفتاح الاختصار:
+	Single Closing Quote	علامة اقتباس إغلاق مفردة
+	Single Opening Quote	علامة اقتباس فتح مفردة
+	Spacing:	التباعد:
+	Special Characters	محارف خاصة
+	Subset:	مجموعة فرعية:
+	The time right now	الوقت الحالي
+	When this document was first created	تاريخ إنشاء هذا المستند لأول مرة
+	When this document was most recently printed	تاريخ آخر طباعة لهذا المستند
+	When this document was most recently saved	تاريخ آخر حفظ لهذا المستند
+	The document has no bookmarks yet.	لا يحتوي المستند على إشارات مرجعية بعد.
+	Who the document properties name as author	اسم المؤلف المحدد في خصائص المستند
+	Name of the file this document is saved as	اسم الملف الذي حُفظ به هذا المستند
+	Title from the document properties	العنوان من خصائص المستند
+	How many pages the whole document has	عدد صفحات المستند بأكمله
+	How many pages this section has	عدد صفحات هذا القسم
+	Number of the page the field sits on	رقم الصفحة التي يوجد فيها الحقل
+	Number of the section the field sits in	رقم القسم الذي يوجد فيه الحقل
+	How many words the document holds	عدد الكلمات في المستند
+	Page on which a bookmarked passage falls	رقم الصفحة التي يقع فيها المقطع ذو الإشارة المرجعية
 	Copy of the text a bookmark marks	Copy of the text a bookmark marks
 	This field has no options.	This field has no options.
 	This font has no characters to show.	This font has no characters to show.
