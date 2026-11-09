@@ -74,7 +74,7 @@ jobs:
       - name: Run document, format, UI, and Arabic regression suites
         working-directory: upstream-wordcraft
         run: |
-          cargo test -p wordcraft-doc -p wordcraft-layout -p wordcraft-docx -p wordcraft-formats -p wordcraft-engine -p wordcraft-ui-egui
+          cargo test -p wordcraft-doc -p wordcraft-layout -p wordcraft-docx -p wordcraft-formats -p wordcraft-engine -p wordcraft-ui-egui -p wordcraft
 
       - name: Run Android shell unit tests on host
         working-directory: upstream-wordcraft
