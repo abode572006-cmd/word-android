@@ -1,4 +1,4 @@
-name: Build native WordCraft Android APK
+name: WordCraft Android development checks
 
 on:
   workflow_dispatch:
@@ -111,41 +111,6 @@ jobs:
         working-directory: upstream-wordcraft
         run: cargo test -p wordcraft-android
 
-      - name: Create temporary signing key
-        run: |
-          keytool -genkeypair -keystore "$RUNNER_TEMP/wordcraft-test.jks" -alias wordcraft \
-            -keyalg RSA -keysize 2048 -validity 10000 \
-            -storepass android -keypass android \
-            -dname "CN=WordCraft CI, O=Local Test, C=US"
+      # APK packaging is intentionally deferred until the Android feature set passes
+      # the functional and device-validation milestones. This workflow is test-only.
 
-      - name: Build signed arm64 APK
-        working-directory: upstream-wordcraft
-        env:
-          CARGO_APK_RELEASE_KEYSTORE: ${{ runner.temp }}/wordcraft-test.jks
-          CARGO_APK_RELEASE_KEYSTORE_PASSWORD: android
-        run: |
-          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/27.2.12479018"
-          export PATH="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH"
-          export CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER=aarch64-linux-android26-clang
-          export CC_aarch64_linux_android=aarch64-linux-android26-clang
-          export CXX_aarch64_linux_android=aarch64-linux-android26-clang++
-          export AR_aarch64_linux_android=llvm-ar
-          cargo apk build --release -p wordcraft-android
-
-      - name: Verify APK package and signature
-        working-directory: upstream-wordcraft
-        run: |
-          APK="$(find target/release/apk -type f -name '*.apk' -print -quit)"
-          test -n "$APK"
-          BUILD_TOOLS_DIR="$(find "$ANDROID_HOME/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n1)"
-          "$BUILD_TOOLS_DIR/apksigner" verify --verbose "$APK"
-          "$BUILD_TOOLS_DIR/aapt" dump badging "$APK" | grep -E "package: name='ai.storyteller.wordcraft'|native-code: 'arm64-v8a'"
-          mkdir -p ../artifacts
-          cp "$APK" ../artifacts/wordcraft-android-arm64.apk
-
-      - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: wordcraft-android-arm64
-          path: artifacts/wordcraft-android-arm64.apk
-          if-no-files-found: error
