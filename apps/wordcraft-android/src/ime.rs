@@ -16,6 +16,24 @@ pub(crate) struct TextDelta {
     pub inserted: String,
 }
 
+/// Convert a GameTextInput UTF-16 code-unit offset to a Rust UTF-8 byte offset.
+///
+/// Returns None for out-of-range offsets or offsets inside a UTF-16 surrogate pair.
+pub(crate) fn utf16_offset_to_byte(text: &str, offset: usize) -> Option<usize> {
+    let mut utf16_offset = 0;
+    for (byte_index, ch) in text.char_indices() {
+        if utf16_offset == offset {
+            return Some(byte_index);
+        }
+        let units = ch.len_utf16();
+        if offset > utf16_offset && offset < utf16_offset + units {
+            return None;
+        }
+        utf16_offset += units;
+    }
+    (utf16_offset == offset).then_some(text.len())
+}
+
 /// Compute a minimal replacement between two UTF-8 strings.
 ///
 /// The returned offsets are byte offsets, matching Rust string slicing. Both boundaries are
