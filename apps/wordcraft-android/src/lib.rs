@@ -480,6 +480,8 @@ impl eframe::App for Shell {
 
 #[cfg(test)]
 mod tests {
+    use super::open_extensions;
+
     /// Keep the Android NativeActivity backend and the Linux X11 backend enabled.
     /// The latter lets this crate's unit tests run on the CI host. The previous
     /// vendored-winit assertion was stale: the pinned upstream workspace resolves
