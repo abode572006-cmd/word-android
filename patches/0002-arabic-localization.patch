@@ -15,7 +15,7 @@ diff --git a/crates/fonts/src/fontdb.rs b/crates/fonts/src/fontdb.rs
 index db1180e..db1180e 100644
 --- a/crates/fonts/src/fontdb.rs
 +++ b/crates/fonts/src/fontdb.rs
-@@ -430,4 +430,10 @@ pub fn system_font_dirs() -> Vec<std::path::PathBuf> {
+@@ -430,4 +430,12 @@ pub fn system_font_dirs() -> Vec<std::path::PathBuf> {
      }
      let home = std::env::var_os("HOME").map(std::path::PathBuf::from);
 -    if cfg!(target_os = "macos") {
