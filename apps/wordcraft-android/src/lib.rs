@@ -27,7 +27,7 @@
 //!
 //! # Feature notes
 //!
-//! - `android-native-activity` **must** be on. Without a backend feature, `android-activity` is
+//! - `android-game-activity` **must** be on. Without a backend feature, `android-activity` is
 //!   pulled with no backend and the build fails with `file not found for module activity_impl`
 //!   plus `Either "game-activity" or "native-activity" must be enabled as features`.
 //! - `accesskit` **must** be off, and here it is unreachable: `ui-egui` has no eframe dependency
@@ -637,7 +637,7 @@ impl eframe::App for Shell {
 mod tests {
     use super::{open_extensions, show_file_home, WordApp, Session, Services, UiState};
 
-    /// Keep the Android NativeActivity backend and the Linux X11 backend enabled.
+    /// Keep the Android GameActivity backend and the Linux X11 backend enabled.
     /// The latter lets this crate's unit tests run on the CI host. The previous
     /// vendored-winit assertion was stale: the pinned upstream workspace resolves
     /// winit 0.30.13 from crates.io and does not contain vendor/winit.
