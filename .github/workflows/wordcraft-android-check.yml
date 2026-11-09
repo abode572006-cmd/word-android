@@ -160,10 +160,9 @@ jobs:
           cargo ndk -t arm64-v8a -o apps/wordcraft-android/game-activity/app/src/main/jniLibs build --release -p wordcraft-android
           test -f apps/wordcraft-android/game-activity/app/src/main/jniLibs/arm64-v8a/libwordcraft.so
 
-      - name: Package GameActivity debug APK (not published)
+      - name: Validate GameActivity Gradle manifest, resources, and Java host (no APK)
         run: |
-          gradle -p upstream-wordcraft/apps/wordcraft-android/game-activity :app:assembleDebug
-          test -f upstream-wordcraft/apps/wordcraft-android/game-activity/app/build/outputs/apk/debug/app-debug.apk
+          gradle -p upstream-wordcraft/apps/wordcraft-android/game-activity :app:processDebugManifest :app:processDebugResources :app:compileDebugJavaWithJavac
 
       - name: Run document, format, UI, and Arabic regression suites
         working-directory: upstream-wordcraft
@@ -174,6 +173,6 @@ jobs:
         working-directory: upstream-wordcraft
         run: cargo test -p wordcraft-android
 
-      # This unsigned debug APK is built only to validate the GameActivity/AAR/manifest/native
-      # linkage. It is not uploaded or signed; release and device acceptance remain deferred.
+      # No APK is assembled or published at this stage. Gradle only validates the Activity,
+      # AndroidX AAR, manifest, resources, and Java host; APK packaging waits for user approval.
 
