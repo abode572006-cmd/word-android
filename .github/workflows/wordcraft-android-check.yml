@@ -6,6 +6,8 @@ on:
     branches: [wordcraft-desktop-android-port]
     paths:
       - ".github/workflows/wordcraft-android-check.yml"
+      - "patches/0002-arabic-localization.patch"
+      - "patches/arabic-catalog.tsv"
       - "apps/wordcraft-android/**"
       - "patches/0001-wordcraft-android-port.patch"
 
@@ -50,6 +52,9 @@ jobs:
         run: |
           git -C upstream-wordcraft apply --check ../patches/0001-wordcraft-android-port.patch
           git -C upstream-wordcraft apply ../patches/0001-wordcraft-android-port.patch
+          git -C upstream-wordcraft apply --check ../patches/0002-arabic-localization.patch
+          git -C upstream-wordcraft apply ../patches/0002-arabic-localization.patch
+          cp patches/arabic-catalog.tsv upstream-wordcraft/crates/ui-egui/src/i18n/ar.tsv
           cp -R apps/wordcraft-android upstream-wordcraft/apps/
 
       - name: Cross-compile Android shell
