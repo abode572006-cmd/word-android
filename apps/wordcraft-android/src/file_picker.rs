@@ -274,6 +274,7 @@ fn safe_file_name(name: &str) -> bool {
     let path = Path::new(name);
     path.components().count() == 1
         && matches!(path.components().next(), Some(std::path::Component::Normal(_)))
+        && !name.contains('/')
         && !name.contains('\\')
 }
 
