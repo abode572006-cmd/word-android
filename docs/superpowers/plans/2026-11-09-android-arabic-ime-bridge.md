@@ -77,8 +77,8 @@
 - [ ] Write failing tests for preedit replacement, commit, delete-surrounding, cursor/selection replacement, identical snapshots, and TextAction.
 - [ ] Run tests and verify each fails for the expected missing behavior.
 - [ ] Patch winit's Android event adapter to consume GameActivity TextEvent/TextAction instead of dropping them.
-- [ ] Map preedit/commit/delete operations to egui 0.36's supported IME events and synchronize the active TextEdit cursor/selection without double-applying text.
-- [ ] Add explicit handling for focus changes and stale snapshots.
+- [ ] Map GameActivity text snapshots to egui 0.36 IME events. The pinned WordCraft canvas already consumes Preedit/Commit; add and test its DeleteSurrounding behavior, and synchronize GameActivity's surrounding text/selection with the document caret so deletion and selected-range replacement work on existing document content.
+- [ ] Add explicit handling for focus changes, stale snapshots, editor selection changes, and text-context refresh after each committed edit.
 - [ ] Run focused tests, full host tests, and Android cross-check; commit.
 
 ### Task 4: Validate actual editor and DOCX round-trip
@@ -92,7 +92,7 @@
 - Consumes: GameActivity packaging and IME bridge from Tasks 2–3.
 - Produces: evidence-based device acceptance report; no release APK.
 
-- [ ] Verify Arabic insertion at start/middle/end, replacement, preedit, backspace, delete, cursor movement, selection, and mixed Arabic/Latin.
+- [ ] Verify Arabic insertion at start/middle/end, replacement of existing selected text, preedit, backspace/delete around the caret, cursor movement, selection, and mixed Arabic/Latin.
 - [ ] Verify composition survives editor focus changes and pause/resume safely.
 - [ ] Save DOCX, close the document, reopen it, and compare text content.
 - [ ] Run the full Rust test suite and Android cross-compile.
