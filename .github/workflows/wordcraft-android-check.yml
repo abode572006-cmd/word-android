@@ -63,36 +63,36 @@ jobs:
           lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
 
           def insert_before_exact_line(target, addition, description):
-              matches = [i for i, line in enumerate(lines) if line.rstrip("\\r\\n") == target]
+              matches = [i for i, line in enumerate(lines) if line.rstrip("\r\n") == target]
               assert len(matches) == 1, f"pinned {description} insertion point changed: {len(matches)} matches"
               lines[matches[0]:matches[0]] = addition.splitlines(keepends=True)
 
           insert_before_exact_line(
               "                egui::Event::Paste(t) => {",
               (
-                  "                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\\n"
-                  "                    for _ in 0..(*before_chars).min(256) {\\n"
-                  "                        let _ = app.run(\\\"equation.backspace\\\", json!({}));\\n"
-                  "                    }\\n"
-                  "                    for _ in 0..(*after_chars).min(256) {\\n"
-                  "                        let _ = app.run(\\\"equation.delete\\\", json!({}));\\n"
-                  "                    }\\n"
-                  "                    continue;\\n"
-                  "                }\\n"
+                  "                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\n"
+                  "                    for _ in 0..(*before_chars).min(256) {\n"
+                  "                        let _ = app.run(\"equation.backspace\", json!({}));\n"
+                  "                    }\n"
+                  "                    for _ in 0..(*after_chars).min(256) {\n"
+                  "                        let _ = app.run(\"equation.delete\", json!({}));\n"
+                  "                    }\n"
+                  "                    continue;\n"
+                  "                }\n"
               ),
               "equation IME",
           )
           insert_before_exact_line(
               "            egui::Event::Paste(t) => {",
               (
-                  "            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\\n"
-                  "                for _ in 0..before_chars.min(256) {\\n"
-                  "                    let _ = app.run(\\\"text.backspace\\\", json!({}));\\n"
-                  "                }\\n"
-                  "                for _ in 0..after_chars.min(256) {\\n"
-                  "                    let _ = app.run(\\\"text.delete\\\", json!({}));\\n"
-                  "                }\\n"
-                  "            }\\n"
+                  "            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\n"
+                  "                for _ in 0..before_chars.min(256) {\n"
+                  "                    let _ = app.run(\"text.backspace\", json!({}));\n"
+                  "                }\n"
+                  "                for _ in 0..after_chars.min(256) {\n"
+                  "                    let _ = app.run(\"text.delete\", json!({}));\n"
+                  "                }\n"
+                  "            }\n"
               ),
               "body IME",
           )
