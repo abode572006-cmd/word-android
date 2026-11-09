@@ -1,9 +1,9 @@
 # Arabic (ar) interface catalog. English fallback remains for entries not yet translated.
 # context<TAB>English source<TAB>Arabic translation
-	(no style)	(no style)
-	(no suggestions)	(no suggestions)
-	1.5 Line Spacing	1.5 Line Spacing
-	A free, open-source word processor written from scratch in Rust.\nPart of the Crafting Apps from the ArtCraft team.	A free, open-source word processor written from scratch in Rust.\nPart of the Crafting Apps from the ArtCraft team.
+	(no style)	(بلا نمط)
+	(no suggestions)	(لا توجد اقتراحات)
+	1.5 Line Spacing	تباعد الأسطر 1.5
+	A free, open-source word processor written from scratch in Rust.\nPart of the Crafting Apps from the ArtCraft team.	معالج نصوص مجاني ومفتوح المصدر كُتب من الصفر بلغة Rust.\nأحد تطبيقات Crafting Apps من فريق ArtCraft.
 	About	حول البرنامج
 	About WordCraft	حول WordCraft
 	Accept	قبول
@@ -13,137 +13,137 @@
 	Add	إضافة
 	Add a comment	إضافة تعليق
 	Add a Table	إدراج جدول
-	Add Object to Selection	Add Object to Selection
-	Add Space Before Paragraph	Add Space Before Paragraph
-	Add space between Asian and Latin text	Add space between Asian and Latin text
-	Add space between Asian text and numbers	Add space between Asian text and numbers
-	Add tab stop at:	Add tab stop at:
-	Add Text	Add Text
-	Add to Dictionary	Add to Dictionary
-	Add to Style Gallery	Add to Style Gallery
+	Add Object to Selection	إضافة كائن إلى التحديد
+	Add Space Before Paragraph	إضافة مسافة قبل الفقرة
+	Add space between Asian and Latin text	إضافة مسافة بين النصوص الآسيوية واللاتينية
+	Add space between Asian text and numbers	إضافة مسافة بين النصوص الآسيوية والأرقام
+	Add tab stop at:	إضافة علامة جدولة عند:
+	Add Text	إضافة نص
+	Add to Dictionary	إضافة إلى القاموس
+	Add to Style Gallery	إضافة إلى معرض الأنماط
 	Address Block	كتلة العنوان
 	Address:	العنوان:
-	Address\nBlock	Address\nBlock
-	Adjust	Adjust
+	Address\nBlock	كتلة\nالعنوان
+	Adjust	ضبط
 	Advanced	متقدم
 	After:	بعد:
-	Agents	Agents
+	Agents	الوكلاء
 	Align	محاذاة
 	Align Left	محاذاة إلى اليسار
 	Align Right	محاذاة إلى اليمين
-	Aligned at:	Aligned at:
+	Aligned at:	محاذاة عند:
 	Alignment	المحاذاة
 	All Borders	كل الحدود
 	All Caps	أحرف كبيرة
-	All caps	All caps
-	All Markup	All Markup
-	Allow hanging punctuation	Allow hanging punctuation
-	Allow Latin text to wrap in the middle of a word	Allow Latin text to wrap in the middle of a word
-	Alt Text	Alt Text
-	Apply Asian line-breaking rules (kinsoku)	Apply Asian line-breaking rules (kinsoku)
-	Apply Character Style	Apply Character Style
+	All caps	أحرف كبيرة
+	All Markup	كل التغييرات
+	Allow hanging punctuation	السماح بتجاوز علامات الترقيم
+	Allow Latin text to wrap in the middle of a word	السماح بالتفاف النص اللاتيني في منتصف الكلمة
+	Alt Text	النص البديل
+	Apply Asian line-breaking rules (kinsoku)	تطبيق قواعد تقسيم الأسطر الآسيوية (Kinsoku)
+	Apply Character Style	تطبيق نمط الأحرف
 	Apply Style	تطبيق النمط
-	Apply Styles	Apply Styles
+	Apply Styles	تطبيق الأنماط
 	Arrange	ترتيب
-	Arrange\nAll	Arrange\nAll
-	Arrow	Arrow
-	Artistic Effects	Artistic Effects
-	Asian Typography	Asian Typography
+	Arrange\nAll	ترتيب\nالكل
+	Arrow	سهم
+	Artistic Effects	تأثيرات فنية
+	Asian Typography	الطباعة الآسيوية
 	Author	المؤلف
-	AutoCorrect Options	AutoCorrect Options
-	AutoFit	AutoFit
-	AutoFit Contents	AutoFit Contents
-	AutoFit Window	AutoFit Window
+	AutoCorrect Options	خيارات التصحيح التلقائي
+	AutoFit	احتواء تلقائي
+	AutoFit Contents	احتواء المحتويات تلقائيًا
+	AutoFit Window	احتواء النافذة تلقائيًا
 	Automatic	تلقائي
-	Automatic ({language})	Automatic ({language})
+	Automatic ({language})	تلقائي ({language})
 	Automatic follows your system's language. Menus and commands change; your documents don't.	يتبع الخيار التلقائي لغة نظامك. تتغير القوائم والأوامر، ولا يتغير محتوى مستنداتك.
-	Automatic Table 1 (3 levels)	Automatic Table 1 (3 levels)
-	Automatic Table 2 (2 levels)	Automatic Table 2 (2 levels)
+	Automatic Table 1 (3 levels)	جدول تلقائي 1 (ثلاثة مستويات)
+	Automatic Table 2 (2 levels)	جدول تلقائي 2 (مستويان)
 	AutoSave	الحفظ التلقائي
-	AutoSave documents you have saved in WordCraft	AutoSave documents you have saved in WordCraft
-	AutoSave failed: {error}. Save the document to turn AutoSave back on.	AutoSave failed: {error}. Save the document to turn AutoSave back on.
-	Balloons	Balloons
+	AutoSave documents you have saved in WordCraft	حفظ المستندات المحفوظة في WordCraft تلقائيًا
+	AutoSave failed: {error}. Save the document to turn AutoSave back on.	فشل الحفظ التلقائي: {error}. احفظ المستند لإعادة تفعيل الحفظ التلقائي.
+	Balloons	فقاعات التعليقات
 	Bottom Margin	الهامش السفلي
-	Click a border between two cells to merge them. Esc stops.	Click a border between two cells to merge them. Esc stops.
-	Bullet	Bullet
-	By author	By author
-	Changed lines:	Changed lines:
-	Click level to modify:	Click level to modify:
-	Color only	Color only
-	Compress punctuation at the start of a line	Compress punctuation at the start of a line
-	Dark page (white text on black)	Dark page (white text on black)
-	Drag a rectangle to draw a table, or a line across cells to split them. Esc stops.	Drag a rectangle to draw a table, or a line across cells to split them. Esc stops.
-	Draw Table	Draw Table
-	Define New Multilevel List	Define New Multilevel List
-	Define New Multilevel List…	Define New Multilevel List…
-	Deletions:	Deletions:
+	Click a border between two cells to merge them. Esc stops.	انقر على الحد الفاصل بين خليتين لدمجهما. اضغط Esc للإيقاف.
+	Bullet	تعداد نقطي
+	By author	حسب المؤلف
+	Changed lines:	الأسطر المتغيرة:
+	Click level to modify:	انقر على المستوى المطلوب تعديله:
+	Color only	اللون فقط
+	Compress punctuation at the start of a line	ضغط علامات الترقيم في بداية السطر
+	Dark page (white text on black)	صفحة داكنة (نص أبيض على خلفية سوداء)
+	Drag a rectangle to draw a table, or a line across cells to split them. Esc stops.	اسحب مستطيلًا لرسم جدول، أو خطًا عبر الخلايا لتقسيمها. اضغط Esc للإيقاف.
+	Draw Table	رسم جدول
+	Define New Multilevel List	تعريف قائمة جديدة متعددة المستويات
+	Define New Multilevel List…	تعريف قائمة جديدة متعددة المستويات…
+	Deletions:	عمليات الحذف:
 	Edit Comment	تحرير التعليق
 	Enter formatting for number:	أدخل تنسيق الترقيم:
-	Follow number with:	Follow number with:
+	Follow number with:	ما الذي يلي الرقم:
 	Formatting	التنسيق
-	Include level number from:	Include level number from:
-	Ink	Ink
-	Insertions and Deletions	Insertions and Deletions
-	Insertions:	Insertions:
-	Left border	Left border
+	Include level number from:	تضمين رقم المستوى من:
+	Ink	الحبر
+	Insertions and Deletions	الإدراجات والحذوفات
+	Insertions:	عمليات الإدراج:
+	Left border	الحد الأيسر
 	Left Margin	الهامش الأيسر
-	Indents and Spacing	Indents and Spacing
-	Legal style numbering	Legal style numbering
-	Line breaking	Line breaking
-	Link level to style:	Link level to style:
-	List Definition	List Definition
-	More templates →	More templates →
-	No templates match your search.	No templates match your search.
-	Nothing	Nothing
-	Number alignment:	Number alignment:
-	Number format	Number format
-	Number style for this level:	Number style for this level:
-	Outside border	Outside border
-	Reopen	Reopen
-	Restart list after:	Restart list after:
-	Right border	Right border
+	Indents and Spacing	المسافات البادئة والتباعد
+	Legal style numbering	ترقيم بالنمط القانوني
+	Line breaking	تقسيم الأسطر
+	Link level to style:	ربط المستوى بالنمط:
+	List Definition	تعريف القائمة
+	More templates →	مزيد من القوالب →
+	No templates match your search.	لا توجد قوالب تطابق بحثك.
+	Nothing	لا شيء
+	Number alignment:	محاذاة الرقم:
+	Number format	تنسيق الرقم
+	Number style for this level:	نمط الترقيم لهذا المستوى:
+	Outside border	الحد الخارجي
+	Reopen	إعادة فتح
+	Restart list after:	إعادة بدء القائمة بعد:
+	Right border	الحد الأيمن
 	Right Margin	الهامش الأيمن
-	Base text:	Base text:
-	Distribute letters	Distribute letters
-	Distribute spacing	Distribute spacing
-	Offset (pt):	Offset (pt):
-	Phonetic Guide	Phonetic Guide
-	Remove	Remove
-	Right (vertical)	Right (vertical)
-	Ruby text:	Ruby text:
-	Search for templates	Search for templates
-	Show all revisions inline	Show all revisions inline
-	Show documents with their colours inverted, like View › Switch Modes. Saving, printing and PDFs are unchanged.	Show documents with their colours inverted, like View › Switch Modes. Saving, printing and PDFs are unchanged.
-	AutoSave saves every change to the file (needs a saved document)	AutoSave saves every change to the file (needs a saved document)
-	AutoSave isn't available in the browser: it can't write to your files. Save downloads a copy.	AutoSave isn't available in the browser: it can't write to your files. Save downloads a copy.
-	AutoSave only keeps .docx, .odt and .rtf files; {name} can't keep all formatting. Save as .docx to turn on AutoSave.	AutoSave only keeps .docx, .odt and .rtf files; {name} can't keep all formatting. Save as .docx to turn on AutoSave.
+	Base text:	النص الأساسي:
+	Distribute letters	توزيع الأحرف
+	Distribute spacing	توزيع المسافات
+	Offset (pt):	الإزاحة (نقطة):
+	Phonetic Guide	دليل النطق
+	Remove	إزالة
+	Right (vertical)	يمين (عمودي)
+	Ruby text:	النص الصوتي (Ruby):
+	Search for templates	البحث عن قوالب
+	Show all revisions inline	إظهار جميع المراجعات ضمن النص
+	Show documents with their colours inverted, like View › Switch Modes. Saving, printing and PDFs are unchanged.	عرض المستندات بألوان معكوسة، مثل عرض › تبديل الأوضاع. لا يتغير الحفظ أو الطباعة أو ملفات PDF.
+	AutoSave saves every change to the file (needs a saved document)	يحفظ الحفظ التلقائي كل تغيير في الملف (يتطلب أن يكون المستند محفوظًا)
+	AutoSave isn't available in the browser: it can't write to your files. Save downloads a copy.	الحفظ التلقائي غير متاح في المتصفح؛ إذ لا يمكنه الكتابة إلى ملفاتك. يؤدي الحفظ إلى تنزيل نسخة.
+	AutoSave only keeps .docx, .odt and .rtf files; {name} can't keep all formatting. Save as .docx to turn on AutoSave.	يدعم الحفظ التلقائي ملفات .docx و.odt و.rtf فقط؛ ولا يمكن للملف {name} الاحتفاظ بكل التنسيقات. احفظ بصيغة .docx لتفعيل الحفظ التلقائي.
 	Save the document to turn on AutoSave	احفظ المستند لتفعيل الحفظ التلقائي
-	Save the document to turn on AutoSave (a file you have only opened isn't rewritten until you save it)	Save the document to turn on AutoSave (a file you have only opened isn't rewritten until you save it)
-	AutoText	AutoText
+	Save the document to turn on AutoSave (a file you have only opened isn't rewritten until you save it)	احفظ المستند لتفعيل الحفظ التلقائي (لن يُعاد حفظ الملف الذي فتحته إلا بعد أن تحفظه)
+	AutoText	نص تلقائي
 	Backspace	مسافة للخلف
-	Banded Columns	Banded Columns
-	Banded Rows	Banded Rows
+	Banded Columns	أعمدة متناوبة التظليل
+	Banded Rows	صفوف متناوبة التظليل
 	Before:	قبل:
 	Bibliography	قائمة المراجع
-	Binary assets added	Binary assets added
-	Binary assets removed	Binary assets removed
+	Binary assets added	الأصول الثنائية المضافة
+	Binary assets removed	الأصول الثنائية المحذوفة
 	Blank	فارغ
-	Blank (Three Columns)	Blank (Three Columns)
+	Blank (Three Columns)	فارغ (ثلاثة أعمدة)
 	Blank document	مستند فارغ
 	Blank Page	صفحة فارغة
-	Block\nAuthors	Block\nAuthors
+	Block\nAuthors	حظر\nالمؤلفين
 	Bold	غامق
 	Bookmark	إشارة مرجعية
-	Bookmark name:	Bookmark name:
-	Border Painter	Border Painter
-	Border\nPainter	Border\nPainter
+	Bookmark name:	اسم الإشارة المرجعية:
+	Border Painter	ناسخ الحدود
+	Border\nPainter	ناسخ\nالحدود
 	Borders	الحدود
 	Tab stop position:	موضع علامة الجدولة:
 	Default tab stops:	علامات الجدولة الافتراضية:
-	Tab stops to be cleared:	Tab stops to be cleared:
+	Tab stops to be cleared:	علامات الجدولة المطلوب مسحها:
 	All	الكل
-	Decimal	Decimal
-	Bar	Bar
+	Decimal	عشري
+	Bar	شريط
 	Leader	Leader
 	Set	Set
 	Page Border	حدود الصفحة
