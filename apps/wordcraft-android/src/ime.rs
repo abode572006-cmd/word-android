@@ -34,7 +34,16 @@ pub(crate) fn utf16_offset_to_byte(text: &str, offset: usize) -> Option<usize> {
     (utf16_offset == offset).then_some(text.len())
 }
 
-/// Convert a GameTextInput span (UTF-16 code-unit offsets) to UTF-8 byte offsets.\n///\n/// The order is preserved because Android permits a reversed selection to represent\n/// an active selection whose anchor and focus are opposite. Invalid or split-surrogate\n/// boundaries are rejected rather than rounded into a different selection.\npub(crate) fn utf16_span_to_bytes(text: &str, start: usize, end: usize) -> Option<(usize, usize)> {\n    Some((utf16_offset_to_byte(text, start)?, utf16_offset_to_byte(text, end)?))\n}\n\n/// Compute a minimal replacement between two UTF-8 strings.
+/// Convert a GameTextInput span (UTF-16 code-unit offsets) to UTF-8 byte offsets.
+///
+/// The order is preserved because Android permits a reversed selection to represent
+/// an active selection whose anchor and focus are opposite. Invalid or split-surrogate
+/// boundaries are rejected rather than rounded into a different selection.
+pub(crate) fn utf16_span_to_bytes(text: &str, start: usize, end: usize) -> Option<(usize, usize)> {
+    Some((utf16_offset_to_byte(text, start)?, utf16_offset_to_byte(text, end)?))
+}
+
+/// Compute a minimal replacement between two UTF-8 strings.
 ///
 /// The returned offsets are byte offsets, matching Rust string slicing. Both boundaries are
 /// guaranteed to lie on UTF-8 character boundaries. None means the snapshots are identical.
