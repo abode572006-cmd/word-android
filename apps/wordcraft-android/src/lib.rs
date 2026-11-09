@@ -522,6 +522,11 @@ impl Shell {
     ) {
         let context = AndroidImeContext::from_word_app(&self.inner, focus_id);
         if self.ime_context.as_ref() != Some(&context) {
+            // A context/focus change cancels any composition owned by the previous editor.
+            raw.events.push(egui::Event::Ime(egui::ImeEvent::Preedit {
+                text: String::new(),
+                active_range_chars: None,
+            }));
             android.set_text_input_state(context.android_state());
             self.ime.reset(context.snapshot.clone());
             self.ime_context = Some(context);
