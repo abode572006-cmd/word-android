@@ -13,6 +13,10 @@ on:
       - "apps/wordcraft-android/**"
       - "patches/0001-wordcraft-android-port.patch"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
