@@ -6,6 +6,7 @@ on:
     branches: [wordcraft-desktop-android-port]
     paths:
       - ".github/workflows/wordcraft-android-check.yml"
+      - "patches/android-file-dialogs.rs"
 
 permissions:
   contents: read
@@ -43,22 +44,46 @@ jobs:
       - name: Install cargo-ndk
         run: cargo install cargo-ndk --locked
 
-      # First verify that the existing document engine and desktop egui UI compile
-      # for Android. APK packaging follows only after platform compatibility is known.
       - name: Cross-compile WordCraft UI and document engine
         working-directory: upstream-wordcraft
         run: |
           export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
           cargo ndk -t arm64-v8a check --package wordcraft-ui-egui
 
-      # Enable eframe/winit Android GameActivity glue before checking the desktop app crate.
-      # Without this feature android-activity is compiled without its required implementation.
+      # Android uses the system Storage Access Framework rather than rfd's desktop dialogs.
+      # This adapter currently falls back to WordCraft's built-in browser until SAF is connected.
+      - name: Prepare Android host adapter
+        run: |
+          cp patches/android-file-dialogs.rs upstream-wordcraft/apps/wordcraft/src/file_dialogs_android.rs
+          cd upstream-wordcraft
+          python3 - <<'PY'
+          from pathlib import Path
+          main = Path("apps/wordcraft/src/main.rs")
+          source = main.read_text()
+          source = source.replace(
+              "mod file_dialogs;",
+              '#[cfg(not(target_os = "android"))]\nmod file_dialogs;\n#[cfg(target_os = "android")]\n#[path = "file_dialogs_android.rs"]\nmod file_dialogs;'
+          )
+          if "file_dialogs_android.rs" not in source:
+              raise SystemExit("Could not install Android file-dialog adapter")
+          main.write_text(source)
+          cargo = Path("apps/wordcraft/Cargo.toml")
+          manifest = cargo.read_text()
+          manifest = manifest.replace(
+              'rfd = { workspace = true }',
+              '# rfd desktop dialogs are replaced by the Android host adapter.'
+          ).replace(
+              'pollster = "1"',
+              '# pollster is only used by the desktop rfd adapter.'
+          )
+          cargo.write_text(manifest)
+          PY
+
       - name: Enable Android activity backend
         working-directory: upstream-wordcraft
         run: |
           sed -i 's/"links"/"links", "android-game-activity"/' apps/wordcraft/Cargo.toml
 
-      # Check the real desktop binary too before adding Android activity and APK packaging.
       - name: Check complete WordCraft application for Android
         working-directory: upstream-wordcraft
         run: |
