@@ -76,7 +76,19 @@ mod tests {
         assert_eq!(utf16_offset_to_byte("م\u{651}ر", 2), Some(4));
         assert_eq!(utf16_offset_to_byte("م\u{651}ر", 4), None);
     }
-    #[test]\n    fn converts_selection_and_composition_spans_from_utf16_without_losing_direction() {\n        assert_eq!(utf16_span_to_bytes("مرحبا", 1, 4), Some((2, 8)));\n        assert_eq!(utf16_span_to_bytes("مرحبا", 4, 1), Some((8, 2)));\n        assert_eq!(utf16_span_to_bytes("م\\u{651}ر", 0, 2), Some((0, 4)));\n    }\n    #[test]\n    fn rejects_spans_outside_text_or_inside_emoji_surrogate_pair() {\n        assert_eq!(utf16_span_to_bytes("ع🙂ب", 1, 2), None);\n        assert_eq!(utf16_span_to_bytes("ع🙂ب", 0, 5), None);\n        assert_eq!(utf16_span_to_bytes("ع🙂ب", 4, 1), Some((8, 2)));\n    }\n    #[test] fn identical_snapshots_have_no_delta() { assert_eq!(diff_text("مرحبا", "مرحبا"), None); }
+    #[test]
+    fn converts_selection_and_composition_spans_from_utf16_without_losing_direction() {
+        assert_eq!(utf16_span_to_bytes("مرحبا", 1, 4), Some((2, 8)));
+        assert_eq!(utf16_span_to_bytes("مرحبا", 4, 1), Some((8, 2)));
+        assert_eq!(utf16_span_to_bytes("مّ", 0, 2), Some((0, 4)));
+    }
+    #[test]
+    fn rejects_spans_outside_text_or_inside_emoji_surrogate_pair() {
+        assert_eq!(utf16_span_to_bytes("ع🙂ب", 1, 2), None);
+        assert_eq!(utf16_span_to_bytes("ع🙂ب", 0, 5), None);
+        assert_eq!(utf16_span_to_bytes("ع🙂ب", 4, 1), Some((8, 2)));
+    }
+    #[test] fn identical_snapshots_have_no_delta() { assert_eq!(diff_text("مرحبا", "مرحبا"), None); }
     #[test] fn inserts_arabic_without_splitting_utf8() {
         assert_eq!(diff_text("مرحبا", "مرحبا بالعالم"), Some(TextDelta { replaced: 10..10, inserted: " بالعالم".into() }));
     }
