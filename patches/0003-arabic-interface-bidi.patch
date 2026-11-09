@@ -1,7 +1,7 @@
 diff --git a/crates/ui-egui/Cargo.toml b/crates/ui-egui/Cargo.toml
 --- a/crates/ui-egui/Cargo.toml
 +++ b/crates/ui-egui/Cargo.toml
-@@ -25,6 +25,7 @@ serde = { workspace = true }
+@@ -25,5 +25,6 @@ serde = { workspace = true }
  serde_json = { workspace = true }
  log = { workspace = true }
 +unicode-bidi = "0.3.18"
@@ -11,14 +11,14 @@ diff --git a/crates/ui-egui/Cargo.toml b/crates/ui-egui/Cargo.toml
 diff --git a/crates/ui-egui/src/i18n/mod.rs b/crates/ui-egui/src/i18n/mod.rs
 --- a/crates/ui-egui/src/i18n/mod.rs
 +++ b/crates/ui-egui/src/i18n/mod.rs
-@@ -25,6 +25,7 @@
+@@ -25,5 +25,6 @@
  //! - [`fmt`]: fill `{name}` placeholders after a lookup; translators may reorder them.
  
 +mod bidi;
  mod catalog;
  
  use std::cell::Cell;
-@@ -76,7 +77,7 @@ impl LangInfo {
+@@ -76,6 +77,6 @@ impl LangInfo {
      fn catalog(&self) -> &Catalog {
          self.catalog.get_or_init(|| {
 -            let (catalog, errors) = Catalog::parse(self.source);
@@ -29,7 +29,7 @@ diff --git a/crates/ui-egui/src/i18n/mod.rs b/crates/ui-egui/src/i18n/mod.rs
 diff --git a/crates/ui-egui/src/i18n/catalog.rs b/crates/ui-egui/src/i18n/catalog.rs
 --- a/crates/ui-egui/src/i18n/catalog.rs
 +++ b/crates/ui-egui/src/i18n/catalog.rs
-@@ -112,13 +112,17 @@ impl Catalog {
+@@ -112,12 +112,15 @@ impl Catalog {
      /// Build a catalog from its valid entries; the errors of the skipped lines come back too.
 -    pub fn parse(text: &str) -> (Catalog, Vec<String>) {
 +    pub fn parse(text: &str, rtl: bool) -> (Catalog, Vec<String>) {
@@ -52,7 +52,7 @@ diff --git a/crates/ui-egui/src/i18n/bidi.rs b/crates/ui-egui/src/i18n/bidi.rs
 new file mode 100644
 --- /dev/null
 +++ b/crates/ui-egui/src/i18n/bidi.rs
-@@ -0,0 +1,132 @@
+@@ -0,0 +1,118 @@
 +//! egui lays a label out run by run and puts the runs left to right in the order it met them.
 +//! It does not run the Unicode bidirectional algorithm, so an Arabic label can read with its
 +//! words in reverse order. Reorder catalog labels into visual order before egui sees them.
@@ -174,7 +174,7 @@ new file mode 100644
 diff --git a/crates/fonts/src/ui_fallback.rs b/crates/fonts/src/ui_fallback.rs
 --- a/crates/fonts/src/ui_fallback.rs
 +++ b/crates/fonts/src/ui_fallback.rs
-@@ -72,6 +72,22 @@ pub fn system_cjk_ui_font(hans: bool) -> Option<SystemUiFont> {
+@@ -72,8 +72,23 @@ pub fn system_cjk_ui_font(hans: bool) -> Option<SystemUiFont> {
      find_ui_font(&crate::system_font_dirs(), &candidates(hans), probe(hans), hans)
  }
  
@@ -210,7 +210,7 @@ diff --git a/crates/fonts/src/ui_fallback.rs b/crates/fonts/src/ui_fallback.rs
 diff --git a/crates/fonts/src/lib.rs b/crates/fonts/src/lib.rs
 --- a/crates/fonts/src/lib.rs
 +++ b/crates/fonts/src/lib.rs
-@@ -18,7 +18,7 @@ use skrifa::MetadataProvider;
+@@ -18,5 +18,5 @@ use skrifa::MetadataProvider;
  use skrifa::instance::Size;
 -pub use ui_fallback::{SystemUiFont, system_cjk_ui_font, ui_needs_system_cjk};
 +pub use ui_fallback::{SystemUiFont, system_arabic_ui_font, system_cjk_ui_font, ui_needs_system_cjk};
@@ -220,7 +220,7 @@ diff --git a/crates/fonts/src/lib.rs b/crates/fonts/src/lib.rs
 diff --git a/crates/ui-egui/src/theme.rs b/crates/ui-egui/src/theme.rs
 --- a/crates/ui-egui/src/theme.rs
 +++ b/crates/ui-egui/src/theme.rs
-@@ -321,6 +321,13 @@ pub fn font_definitions(prefer_hans: bool, system_cjk: bool) -> FontDefinitions {
+@@ -321,5 +321,12 @@ pub fn font_definitions(prefer_hans: bool, system_cjk: bool) -> FontDefinitions {
          data.index = f.index;
          add_cjk(&mut fonts, format!("system {}", f.family), data);
      }
@@ -233,7 +233,7 @@ diff --git a/crates/ui-egui/src/theme.rs b/crates/ui-egui/src/theme.rs
 +    }
      #[cfg(target_arch = "wasm32")]
      let _ = system_cjk;
-@@ -336,6 +343,14 @@ fn system_cjk_font(hans: bool) -> Option<&'static wordcraft_fonts::SystemUiFont> {
+@@ -336,6 +343,12 @@ fn system_cjk_font(hans: bool) -> Option<&'static wordcraft_fonts::SystemUiFont> {
      (if hans { &ZH } else { &OTHER }).get_or_init(|| wordcraft_fonts::system_cjk_ui_font(hans)).as_ref()
  }
  
@@ -249,7 +249,7 @@ diff --git a/crates/ui-egui/src/theme.rs b/crates/ui-egui/src/theme.rs
 diff --git a/crates/layout/src/tests_bidi.rs b/crates/layout/src/tests_bidi.rs
 --- a/crates/layout/src/tests_bidi.rs
 +++ b/crates/layout/src/tests_bidi.rs
-@@ -519,3 +519,21 @@ fn rtl_section_puts_its_first_column_on_the_right() {
+@@ -520,2 +520,21 @@ fn rtl_section_puts_its_first_column_on_the_right() {
      assert_eq!(sep, vec![72.0 + 234.0], "line between the columns");
  }
 +
@@ -274,7 +274,7 @@ diff --git a/crates/layout/src/tests_bidi.rs b/crates/layout/src/tests_bidi.rs
 diff --git a/crates/ui-egui/src/i18n/tests.rs b/crates/ui-egui/src/i18n/tests.rs
 --- a/crates/ui-egui/src/i18n/tests.rs
 +++ b/crates/ui-egui/src/i18n/tests.rs
-@@ -614,3 +614,18 @@ fn bundled_interface_fonts_cover_turkish_without_system_fallbacks() {
+@@ -614,2 +614,17 @@ fn bundled_interface_fonts_cover_turkish_without_system_fallbacks() {
      assert!(!lang("tr").uses_cjk());
  }
 +
@@ -336,12 +336,12 @@ diff --git a/crates/ui-egui/src/lib.rs b/crates/ui-egui/src/lib.rs
 diff --git a/crates/ui-egui/src/i18n/tests.rs b/crates/ui-egui/src/i18n/tests.rs
 --- a/crates/ui-egui/src/i18n/tests.rs
 +++ b/crates/ui-egui/src/i18n/tests.rs
-@@ -90,7 +90,7 @@
+@@ -91,3 +91,3 @@
  fn malformed_catalog_lines_are_skipped_not_fatal() {
      let (c, errors) =
 -        Catalog::parse("# c\n\tHello\t你好\nctx\tA\tB\n\tOpen…\t打开\n\tPage {n}\t第 {m} 页\nno tabs\n\tHello\t重复\n\tLine\\nTwo\t一\\n二\n");
 +        Catalog::parse("# c\n\tHello\t你好\nctx\tA\tB\n\tOpen…\t打开\n\tPage {n}\t第 {m} 页\nno tabs\n\tHello\t重复\n\tLine\\nTwo\t一\\n二\n", false);
-@@ -467,7 +467,7 @@
+@@ -468,2 +468,2 @@
  fn context_entries_override_only_their_context_and_unknown_contexts_are_rejected() {
 -    let (c, errors) = Catalog::parse("\tTitle\tЗаголовок\npreview\tTitle\tТитул\n\tFont\tШрифт\nnope\tFont\tX\n");
 +    let (c, errors) = Catalog::parse("\tTitle\tЗаголовок\npreview\tTitle\tТитул\n\tFont\tШрифт\nnope\tFont\tX\n", false);
