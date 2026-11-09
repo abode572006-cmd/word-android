@@ -298,163 +298,163 @@
 	Dotted	منقّط
 	Double	مزدوج
 	Double Spacing	تباعد مزدوج
-	Double Strikethrough	Double Strikethrough
-	Double Underline	Double Underline
+	Double Strikethrough	يتوسطه خط مزدوج
+	Double Underline	تسطير مزدوج
 	Down	أسفل
-	Draft	Draft
+	Draft	مسودة
 	Draw	رسم
 	Drawing Tools	أدوات الرسم
-	Drawing\nCanvas	Drawing\nCanvas
-	Drop Cap	Drop Cap
+	Drawing\nCanvas	لوحة\nالرسم
+	Drop Cap	حرف استهلالي كبير
 	Edit Footer	تحرير تذييل الصفحة
 	Edit Header	تحرير رأس الصفحة
-	Edit Recipient List	Edit Recipient List
-	Edit\nRecipient List	Edit\nRecipient List
-	Edited	Edited
-	Editing	Editing
-	Editing header/footer	Editing header/footer
-	Editing — edit the document directly	Editing — edit the document directly
+	Edit Recipient List	تحرير قائمة المستلمين
+	Edit\nRecipient List	تحرير\nقائمة المستلمين
+	Edited	مُحرَّر
+	Editing	تحرير
+	Editing header/footer	تحرير الرأس والتذييل
+	Editing — edit the document directly	وضع التحرير — تعديل المستند مباشرة
 	Editor	المحرر
 	Effects	تأثيرات
-	Emboss	Emboss
-	Encrypt with Password	Encrypt with Password
+	Emboss	نقش بارز
+	Encrypt with Password	تشفير بكلمة مرور
 	English (United States)	الإنجليزية (الولايات المتحدة)
-	Engrave	Engrave
+	Engrave	نقش غائر
 	Enter page number:	أدخل رقم الصفحة:
-	Envelopes	Envelopes
+	Envelopes	المظاريف
 	Equation	معادلة
-	Eraser	Eraser
-	Even Page	Even Page
-	Every command is available to scripts and AI agents: run `wordcraft-cli mcp` for an MCP server, or start the app with `--control <port>` for the JSON control channel.	Every command is available to scripts and AI agents: run `wordcraft-cli mcp` for an MCP server, or start the app with `--control <port>` for the JSON control channel.
+	Eraser	ممحاة
+	Even Page	صفحة زوجية
+	Every command is available to scripts and AI agents: run `wordcraft-cli mcp` for an MCP server, or start the app with `--control <port>` for the JSON control channel.	جميع الأوامر متاحة للبرامج النصية ووكلاء الذكاء الاصطناعي: شغّل `wordcraft-cli mcp` لتشغيل خادم MCP، أو ابدأ التطبيق باستخدام `--control <port>` لقناة التحكم بصيغة JSON.
 	Export	تصدير
-	Export a copy to share (PDF, Word document)	Export a copy to share (PDF, Word document)
-	Export Page as PNG	Export Page as PNG
+	Export a copy to share (PDF, Word document)	تصدير نسخة للمشاركة (PDF أو مستند Word)
+	Export Page as PNG	تصدير الصفحة بصيغة PNG
 	Export PDF	تصدير PDF
 	Exported {path}	تم تصدير {path}
-	Extend Selection	Extend Selection
-	Field	Field
+	Extend Selection	توسيع التحديد
+	Field	حقل
 	File	ملف
 	Find	بحث
 	Find and Replace	بحث واستبدال
 	Find Next	بحث عن التالي
 	Find Previous	بحث عن السابق
-	Find Recipient	Find Recipient
+	Find Recipient	العثور على مستلم
 	Find what:	البحث عن:
 	Finish	إنهاء
-	Finish & Merge	Finish & Merge
-	Finish &\nMerge	Finish &\nMerge
-	First Column	First Column
-	First commit	First commit
-	First line:	First line:
-	Fixed Column Width	Fixed Column Width
-	Focus	Focus
+	Finish & Merge	إنهاء ودمج
+	Finish &\nMerge	إنهاء و\nدمج
+	First Column	العمود الأول
+	First commit	أول إيداع برمجي
+	First line:	السطر الأول:
+	Fixed Column Width	عرض عمود ثابت
+	Focus	تركيز
 	Font	الخط
 	Font Color	لون الخط
-	Font color:	Font color:
-	Font Dialog	Font Dialog
+	Font color:	لون الخط:
+	Font Dialog	مربع حوار الخط
 	Font Size	حجم الخط
 	Font:	الخط:
 	Fonts	الخطوط
 	Footer	تذييل الصفحة
-	Footnote and Endnote	Footnote and Endnote
-	Footnotes	Footnotes
+	Footnote and Endnote	حاشية سفلية وحاشية ختامية
+	Footnotes	الحواشي السفلية
 	Format	تنسيق
 	Format Page Numbers	تنسيق أرقام الصفحات
-	Format Page Numbers…	Format Page Numbers…
-	Format Painter	Format Painter
-	Formatting at Selection	Formatting at Selection
-	Formula	Formula
+	Format Page Numbers…	تنسيق أرقام الصفحات…
+	Format Painter	نسخ التنسيق
+	Formatting at Selection	تنسيق التحديد
+	Formula	صيغة
 	General	عام
 	Go To	انتقال إلى
-	Go to	Go to
-	Go To (⌘⌥G)	Go To (⌘⌥G)
-	Grab bag	Grab bag
-	Greeting Line	Greeting Line
-	Greeting\nLine	Greeting\nLine
+	Go to	انتقال إلى
+	Go To (⌘⌥G)	انتقال إلى (⌘⌥G)
+	Grab bag	متفرقات
+	Greeting Line	سطر التحية
+	Greeting\nLine	سطر\nالتحية
 	Gridlines	خطوط الشبكة
 	Group	تجميع
-	Grow Font 1 Point	Grow Font 1 Point
-	Hanging Indent	Hanging Indent
+	Grow Font 1 Point	تكبير الخط نقطة واحدة
+	Hanging Indent	مسافة بادئة معلّقة
 	Header	رأس الصفحة
 	Header & Footer	رأس الصفحة وتذييلها
-	Header Row	Header Row
-	Header/Footer Position	Header/Footer Position
+	Header Row	صف الرأس
+	Header/Footer Position	موضع الرأس والتذييل
 	Heading 1	عنوان 1
 	Heading 2	عنوان 2
 	Heading 3	عنوان 3
 	Headings	العناوين
-	Heart	Heart
+	Heart	قلب
 	Help	مساعدة
-	Hidden	Hidden
-	Highlight Merge Fields	Highlight Merge Fields
-	Highlight\nMerge Fields	Highlight\nMerge Fields
-	Highlighter	Highlighter
+	Hidden	مخفي
+	Highlight Merge Fields	تمييز حقول الدمج
+	Highlight\nMerge Fields	تمييز\nحقول الدمج
+	Highlighter	قلم تمييز
 	Home	الرئيسية
 	Horizontal	أفقي
-	Horizontal Line	Horizontal Line
-	Hyphenation	Hyphenation
-	Icons	Icons
-	Ignore All	Ignore All
-	Illustrations	Illustrations
-	Immersive	Immersive
-	Immersive Reader	Immersive Reader
-	Immersive\nReader	Immersive\nReader
+	Horizontal Line	خط أفقي
+	Hyphenation	تقسيم الكلمات بالواصلة
+	Icons	أيقونات
+	Ignore All	تجاهل الكل
+	Illustrations	رسوم توضيحية
+	Immersive	وضع الانغماس
+	Immersive Reader	القارئ الغامر
+	Immersive\nReader	القارئ\nالغامر
 	Increase Font Size	تكبير حجم الخط
 	Increase Indent	زيادة المسافة البادئة
 	Indent	مسافة بادئة
-	Indentation	Indentation
-	Indents	Indents
-	Index	Index
-	Info	Info
-	Ink to\nMath	Ink to\nMath
-	Ink to\nShape	Ink to\nShape
-	Ink\nReplay	Ink\nReplay
+	Indentation	المسافة البادئة
+	Indents	المسافات البادئة
+	Index	الفهرس
+	Info	معلومات
+	Ink to\nMath	تحويل الحبر إلى\nمعادلة رياضية
+	Ink to\nShape	تحويل الحبر إلى\nشكل
+	Ink\nReplay	إعادة تشغيل\nالحبر
 	Insert	إدراج
 	Insert Above	إدراج أعلاه
 	Insert Below	إدراج أدناه
 	Insert Caption	إدراج تسمية توضيحية
-	Insert Citation	Insert Citation
-	Insert Endnote	Insert Endnote
+	Insert Citation	إدراج استشهاد
+	Insert Endnote	إدراج حاشية ختامية
 	Insert Footnote	إدراج حاشية سفلية
 	Insert Hyperlink	إدراج ارتباط تشعبي
-	Insert Index	Insert Index
-	Insert Left	Insert Left
-	Insert Merge Field	Insert Merge Field
-	Insert Merge\nField	Insert Merge\nField
-	Insert Right	Insert Right
-	Insert Shapes	Insert Shapes
+	Insert Index	إدراج فهرس
+	Insert Left	إدراج إلى اليسار
+	Insert Merge Field	إدراج حقل دمج
+	Insert Merge\nField	إدراج\nحقل دمج
+	Insert Right	إدراج إلى اليمين
+	Insert Shapes	إدراج أشكال
 	Insert Table	إدراج جدول
-	Insert Table of Authorities	Insert Table of Authorities
-	Insert Table of Figures	Insert Table of Figures
+	Insert Table of Authorities	إدراج جدول المراجع القانونية
+	Insert Table of Figures	إدراج جدول الأشكال
 	Insert Table…	إدراج جدول…
-	Insert\nAbove	Insert\nAbove
-	Insert\nCaption	Insert\nCaption
-	Insert\nCitation	Insert\nCitation
-	Insert\nFootnote	Insert\nFootnote
-	Inside Borders	Inside Borders
-	Inspect Document	Inspect Document
+	Insert\nAbove	إدراج\nأعلى
+	Insert\nCaption	إدراج\nتسمية توضيحية
+	Insert\nCitation	إدراج\nاستشهاد
+	Insert\nFootnote	إدراج\nحاشية سفلية
+	Inside Borders	الحدود الداخلية
+	Inspect Document	فحص المستند
 	Interface language:	لغة الواجهة:
 	Italic	مائل
-	Join the ArtCraft community on Discord	Join the ArtCraft community on Discord
-	Join us on Discord: discord.gg/artcraft	Join us on Discord: discord.gg/artcraft
+	Join the ArtCraft community on Discord	انضم إلى مجتمع ArtCraft على Discord
+	Join us on Discord: discord.gg/artcraft	انضم إلينا على Discord: discord.gg/artcraft
 	Justify	ضبط النص
-	Keep Lines Together	Keep Lines Together
-	Keep lines together	Keep lines together
-	Keep Text Only	Keep Text Only
-	Keep with Next	Keep with Next
-	Keep with next	Keep with next
-	Labels	Labels
-	Landscape	Landscape
+	Keep Lines Together	إبقاء الأسطر معًا
+	Keep lines together	إبقاء الأسطر معًا
+	Keep Text Only	الاحتفاظ بالنص فقط
+	Keep with Next	إبقاء الفقرة مع التالية
+	Keep with next	إبقاء الفقرة مع التالية
+	Labels	تسميات
+	Landscape	أفقي
 	Language	اللغة
-	Lasso	Lasso
-	Last Column	Last Column
-	Last commit	Last commit
+	Lasso	تحديد حر
+	Last Column	العمود الأخير
+	Last commit	آخر إيداع برمجي
 	Layout	تخطيط
-	Layout Summary	Layout Summary
+	Layout Summary	ملخص التخطيط
 	Left	يسار
-	Left Border	Left Border
-	Left:	Left:
-	Letter	Letter
+	Left Border	الحد الأيسر
+	Left:	اليسار:
+	Letter	حجم Letter
 	Line	Line
 	Line and Page Breaks	Line and Page Breaks
 	Line and Paragraph Spacing	Line and Paragraph Spacing
