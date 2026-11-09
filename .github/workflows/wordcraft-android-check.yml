@@ -46,9 +46,6 @@ jobs:
           yes | sdkmanager --licenses
           sdkmanager "platforms;android-35" "build-tools;35.0.0" "ndk;27.2.12479018"
 
-      - name: Install cargo-apk
-        run: cargo install cargo-apk
-
       - name: Assemble Android shell against pinned upstream
         run: |
           git -C upstream-wordcraft apply --check ../patches/0001-wordcraft-android-port.patch
