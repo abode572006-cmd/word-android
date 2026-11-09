@@ -143,7 +143,6 @@ fn write_atomic(path: &Path, bytes: &[u8]) -> std::io::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::sync::atomic::{AtomicUsize, Ordering};
 
     fn scratch() -> PathBuf {
         static NEXT: AtomicUsize = AtomicUsize::new(0);
