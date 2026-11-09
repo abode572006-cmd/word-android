@@ -1011,102 +1011,102 @@
 	Result	النتيجة
 	Keeps the fonts and formatting of the copied text.	يحتفظ بالخطوط والتنسيق للنص المنسوخ.
 	Reads the clipboard's rich text and keeps its formatting.	يقرأ النص المنسق من الحافظة ويحتفظ بتنسيقه.
-	Reads the clipboard's web content and keeps its formatting.	Reads the clipboard's web content and keeps its formatting.
-	Drops all formatting and pastes plain text.	Drops all formatting and pastes plain text.
-	Advanced Find	Advanced Find
-	Advanced Find…	Advanced Find…
-	Go To…	Go To…
-	Reading Highlight	Reading Highlight
-	New Table Style	New Table Style
-	Modify Table Style	Modify Table Style
-	New Table Style…	New Table Style…
-	Modify Table Style…	Modify Table Style…
-	Apply formatting to:	Apply formatting to:
-	Whole Table	Whole Table
-	Fill color:	Fill color:
-	{count} items highlighted	{count} items highlighted
-	{n} pt	{n} pt
-	Not {name}	Not {name}
-	Level {n}	Level {n}
-	Body Text	Body Text
-	{n} lines	{n} lines
-	At least {n}	At least {n}
-	Exactly {n}	Exactly {n}
-	Centered	Centered
-	Character spacing	Character spacing
-	Don't add space between paragraphs of the same style	Don't add space between paragraphs of the same style
-	Don't hyphenate	Don't hyphenate
-	Double strikethrough	Double strikethrough
-	Drop cap	Drop cap
-	First line	First line
-	Font color	Font color
-	Highlight	Highlight
-	Justified	Justified
-	Left indent	Left indent
-	Line spacing	Line spacing
-	Outline level	Outline level
-	Raised/lowered	Raised/lowered
-	Right indent	Right indent
-	Scale	Scale
-	Space after	Space after
-	Space before	Space before
-	Suppress line numbers	Suppress line numbers
-	Underline color	Underline color
-	Letters	Letters
-	E-mail Messages	E-mail Messages
-	Directory	Directory
-	Normal Word Document	Normal Word Document
-	If…Then…Else…	If…Then…Else…
-	If…Then…Else	If…Then…Else
-	Merge Record #	Merge Record #
-	Skip Record If…	Skip Record If…
-	Skip Record If	Skip Record If
-	Equals:	Equals:
-	Then insert:	Then insert:
-	Otherwise insert:	Otherwise insert:
-	Courtesy Title	Courtesy Title
-	First Name	First Name
-	Last Name	Last Name
-	Company	Company
-	Address	Address
-	City	City
-	State	State
-	Postal Code	Postal Code
-	Country	Country
-	(not matched)	(not matched)
-	Leave a recipient out of the merge when a field has this value.	Leave a recipient out of the merge when a field has this value.
-	Insert one text or another, depending on a field's value.	Insert one text or another, depending on a field's value.
-	Select recipients first to match their fields.	Select recipients first to match their fields.
-	The recipient-list field that fills each part of an address block and greeting line.	The recipient-list field that fills each part of an address block and greeting line.
-	No errors found: every merge field is in the recipient list.	No errors found: every merge field is in the recipient list.
-	These merge fields aren't in the recipient list:	These merge fields aren't in the recipient list:
-	Add at least one field.	Add at least one field.
-	Add Field	Add Field
-	Every field needs a name.	Every field needs a name.
-	Field name	Field name
-	Field names must be different.	Field names must be different.
-	Fields:	Fields:
-	Field:	Field:
-	Find:	Find:
-	New Entry	New Entry
-	Recipient List	Recipient List
-	Recipients: {count}	Recipients: {count}
-	Remove field	Remove field
-	Remove recipient	Remove recipient
-	Select recipients first to choose from their fields.	Select recipients first to choose from their fields.
-	Type a New List…	Type a New List…
-	Type at least one recipient.	Type at least one recipient.
-	Type the recipients, or load them from a file.	Type the recipients, or load them from a file.
-	Use an Existing List…	Use an Existing List…
-	Choose the sheet that holds the recipients.	Choose the sheet that holds the recipients.
-	First row of data contains column headers	First row of data contains column headers
-	Interface theme:	Interface theme:
-	Interface\nTheme	Interface\nTheme
-	Interface Theme	Interface Theme
-	Light	Light
-	Dark	Dark
-	Use system setting	Use system setting
-	A file dialog is already open.	A file dialog is already open.
+	Reads the clipboard's web content and keeps its formatting.	يقرأ محتوى الويب من الحافظة ويحتفظ بتنسيقه.
+	Drops all formatting and pastes plain text.	يزيل جميع التنسيقات ويلصق النص العادي.
+	Advanced Find	بحث متقدم
+	Advanced Find…	بحث متقدم…
+	Go To…	انتقال إلى…
+	Reading Highlight	تمييز موضع القراءة
+	New Table Style	نمط جدول جديد
+	Modify Table Style	تعديل نمط الجدول
+	New Table Style…	نمط جدول جديد…
+	Modify Table Style…	تعديل نمط الجدول…
+	Apply formatting to:	تطبيق التنسيق على:
+	Whole Table	الجدول بأكمله
+	Fill color:	لون التعبئة:
+	{count} items highlighted	تم تمييز {count} عنصرًا
+	{n} pt	{n} نقطة
+	Not {name}	ليس {name}
+	Level {n}	المستوى {n}
+	Body Text	نص المتن
+	{n} lines	{n} أسطر
+	At least {n}	{n} على الأقل
+	Exactly {n}	{n} تمامًا
+	Centered	توسيط
+	Character spacing	تباعد الأحرف
+	Don't add space between paragraphs of the same style	عدم إضافة مسافة بين فقرات النمط نفسه
+	Don't hyphenate	عدم تقسيم الكلمات بالواصلة
+	Double strikethrough	شطب مزدوج
+	Drop cap	حرف استهلالي
+	First line	السطر الأول
+	Font color	لون الخط
+	Highlight	تمييز
+	Justified	ضبط النص
+	Left indent	المسافة البادئة اليسرى
+	Line spacing	تباعد الأسطر
+	Outline level	مستوى المخطط التفصيلي
+	Raised/lowered	مرتفع/منخفض
+	Right indent	المسافة البادئة اليمنى
+	Scale	مقياس
+	Space after	المسافة بعد
+	Space before	المسافة قبل
+	Suppress line numbers	إخفاء أرقام الأسطر
+	Underline color	لون التسطير
+	Letters	أحرف
+	E-mail Messages	رسائل البريد الإلكتروني
+	Directory	دليل العناوين
+	Normal Word Document	مستند Word عادي
+	If…Then…Else…	إذا…ثم…وإلا…
+	If…Then…Else	إذا…ثم…وإلا
+	Merge Record #	رقم سجل الدمج
+	Skip Record If…	تخطي السجل إذا…
+	Skip Record If	تخطي السجل إذا
+	Equals:	يساوي:
+	Then insert:	ثم أدرج:
+	Otherwise insert:	وإلا فأدرج:
+	Courtesy Title	لقب المخاطبة
+	First Name	الاسم الأول
+	Last Name	اسم العائلة
+	Company	الشركة
+	Address	العنوان
+	City	المدينة
+	State	الولاية
+	Postal Code	الرمز البريدي
+	Country	البلد
+	(not matched)	(غير مطابق)
+	Leave a recipient out of the merge when a field has this value.	استبعاد المستلم من الدمج عندما يحتوي أحد الحقول على هذه القيمة.
+	Insert one text or another, depending on a field's value.	إدراج نص معين أو نص آخر وفقًا لقيمة أحد الحقول.
+	Select recipients first to match their fields.	حدد المستلمين أولًا لمطابقة حقولهم.
+	The recipient-list field that fills each part of an address block and greeting line.	حقل قائمة المستلمين الذي يملأ كل جزء من كتلة العنوان وسطر التحية.
+	No errors found: every merge field is in the recipient list.	لم يتم العثور على أخطاء: جميع حقول الدمج موجودة في قائمة المستلمين.
+	These merge fields aren't in the recipient list:	حقول الدمج التالية غير موجودة في قائمة المستلمين:
+	Add at least one field.	أضف حقلًا واحدًا على الأقل.
+	Add Field	إضافة حقل
+	Every field needs a name.	يجب أن يكون لكل حقل اسم.
+	Field name	اسم الحقل
+	Field names must be different.	يجب أن تكون أسماء الحقول مختلفة.
+	Fields:	الحقول:
+	Field:	الحقل:
+	Find:	بحث عن:
+	New Entry	مدخل جديد
+	Recipient List	قائمة المستلمين
+	Recipients: {count}	المستلمون: {count}
+	Remove field	إزالة الحقل
+	Remove recipient	إزالة المستلم
+	Select recipients first to choose from their fields.	حدد المستلمين أولًا للاختيار من حقولهم.
+	Type a New List…	كتابة قائمة جديدة…
+	Type at least one recipient.	أدخل مستلمًا واحدًا على الأقل.
+	Type the recipients, or load them from a file.	أدخل بيانات المستلمين أو حمّلها من ملف.
+	Use an Existing List…	استخدام قائمة موجودة…
+	Choose the sheet that holds the recipients.	اختر ورقة العمل التي تحتوي على المستلمين.
+	First row of data contains column headers	يحتوي الصف الأول من البيانات على عناوين الأعمدة
+	Interface theme:	سمة الواجهة:
+	Interface\nTheme	سمة\nالواجهة
+	Interface Theme	سمة الواجهة
+	Light	فاتح
+	Dark	داكن
+	Use system setting	استخدام إعداد النظام
+	A file dialog is already open.	يوجد مربع حوار ملفات مفتوح بالفعل.
 	Height:	Height:
 	Width:	Width:
 	Row	Row
