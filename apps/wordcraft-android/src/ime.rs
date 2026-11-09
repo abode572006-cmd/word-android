@@ -68,7 +68,7 @@ pub(crate) fn diff_text(previous: &str, current: &str) -> Option<TextDelta> {
 
 #[cfg(test)]
 mod tests {
-    use super::{diff_text, utf16_offset_to_byte, TextDelta};
+    use super::{diff_text, utf16_offset_to_byte, utf16_span_to_bytes, TextDelta};
     #[test] fn converts_arabic_utf16_offsets_to_utf8_boundaries() {
         assert_eq!(utf16_offset_to_byte("مرحبا", 0), Some(0));
         assert_eq!(utf16_offset_to_byte("مرحبا", 3), Some(6));
