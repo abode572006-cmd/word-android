@@ -102,6 +102,30 @@ jobs:
           export AR_aarch64_linux_android=llvm-ar
           cargo check -p wordcraft-android --target aarch64-linux-android
 
+      - name: Set up Java and Gradle
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+
+      - name: Build GameActivity native library
+        working-directory: upstream-wordcraft
+        run: |
+          cargo install cargo-ndk --locked
+          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/27.2.12479018"
+          cargo ndk -t arm64-v8a -o apps/wordcraft-android/game-activity/app/src/main/jniLibs build --release -p wordcraft-android
+          test -f apps/wordcraft-android/game-activity/app/src/main/jniLibs/arm64-v8a/libwordcraft.so
+
+      - name: Package GameActivity debug APK (not published)
+        run: |
+          gradle -p upstream-wordcraft/apps/wordcraft-android/game-activity :app:assembleDebug
+          test -f upstream-wordcraft/apps/wordcraft-android/game-activity/app/build/outputs/apk/debug/app-debug.apk
+
       - name: Run document, format, UI, and Arabic regression suites
         working-directory: upstream-wordcraft
         run: |
