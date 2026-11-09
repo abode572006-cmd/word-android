@@ -2,6 +2,9 @@ package ai.storyteller.wordcraft;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.Settings;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -59,6 +62,24 @@ public final class MainActivity extends GameActivity {
                         Manifest.permission.READ_EXTERNAL_STORAGE
                 }, 4102);
             }
+        }
+    }
+
+    /** Open the system page for granting this app broad shared-storage access. */
+    public void openStorageSettings() {
+        Intent intent;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+        } else {
+            intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        }
+        intent.setData(Uri.parse("package:" + getPackageName()));
+        try {
+            startActivity(intent);
+        } catch (android.content.ActivityNotFoundException ignored) {
+            Intent fallback = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            fallback.setData(Uri.parse("package:" + getPackageName()));
+            startActivity(fallback);
         }
     }
 

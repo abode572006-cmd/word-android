@@ -261,6 +261,38 @@ fn new_window() {
     }
 }
 
+#[cfg(target_os = "android")]
+fn launch_storage_settings() {
+    let Some(app) = APP.with(|slot| slot.borrow().clone()) else {
+        log::error!("no Android Activity available to open storage settings");
+        return;
+    };
+    // SAFETY: this is the JavaVM owned by the current Activity process.
+    let vm = unsafe { jni::JavaVM::from_raw(app.vm_as_ptr().cast()) };
+    let opened = vm.attach_current_thread(|env| -> jni::errors::Result<()> {
+        use jni::objects::JObject;
+        use jni::signature::RuntimeMethodSignature;
+        use jni::strings::JNIStr;
+
+        let method = RuntimeMethodSignature::from_str("()V")?;
+        // SAFETY: the Activity reference is valid while its AndroidApp is alive.
+        let activity = unsafe { JObject::from_raw(env, app.activity_as_ptr() as jni::sys::jobject) };
+        env.call_method(
+            &activity,
+            JNIStr::from_cstr(c"openStorageSettings").expect("literal method name"),
+            method.method_signature(),
+            &[],
+        )?;
+        Ok(())
+    });
+    if let Err(e) = opened {
+        log::error!("couldn't open Android storage settings: {e}");
+    }
+}
+
+#[cfg(not(target_os = "android"))]
+fn launch_storage_settings() {}
+
 /// The platform-neutral half of the desktop `services()`.
 ///
 /// `file_dialog` carries the whole Open/Save As/Export/Insert-Picture path; everything else the
@@ -638,7 +670,9 @@ impl eframe::App for Shell {
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         self.inner.ui(ui);
         // After the app, so the picker floats above the ribbon and the page.
-        file_picker::draw(ui.ctx());
+        if file_picker::draw(ui.ctx()) {
+            launch_storage_settings();
+        }
         // File ▸ Exit is a menu click, so it is set during this call: check here, in the same
         // frame, rather than leaving it to the next `logic` — no repaint is guaranteed after a
         // click, and waiting for one is how Exit ends up doing nothing.

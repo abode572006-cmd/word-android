@@ -304,11 +304,11 @@ fn safe_file_name(name: &str) -> bool {
 /// Draw the picker if this window has a dialog queued. Called from the shell's
 /// `ui`, *after* forwarding to the app's own `ui`, so the window floats above
 /// the editor.
-pub fn draw(ctx: &egui::Context) {
+pub fn draw(ctx: &egui::Context) -> bool {
     // Taken out for the duration rather than borrowed, so nothing in here can trip over a
     // re-entrant borrow; it is put back below while the user has not answered.
     let Some(mut pending) = PENDING.with(|slot| slot.borrow_mut().take()) else {
-        return;
+        return false;
     };
     let kind = pending.kind;
     // First frame: pick a starting directory.
@@ -322,6 +322,7 @@ pub fn draw(ctx: &egui::Context) {
 
     let mut answer: Option<Vec<PathBuf>> = None;
     let mut cancel = false;
+    let mut open_storage_settings = false;
     let mut navigate: Option<PathBuf> = None;
 
     let dir = pending.dir.clone();
@@ -508,6 +509,7 @@ pub fn draw(ctx: &egui::Context) {
         PENDING.with(|slot| *slot.borrow_mut() = Some(pending));
         ctx.request_repaint();
     }
+    open_storage_settings
 }
 
 
