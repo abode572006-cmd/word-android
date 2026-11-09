@@ -62,31 +62,29 @@ jobs:
           path = Path("upstream-wordcraft/crates/ui-egui/src/keys.rs")
           source = path.read_text(encoding="utf-8")
 
-          equation_anchor = """                egui::Event::Paste(t) => {
-                      let _ = app.run("equation.type", json!({"text": t}));
-                      continue;
-                  }"""
-          equation_insert = """                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
-                      for _ in 0..(*before_chars).min(256) {
-                          let _ = app.run("equation.backspace", json!({}));
-                      }
-                      for _ in 0..(*after_chars).min(256) {
-                          let _ = app.run("equation.delete", json!({}));
-                      }
-                      continue;
-                  }
-          """
-          body_anchor = """            egui::Event::Paste(t) => {
-                  // Mod+Alt+V arrives as a paste too (the shell reads the clipboard): Paste Special."""
-          body_insert = """            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
-                  for _ in 0..before_chars.min(256) {
-                      let _ = app.run("text.backspace", json!({}));
-                  }
-                  for _ in 0..after_chars.min(256) {
-                      let _ = app.run("text.delete", json!({}));
-                  }
-              }
-          """
+          equation_anchor = "                egui::Event::Paste(t) => {"
+          equation_insert = (
+              "                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\n"
+              "                    for _ in 0..(*before_chars).min(256) {\n"
+              "                        let _ = app.run(\"equation.backspace\", json!({}));\n"
+              "                    }\n"
+              "                    for _ in 0..(*after_chars).min(256) {\n"
+              "                        let _ = app.run(\"equation.delete\", json!({}));\n"
+              "                    }\n"
+              "                    continue;\n"
+              "                }\n"
+          )
+          body_anchor = "            egui::Event::Paste(t) => {"
+          body_insert = (
+              "            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\n"
+              "                for _ in 0..before_chars.min(256) {\n"
+              "                    let _ = app.run(\"text.backspace\", json!({}));\n"
+              "                }\n"
+              "                for _ in 0..after_chars.min(256) {\n"
+              "                    let _ = app.run(\"text.delete\", json!({}));\n"
+              "                }\n"
+              "            }\n"
+          )
           assert source.count(equation_anchor) == 1, "pinned equation IME insertion point changed"
           assert source.count(body_anchor) == 1, "pinned body IME insertion point changed"
           source = source.replace(equation_anchor, equation_insert + equation_anchor, 1)
