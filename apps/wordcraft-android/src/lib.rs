@@ -39,14 +39,12 @@
 //!
 //! Honest gaps, not oversights:
 //!
-//! - **File dialogs are drawn by the app itself** ([`file_picker`]). WordCraft's `Services`
-//!   already has the asynchronous seam for exactly this (`file_dialog`, a request whose answer
-//!   arrives later through a channel — the desktop shell uses it so the window never freezes),
-//!   so Open, Save As, Export, Insert Picture and the mail-merge recipient list all work: the
-//!   picker browses the app's own folder with no permission at all, and offers a shared-storage
-//!   root only when it can actually read it. Android's *own* picker is still future work: the
-//!   Storage Access Framework needs `startActivityForResult`, which `android-activity` 0.6 does
-//!   not expose.
+//! - **Document dialogs use the in-app file browser** ([`file_picker`]) because the port needs
+//!   ordinary filesystem paths for Open, Save As, Export and mail-merge files. **Insert Picture
+//!   uses Android's native Photo Picker** on Android 13+, with the system document picker as the
+//!   fallback on older Android versions. The selected content URI is copied into the app cache
+//!   before it is handed to WordCraft, so the document engine receives a normal readable path
+//!   without broad photo-library permission.
 //! - **No system clipboard.** `arboard` has no Android backend, so `clipboard_picture` stays
 //!   `None`: Paste still handles text through egui, but a picture copied in another app is not
 //!   offered.
@@ -156,6 +154,13 @@ fn open_extensions(purpose: &str) -> Option<Vec<String>> {
 /// waiting thread: the picker answers `Vec<PathBuf>`, and the thread turns it into the
 /// `Option<String>` the app is polling for. One thread per pick, and it ends with the request.
 fn file_dialog(req: FileDialogRequest) -> Receiver<Option<String>> {
+    // Images use Android's own picker rather than asking the user to browse storage paths.
+    // The returned URI is copied into the app cache by MainActivity and arrives here as a path.
+    #[cfg(target_os = "android")]
+    if matches!(&req, FileDialogRequest::Open { purpose } if purpose == "picture") {
+        return android_photo_dialog();
+    }
+
     let (kind, title, extensions, suggested) = match req {
         FileDialogRequest::Open { purpose } => (file_picker::Kind::Open, "Open \u{2014} Android", open_extensions(&purpose), None),
         FileDialogRequest::Save { name } => (file_picker::Kind::Save, "Save As \u{2014} Android", None, Some(name)),
@@ -182,6 +187,9 @@ fn file_dialog(req: FileDialogRequest) -> Receiver<Option<String>> {
 #[cfg(target_os = "android")]
 thread_local! {
     static APP: std::cell::RefCell<Option<winit::platform::android::activity::AndroidApp>> =
+        const { std::cell::RefCell::new(None) };
+    /// The outstanding native Photo Picker answer for this Activity's UI thread.
+    static PHOTO_PICKER_ANSWER: std::cell::RefCell<Option<std::sync::mpsc::Sender<Option<String>>>> =
         const { std::cell::RefCell::new(None) };
 }
 
@@ -292,6 +300,114 @@ fn launch_storage_settings() {
 
 #[cfg(not(target_os = "android"))]
 fn launch_storage_settings() {}
+
+/// Start the platform Photo Picker and return the channel WordCraft already polls for dialogs.
+#[cfg(target_os = "android")]
+fn android_photo_dialog() -> Receiver<Option<String>> {
+    let (answer, receiver) = std::sync::mpsc::channel();
+    PHOTO_PICKER_ANSWER.with(|slot| {
+        if let Some(previous) = slot.borrow_mut().replace(answer) {
+            let _ = previous.send(None);
+        }
+    });
+    if !launch_photo_picker() {
+        PHOTO_PICKER_ANSWER.with(|slot| {
+            if let Some(sender) = slot.borrow_mut().take() {
+                let _ = sender.send(None);
+            }
+        });
+    }
+    receiver
+}
+
+#[cfg(target_os = "android")]
+fn android_photo_picker_pending() -> bool {
+    PHOTO_PICKER_ANSWER.with(|slot| slot.borrow().is_some())
+}
+
+/// Ask MainActivity to open the native picker. MainActivity marshals the launch onto Android's
+/// UI thread, because the egui/winit event loop is not the Activity's Java UI thread.
+#[cfg(target_os = "android")]
+fn launch_photo_picker() -> bool {
+    let Some(app) = APP.with(|slot| slot.borrow().clone()) else {
+        log::error!("no Android Activity available to open the Photo Picker");
+        return false;
+    };
+    let vm = unsafe { jni::JavaVM::from_raw(app.vm_as_ptr().cast()) };
+    let opened = vm.attach_current_thread(|env| -> jni::errors::Result<()> {
+        use jni::objects::JObject;
+        use jni::signature::RuntimeMethodSignature;
+        use jni::strings::JNIStr;
+
+        let method = RuntimeMethodSignature::from_str("()V")?;
+        let activity = unsafe { JObject::from_raw(env, app.activity_as_ptr() as jni::sys::jobject) };
+        env.call_method(
+            &activity,
+            JNIStr::from_cstr(c"pickImage").expect("literal method name"),
+            method.method_signature(),
+            &[],
+        )?;
+        Ok(())
+    });
+    match opened {
+        Ok(()) => true,
+        Err(error) => {
+            log::error!("couldn't launch Android Photo Picker: {error}");
+            false
+        }
+    }
+}
+
+/// Poll the result left by MainActivity. Null means the picker is still open; an empty string
+/// means the user cancelled; a non-empty string is a copied cache-file path.
+#[cfg(target_os = "android")]
+fn poll_android_photo_picker() {
+    if !android_photo_picker_pending() {
+        return;
+    }
+    let Some(app) = APP.with(|slot| slot.borrow().clone()) else {
+        complete_android_photo_picker(None);
+        return;
+    };
+    let vm = unsafe { jni::JavaVM::from_raw(app.vm_as_ptr().cast()) };
+    let result = vm.attach_current_thread(|env| -> jni::errors::Result<Option<String>> {
+        use jni::objects::{JObject, JString};
+        use jni::signature::RuntimeMethodSignature;
+        use jni::strings::JNIStr;
+
+        let method = RuntimeMethodSignature::from_str("()Ljava/lang/String;")?;
+        let activity = unsafe { JObject::from_raw(env, app.activity_as_ptr() as jni::sys::jobject) };
+        let value = env.call_method(
+            &activity,
+            JNIStr::from_cstr(c"takePhotoPickerResult").expect("literal method name"),
+            method.method_signature(),
+            &[],
+        )?.l()?;
+        if value.is_null() {
+            return Ok(None);
+        }
+        let value = JString::from(value);
+        let path: String = env.get_string(&value)?.into();
+        Ok(Some(path))
+    });
+    match result {
+        Ok(Some(path)) => complete_android_photo_picker((!path.is_empty()).then_some(path)),
+        Ok(None) => {}
+        Err(error) => {
+            log::error!("couldn't read Android Photo Picker result: {error}");
+            complete_android_photo_picker(None);
+        }
+    }
+}
+
+#[cfg(target_os = "android")]
+fn complete_android_photo_picker(result: Option<String>) {
+    PHOTO_PICKER_ANSWER.with(|slot| {
+        if let Some(sender) = slot.borrow_mut().take() {
+            let _ = sender.send(result);
+        }
+    });
+}
 
 /// The platform-neutral half of the desktop `services()`.
 ///
@@ -643,6 +759,13 @@ impl Shell {
 
 impl eframe::App for Shell {
     fn logic(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
+        #[cfg(target_os = "android")]
+        {
+            poll_android_photo_picker();
+            if android_photo_picker_pending() {
+                ctx.request_repaint_after(Duration::from_millis(120));
+            }
+        }
         self.inner.logic(ctx);
         if self.prefs.due() {
             let bytes = prefs_bytes(&self.inner);
@@ -709,6 +832,25 @@ mod tests {
         assert!(documents.contains(&"docx".to_string()));
         assert!(documents.contains(&"odt".to_string()));
         assert!(!documents.contains(&"png".to_string()));
+    }
+
+    #[test]
+    fn android_picture_picker_uses_the_system_picker_without_photo_permissions() {
+        let root = std::path::Path::new(env!("CARGO_MANIFEST_DIR"));
+        let activity = std::fs::read_to_string(
+            root.join("game-activity/app/src/main/java/ai/storyteller/wordcraft/MainActivity.java")
+        ).unwrap();
+        let manifest = std::fs::read_to_string(
+            root.join("game-activity/app/src/main/AndroidManifest.xml")
+        ).unwrap();
+
+        assert!(activity.contains("MediaStore.ACTION_PICK_IMAGES"));
+        assert!(activity.contains("Intent.ACTION_OPEN_DOCUMENT"));
+        assert!(activity.contains("copyPickedImageToCache"));
+        assert!(activity.contains("takePhotoPickerResult"));
+        assert!(!activity.contains("requestImageReadAccess"));
+        assert!(!manifest.contains("READ_MEDIA_IMAGES"));
+        assert!(!manifest.contains("READ_MEDIA_VISUAL_USER_SELECTED"));
     }
 
     #[test]
