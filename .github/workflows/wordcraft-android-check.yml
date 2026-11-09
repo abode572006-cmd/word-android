@@ -59,6 +59,32 @@ jobs:
           git -C upstream-wordcraft apply ../patches/0003-arabic-interface-bidi.patch
           cp patches/arabic-catalog.tsv upstream-wordcraft/crates/ui-egui/src/i18n/ar.tsv
           cp -R apps/wordcraft-android upstream-wordcraft/apps/
+          test -f apps/wordcraft-android/res/values/styles.xml
+          grep -F 'theme = "@style/WordcraftFullscreen"' apps/wordcraft-android/Cargo.toml
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def entries(path):
+              rows = []
+              for line in Path(path).read_text(encoding="utf-8").splitlines():
+                  if not line.strip() or line.startswith("#"):
+                      continue
+                  cols = line.split("\\t")
+                  assert len(cols) == 3, f"malformed TSV row in {path}: {line!r}"
+                  rows.append(cols)
+              return rows
+
+          source = entries("upstream-wordcraft/crates/ui-egui/src/i18n/zh-hans.tsv")
+          arabic = entries("upstream-wordcraft/crates/ui-egui/src/i18n/ar.tsv")
+          source_keys = {(row[0], row[1]) for row in source}
+          arabic_keys = {(row[0], row[1]) for row in arabic}
+          assert len(source) == len(source_keys) == 1729
+          assert len(arabic) == len(arabic_keys) == 1729
+          assert source_keys == arabic_keys, "Arabic catalog keys differ from the pinned upstream catalog"
+          translated = sum(row[1] != row[2] for row in arabic)
+          assert translated == 1713, f"expected 1713 translated entries, got {translated}"
+          print(f"Arabic catalog verified: {len(arabic)} exact keys, {translated} translated")
+          PY
 
       - name: Cross-compile Android shell
         working-directory: upstream-wordcraft
