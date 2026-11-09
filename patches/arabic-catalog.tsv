@@ -912,105 +912,105 @@
 	Add/Edit\nBibliography	إضافة/تحرير\nقائمة المراجع
 	Refresh	تحديث
 	Document\nPreferences	تفضيلات\nالمستند
-	Unlink\nCitations	Unlink\nCitations
-	Waiting for Zotero…	Waiting for Zotero…
-	Zotero: done	Zotero: done
-	Zotero: cancelled	Zotero: cancelled
+	Unlink\nCitations	إلغاء ربط\nالاستشهادات
+	Waiting for Zotero…	بانتظار Zotero…
+	Zotero: done	Zotero: اكتمل
+	Zotero: cancelled	Zotero: أُلغي
 	Yes	نعم
 	No	لا
-	Move Past Citation	Move Past Citation
-	Move Past\nCitation	Move Past\nCitation
-	Next Sentence	Next Sentence
-	Previous Sentence	Previous Sentence
-	Next sentence	Next sentence
-	Previous sentence	Previous sentence
-	Play/Pause	Play/Pause
-	Read Aloud Status	Read Aloud Status
-	Reading Speed	Reading Speed
-	Skip Citations and Bibliography	Skip Citations and Bibliography
-	Skip citations & bibliography	Skip citations & bibliography
-	Stop Reading	Stop Reading
-	Don't read Zotero, Mendeley or EndNote citations and bibliographies	Don't read Zotero, Mendeley or EndNote citations and bibliographies
-	Play	Play
-	Pause	Pause
-	Stop	Stop
-	Sentence	Sentence
-	Paused	Paused
-	Finished	Finished
-	Stopped	Stopped
-	Speed	Speed
-	Normal speed	Normal speed
-	Your changes will be lost if you don't save them.	Your changes will be lost if you don't save them.
-	Scroll ribbon left	Scroll ribbon left
-	Scroll ribbon right	Scroll ribbon right
-	Change Structure	Change Structure
-	Change to Display	Change to Display
-	Change to Inline	Change to Inline
-	Conversions	Conversions
-	Delete Back in Equation	Delete Back in Equation
-	Delete in Equation	Delete in Equation
-	Edit Equation	Edit Equation
-	Enter in Equation	Enter in Equation
-	Equation Gallery	Equation Gallery
-	Equation Info	Equation Info
-	Equation Number	Equation Number
-	Input Format	Input Format
-	Insert Structure	Insert Structure
-	Insert Symbol	Insert Symbol
-	Justification	Justification
-	Leave Equation	Leave Equation
-	Move in Equation	Move in Equation
-	Normal Text	Normal Text
-	Set Equation	Set Equation
-	Structure Actions	Structure Actions
-	Structures	Structures
+	Move Past Citation	تجاوز الاستشهاد
+	Move Past\nCitation	تجاوز\nالاستشهاد
+	Next Sentence	الجملة التالية
+	Previous Sentence	الجملة السابقة
+	Next sentence	الجملة التالية
+	Previous sentence	الجملة السابقة
+	Play/Pause	تشغيل/إيقاف مؤقت
+	Read Aloud Status	حالة القراءة بصوت عالٍ
+	Reading Speed	سرعة القراءة
+	Skip Citations and Bibliography	تخطي الاستشهادات وقائمة المراجع
+	Skip citations & bibliography	تخطي الاستشهادات والمراجع
+	Stop Reading	إيقاف القراءة
+	Don't read Zotero, Mendeley or EndNote citations and bibliographies	عدم قراءة استشهادات ومراجع Zotero أو Mendeley أو EndNote
+	Play	تشغيل
+	Pause	إيقاف مؤقت
+	Stop	إيقاف
+	Sentence	جملة
+	Paused	متوقف مؤقتًا
+	Finished	اكتمل
+	Stopped	تم الإيقاف
+	Speed	السرعة
+	Normal speed	السرعة العادية
+	Your changes will be lost if you don't save them.	ستفقد تغييراتك إذا لم تحفظها.
+	Scroll ribbon left	تمرير الشريط إلى اليسار
+	Scroll ribbon right	تمرير الشريط إلى اليمين
+	Change Structure	تغيير البنية
+	Change to Display	تحويل إلى معادلة معروضة
+	Change to Inline	تحويل إلى معادلة ضمن السطر
+	Conversions	تحويلات
+	Delete Back in Equation	حذف للخلف داخل المعادلة
+	Delete in Equation	حذف داخل المعادلة
+	Edit Equation	تحرير المعادلة
+	Enter in Equation	إدخال داخل المعادلة
+	Equation Gallery	معرض المعادلات
+	Equation Info	معلومات المعادلة
+	Equation Number	رقم المعادلة
+	Input Format	تنسيق الإدخال
+	Insert Structure	إدراج بنية
+	Insert Symbol	إدراج رمز
+	Justification	ضبط النص
+	Leave Equation	مغادرة المعادلة
+	Move in Equation	التنقل داخل المعادلة
+	Normal Text	نص عادي
+	Set Equation	تعيين المعادلة
+	Structure Actions	إجراءات البنية
+	Structures	البنى
 	Tools	أدوات
-	Type in Equation	Type in Equation
-	Inline	Inline
-	Number	Number
-	Close Equation	Close Equation
-	Insert New Equation	Insert New Equation
-	Built-In	Built-In
-	Professional	Professional
-	Linear	Linear
-	Fraction	Fraction
-	Script	Script
-	Radical	Radical
-	Integral	Integral
-	Large\nOperator	Large\nOperator
-	Bracket	Bracket
-	Function	Function
-	Accent	Accent
-	Limit and\nLog	Limit and\nLog
-	Operator	Operator
-	Equation Options	Equation Options
-	All symbol sets	All symbol sets
-	Send the document straight to the system print dialog, or save a copy in another format below.	Send the document straight to the system print dialog, or save a copy in another format below.
-	Or save a copy in another format:	Or save a copy in another format:
-	Opening print dialog…	Opening print dialog…
-	Print failed: {error}	Print failed: {error}
-	Couldn't open {path}: {error}	Couldn't open {path}: {error}
-	Column Selection	Column Selection
-	Style Inspector	Style Inspector
-	Inspect Styles at Selection	Inspect Styles at Selection
-	Clear Formatting Level	Clear Formatting Level
-	Characters	Characters
-	Direct formatting	Direct formatting
-	Reset to Normal	Reset to Normal
-	Clear Paragraph Formatting	Clear Paragraph Formatting
-	Clear Character Style	Clear Character Style
-	Clear Character Formatting	Clear Character Formatting
-	Paste Special	Paste Special
-	Paste Special…	Paste Special…
-	Paste as:	Paste as:
-	The clipboard is empty.	The clipboard is empty.
-	Formatted Text	Formatted Text
-	Rich Text Format (RTF)	Rich Text Format (RTF)
-	HTML Format	HTML Format
-	Unformatted Text	Unformatted Text
-	Result	Result
-	Keeps the fonts and formatting of the copied text.	Keeps the fonts and formatting of the copied text.
-	Reads the clipboard's rich text and keeps its formatting.	Reads the clipboard's rich text and keeps its formatting.
+	Type in Equation	الكتابة في المعادلة
+	Inline	ضمن السطر
+	Number	رقم
+	Close Equation	إغلاق المعادلة
+	Insert New Equation	إدراج معادلة جديدة
+	Built-In	مضمّن
+	Professional	احترافي
+	Linear	خطي
+	Fraction	كسر
+	Script	أسّ وفهرس
+	Radical	جذر
+	Integral	تكامل
+	Large\nOperator	عامل\nكبير
+	Bracket	قوس
+	Function	دالة
+	Accent	علامة تشكيل
+	Limit and\nLog	نهاية\nولوغاريتم
+	Operator	عامل
+	Equation Options	خيارات المعادلة
+	All symbol sets	جميع مجموعات الرموز
+	Send the document straight to the system print dialog, or save a copy in another format below.	أرسل المستند مباشرة إلى مربع حوار الطباعة في النظام، أو احفظ نسخة بتنسيق آخر أدناه.
+	Or save a copy in another format:	أو احفظ نسخة بتنسيق آخر:
+	Opening print dialog…	جارٍ فتح مربع حوار الطباعة…
+	Print failed: {error}	فشلت الطباعة: {error}
+	Couldn't open {path}: {error}	تعذر فتح {path}: {error}
+	Column Selection	تحديد العمود
+	Style Inspector	مفتش الأنماط
+	Inspect Styles at Selection	فحص الأنماط عند التحديد
+	Clear Formatting Level	مسح مستوى التنسيق
+	Characters	أحرف
+	Direct formatting	تنسيق مباشر
+	Reset to Normal	إعادة التعيين إلى النمط العادي
+	Clear Paragraph Formatting	مسح تنسيق الفقرة
+	Clear Character Style	مسح نمط الأحرف
+	Clear Character Formatting	مسح تنسيق الأحرف
+	Paste Special	لصق خاص
+	Paste Special…	لصق خاص…
+	Paste as:	لصق كـ:
+	The clipboard is empty.	الحافظة فارغة.
+	Formatted Text	نص منسق
+	Rich Text Format (RTF)	تنسيق النص المنسق (RTF)
+	HTML Format	تنسيق HTML
+	Unformatted Text	نص غير منسق
+	Result	النتيجة
+	Keeps the fonts and formatting of the copied text.	يحتفظ بالخطوط والتنسيق للنص المنسوخ.
+	Reads the clipboard's rich text and keeps its formatting.	يقرأ النص المنسق من الحافظة ويحتفظ بتنسيقه.
 	Reads the clipboard's web content and keeps its formatting.	Reads the clipboard's web content and keeps its formatting.
 	Drops all formatting and pastes plain text.	Drops all formatting and pastes plain text.
 	Advanced Find	Advanced Find
