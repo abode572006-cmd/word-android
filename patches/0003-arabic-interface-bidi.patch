@@ -231,7 +231,7 @@ diff --git a/crates/layout/src/tests_bidi.rs b/crates/layout/src/tests_bidi.rs
 +/// Arabic with vowel marks, Arabic-Indic digits and embedded Latin text follows UAX #9.
 +#[test]
 +fn arabic_paragraph_handles_marks_and_mixed_direction_runs() {
-+    let text = "السَّلَامُ عَلَيْكُمْ WordCraft ١٢٣، PDF 2026";
++    let text = "السَّلَامُ عَلَيْكُمْ WordCraft \u{0661}\u{0662}\u{0663}، PDF 2026";
 +    let levels = bidi_levels(text, true);
 +    assert_eq!(levels.len(), text.len());
 +    assert_eq!(levels[0] % 2, 1, "Arabic starts in an RTL run");
@@ -303,7 +303,7 @@ diff --git a/crates/ui-egui/src/lib.rs b/crates/ui-egui/src/lib.rs
 +        frame(&mut a, vec![egui::Event::PointerButton {
 +            pos: at, button: egui::PointerButton::Primary, pressed: false, modifiers: egui::Modifiers::NONE,
 +        }]);
-+        let arabic = "السَّلَامُ عَلَيْكُمْ WordCraft ١٢٣";
++        let arabic = "السَّلَامُ عَلَيْكُمْ WordCraft \u{0661}\u{0662}\u{0663}";
 +        frame(&mut a, vec![egui::Event::Text(arabic.into())]);
 +        assert!(body_text(&a).contains(arabic), "typed Arabic must remain in logical order");
 +    }
