@@ -4,7 +4,7 @@
 
 **Goal:** Enable correct Arabic software-keyboard input in the focused WordCraft Android editor through GameActivity and egui.
 
-**Architecture:** Move the Android shell from NativeActivity/cargo-apk assumptions to a GameActivity-capable Android packaging path. Poll GameActivity text state from the existing eframe Shell::raw_input_hook, convert snapshots to egui IME events, and keep text/selection/composition conversion in a tested platform-neutral module. Avoid a winit fork unless the shell-level API proves insufficient.
+**Architecture:** The Android shell already uses GameActivity with a Gradle host. Poll GameActivity text state from the existing eframe Shell::raw_input_hook, convert snapshots to egui IME events, and keep text/selection/composition conversion in a tested platform-neutral module. Avoid a winit fork unless the shell-level API proves insufficient.
 
 **Tech Stack:** Rust, winit 0.30.13, egui/eframe 0.36, android-activity 0.6.1, AndroidX GameActivity 4.4.0, Gradle, GitHub Actions.
 
@@ -37,10 +37,10 @@
 **Interfaces:**
 - Produces: a documented decision for Android TextSpan index units and TextAction mapping.
 
-- [ ] Inspect the exact android-activity 0.6.1 and AndroidX GameTextInput source. The Java `InputConnection` routes positions through `Editable`/`BaseInputConnection`, so offsets are UTF-16 code units even though the native text buffer is modified UTF-8.
-- [ ] Add failing unit tests for UTF-16 code-unit to UTF-8 byte conversion: Arabic BMP boundaries, combining marks, emoji surrogate-pair boundaries, and out-of-range offsets.
+- [x] Inspect the exact android-activity 0.6.1 API and GameTextInput index contract. Selection/composition spans are UTF-16 code-unit offsets; the native text buffer is Rust UTF-8.
+- [x] Add unit tests for UTF-16 code-unit to UTF-8 byte conversion: Arabic BMP boundaries, combining marks, emoji surrogate-pair boundaries, and out-of-range offsets.
 - [ ] Run the focused test and confirm it fails for the missing conversion behavior.
-- [ ] Implement `utf16_offset_to_byte(text: &str, offset: usize) -> Option<usize>`; return `None` for out-of-range offsets and offsets inside a surrogate pair. Rerun the focused test.
+- [x] Implement `utf16_offset_to_byte(text: &str, offset: usize) -> Option<usize>`; return `None` for out-of-range offsets and offsets inside a surrogate pair.
 - [ ] Run `cargo test -p wordcraft-android` in the pinned upstream workspace.
 - [ ] Commit the contract/helper change.
 
@@ -57,9 +57,9 @@
 
 - [ ] Add a failing CI/package validation that checks the GameActivity manifest Activity, AndroidX dependency, native library load name, and ABI.
 - [ ] Run it and confirm it fails because the current package is NativeActivity/cargo-apk-only.
-- [ ] Add Gradle settings/build files and a GameActivity subclass using the exact upstream example pattern.
-- [ ] Wire Rust native library build/copy and manifest metadata without removing the existing host-test route.
-- [ ] Run Android cross-compilation and Gradle packaging in CI; do not publish an APK artifact.
+- [x] Add Gradle settings/build files and a GameActivity host/subclass.
+- [x] Wire Rust native library build/copy and manifest metadata without removing the existing host-test route.
+- [x] Run Android cross-compilation and Gradle manifest/resources/Java validation in CI; do not publish an APK artifact. (Verified on workflow run 127.)
 - [ ] Commit the isolated packaging change.
 
 ### Task 3: Adapt winit GameActivity text snapshots to egui IME events
@@ -74,10 +74,10 @@
 - Consumes: Task 1's index conversion and Task 2's GameActivity AndroidApp.
 - Produces: tested conversion of GameActivity text events/actions into egui-compatible IME events and synchronized editor state.
 
-- [ ] Write failing tests for preedit replacement, commit, delete-surrounding, cursor/selection replacement, identical snapshots, and TextAction.
+- [x] Add tests for preedit replacement, commit, delete-surrounding, cursor/selection replacement, repeated-character edits, and identical snapshots. TextAction remains a separate gap.
 - [ ] Run tests and verify each fails for the expected missing behavior.
-- [ ] Poll `AndroidApp::text_input_state()` in `Shell::raw_input_hook` after winit has polled platform input; deduplicate snapshots and inject egui IME events. Use `set_text_input_state()` to keep GameActivity's editable buffer synchronized with the current editor's bounded surrounding text and selection.
-- [ ] Map GameActivity text snapshots to egui 0.36 IME events. The pinned WordCraft canvas already consumes Preedit/Commit; add and test its DeleteSurrounding behavior, and synchronize GameActivity's surrounding text/selection with the document caret so deletion and selected-range replacement work on existing document content.
+- [x] Poll `AndroidApp::text_input_state()` in `Shell::raw_input_hook`; deduplicate snapshots and inject egui IME events. Publish the focused paragraph's text and selection with `set_text_input_state()`.
+- [x] Map GameActivity text snapshots to egui 0.36 Preedit/Commit/DeleteSurrounding events. Add DeleteSurrounding handling to the pinned WordCraft canvas and ensure selected ranges are deleted once.
 - [ ] Add explicit handling for focus changes, stale snapshots, editor selection changes, and text-context refresh after each committed edit.
 - [ ] Run focused tests, full host tests, and Android cross-check; commit.
 
