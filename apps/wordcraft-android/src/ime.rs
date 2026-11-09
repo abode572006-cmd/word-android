@@ -114,7 +114,7 @@ impl ImeSnapshot {
 }
 
 /// The semantic update to apply to the document editor for one changed IME snapshot.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq)]
 pub(crate) struct SnapshotUpdate {
     /// Range in the previous committed document context to select before applying the event.
     pub replacement: Option<Range<usize>>,
