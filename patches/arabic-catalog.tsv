@@ -1655,77 +1655,77 @@
 	Inflate	انتفاخ
 	Deflate	انكماش
 	Chevron Up	شيفرون لأعلى
-	Chevron Down	Chevron Down
-	Triangle Up	Triangle Up
-	Triangle Down	Triangle Down
-	Solid Accent	Solid Accent
-	Light with Outline	Light with Outline
-	Hollow	Hollow
-	Accent Gradient	Accent Gradient
-	Dark with Shadow	Dark with Shadow
-	Soft Glow	Soft Glow
-	Accent with Reflection	Accent with Reflection
-	Warm Gradient with Outline	Warm Gradient with Outline
-	Add line numbering	Add line numbering
-	Add to Document	Add to Document
-	Address labels	Address labels
+	Chevron Down	شيفرون لأسفل
+	Triangle Up	مثلث لأعلى
+	Triangle Down	مثلث لأسفل
+	Solid Accent	تمييز مصمت
+	Light with Outline	فاتح مع مخطط
+	Hollow	مجوف
+	Accent Gradient	تدرج لوني مميز
+	Dark with Shadow	داكن مع ظل
+	Soft Glow	توهج ناعم
+	Accent with Reflection	تمييز مع انعكاس
+	Warm Gradient with Outline	تدرج دافئ مع مخطط
+	Add line numbering	إضافة ترقيم للأسطر
+	Add to Document	إضافة إلى المستند
+	Address labels	ملصقات العناوين
 	Arabic	العربية
-	Auto	Auto
-	Automatically hyphenate document	Automatically hyphenate document
-	Chinese (Simplified)	Chinese (Simplified)
-	Chinese (Traditional)	Chinese (Traditional)
-	Column:	Column:
-	Count by:	Count by:
-	Czech	Czech
-	Danish	Danish
-	Delivery address:	Delivery address:
-	Detect language automatically	Detect language automatically
-	Do not check spelling or grammar	Do not check spelling or grammar
-	Dutch	Dutch
-	English (United Kingdom)	English (United Kingdom)
-	Envelope size:	Envelope size:
-	Estonian	Estonian
-	Finnish	Finnish
-	French (France)	French (France)
-	From text:	From text:
-	Full page of the same label	Full page of the same label
-	German (Germany)	German (Germany)
-	Greek	Greek
+	Auto	تلقائي
+	Automatically hyphenate document	تقسيم كلمات المستند بالواصلة تلقائيًا
+	Chinese (Simplified)	الصينية (المبسطة)
+	Chinese (Traditional)	الصينية (التقليدية)
+	Column:	العمود:
+	Count by:	الزيادة بمقدار:
+	Czech	التشيكية
+	Danish	الدنماركية
+	Delivery address:	عنوان التسليم:
+	Detect language automatically	اكتشاف اللغة تلقائيًا
+	Do not check spelling or grammar	عدم التدقيق الإملائي أو النحوي
+	Dutch	الهولندية
+	English (United Kingdom)	الإنجليزية (المملكة المتحدة)
+	Envelope size:	حجم الظرف:
+	Estonian	الإستونية
+	Finnish	الفنلندية
+	French (France)	الفرنسية (فرنسا)
+	From text:	من النص:
+	Full page of the same label	صفحة كاملة من الملصق نفسه
+	German (Germany)	الألمانية (ألمانيا)
+	Greek	اليونانية
 	Hebrew	العبرية
-	Hyphenate at:	Hyphenate at:
-	Hyphenate words in CAPS	Hyphenate words in CAPS
-	Hyphenation Options…	Hyphenation Options…
-	Hyphenation zone:	Hyphenation zone:
-	Italian	Italian
-	Japanese	Japanese
-	Korean	Korean
-	Limit consecutive hyphens to:	Limit consecutive hyphens to:
-	Line Numbering Options…	Line Numbering Options…
-	Manual Hyphenation	Manual Hyphenation
-	Manual hyphenation is complete.	Manual hyphenation is complete.
-	Manual…	Manual…
-	Mark selected text as:	Mark selected text as:
+	Hyphenate at:	تقسيم الكلمات عند:
+	Hyphenate words in CAPS	تقسيم الكلمات المكتوبة بأحرف كبيرة
+	Hyphenation Options…	خيارات تقسيم الكلمات…
+	Hyphenation zone:	منطقة تقسيم الكلمات:
+	Italian	الإيطالية
+	Japanese	اليابانية
+	Korean	الكورية
+	Limit consecutive hyphens to:	تحديد عدد الأسطر المتتالية المنتهية بواصلة:
+	Line Numbering Options…	خيارات ترقيم الأسطر…
+	Manual Hyphenation	تقسيم الكلمات يدويًا
+	Manual hyphenation is complete.	اكتمل تقسيم الكلمات يدويًا.
+	Manual…	يدوي…
+	Mark selected text as:	وضع علامة على النص المحدد بوصفه:
 	New Document	مستند جديد
-	No limit	No limit
-	Norwegian (Bokmål)	Norwegian (Bokmål)
-	Numbering:	Numbering:
-	Omit	Omit
-	One label per recipient	One label per recipient
-	Polish	Polish
-	Portuguese (Brazil)	Portuguese (Brazil)
-	Portuguese (Portugal)	Portuguese (Portugal)
-	Return address labels	Return address labels
-	Return address:	Return address:
-	Row:	Row:
-	Russian	Russian
-	Serbian (Cyrillic)	Serbian (Cyrillic)
-	Serbian (Latin)	Serbian (Latin)
-	Set As Default	Set As Default
-	Shipping labels	Shipping labels
-	Single label	Single label
-	Spanish (Mexico)	Spanish (Mexico)
-	Spanish (Spain)	Spanish (Spain)
-	Swedish	Swedish
-	Turkish	Turkish
-	Ukrainian	Ukrainian
-	{language} is now the document's default language.	{language} is now the document's default language.
+	No limit	بلا حد
+	Norwegian (Bokmål)	النرويجية (بوكمال)
+	Numbering:	الترقيم:
+	Omit	تجاهل
+	One label per recipient	ملصق واحد لكل مستلم
+	Polish	البولندية
+	Portuguese (Brazil)	البرتغالية (البرازيل)
+	Portuguese (Portugal)	البرتغالية (البرتغال)
+	Return address labels	ملصقات عنوان المرسل
+	Return address:	عنوان المرسل:
+	Row:	الصف:
+	Russian	الروسية
+	Serbian (Cyrillic)	الصربية (السيريلية)
+	Serbian (Latin)	الصربية (اللاتينية)
+	Set As Default	تعيين كافتراضي
+	Shipping labels	ملصقات الشحن
+	Single label	ملصق واحد
+	Spanish (Mexico)	الإسبانية (المكسيك)
+	Spanish (Spain)	الإسبانية (إسبانيا)
+	Swedish	السويدية
+	Turkish	التركية
+	Ukrainian	الأوكرانية
+	{language} is now the document's default language.	أصبحت {language} الآن اللغة الافتراضية للمستند.
