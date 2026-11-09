@@ -568,122 +568,122 @@
 	Page Borders	حدود الصفحة
 	Page Break	فاصل صفحات
 	Page Break Before	فاصل صفحة قبل الفقرة
-	Page break before	Page break before
-	Page Breaks	Page Breaks
+	Page break before	فاصل صفحة قبل الفقرة
+	Page Breaks	فواصل الصفحات
 	Page Color	لون الصفحة
-	Page Down	Page Down
-	Page image (*.png)	Page image (*.png)
-	Page Movement	Page Movement
+	Page Down	صفحة لأسفل
+	Page image (*.png)	صورة الصفحة (*.png)
+	Page Movement	حركة الصفحة
 	Page Number	رقم الصفحة
 	Page Setup	إعداد الصفحة
-	Page Up	Page Up
-	Page Width	Page Width
-	Page width	Page width
-	Page X of Y	Page X of Y
-	Page {page}	Page {page}
+	Page Up	صفحة لأعلى
+	Page Width	عرض الصفحة
+	Page width	عرض الصفحة
+	Page X of Y	الصفحة X من Y
+	Page {page}	الصفحة {page}
 	Page {page} of {pages}	الصفحة {page} من {pages}
-	Page\nBorders	Page\nBorders
-	Page\nColor	Page\nColor
-	Page\nNumber	Page\nNumber
-	Pages	Pages
+	Page\nBorders	حدود\nالصفحة
+	Page\nColor	لون\nالصفحة
+	Page\nNumber	رقم\nالصفحة
+	Pages	صفحات
 	Paragraph	فقرة
-	Paragraph Details	Paragraph Details
-	Paragraph Down	Paragraph Down
+	Paragraph Details	تفاصيل الفقرة
+	Paragraph Down	الانتقال إلى الفقرة التالية
 	Paragraph Settings	إعدادات الفقرة
 	Paragraph Spacing	تباعد الفقرات
-	Paragraph Up	Paragraph Up
-	Paragraphs	Paragraphs
+	Paragraph Up	الانتقال إلى الفقرة السابقة
+	Paragraphs	فقرات
 	Paste	لصق
-	Paste (⌘V)	Paste (⌘V)
-	Paste Formatting	Paste Formatting
-	Paste: Keep Text Only	Paste: Keep Text Only
-	Paste: Merge Formatting	Paste: Merge Formatting
-	PDF document (*.pdf)	PDF document (*.pdf)
-	Pen	Pen
-	Pencil	Pencil
-	Picture Border	Picture Border
-	Picture Format	Picture Format
-	Picture Styles	Picture Styles
-	Pictures	Pictures
-	Plain text (*.txt)	Plain text (*.txt)
-	Portrait	Portrait
-	Position	Position
-	Preview Results	Preview Results
-	Preview\nResults	Preview\nResults
-	Previous	Previous
-	Previous Change	Previous Change
-	Previous Comment	Previous Comment
-	Previous Record	Previous Record
-	Previous Section	Previous Section
+	Paste (⌘V)	لصق (⌘V)
+	Paste Formatting	لصق التنسيق
+	Paste: Keep Text Only	لصق: الاحتفاظ بالنص فقط
+	Paste: Merge Formatting	لصق: دمج التنسيق
+	PDF document (*.pdf)	مستند PDF (*.pdf)
+	Pen	قلم
+	Pencil	قلم رصاص
+	Picture Border	حدود الصورة
+	Picture Format	تنسيق الصورة
+	Picture Styles	أنماط الصور
+	Pictures	صور
+	Plain text (*.txt)	نص عادي (*.txt)
+	Portrait	عمودي
+	Position	الموضع
+	Preview Results	معاينة النتائج
+	Preview\nResults	معاينة\nالنتائج
+	Previous	السابق
+	Previous Change	التغيير السابق
+	Previous Comment	التعليق السابق
+	Previous Record	السجل السابق
+	Previous Section	القسم السابق
 	Print	طباعة
-	Print Layout	Print Layout
-	Print\nLayout	Print\nLayout
-	Proofing	Proofing
-	Proofing Issues	Proofing Issues
+	Print Layout	تخطيط الطباعة
+	Print\nLayout	تخطيط\nالطباعة
+	Proofing	التدقيق
+	Proofing Issues	مشكلات التدقيق
 	Properties	خصائص
-	Protect	Protect
-	Protect Document	Protect Document
-	Quick Access Toolbar	Quick Access Toolbar
-	Quick Parts	Quick Parts
-	Quick Tables	Quick Tables
-	Read Aloud	Read Aloud
-	Read Mode	Read Mode
-	Read\nAloud	Read\nAloud
-	Read\nMode	Read\nMode
-	Recent	Recent
-	Record Macro	Record Macro
-	Recover Unsaved Documents	Recover Unsaved Documents
-	Rectangle	Rectangle
+	Protect	حماية
+	Protect Document	حماية المستند
+	Quick Access Toolbar	شريط أدوات الوصول السريع
+	Quick Parts	أجزاء سريعة
+	Quick Tables	جداول سريعة
+	Read Aloud	القراءة بصوت عالٍ
+	Read Mode	وضع القراءة
+	Read\nAloud	القراءة\nبصوت عالٍ
+	Read\nMode	وضع\nالقراءة
+	Recent	الأخيرة
+	Record Macro	تسجيل ماكرو
+	Recover Unsaved Documents	استرداد المستندات غير المحفوظة
+	Rectangle	مستطيل
 	Redo	إعادة
-	Reduce Hanging Indent	Reduce Hanging Indent
+	Reduce Hanging Indent	تقليل المسافة البادئة المعلّقة
 	References	مراجع
-	Reject	Reject
-	Reject All Changes	Reject All Changes
-	Reject Change	Reject Change
-	Relaxed	Relaxed
-	Remove Background	Remove Background
-	Remove Footer	Remove Footer
-	Remove Header	Remove Header
-	Remove Hyperlink	Remove Hyperlink
-	Remove Space After Paragraph	Remove Space After Paragraph
-	Remove Table of Contents	Remove Table of Contents
-	Remove Watermark	Remove Watermark
-	Repeat	Repeat
-	Repeat Header Rows	Repeat Header Rows
+	Reject	رفض
+	Reject All Changes	رفض جميع التغييرات
+	Reject Change	رفض التغيير
+	Relaxed	متباعد
+	Remove Background	إزالة الخلفية
+	Remove Footer	إزالة التذييل
+	Remove Header	إزالة الرأس
+	Remove Hyperlink	إزالة الارتباط التشعبي
+	Remove Space After Paragraph	إزالة المسافة بعد الفقرة
+	Remove Table of Contents	إزالة جدول المحتويات
+	Remove Watermark	إزالة العلامة المائية
+	Repeat	تكرار
+	Repeat Header Rows	تكرار صفوف الرأس
 	Replace	استبدال
-	Replace All	Replace All
-	Replace Document Text	Replace Document Text
-	Replace with:	Replace with:
-	Replay	Replay
-	Reply	Reply
-	Report	Report
-	Research	Research
-	Researcher	Researcher
-	Reset Picture	Reset Picture
-	Resolve	Resolve
-	Resolved	Resolved
-	Restart at 1	Restart at 1
-	Restart Each Page	Restart Each Page
-	Restart Each Section	Restart Each Section
-	Restrict Editing	Restrict Editing
-	Restrict\nEditing	Restrict\nEditing
-	Results	Results
-	Reverse the order	Reverse the order
+	Replace All	استبدال الكل
+	Replace Document Text	استبدال نص المستند
+	Replace with:	استبدال بـ:
+	Replay	إعادة تشغيل
+	Reply	رد
+	Report	تقرير
+	Research	بحث
+	Researcher	الباحث
+	Reset Picture	إعادة تعيين الصورة
+	Resolve	حل
+	Resolved	تم الحل
+	Restart at 1	إعادة البدء من 1
+	Restart Each Page	إعادة البدء في كل صفحة
+	Restart Each Section	إعادة البدء في كل قسم
+	Restrict Editing	تقييد التحرير
+	Restrict\nEditing	تقييد\nالتحرير
+	Results	النتائج
+	Reverse the order	عكس الترتيب
 	Review	مراجعة
-	Reviewing	Reviewing
-	Reviewing Pane	Reviewing Pane
-	Reviewing — edits become suggestions	Reviewing — edits become suggestions
-	Rich Text Format (*.rtf)	Rich Text Format (*.rtf)
+	Reviewing	مراجعة
+	Reviewing Pane	جزء المراجعة
+	Reviewing — edits become suggestions	وضع المراجعة — تتحول التعديلات إلى اقتراحات
+	Rich Text Format (*.rtf)	تنسيق النص المنسق (*.rtf)
 	Right	يمين
-	Right Border	Right Border
+	Right Border	الحد الأيمن
 	Right-to-Left Text Direction	اتجاه الكتابة من اليمين إلى اليسار
 	Left-to-Right Text Direction	اتجاه الكتابة من اليسار إلى اليمين
-	Right:	Right:
-	Rotate	Rotate
-	Rounded Rectangle	Rounded Rectangle
-	Rows & Columns	Rows & Columns
-	Ruler	Ruler
-	Rules	Rules
+	Right:	اليمين:
+	Rotate	تدوير
+	Rounded Rectangle	مستطيل مستدير الزوايا
+	Rows & Columns	الصفوف والأعمدة
+	Ruler	المسطرة
+	Rules	القواعد
 	Résumé	Résumé
 	Save	حفظ
 	Save a copy in another format. Printing goes through a PDF you can print from any viewer.	Save a copy in another format. Printing goes through a PDF you can print from any viewer.
