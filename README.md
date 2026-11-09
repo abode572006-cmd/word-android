@@ -25,7 +25,7 @@ There is no Gradle/WebView Android app in this repository. The APK is produced b
 - The file picker is drawn inside the app; Android's Storage Access Framework picker is not integrated.
 - Shared-storage browsing depends on Android permissions. The app's own files folder remains available without broad storage access.
 - System clipboard images, system printing and stylus pressure/tilt are not implemented. Text clipboard behavior depends on the Android input/backend path and still needs device testing.
-- The file picker controls are currently English even when the main WordCraft interface is Arabic.
+- Arabic labels are translated and adapted for bidirectional text rendering, but the ribbon, menus and every panel have not yet been comprehensively mirrored into a fully right-to-left layout. The in-app file picker controls are currently English.
 - CI verifies compilation, tests, APK package metadata and APK signature. It does **not** replace installation and functional testing on a physical Samsung Galaxy Tab S9 FE+.
 - CI currently creates a temporary signing key for test builds. A stable private keystore must be configured before distributing updates; APKs signed with different keys cannot update one another in place.
 
