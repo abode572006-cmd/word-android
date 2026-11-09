@@ -176,7 +176,7 @@ new file mode 100644
 diff --git a/crates/ui-egui/src/theme.rs b/crates/ui-egui/src/theme.rs
 --- a/crates/ui-egui/src/theme.rs
 +++ b/crates/ui-egui/src/theme.rs
-@@ -321,5 +321,12 @@ pub fn font_definitions(prefer_hans: bool, system_cjk: bool) -> FontDefinitions {
+@@ -321,5 +321,11 @@ pub fn font_definitions(prefer_hans: bool, system_cjk: bool) -> FontDefinitions {
          data.index = f.index;
          add_cjk(&mut fonts, format!("system {}", f.family), data);
      }
@@ -188,7 +188,7 @@ diff --git a/crates/ui-egui/src/theme.rs b/crates/ui-egui/src/theme.rs
 +    }
      #[cfg(target_arch = "wasm32")]
      let _ = system_cjk;
-@@ -336,6 +343,12 @@ fn system_cjk_font(hans: bool) -> Option<&'static wordcraft_fonts::SystemUiFont> {
+@@ -336,6 +342,32 @@ fn system_cjk_font(hans: bool) -> Option<&'static wordcraft_fonts::SystemUiFont> {
      (if hans { &ZH } else { &OTHER }).get_or_init(|| wordcraft_fonts::system_cjk_ui_font(hans)).as_ref()
  }
  
