@@ -1,8 +1,7 @@
 diff --git a/crates/ui-egui/src/keys.rs b/crates/ui-egui/src/keys.rs
 --- a/crates/ui-egui/src/keys.rs
 +++ b/crates/ui-egui/src/keys.rs
-@@ -203,6 +203,18 @@ pub fn canvas_events(app: &mut WordApp, ctx: &egui::Context) {
-                     }
+@@ -208,6 +208,15 @@ pub fn canvas_events(app: &mut WordApp, ctx: &egui::Context) {
                      continue;
                  }
 +                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
@@ -17,9 +16,7 @@ diff --git a/crates/ui-egui/src/keys.rs b/crates/ui-egui/src/keys.rs
                  egui::Event::Paste(t) => {
                      let _ = app.run("equation.type", json!({"text": t}));
                      continue;
-@@ -235,6 +247,16 @@ pub fn canvas_events(app: &mut WordApp, ctx: &egui::Context) {
-                     let _ = app.run("text.insert", json!({"text": text}));
-                 }
+@@ -236,2 +245,10 @@ pub fn canvas_events(app: &mut WordApp, ctx: &egui::Context) {
              }
 +            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
 +                for _ in 0..before_chars.min(256) {
@@ -30,5 +27,3 @@ diff --git a/crates/ui-egui/src/keys.rs b/crates/ui-egui/src/keys.rs
 +                }
 +            }
              egui::Event::Paste(t) => {
-                 // Mod+Alt+V arrives as a paste too (the shell reads the clipboard): Paste Special.
-                 let m = ctx.input(|i| i.modifiers);
