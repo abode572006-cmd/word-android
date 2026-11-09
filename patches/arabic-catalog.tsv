@@ -799,119 +799,119 @@
 	Table of Contents	جدول المحتويات
 	Table of\nContents	جدول\nالمحتويات
 	Table Properties	خصائص الجدول
-	Table Row Height	Table Row Height
-	Table Style Options	Table Style Options
-	Table Styles	Table Styles
-	Tables	Tables
-	Tabs	Tabs
-	Tabular List	Tabular List
+	Table Row Height	ارتفاع صف الجدول
+	Table Style Options	خيارات نمط الجدول
+	Table Styles	أنماط الجداول
+	Tables	جداول
+	Tabs	علامات الجدولة
+	Tabular List	قائمة جدولية
 	Text	نص
-	Text Box	Text Box
+	Text Box	مربع نص
 	Text Direction	اتجاه النص
-	Text Effects	Text Effects
-	Text Effects and Typography	Text Effects and Typography
-	Text from File	Text from File
-	Text Highlight Color	Text Highlight Color
-	Text indent at:	Text indent at:
-	Text to display:	Text to display:
-	Text Wrapping	Text Wrapping
-	Text:	Text:
-	Text\nBox	Text\nBox
-	Text\nDirection	Text\nDirection
-	That format doesn't keep everything, so the document is still open. Save it as a Word document (.docx) to go on.	That format doesn't keep everything, so the document is still open. Save it as a Word document (.docx) to go on.
-	The new style takes the formatting of the current paragraph.	The new style takes the formatting of the current paragraph.
-	Theme Colors	Theme Colors
-	Theme Fonts	Theme Fonts
-	Theme List	Theme List
-	Themes	Themes
-	Thesaurus	Thesaurus
-	Thick	Thick
-	Three	Three
-	Tight	Tight
-	Top Border	Top Border
+	Text Effects	تأثيرات النص
+	Text Effects and Typography	تأثيرات النص والطباعة
+	Text from File	نص من ملف
+	Text Highlight Color	لون تمييز النص
+	Text indent at:	مسافة بادئة للنص عند:
+	Text to display:	النص المراد عرضه:
+	Text Wrapping	التفاف النص
+	Text:	النص:
+	Text\nBox	مربع\nنص
+	Text\nDirection	اتجاه\nالنص
+	That format doesn't keep everything, so the document is still open. Save it as a Word document (.docx) to go on.	هذا التنسيق لا يحتفظ بكل العناصر، لذلك سيظل المستند مفتوحًا. احفظه كمستند Word (.docx) للمتابعة.
+	The new style takes the formatting of the current paragraph.	يأخذ النمط الجديد تنسيق الفقرة الحالية.
+	Theme Colors	ألوان النسق
+	Theme Fonts	خطوط النسق
+	Theme List	قائمة الأنساق
+	Themes	الأنساق
+	Thesaurus	قاموس المرادفات
+	Thick	سميك
+	Three	ثلاثة
+	Tight	متقارب
+	Top Border	الحد العلوي
 	Top Margin	الهامش العلوي
-	Top of Page	Top of Page
-	Top:	Top:
-	Total Row	Total Row
-	Track Changes	Track Changes
-	Track Changes Options	Track Changes Options
-	Track Changes: On	Track Changes: On
-	Track formatting	Track formatting
-	Tracking	Tracking
-	Translate	Translate
-	Transparency	Transparency
-	Triangle	Triangle
-	Two	Two
-	Type a command, e.g. "insert table"	Type a command, e.g. "insert table"
-	Type Text	Type Text
+	Top of Page	أعلى الصفحة
+	Top:	الأعلى:
+	Total Row	الصف الإجمالي
+	Track Changes	تعقب التغييرات
+	Track Changes Options	خيارات تعقب التغييرات
+	Track Changes: On	تعقب التغييرات: مفعّل
+	Track formatting	تعقب التنسيق
+	Tracking	التعقب
+	Translate	ترجمة
+	Transparency	الشفافية
+	Triangle	مثلث
+	Two	اثنان
+	Type a command, e.g. "insert table"	اكتب أمرًا، مثل «إدراج جدول»
+	Type Text	كتابة نص
 	Underline	تسطير
-	Underline Words Only	Underline Words Only
+	Underline Words Only	تسطير الكلمات فقط
 	Undo	تراجع
-	Undo {action}	Undo {action}
-	Ungroup	Ungroup
-	Up	Up
-	Update Field	Update Field
-	Update Index	Update Index
-	Update Style to Match Selection	Update Style to Match Selection
-	Update Table	Update Table
-	Update Table of Figures	Update Table of Figures
-	Update to Match	Update to Match
-	Update to Match Selection	Update to Match Selection
-	UPPERCASE	UPPERCASE
-	User Name	User Name
-	User name:	User name:
-	Version History	Version History
-	Version {version} ({build})	Version {version} ({build})
-	Vertical	Vertical
-	Vertical Alignment	Vertical Alignment
+	Undo {action}	التراجع عن {action}
+	Ungroup	إلغاء التجميع
+	Up	أعلى
+	Update Field	تحديث الحقل
+	Update Index	تحديث الفهرس
+	Update Style to Match Selection	تحديث النمط لمطابقة التحديد
+	Update Table	تحديث الجدول
+	Update Table of Figures	تحديث جدول الأشكال
+	Update to Match	تحديث لمطابقة التحديد
+	Update to Match Selection	تحديث لمطابقة التحديد
+	UPPERCASE	أحرف كبيرة
+	User Name	اسم المستخدم
+	User name:	اسم المستخدم:
+	Version History	سجل الإصدارات
+	Version {version} ({build})	الإصدار {version} ({build})
+	Vertical	عمودي
+	Vertical Alignment	محاذاة رأسية
 	View	عرض
-	View Gridlines	View Gridlines
-	View State	View State
-	Views	Views
-	Voice	Voice
-	Watermark	Watermark
-	Wave	Wave
-	Web Layout	Web Layout
-	Web page (*.html)	Web page (*.html)
-	Web\nLayout	Web\nLayout
-	Whole page	Whole page
-	Whole words	Whole words
-	Wide	Wide
-	Widow/Orphan Control	Widow/Orphan Control
-	Widow/Orphan control	Widow/Orphan control
-	Wildcards (regex)	Wildcards (regex)
+	View Gridlines	إظهار خطوط الشبكة
+	View State	حالة العرض
+	Views	طرق العرض
+	Voice	الصوت
+	Watermark	علامة مائية
+	Wave	موجة
+	Web Layout	تخطيط الويب
+	Web page (*.html)	صفحة ويب (*.html)
+	Web\nLayout	تخطيط\nالويب
+	Whole page	الصفحة بأكملها
+	Whole words	كلمات كاملة
+	Wide	عريض
+	Widow/Orphan Control	منع الأسطر اليتيمة والأرامل
+	Widow/Orphan control	منع الأسطر اليتيمة والأرامل
+	Wildcards (regex)	أحرف البدل (التعبيرات النمطية)
 	Window	نافذة
 	Word Count	عدد الكلمات
-	Word document (*.docx)	Word document (*.docx)
-	Word Left	Word Left
-	Word Right	Word Right
-	WordArt	WordArt
+	Word document (*.docx)	مستند Word (*.docx)
+	Word Left	الكلمة السابقة
+	Word Right	الكلمة التالية
+	WordArt	فن النص (WordArt)
 	WordCraft	WordCraft
-	Words	Words
-	Words only	Words only
-	Wrap Text	Wrap Text
-	Wrap\nText	Wrap\nText
-	Write & Insert Fields	Write & Insert Fields
-	Write a reply	Write a reply
+	Words	كلمات
+	Words only	الكلمات فقط
+	Wrap Text	التفاف النص
+	Wrap\nText	التفاف\nالنص
+	Write & Insert Fields	كتابة الحقول وإدراجها
+	Write a reply	كتابة رد
 	Zoom	تكبير
 	Zoom In	تكبير
 	Zoom Out	تصغير
-	{group} settings	{group} settings
-	{key}+Click to follow link	{key}+Click to follow link
-	Browse…	Browse…
-	{words} words	{words} words
-	{selected} of {words} words	{selected} of {words} words
+	{group} settings	إعدادات {group}
+	{key}+Click to follow link	اضغط على {key} مع النقر لفتح الرابط
+	Browse…	استعراض…
+	{words} words	{words} كلمة
+	{selected} of {words} words	المحدد: {selected} من أصل {words} كلمة
 	Direction:	الاتجاه:
 	Right-to-left	من اليمين إلى اليسار
 	Left-to-right	من اليسار إلى اليمين
 	Zotero	Zotero
-	Citations	Citations
+	Citations	الاستشهادات
 	Document	مستند
-	Add/Edit\nCitation	Add/Edit\nCitation
-	Add\nNote	Add\nNote
-	Add/Edit\nBibliography	Add/Edit\nBibliography
-	Refresh	Refresh
-	Document\nPreferences	Document\nPreferences
+	Add/Edit\nCitation	إضافة/تحرير\nاستشهاد
+	Add\nNote	إضافة\nملاحظة
+	Add/Edit\nBibliography	إضافة/تحرير\nقائمة المراجع
+	Refresh	تحديث
+	Document\nPreferences	تفضيلات\nالمستند
 	Unlink\nCitations	Unlink\nCitations
 	Waiting for Zotero…	Waiting for Zotero…
 	Zotero: done	Zotero: done
