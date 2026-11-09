@@ -101,9 +101,10 @@ impl ImeSnapshot {
         composition: Option<(usize, usize)>,
     ) -> Option<Self> {
         let selection = utf16_span_to_bytes(&text, selection.0, selection.1)?;
-        let composition = composition
-            .map(|span| utf16_span_to_bytes(&text, span.0, span.1))
-            .transpose()?;
+        let composition = match composition {
+            Some((start, end)) => Some(utf16_span_to_bytes(&text, start, end)?),
+            None => None,
+        };
         Some(Self {
             text,
             selection: selection.0..selection.1,
@@ -230,11 +231,9 @@ fn selection_within(
 }
 
 fn byte_range_to_chars(text: &str, range: Range<usize>) -> Option<Range<usize>> {
-    Some((
-        text.get(..range.start)?.chars().count(),
-        text.get(..range.end)?.chars().count(),
-    )
-        .0..text.get(..range.end)?.chars().count())
+    let start = text.get(..range.start)?.chars().count();
+    let end = text.get(..range.end)?.chars().count();
+    Some(start..end)
 }
 
 #[cfg(test)]
