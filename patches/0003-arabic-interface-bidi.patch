@@ -212,7 +212,13 @@ diff --git a/crates/fonts/src/ui_fallback.rs b/crates/fonts/src/ui_fallback.rs
 diff --git a/crates/fonts/src/lib.rs b/crates/fonts/src/lib.rs
 --- a/crates/fonts/src/lib.rs
 +++ b/crates/fonts/src/lib.rs
-@@ -21,1 +21,1 @@
+@@ -15,7 +15,7 @@
+ pub use fontdb::{FALLBACK_FAMILY, FaceRef, FontDb, FontFace, base_style, bundled, system_font_dirs};
+ pub use harfrust::Feature;
+ use harfrust::{Direction, ShapeOptions, Tag, UnicodeBuffer};
+ pub use kurbo::BezPath;
+ use skrifa::MetadataProvider;
+ use skrifa::instance::Size;
 -pub use ui_fallback::{SystemUiFont, system_cjk_ui_font, ui_needs_system_cjk};
 +pub use ui_fallback::{SystemUiFont, system_arabic_ui_font, system_cjk_ui_font, ui_needs_system_cjk};
 diff --git a/crates/ui-egui/src/theme.rs b/crates/ui-egui/src/theme.rs
