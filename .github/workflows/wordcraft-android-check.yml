@@ -36,6 +36,19 @@ jobs:
         with:
           targets: aarch64-linux-android
 
+      - name: Cache Rust dependencies and build artifacts
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            upstream-wordcraft -> target
+          cache-all-crates: "true"
+
+      - name: Cache cargo-ndk binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin/cargo-ndk
+          key: cargo-ndk-${{ runner.os }}-v0.9.34
+
       - name: Set up Android SDK and NDK
         uses: android-actions/setup-android@v3
         with:
@@ -155,7 +168,9 @@ jobs:
       - name: Build GameActivity native library
         working-directory: upstream-wordcraft
         run: |
-          cargo install cargo-ndk --locked
+          if ! command -v cargo-ndk >/dev/null 2>&1; then
+            cargo install cargo-ndk --locked --version 0.9.34
+          fi
           export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/27.2.12479018"
           cargo ndk -t arm64-v8a -o apps/wordcraft-android/game-activity/app/src/main/jniLibs build --release -p wordcraft-android
           test -f apps/wordcraft-android/game-activity/app/src/main/jniLibs/arm64-v8a/libwordcraft.so
