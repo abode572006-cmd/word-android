@@ -144,159 +144,159 @@
 	All	الكل
 	Decimal	عشري
 	Bar	شريط
-	Leader	Leader
-	Set	Set
+	Leader	نمط التعبئة
+	Set	تعيين
 	Page Border	حدود الصفحة
 	Apply to:	تطبيق على:
 	Whole document	المستند بأكمله
 	This section	هذا القسم
-	Fill	Fill
-	Setting:	Setting:
-	3-D	3-D
-	Custom	Custom
-	Style:	Style:
-	Dot dash	Dot dash
-	Triple	Triple
-	Between	Between
+	Fill	تعبئة
+	Setting:	الإعداد:
+	3-D	ثلاثي الأبعاد
+	Custom	مخصص
+	Style:	النمط:
+	Dot dash	شرطة ونقطة
+	Triple	ثلاثي
+	Between	بين
 	Borders and Shading	الحدود والتظليل
-	Tabs…	Tabs…
-	Borders and Shading…	Borders and Shading…
+	Tabs…	علامات الجدولة…
+	Borders and Shading…	الحدود والتظليل…
 	Bottom Border	حد سفلي
-	Bottom of Page	Bottom of Page
-	Bottom:	Bottom:
-	Box	Box
-	Breaks	Breaks
-	Bring Forward	Bring Forward
-	Bullet Library	Bullet Library
-	Bullets	Bullets
-	Calendar	Calendar
+	Bottom of Page	أسفل الصفحة
+	Bottom:	السفل:
+	Box	إطار
+	Breaks	فواصل
+	Bring Forward	إحضار إلى الأمام
+	Bullet Library	مكتبة التعداد النقطي
+	Bullets	تعداد نقطي
+	Calendar	التقويم
 	Cancel	إلغاء
-	Capitalize Each Word	Capitalize Each Word
-	Captions	Captions
-	Cell Margins	Cell Margins
-	Cell Size	Cell Size
-	Cell\nMargins	Cell\nMargins
+	Capitalize Each Word	كتابة الحرف الأول من كل كلمة كبيرًا
+	Captions	التسميات التوضيحية
+	Cell Margins	هوامش الخلية
+	Cell Size	حجم الخلية
+	Cell\nMargins	هوامش\nالخلية
 	Center	توسيط
 	Change	تغيير
-	Change Case	Change Case
-	Change List Level	Change List Level
+	Change Case	تغيير حالة الأحرف
+	Change List Level	تغيير مستوى القائمة
 	Change Picture	تغيير الصورة
-	Change Shape	Change Shape
+	Change Shape	تغيير الشكل
 	Changes	التغييرات
-	Character Position	Character Position
-	Character Scale	Character Scale
-	Character Shading	Character Shading
-	Character Spacing	Character Spacing
-	Character Border	Character Border
-	Characters (no spaces)	Characters (no spaces)
-	Characters (with spaces)	Characters (with spaces)
+	Character Position	موضع الأحرف
+	Character Scale	مقياس الأحرف
+	Character Shading	تظليل الأحرف
+	Character Spacing	تباعد الأحرف
+	Character Border	حدود الأحرف
+	Characters (no spaces)	الأحرف (من دون مسافات)
+	Characters (with spaces)	الأحرف (مع المسافات)
 	Chart	مخطط
 	Check Accessibility	التحقق من إمكانية الوصول
-	Check Compatibility	Check Compatibility
-	Check for Errors	Check for Errors
+	Check Compatibility	التحقق من التوافق
+	Check for Errors	التحقق من الأخطاء
 	Check Spelling as You Type	التدقيق الإملائي أثناء الكتابة
-	Check\nAccessibility	Check\nAccessibility
-	Citation Style	Citation Style
-	Citations & Bibliography	Citations & Bibliography
+	Check\nAccessibility	التحقق من\nإمكانية الوصول
+	Citation Style	نمط الاستشهاد
+	Citations & Bibliography	الاستشهادات والمراجع
 	Clear	مسح
 	Clear All Formatting	مسح كافة التنسيقات
 	Clipboard	الحافظة
-	Clipboard Pane	Clipboard Pane
-	Clipboard Items	Clipboard Items
-	Paste Clipboard Item	Paste Clipboard Item
-	Paste All	Paste All
-	Delete Clipboard Item	Delete Clipboard Item
-	Clear All	Clear All
+	Clipboard Pane	جزء الحافظة
+	Clipboard Items	عناصر الحافظة
+	Paste Clipboard Item	لصق عنصر من الحافظة
+	Paste All	لصق الكل
+	Delete Clipboard Item	حذف عنصر من الحافظة
+	Clear All	مسح الكل
 	Click an item to paste it.	اضغط على عنصر للصقه.
 	Nothing collected yet. Items you copy or cut appear here.	لا توجد عناصر بعد. ستظهر هنا العناصر التي تنسخها أو تقصها.
-	(picture or object)	(picture or object)
+	(picture or object)	(صورة أو كائن)
 	Close	إغلاق
 	Close Header and Footer	إغلاق الرأس والتذييل
-	Collapse Selection	Collapse Selection
+	Collapse Selection	طيّ التحديد
 	Color	اللون
 	Color:	اللون:
-	Colors	Colors
+	Colors	الألوان
 	Column	عمود
-	Column Break	Column Break
+	Column Break	فاصل عمود
 	Columns	أعمدة
-	Combine	Combine
-	Commands	Commands
+	Combine	دمج
+	Commands	الأوامر
 	Comment	تعليق
 	Comments	التعليقات
-	Comments Pane	Comments Pane
-	Community\nDiscord	Community\nDiscord
-	Compact	Compact
+	Comments Pane	جزء التعليقات
+	Community\nDiscord	مجتمع\nDiscord
+	Compact	مضغوط
 	Compare	مقارنة
-	Compress Pictures	Compress Pictures
-	Continuous	Continuous
-	Convert	Convert
-	Convert Text to Table	Convert Text to Table
-	Convert Text to Table…	Convert Text to Table…
-	Convert to Text	Convert to Text
+	Compress Pictures	ضغط الصور
+	Continuous	مستمر
+	Convert	تحويل
+	Convert Text to Table	تحويل النص إلى جدول
+	Convert Text to Table…	تحويل النص إلى جدول…
+	Convert to Text	تحويل إلى نص
 	Copy	نسخ
 	Copy Formatting	نسخ التنسيق
-	Corrections	Corrections
-	Count words in text boxes and notes	Count words in text boxes and notes
+	Corrections	التصحيحات
+	Count words in text boxes and notes	احتساب الكلمات في مربعات النص والملاحظات
 	Couldn't download {name}: {error}	تعذر تنزيل {name}: {error}
 	Cover Page	صفحة غلاف
 	Create	إنشاء
-	Create a Style	Create a Style
-	Create an interactive outline of your document.\n\nIt's a great way to keep track of where you are or quickly move your content around.\n\nTo get started, go to the Home tab and apply Heading styles to the headings in your document.	Create an interactive outline of your document.\n\nIt's a great way to keep track of where you are or quickly move your content around.\n\nTo get started, go to the Home tab and apply Heading styles to the headings in your document.
+	Create a Style	إنشاء نمط
+	Create an interactive outline of your document.\n\nIt's a great way to keep track of where you are or quickly move your content around.\n\nTo get started, go to the Home tab and apply Heading styles to the headings in your document.	أنشئ مخططًا تفاعليًا لمستندك.\n\nيساعدك ذلك على متابعة موضعك أو نقل أجزاء المحتوى بسرعة وسهولة.\n\nللبدء، انتقل إلى علامة تبويب الرئيسية وطبّق أنماط العناوين على عناوين المستند.
 	Create New Style	إنشاء نمط جديد
-	Crop	Crop
-	Cross-reference	Cross-reference
-	Current Position	Current Position
+	Crop	اقتصاص
+	Cross-reference	إحالة مرجعية
+	Current Position	الموضع الحالي
 	Current style: {style}	النمط الحالي: {style}
 	Custom Margins…	هوامش مخصصة…
-	Custom Watermark	Custom Watermark
+	Custom Watermark	علامة مائية مخصصة
 	Custom Watermark…	علامة مائية مخصصة…
-	Customize Quick Access Toolbar	Customize Quick Access Toolbar
+	Customize Quick Access Toolbar	تخصيص شريط أدوات الوصول السريع
 	Cut	قص
 	Dark Mode	الوضع الداكن
-	Dashed	Dashed
-	Data	Data
+	Dashed	متقطع
+	Data	البيانات
 	Date & Time	التاريخ والوقت
 	Decrease Font Size	تصغير حجم الخط
 	Decrease Indent	تقليل المسافة البادئة
 	Default	افتراضي
-	Define New Bullet	Define New Bullet
-	Define New Number Format	Define New Number Format
+	Define New Bullet	تعريف تعداد نقطي جديد
+	Define New Number Format	تعريف تنسيق ترقيم جديد
 	Delete	حذف
 	Delete Cells	حذف الخلايا
 	Delete Columns	حذف الأعمدة
-	Delete Comment	Delete Comment
-	Delete Next Word	Delete Next Word
-	Delete Previous Word	Delete Previous Word
+	Delete Comment	حذف التعليق
+	Delete Next Word	حذف الكلمة التالية
+	Delete Previous Word	حذف الكلمة السابقة
 	Delete Rows	حذف الصفوف
-	Delete Style	Delete Style
-	Delete Table	Delete Table
+	Delete Style	حذف النمط
+	Delete Table	حذف الجدول
 	Design	تصميم
-	development build	development build
-	Diagonal	Diagonal
-	Diamond	Diamond
+	development build	إصدار قيد التطوير
+	Diagonal	قطري
+	Diamond	مُعين
 	Dictate	إملاء صوتي
-	Different First Page	Different First Page
-	Different Odd & Even Pages	Different Odd & Even Pages
+	Different First Page	صفحة أولى مختلفة
+	Different Odd & Even Pages	صفحات فردية وزوجية مختلفة
 	Discord	Discord
-	Discord community	Discord community
+	Discord community	مجتمع Discord
 	Display	عرض
-	Display for Review	Display for Review
-	Distribute Columns	Distribute Columns
-	Distribute Rows	Distribute Rows
-	Distributed	Distributed
-	Do Not Show in TOC	Do Not Show in TOC
+	Display for Review	العرض للمراجعة
+	Distribute Columns	توزيع الأعمدة
+	Distribute Rows	توزيع الصفوف
+	Distributed	موزّع
+	Do Not Show in TOC	عدم الإظهار في جدول المحتويات
 	Do you want to save changes to {name}?	هل تريد حفظ التغييرات على {name}؟
-	Don't Save	Don't Save
-	Document End	Document End
-	Document Formatting	Document Formatting
-	Document Property	Document Property
-	Document Start	Document Start
-	Document Text	Document Text
+	Don't Save	عدم الحفظ
+	Document End	نهاية المستند
+	Document Formatting	تنسيق المستند
+	Document Property	خاصية المستند
+	Document Start	بداية المستند
+	Document Text	نص المستند
 	Document Title	عنوان المستند
 	Documents you open will show up here.	ستظهر هنا المستندات التي تفتحها.
-	Dot-dash	Dot-dash
-	Dotted	Dotted
-	Double	Double
+	Dot-dash	نقطة وشرطة
+	Dotted	منقّط
+	Double	مزدوج
 	Double Spacing	تباعد مزدوج
 	Double Strikethrough	Double Strikethrough
 	Double Underline	Double Underline
