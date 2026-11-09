@@ -474,25 +474,6 @@ pub fn draw(ctx: &egui::Context) {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn media_fonts_folder_is_derived_from_android_external_files_path() {
-        let external = Path::new("/storage/emulated/0/Android/data/ai.storyteller.wordcraft/files");
-        assert_eq!(
-            media_dir_from(external),
-            Some(PathBuf::from("/storage/emulated/0/Android/media/ai.storyteller.wordcraft"))
-        );
-    }
-
-    #[test]
-    fn fonts_folder_is_named_consistently() {
-        let media = Path::new("/storage/emulated/0/Android/media/ai.storyteller.wordcraft");
-        assert_eq!(media.join("Fonts"), PathBuf::from("/storage/emulated/0/Android/media/ai.storyteller.wordcraft/Fonts"));
-    }
-}
 
 #[cfg(test)]
 mod tests {
