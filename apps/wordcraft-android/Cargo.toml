@@ -4,7 +4,7 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 rust-version.workspace = true
-description = "WordCraft on Android: the real engine and egui shell on winit's NativeActivity backend"
+description = "WordCraft on Android: the real engine and egui shell on winit's GameActivity backend"
 publish = false
 
 # cargo-apk turns this cdylib into the APK's lib/arm64-v8a/libwordcraft.so, and the artifact
@@ -29,7 +29,7 @@ egui = { workspace = true }
 log = { workspace = true }
 serde_json = { workspace = true }
 
-# `android-native-activity` is the whole reason this builds. Without a backend feature,
+# `android-game-activity` is the backend selected for the Gradle-hosted GameActivity build. Without a backend feature,
 # `android-activity` is pulled with no backend at all and eframe fails with
 # `file not found for module activity_impl` plus
 # `Either "game-activity" or "native-activity" must be enabled as features` — a missing
@@ -42,10 +42,10 @@ serde_json = { workspace = true }
 #
 # The android-* features are inert elsewhere (winit only binds android-activity under
 # cfg(target_os = "android")), so the host workspace is unaffected.
-eframe = { workspace = true, features = ["default_fonts", "wgpu", "android-native-activity"] }
+eframe = { workspace = true, features = ["default_fonts", "wgpu", "android-game-activity"] }
 # Needed to name `AndroidApp` for `NativeOptions::android_app`; eframe does not re-export
 # winit. Pinned to the exact version eframe/egui-winit build against.
-winit = { version = "=0.30.13", default-features = false, features = ["android-native-activity", "x11"] }
+winit = { version = "=0.30.13", default-features = false, features = ["android-game-activity", "x11"] }
 
 [package.metadata.android]
 package = "ai.storyteller.wordcraft"
