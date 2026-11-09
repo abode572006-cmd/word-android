@@ -34,7 +34,7 @@ pub(crate) fn utf16_offset_to_byte(text: &str, offset: usize) -> Option<usize> {
     (utf16_offset == offset).then_some(text.len())
 }
 
-/// Compute a minimal replacement between two UTF-8 strings.
+/// Convert a GameTextInput span (UTF-16 code-unit offsets) to UTF-8 byte offsets.\n///\n/// The order is preserved because Android permits a reversed selection to represent\n/// an active selection whose anchor and focus are opposite. Invalid or split-surrogate\n/// boundaries are rejected rather than rounded into a different selection.\npub(crate) fn utf16_span_to_bytes(text: &str, start: usize, end: usize) -> Option<(usize, usize)> {\n    Some((utf16_offset_to_byte(text, start)?, utf16_offset_to_byte(text, end)?))\n}\n\n/// Compute a minimal replacement between two UTF-8 strings.
 ///
 /// The returned offsets are byte offsets, matching Rust string slicing. Both boundaries are
 /// guaranteed to lie on UTF-8 character boundaries. None means the snapshots are identical.
@@ -76,7 +76,7 @@ mod tests {
         assert_eq!(utf16_offset_to_byte("م\u{651}ر", 2), Some(4));
         assert_eq!(utf16_offset_to_byte("م\u{651}ر", 4), None);
     }
-    #[test] fn identical_snapshots_have_no_delta() { assert_eq!(diff_text("مرحبا", "مرحبا"), None); }
+    #[test]\n    fn converts_selection_and_composition_spans_from_utf16_without_losing_direction() {\n        assert_eq!(utf16_span_to_bytes("مرحبا", 1, 4), Some((2, 8)));\n        assert_eq!(utf16_span_to_bytes("مرحبا", 4, 1), Some((8, 2)));\n        assert_eq!(utf16_span_to_bytes("م\\u{651}ر", 0, 2), Some((0, 4)));\n    }\n    #[test]\n    fn rejects_spans_outside_text_or_inside_emoji_surrogate_pair() {\n        assert_eq!(utf16_span_to_bytes("ع🙂ب", 1, 2), None);\n        assert_eq!(utf16_span_to_bytes("ع🙂ب", 0, 5), None);\n        assert_eq!(utf16_span_to_bytes("ع🙂ب", 4, 1), Some((8, 2)));\n    }\n    #[test] fn identical_snapshots_have_no_delta() { assert_eq!(diff_text("مرحبا", "مرحبا"), None); }
     #[test] fn inserts_arabic_without_splitting_utf8() {
         assert_eq!(diff_text("مرحبا", "مرحبا بالعالم"), Some(TextDelta { replaced: 10..10, inserted: " بالعالم".into() }));
     }
