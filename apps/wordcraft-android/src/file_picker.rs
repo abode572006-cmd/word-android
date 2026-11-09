@@ -206,32 +206,15 @@ pub fn fonts_dir() -> Option<PathBuf> {
     Some(media_dir()?.join("Fonts"))
 }
 
-/// Point the font scan at a folder the user can reach over a USB cable.
+/// Create the user-font folder that the Android font database scans directly.
 ///
-/// # Why this is needed on Android and on no other platform
-///
-/// `system_font_dirs()` in this app's font code takes its Linux branch here and scans
-/// `/usr/share/fonts`, `$HOME/.fonts` and `$HOME/.local/share/fonts` — and none of those exist on
-/// Android: the platform's own faces are in `/system/fonts`, and `HOME` is unset. So the app knows
-/// only its bundled families and there is no way to add one — where VectorCraft and PhotoCraft have
-/// `set_platform_font_files`/`set_app_font_dir` hooks, this app's font code has neither. It *does*
-/// read `HOME` at every scan, though, so pointing `HOME` at the app's media folder and putting the
-/// fonts where that branch looks gives the same result with no change to the app: drop a `.ttf`
-/// into `Fonts/` over the cable, reopen the app, and it is in the font list.
-///
-/// The two names the scan looks for are hidden ones (`.fonts`, `.local/share/fonts`), so both are
-/// symlinks to the visible `Fonts` folder — the user drops a file in one place and the app reads it
-/// from the other.
-///
-/// The scan runs once per process (a `OnceLock` in the app), which is why a new font needs the app
-/// reopened rather than a reload.
+/// The path is also listed in the Android branch of `system_font_dirs()` in patch 0002.
+/// Avoid changing process-wide environment variables here: Android can start a second
+/// NativeActivity while another window and its worker threads are already running.
 #[cfg(target_os = "android")]
 pub fn register_fonts() {
     let Some(fonts) = fonts_dir() else {
         log::warn!("fonts: no Fonts folder to register; adding a font will not work");
-        return;
-    };
-    let Some(media) = media_dir() else {
         return;
     };
     if let Err(e) = std::fs::create_dir_all(&fonts) {
@@ -239,28 +222,6 @@ pub fn register_fonts() {
         return;
     }
     log::info!("fonts: the Fonts folder is {}", fonts.display());
-    // SAFETY: called from `android_main` before eframe starts, so nothing else is reading the
-    // environment yet; the app's font code only ever reads `HOME`.
-    unsafe { std::env::set_var("HOME", &media) };
-    link_fonts_dir(&fonts, &media.join(".fonts"));
-    link_fonts_dir(&fonts, &media.join(".local").join("share").join("fonts"));
-}
-
-/// Make `link` a directory symlink to `target`, replacing a stale one. Failure is logged and
-/// survivable: the folder the user drops fonts into still exists, the app just cannot see it yet.
-#[cfg(target_os = "android")]
-fn link_fonts_dir(target: &Path, link: &Path) {
-    if let Some(parent) = link.parent() {
-        let _ = std::fs::create_dir_all(parent);
-    }
-    if std::fs::read_link(link).is_ok() {
-        let _ = std::fs::remove_file(link);
-    }
-    if !link.exists()
-        && let Err(e) = std::os::unix::fs::symlink(target, link)
-    {
-        log::warn!("fonts: could not link {} → {}: {e}", link.display(), target.display());
-    }
 }
 
 
@@ -476,5 +437,25 @@ pub fn draw(ctx: &egui::Context) {
         // second while it waits, so the picker keeps asking for frames itself.
         PENDING.with(|slot| *slot.borrow_mut() = Some(pending));
         ctx.request_repaint();
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn media_fonts_folder_is_derived_from_android_external_files_path() {
+        let external = Path::new("/storage/emulated/0/Android/data/ai.storyteller.wordcraft/files");
+        assert_eq!(
+            media_dir_from(external),
+            Some(PathBuf::from("/storage/emulated/0/Android/media/ai.storyteller.wordcraft"))
+        );
+    }
+
+    #[test]
+    fn fonts_folder_is_named_consistently() {
+        let media = Path::new("/storage/emulated/0/Android/media/ai.storyteller.wordcraft");
+        assert_eq!(media.join("Fonts"), PathBuf::from("/storage/emulated/0/Android/media/ai.storyteller.wordcraft/Fonts"));
     }
 }
