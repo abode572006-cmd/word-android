@@ -41,7 +41,23 @@ pub(crate) fn diff_text(previous: &str, current: &str) -> Option<TextDelta> {
 
 #[cfg(test)]
 mod tests {
-    use super::{diff_text, TextDelta};
+    use super::{diff_text, utf16_offset_to_byte, TextDelta};
+    #[test] fn converts_arabic_utf16_offsets_to_utf8_boundaries() {
+        assert_eq!(utf16_offset_to_byte("مرحبا", 0), Some(0));
+        assert_eq!(utf16_offset_to_byte("مرحبا", 3), Some(6));
+        assert_eq!(utf16_offset_to_byte("مرحبا", 5), Some(10));
+    }
+    #[test] fn converts_offsets_around_emoji_without_splitting_surrogate_pairs() {
+        assert_eq!(utf16_offset_to_byte("ع🙂ب", 1), Some(2));
+        assert_eq!(utf16_offset_to_byte("ع🙂ب", 2), None);
+        assert_eq!(utf16_offset_to_byte("ع🙂ب", 3), Some(6));
+        assert_eq!(utf16_offset_to_byte("ع🙂ب", 4), Some(8));
+    }
+    #[test] fn converts_combining_mark_offsets_and_rejects_out_of_range() {
+        assert_eq!(utf16_offset_to_byte("م\u{651}ر", 1), Some(2));
+        assert_eq!(utf16_offset_to_byte("م\u{651}ر", 2), Some(4));
+        assert_eq!(utf16_offset_to_byte("م\u{651}ر", 4), None);
+    }
     #[test] fn identical_snapshots_have_no_delta() { assert_eq!(diff_text("مرحبا", "مرحبا"), None); }
     #[test] fn inserts_arabic_without_splitting_utf8() {
         assert_eq!(diff_text("مرحبا", "مرحبا بالعالم"), Some(TextDelta { replaced: 10..10, inserted: " بالعالم".into() }));
