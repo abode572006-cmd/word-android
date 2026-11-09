@@ -139,3 +139,55 @@ fn write_atomic(path: &Path, bytes: &[u8]) -> std::io::Result<()> {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::sync::atomic::{AtomicUsize, Ordering};
+
+    fn scratch() -> PathBuf {
+        static NEXT: AtomicUsize = AtomicUsize::new(0);
+        std::env::temp_dir().join(format!(
+            "wordcraft-prefs-{}-{}",
+            std::process::id(),
+            NEXT.fetch_add(1, Ordering::Relaxed)
+        ))
+    }
+
+    #[test]
+    fn atomic_write_replaces_the_complete_preferences_file() {
+        let dir = scratch();
+        std::fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("ui.json");
+        write_atomic(&path, br#"{"theme":"light"}"#).unwrap();
+        assert_eq!(std::fs::read(&path).unwrap(), br#"{"theme":"light"}"#);
+        write_atomic(&path, br#"{"theme":"dark"}"#).unwrap();
+        assert_eq!(std::fs::read(&path).unwrap(), br#"{"theme":"dark"}"#);
+        assert_eq!(std::fs::read_dir(&dir).unwrap().count(), 1, "temporary files are cleaned up");
+        std::fs::remove_dir_all(dir).unwrap();
+    }
+
+    #[test]
+    fn writer_skips_unchanged_bytes_and_store_now_forces_a_new_value() {
+        let dir = scratch();
+        std::fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("ui.json");
+        let mut writer = Writer::new(Some(path.clone()), Duration::from_secs(3600));
+        writer.store(b"first");
+        assert_eq!(std::fs::read(&path).unwrap(), b"first");
+        writer.store(b"first");
+        assert_eq!(std::fs::read(&path).unwrap(), b"first");
+        writer.store_now(b"second");
+        assert_eq!(std::fs::read(&path).unwrap(), b"second");
+        std::fs::remove_dir_all(dir).unwrap();
+    }
+
+    #[test]
+    fn window_guard_tracks_a_window_for_its_lifetime() {
+        let before = windows();
+        let guard = counted_window();
+        assert_eq!(windows(), before + 1);
+        drop(guard);
+        assert_eq!(windows(), before);
+    }
+}
