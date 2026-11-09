@@ -107,11 +107,12 @@ fn load_prefs(app: &mut WordApp) {
     }
 }
 
-/// Android opens on WordCraft's existing Open page so saved recent documents are immediately
-/// available. The page already supports reopening a path through the normal document command.
-fn show_recent_documents(app: &mut WordApp) {
+/// Android opens on WordCraft's existing Home page, not in the editor. Home is the
+/// start screen: it offers a blank document, templates and recent documents; nothing is
+/// opened until the user chooses one. The Open page remains available for browsing files.
+fn show_file_home(app: &mut WordApp) {
     app.ui.backstage = true;
-    app.ui.backstage_page = "open".into();
+    app.ui.backstage_page = "home".into();
 }
 
 /// How often the preferences are looked at; a change is written at the next look. Short enough
@@ -363,7 +364,7 @@ pub fn android_main(app: winit::platform::android::activity::AndroidApp) {
         Box::new(|cc| {
             let mut app = WordApp::new(Session::new(wordcraft_doc::Document::new()), android_services());
             load_prefs(&mut app);
-            show_recent_documents(&mut app);
+            show_file_home(&mut app);
             // No caption buttons: the app draws its own title bar (Quick Access Toolbar, ribbon).
             // `integrated_titlebar` is the macOS switch that leaves room for the traffic lights
             // inside that bar; on Android nothing draws them, so it stays off.
@@ -488,7 +489,7 @@ impl eframe::App for Shell {
 
 #[cfg(test)]
 mod tests {
-    use super::{open_extensions, show_recent_documents, WordApp, Session, Services, UiState};
+    use super::{open_extensions, show_file_home, WordApp, Session, Services, UiState};
 
     /// Keep the Android NativeActivity backend and the Linux X11 backend enabled.
     /// The latter lets this crate's unit tests run on the CI host. The previous
@@ -513,7 +514,7 @@ mod tests {
     }
 
     #[test]
-    fn startup_shows_saved_recent_documents_on_the_open_page() {
+    fn startup_shows_the_file_home_without_opening_a_document() {
         let mut first = WordApp::new(
             Session::new(wordcraft_doc::Document::new()),
             Services::default(),
@@ -529,10 +530,10 @@ mod tests {
             Services::default(),
         );
         restored.apply_prefs(serde_json::from_slice::<UiState>(&saved).unwrap());
-        show_recent_documents(&mut restored);
+        show_file_home(&mut restored);
 
         assert!(restored.ui.backstage);
-        assert_eq!(restored.ui.backstage_page, "open");
+        assert_eq!(restored.ui.backstage_page, "home");
         assert_eq!(restored.ui.recent, first.ui.recent);
     }
 
