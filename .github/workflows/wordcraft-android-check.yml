@@ -7,6 +7,7 @@ on:
     paths:
       - ".github/workflows/wordcraft-android-check.yml"
       - "patches/0002-arabic-localization.patch"
+      - "patches/0003-arabic-interface-bidi.patch"
       - "patches/arabic-catalog.tsv"
       - "apps/wordcraft-android/**"
       - "patches/0001-wordcraft-android-port.patch"
@@ -54,6 +55,8 @@ jobs:
           git -C upstream-wordcraft apply ../patches/0001-wordcraft-android-port.patch
           git -C upstream-wordcraft apply --check ../patches/0002-arabic-localization.patch
           git -C upstream-wordcraft apply ../patches/0002-arabic-localization.patch
+          git -C upstream-wordcraft apply --check ../patches/0003-arabic-interface-bidi.patch
+          git -C upstream-wordcraft apply ../patches/0003-arabic-interface-bidi.patch
           cp patches/arabic-catalog.tsv upstream-wordcraft/crates/ui-egui/src/i18n/ar.tsv
           cp -R apps/wordcraft-android upstream-wordcraft/apps/
 
@@ -67,6 +70,14 @@ jobs:
           export CXX_aarch64_linux_android=aarch64-linux-android26-clang++
           export AR_aarch64_linux_android=llvm-ar
           cargo check -p wordcraft-android --target aarch64-linux-android
+
+      - name: Run Arabic localization and editor regression tests
+        working-directory: upstream-wordcraft
+        run: |
+          cargo test -p wordcraft-ui-egui visual_rtl
+          cargo test -p wordcraft-ui-egui arabic_catalog_is_complete_and_uses_visual_order_for_egui
+          cargo test -p wordcraft-ui-egui arabic_keyboard_text_is_inserted_into_the_document
+          cargo test -p wordcraft-layout arabic_paragraph_handles_marks_and_mixed_direction_runs
 
       - name: Run Android shell unit tests on host
         working-directory: upstream-wordcraft
