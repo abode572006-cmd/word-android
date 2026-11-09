@@ -71,6 +71,15 @@ jobs:
           )
           if "file_dialogs_android.rs" not in source or "clipboard_android.rs" not in source:
               raise SystemExit("Could not install Android host adapters")
+          # X11 event-loop setup is desktop-only; Android has its own activity backend.
+          x11_cfg = '#[cfg(all(unix, not(target_os = "macos")))]'
+          if x11_cfg not in source:
+              raise SystemExit("Could not find the Unix desktop X11 setup")
+          source = source.replace(
+              x11_cfg,
+              '#[cfg(all(unix, not(target_os = "macos"), not(target_os = "android")))]',
+              1
+          )
           main.write_text(source)
 
           cargo = Path("apps/wordcraft/Cargo.toml")
