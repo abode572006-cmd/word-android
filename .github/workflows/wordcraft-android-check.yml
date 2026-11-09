@@ -69,7 +69,7 @@ jobs:
               for line in Path(path).read_text(encoding="utf-8").splitlines():
                   if not line.strip() or line.startswith("#"):
                       continue
-                  cols = line.split("\\t")
+                  cols = line.split("\t")
                   assert len(cols) == 3, f"malformed TSV row in {path}: {line!r}"
                   rows.append(cols)
               return rows
