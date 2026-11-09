@@ -1,0 +1,1731 @@
+# Arabic (ar) interface catalog. English fallback remains for entries not yet translated.
+# context<TAB>English source<TAB>Arabic translation
+	(no style)	(no style)
+	(no suggestions)	(no suggestions)
+	1.5 Line Spacing	1.5 Line Spacing
+	A free, open-source word processor written from scratch in Rust.\nPart of the Crafting Apps from the ArtCraft team.	A free, open-source word processor written from scratch in Rust.\nPart of the Crafting Apps from the ArtCraft team.
+	About	حول البرنامج
+	About WordCraft	حول WordCraft
+	Accept	قبول
+	Accept All Changes	قبول جميع التغييرات
+	Accept This Change	قبول هذا التغيير
+	Accessibility	إمكانية الوصول
+	Add	إضافة
+	Add a comment	إضافة تعليق
+	Add a Table	إدراج جدول
+	Add Object to Selection	Add Object to Selection
+	Add Space Before Paragraph	Add Space Before Paragraph
+	Add space between Asian and Latin text	Add space between Asian and Latin text
+	Add space between Asian text and numbers	Add space between Asian text and numbers
+	Add tab stop at:	Add tab stop at:
+	Add Text	Add Text
+	Add to Dictionary	Add to Dictionary
+	Add to Style Gallery	Add to Style Gallery
+	Address Block	كتلة العنوان
+	Address:	العنوان:
+	Address\nBlock	Address\nBlock
+	Adjust	Adjust
+	Advanced	متقدم
+	After:	بعد:
+	Agents	Agents
+	Align	محاذاة
+	Align Left	محاذاة إلى اليسار
+	Align Right	محاذاة إلى اليمين
+	Aligned at:	Aligned at:
+	Alignment	المحاذاة
+	All Borders	كل الحدود
+	All Caps	أحرف كبيرة
+	All caps	All caps
+	All Markup	All Markup
+	Allow hanging punctuation	Allow hanging punctuation
+	Allow Latin text to wrap in the middle of a word	Allow Latin text to wrap in the middle of a word
+	Alt Text	Alt Text
+	Apply Asian line-breaking rules (kinsoku)	Apply Asian line-breaking rules (kinsoku)
+	Apply Character Style	Apply Character Style
+	Apply Style	تطبيق النمط
+	Apply Styles	Apply Styles
+	Arrange	ترتيب
+	Arrange\nAll	Arrange\nAll
+	Arrow	Arrow
+	Artistic Effects	Artistic Effects
+	Asian Typography	Asian Typography
+	Author	المؤلف
+	AutoCorrect Options	AutoCorrect Options
+	AutoFit	AutoFit
+	AutoFit Contents	AutoFit Contents
+	AutoFit Window	AutoFit Window
+	Automatic	تلقائي
+	Automatic ({language})	Automatic ({language})
+	Automatic follows your system's language. Menus and commands change; your documents don't.	يتبع الخيار التلقائي لغة نظامك. تتغير القوائم والأوامر، ولا يتغير محتوى مستنداتك.
+	Automatic Table 1 (3 levels)	Automatic Table 1 (3 levels)
+	Automatic Table 2 (2 levels)	Automatic Table 2 (2 levels)
+	AutoSave	الحفظ التلقائي
+	AutoSave documents you have saved in WordCraft	AutoSave documents you have saved in WordCraft
+	AutoSave failed: {error}. Save the document to turn AutoSave back on.	AutoSave failed: {error}. Save the document to turn AutoSave back on.
+	Balloons	Balloons
+	Bottom Margin	الهامش السفلي
+	Click a border between two cells to merge them. Esc stops.	Click a border between two cells to merge them. Esc stops.
+	Bullet	Bullet
+	By author	By author
+	Changed lines:	Changed lines:
+	Click level to modify:	Click level to modify:
+	Color only	Color only
+	Compress punctuation at the start of a line	Compress punctuation at the start of a line
+	Dark page (white text on black)	Dark page (white text on black)
+	Drag a rectangle to draw a table, or a line across cells to split them. Esc stops.	Drag a rectangle to draw a table, or a line across cells to split them. Esc stops.
+	Draw Table	Draw Table
+	Define New Multilevel List	Define New Multilevel List
+	Define New Multilevel List…	Define New Multilevel List…
+	Deletions:	Deletions:
+	Edit Comment	تحرير التعليق
+	Enter formatting for number:	أدخل تنسيق الترقيم:
+	Follow number with:	Follow number with:
+	Formatting	التنسيق
+	Include level number from:	Include level number from:
+	Ink	Ink
+	Insertions and Deletions	Insertions and Deletions
+	Insertions:	Insertions:
+	Left border	Left border
+	Left Margin	الهامش الأيسر
+	Indents and Spacing	Indents and Spacing
+	Legal style numbering	Legal style numbering
+	Line breaking	Line breaking
+	Link level to style:	Link level to style:
+	List Definition	List Definition
+	More templates →	More templates →
+	No templates match your search.	No templates match your search.
+	Nothing	Nothing
+	Number alignment:	Number alignment:
+	Number format	Number format
+	Number style for this level:	Number style for this level:
+	Outside border	Outside border
+	Reopen	Reopen
+	Restart list after:	Restart list after:
+	Right border	Right border
+	Right Margin	الهامش الأيمن
+	Base text:	Base text:
+	Distribute letters	Distribute letters
+	Distribute spacing	Distribute spacing
+	Offset (pt):	Offset (pt):
+	Phonetic Guide	Phonetic Guide
+	Remove	Remove
+	Right (vertical)	Right (vertical)
+	Ruby text:	Ruby text:
+	Search for templates	Search for templates
+	Show all revisions inline	Show all revisions inline
+	Show documents with their colours inverted, like View › Switch Modes. Saving, printing and PDFs are unchanged.	Show documents with their colours inverted, like View › Switch Modes. Saving, printing and PDFs are unchanged.
+	AutoSave saves every change to the file (needs a saved document)	AutoSave saves every change to the file (needs a saved document)
+	AutoSave isn't available in the browser: it can't write to your files. Save downloads a copy.	AutoSave isn't available in the browser: it can't write to your files. Save downloads a copy.
+	AutoSave only keeps .docx, .odt and .rtf files; {name} can't keep all formatting. Save as .docx to turn on AutoSave.	AutoSave only keeps .docx, .odt and .rtf files; {name} can't keep all formatting. Save as .docx to turn on AutoSave.
+	Save the document to turn on AutoSave	احفظ المستند لتفعيل الحفظ التلقائي
+	Save the document to turn on AutoSave (a file you have only opened isn't rewritten until you save it)	Save the document to turn on AutoSave (a file you have only opened isn't rewritten until you save it)
+	AutoText	AutoText
+	Backspace	مسافة للخلف
+	Banded Columns	Banded Columns
+	Banded Rows	Banded Rows
+	Before:	قبل:
+	Bibliography	قائمة المراجع
+	Binary assets added	Binary assets added
+	Binary assets removed	Binary assets removed
+	Blank	فارغ
+	Blank (Three Columns)	Blank (Three Columns)
+	Blank document	مستند فارغ
+	Blank Page	صفحة فارغة
+	Block\nAuthors	Block\nAuthors
+	Bold	غامق
+	Bookmark	إشارة مرجعية
+	Bookmark name:	Bookmark name:
+	Border Painter	Border Painter
+	Border\nPainter	Border\nPainter
+	Borders	الحدود
+	Tab stop position:	موضع علامة الجدولة:
+	Default tab stops:	علامات الجدولة الافتراضية:
+	Tab stops to be cleared:	Tab stops to be cleared:
+	All	الكل
+	Decimal	Decimal
+	Bar	Bar
+	Leader	Leader
+	Set	Set
+	Page Border	حدود الصفحة
+	Apply to:	تطبيق على:
+	Whole document	المستند بأكمله
+	This section	هذا القسم
+	Fill	Fill
+	Setting:	Setting:
+	3-D	3-D
+	Custom	Custom
+	Style:	Style:
+	Dot dash	Dot dash
+	Triple	Triple
+	Between	Between
+	Borders and Shading	الحدود والتظليل
+	Tabs…	Tabs…
+	Borders and Shading…	Borders and Shading…
+	Bottom Border	حد سفلي
+	Bottom of Page	Bottom of Page
+	Bottom:	Bottom:
+	Box	Box
+	Breaks	Breaks
+	Bring Forward	Bring Forward
+	Bullet Library	Bullet Library
+	Bullets	Bullets
+	Calendar	Calendar
+	Cancel	إلغاء
+	Capitalize Each Word	Capitalize Each Word
+	Captions	Captions
+	Cell Margins	Cell Margins
+	Cell Size	Cell Size
+	Cell\nMargins	Cell\nMargins
+	Center	توسيط
+	Change	تغيير
+	Change Case	Change Case
+	Change List Level	Change List Level
+	Change Picture	تغيير الصورة
+	Change Shape	Change Shape
+	Changes	التغييرات
+	Character Position	Character Position
+	Character Scale	Character Scale
+	Character Shading	Character Shading
+	Character Spacing	Character Spacing
+	Character Border	Character Border
+	Characters (no spaces)	Characters (no spaces)
+	Characters (with spaces)	Characters (with spaces)
+	Chart	مخطط
+	Check Accessibility	التحقق من إمكانية الوصول
+	Check Compatibility	Check Compatibility
+	Check for Errors	Check for Errors
+	Check Spelling as You Type	التدقيق الإملائي أثناء الكتابة
+	Check\nAccessibility	Check\nAccessibility
+	Citation Style	Citation Style
+	Citations & Bibliography	Citations & Bibliography
+	Clear	مسح
+	Clear All Formatting	مسح كافة التنسيقات
+	Clipboard	الحافظة
+	Clipboard Pane	Clipboard Pane
+	Clipboard Items	Clipboard Items
+	Paste Clipboard Item	Paste Clipboard Item
+	Paste All	Paste All
+	Delete Clipboard Item	Delete Clipboard Item
+	Clear All	Clear All
+	Click an item to paste it.	اضغط على عنصر للصقه.
+	Nothing collected yet. Items you copy or cut appear here.	لا توجد عناصر بعد. ستظهر هنا العناصر التي تنسخها أو تقصها.
+	(picture or object)	(picture or object)
+	Close	إغلاق
+	Close Header and Footer	إغلاق الرأس والتذييل
+	Collapse Selection	Collapse Selection
+	Color	اللون
+	Color:	اللون:
+	Colors	Colors
+	Column	عمود
+	Column Break	Column Break
+	Columns	أعمدة
+	Combine	Combine
+	Commands	Commands
+	Comment	تعليق
+	Comments	التعليقات
+	Comments Pane	Comments Pane
+	Community\nDiscord	Community\nDiscord
+	Compact	Compact
+	Compare	مقارنة
+	Compress Pictures	Compress Pictures
+	Continuous	Continuous
+	Convert	Convert
+	Convert Text to Table	Convert Text to Table
+	Convert Text to Table…	Convert Text to Table…
+	Convert to Text	Convert to Text
+	Copy	نسخ
+	Copy Formatting	نسخ التنسيق
+	Corrections	Corrections
+	Count words in text boxes and notes	Count words in text boxes and notes
+	Couldn't download {name}: {error}	تعذر تنزيل {name}: {error}
+	Cover Page	صفحة غلاف
+	Create	إنشاء
+	Create a Style	Create a Style
+	Create an interactive outline of your document.\n\nIt's a great way to keep track of where you are or quickly move your content around.\n\nTo get started, go to the Home tab and apply Heading styles to the headings in your document.	Create an interactive outline of your document.\n\nIt's a great way to keep track of where you are or quickly move your content around.\n\nTo get started, go to the Home tab and apply Heading styles to the headings in your document.
+	Create New Style	إنشاء نمط جديد
+	Crop	Crop
+	Cross-reference	Cross-reference
+	Current Position	Current Position
+	Current style: {style}	النمط الحالي: {style}
+	Custom Margins…	هوامش مخصصة…
+	Custom Watermark	Custom Watermark
+	Custom Watermark…	علامة مائية مخصصة…
+	Customize Quick Access Toolbar	Customize Quick Access Toolbar
+	Cut	قص
+	Dark Mode	الوضع الداكن
+	Dashed	Dashed
+	Data	Data
+	Date & Time	التاريخ والوقت
+	Decrease Font Size	تصغير حجم الخط
+	Decrease Indent	تقليل المسافة البادئة
+	Default	افتراضي
+	Define New Bullet	Define New Bullet
+	Define New Number Format	Define New Number Format
+	Delete	حذف
+	Delete Cells	حذف الخلايا
+	Delete Columns	حذف الأعمدة
+	Delete Comment	Delete Comment
+	Delete Next Word	Delete Next Word
+	Delete Previous Word	Delete Previous Word
+	Delete Rows	حذف الصفوف
+	Delete Style	Delete Style
+	Delete Table	Delete Table
+	Design	تصميم
+	development build	development build
+	Diagonal	Diagonal
+	Diamond	Diamond
+	Dictate	إملاء صوتي
+	Different First Page	Different First Page
+	Different Odd & Even Pages	Different Odd & Even Pages
+	Discord	Discord
+	Discord community	Discord community
+	Display	عرض
+	Display for Review	Display for Review
+	Distribute Columns	Distribute Columns
+	Distribute Rows	Distribute Rows
+	Distributed	Distributed
+	Do Not Show in TOC	Do Not Show in TOC
+	Do you want to save changes to {name}?	هل تريد حفظ التغييرات على {name}؟
+	Don't Save	Don't Save
+	Document End	Document End
+	Document Formatting	Document Formatting
+	Document Property	Document Property
+	Document Start	Document Start
+	Document Text	Document Text
+	Document Title	عنوان المستند
+	Documents you open will show up here.	ستظهر هنا المستندات التي تفتحها.
+	Dot-dash	Dot-dash
+	Dotted	Dotted
+	Double	Double
+	Double Spacing	تباعد مزدوج
+	Double Strikethrough	Double Strikethrough
+	Double Underline	Double Underline
+	Down	أسفل
+	Draft	Draft
+	Draw	رسم
+	Drawing Tools	أدوات الرسم
+	Drawing\nCanvas	Drawing\nCanvas
+	Drop Cap	Drop Cap
+	Edit Footer	تحرير تذييل الصفحة
+	Edit Header	تحرير رأس الصفحة
+	Edit Recipient List	Edit Recipient List
+	Edit\nRecipient List	Edit\nRecipient List
+	Edited	Edited
+	Editing	Editing
+	Editing header/footer	Editing header/footer
+	Editing — edit the document directly	Editing — edit the document directly
+	Editor	المحرر
+	Effects	تأثيرات
+	Emboss	Emboss
+	Encrypt with Password	Encrypt with Password
+	English (United States)	الإنجليزية (الولايات المتحدة)
+	Engrave	Engrave
+	Enter page number:	أدخل رقم الصفحة:
+	Envelopes	Envelopes
+	Equation	معادلة
+	Eraser	Eraser
+	Even Page	Even Page
+	Every command is available to scripts and AI agents: run `wordcraft-cli mcp` for an MCP server, or start the app with `--control <port>` for the JSON control channel.	Every command is available to scripts and AI agents: run `wordcraft-cli mcp` for an MCP server, or start the app with `--control <port>` for the JSON control channel.
+	Export	تصدير
+	Export a copy to share (PDF, Word document)	Export a copy to share (PDF, Word document)
+	Export Page as PNG	Export Page as PNG
+	Export PDF	تصدير PDF
+	Exported {path}	تم تصدير {path}
+	Extend Selection	Extend Selection
+	Field	Field
+	File	ملف
+	Find	بحث
+	Find and Replace	بحث واستبدال
+	Find Next	بحث عن التالي
+	Find Previous	بحث عن السابق
+	Find Recipient	Find Recipient
+	Find what:	البحث عن:
+	Finish	إنهاء
+	Finish & Merge	Finish & Merge
+	Finish &\nMerge	Finish &\nMerge
+	First Column	First Column
+	First commit	First commit
+	First line:	First line:
+	Fixed Column Width	Fixed Column Width
+	Focus	Focus
+	Font	الخط
+	Font Color	لون الخط
+	Font color:	Font color:
+	Font Dialog	Font Dialog
+	Font Size	حجم الخط
+	Font:	الخط:
+	Fonts	الخطوط
+	Footer	تذييل الصفحة
+	Footnote and Endnote	Footnote and Endnote
+	Footnotes	Footnotes
+	Format	تنسيق
+	Format Page Numbers	تنسيق أرقام الصفحات
+	Format Page Numbers…	Format Page Numbers…
+	Format Painter	Format Painter
+	Formatting at Selection	Formatting at Selection
+	Formula	Formula
+	General	عام
+	Go To	انتقال إلى
+	Go to	Go to
+	Go To (⌘⌥G)	Go To (⌘⌥G)
+	Grab bag	Grab bag
+	Greeting Line	Greeting Line
+	Greeting\nLine	Greeting\nLine
+	Gridlines	خطوط الشبكة
+	Group	تجميع
+	Grow Font 1 Point	Grow Font 1 Point
+	Hanging Indent	Hanging Indent
+	Header	رأس الصفحة
+	Header & Footer	رأس الصفحة وتذييلها
+	Header Row	Header Row
+	Header/Footer Position	Header/Footer Position
+	Heading 1	عنوان 1
+	Heading 2	عنوان 2
+	Heading 3	عنوان 3
+	Headings	العناوين
+	Heart	Heart
+	Help	مساعدة
+	Hidden	Hidden
+	Highlight Merge Fields	Highlight Merge Fields
+	Highlight\nMerge Fields	Highlight\nMerge Fields
+	Highlighter	Highlighter
+	Home	الرئيسية
+	Horizontal	أفقي
+	Horizontal Line	Horizontal Line
+	Hyphenation	Hyphenation
+	Icons	Icons
+	Ignore All	Ignore All
+	Illustrations	Illustrations
+	Immersive	Immersive
+	Immersive Reader	Immersive Reader
+	Immersive\nReader	Immersive\nReader
+	Increase Font Size	تكبير حجم الخط
+	Increase Indent	زيادة المسافة البادئة
+	Indent	مسافة بادئة
+	Indentation	Indentation
+	Indents	Indents
+	Index	Index
+	Info	Info
+	Ink to\nMath	Ink to\nMath
+	Ink to\nShape	Ink to\nShape
+	Ink\nReplay	Ink\nReplay
+	Insert	إدراج
+	Insert Above	إدراج أعلاه
+	Insert Below	إدراج أدناه
+	Insert Caption	إدراج تسمية توضيحية
+	Insert Citation	Insert Citation
+	Insert Endnote	Insert Endnote
+	Insert Footnote	إدراج حاشية سفلية
+	Insert Hyperlink	إدراج ارتباط تشعبي
+	Insert Index	Insert Index
+	Insert Left	Insert Left
+	Insert Merge Field	Insert Merge Field
+	Insert Merge\nField	Insert Merge\nField
+	Insert Right	Insert Right
+	Insert Shapes	Insert Shapes
+	Insert Table	إدراج جدول
+	Insert Table of Authorities	Insert Table of Authorities
+	Insert Table of Figures	Insert Table of Figures
+	Insert Table…	إدراج جدول…
+	Insert\nAbove	Insert\nAbove
+	Insert\nCaption	Insert\nCaption
+	Insert\nCitation	Insert\nCitation
+	Insert\nFootnote	Insert\nFootnote
+	Inside Borders	Inside Borders
+	Inspect Document	Inspect Document
+	Interface language:	لغة الواجهة:
+	Italic	مائل
+	Join the ArtCraft community on Discord	Join the ArtCraft community on Discord
+	Join us on Discord: discord.gg/artcraft	Join us on Discord: discord.gg/artcraft
+	Justify	ضبط النص
+	Keep Lines Together	Keep Lines Together
+	Keep lines together	Keep lines together
+	Keep Text Only	Keep Text Only
+	Keep with Next	Keep with Next
+	Keep with next	Keep with next
+	Labels	Labels
+	Landscape	Landscape
+	Language	اللغة
+	Lasso	Lasso
+	Last Column	Last Column
+	Last commit	Last commit
+	Layout	تخطيط
+	Layout Summary	Layout Summary
+	Left	يسار
+	Left Border	Left Border
+	Left:	Left:
+	Letter	Letter
+	Line	Line
+	Line and Page Breaks	Line and Page Breaks
+	Line and Paragraph Spacing	Line and Paragraph Spacing
+	Line Break	Line Break
+	Line delta	Line delta
+	Line End	Line End
+	Line Numbers	Line Numbers
+	Line Spacing	تباعد الأسطر
+	Line Spacing Options…	Line Spacing Options…
+	Line spacing:	Line spacing:
+	Line Start	Line Start
+	Lines	Lines
+	Lines added	Lines added
+	Lines deleted	Lines deleted
+	Link	رابط
+	Link to Previous	Link to Previous
+	Links	Links
+	Location: {path}	Location: {path}
+	lowercase	lowercase
+	Macros	Macros
+	Mailings	Mailings
+	Manage Sources	Manage Sources
+	Many pages	Many pages
+	Margins	هوامش
+	Mark Citation	Mark Citation
+	Mark Entry	Mark Entry
+	Mark\nCitation	Mark\nCitation
+	Mark\nEntry	Mark\nEntry
+	Markdown (*.md)	Markdown (*.md)
+	Match case	Match case
+	Match Fields	Match Fields
+	Matrix	Matrix
+	Merge	Merge
+	Merge Cells	Merge Cells
+	Merge Formatting	Merge Formatting
+	Merged PRs	Merged PRs
+	Mirrored	Mirrored
+	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.
+	Moderate	Moderate
+	Modify Style	Modify Style
+	Modify…	Modify…
+	Move or Resize	Move or Resize
+	Multilevel List	Multilevel List
+	Multiple Pages	Multiple Pages
+	Name (A–Z)	Name (A–Z)
+	Name:	Name:
+	Narrow  0.5" all	Narrow  0.5" all
+	Navigation	Navigation
+	Navigation Pane	Navigation Pane
+	New	جديد
+	New Comment	تعليق جديد
+	New from Template	New from Template
+	New Paragraph	New Paragraph
+	New Style…	New Style…
+	New Window	نافذة جديدة
+	New\nComment	New\nComment
+	New\nWindow	New\nWindow
+	Next	التالي
+	Next Change	Next Change
+	Next Comment	Next Comment
+	Next Footnote	Next Footnote
+	Next Page	Next Page
+	Next Record	Next Record
+	Next Section	Next Section
+	No Border	No Border
+	No Color	No Color
+	No contributor data was built into this copy.	No contributor data was built into this copy.
+	No Markup	No Markup
+	No model credits were built into this copy.	No model credits were built into this copy.
+	No Paragraph Space	No Paragraph Space
+	Nonbreaking Hyphen	Nonbreaking Hyphen
+	Nonbreaking Space	Nonbreaking Space
+	None	بلا
+	Normal  1" all	Normal  1" all
+	Normal Style	Normal Style
+	Not available right now	Not available right now
+	Not saved	Not saved
+	Not saved yet	Not saved yet
+	Nudge	Nudge
+	Number of columns:	Number of columns:
+	Number of rows:	Number of rows:
+	Numbering	Numbering
+	Object	Object
+	Odd Page	Odd Page
+	Office 2003 Default	Office 2003 Default
+	OK	موافق
+	One	One
+	One Page	One Page
+	Only web (http, https) and email (mailto) links can be followed	Only web (http, https) and email (mailto) links can be followed
+	Open	فتح
+	OpenDocument Text (*.odt)	OpenDocument Text (*.odt)
+	Optional Hyphen	Optional Hyphen
+	Copyright Sign	Copyright Sign
+	Ellipsis	Ellipsis
+	Em Dash	Em Dash
+	Insert Date Field	Insert Date Field
+	Insert Page Field	Insert Page Field
+	Insert Time Field	Insert Time Field
+	Registered Sign	Registered Sign
+	Reset Character Formatting	Reset Character Formatting
+	Reset Paragraph Formatting	Reset Paragraph Formatting
+	Trademark Sign	Trademark Sign
+	Options	خيارات
+	Orientation	اتجاه الصفحة
+	Outline	Outline
+	Outline Level	Outline Level
+	Outside Borders	Outside Borders
+	Oval	Oval
+	Page	صفحة
+	Page Background	Page Background
+	Page Borders	Page Borders
+	Page Break	فاصل صفحات
+	Page Break Before	Page Break Before
+	Page break before	Page break before
+	Page Breaks	Page Breaks
+	Page Color	لون الصفحة
+	Page Down	Page Down
+	Page image (*.png)	Page image (*.png)
+	Page Movement	Page Movement
+	Page Number	رقم الصفحة
+	Page Setup	إعداد الصفحة
+	Page Up	Page Up
+	Page Width	Page Width
+	Page width	Page width
+	Page X of Y	Page X of Y
+	Page {page}	Page {page}
+	Page {page} of {pages}	الصفحة {page} من {pages}
+	Page\nBorders	Page\nBorders
+	Page\nColor	Page\nColor
+	Page\nNumber	Page\nNumber
+	Pages	Pages
+	Paragraph	فقرة
+	Paragraph Details	Paragraph Details
+	Paragraph Down	Paragraph Down
+	Paragraph Settings	إعدادات الفقرة
+	Paragraph Spacing	تباعد الفقرات
+	Paragraph Up	Paragraph Up
+	Paragraphs	Paragraphs
+	Paste	لصق
+	Paste (⌘V)	Paste (⌘V)
+	Paste Formatting	Paste Formatting
+	Paste: Keep Text Only	Paste: Keep Text Only
+	Paste: Merge Formatting	Paste: Merge Formatting
+	PDF document (*.pdf)	PDF document (*.pdf)
+	Pen	Pen
+	Pencil	Pencil
+	Picture Border	Picture Border
+	Picture Format	Picture Format
+	Picture Styles	Picture Styles
+	Pictures	Pictures
+	Plain text (*.txt)	Plain text (*.txt)
+	Portrait	Portrait
+	Position	Position
+	Preview Results	Preview Results
+	Preview\nResults	Preview\nResults
+	Previous	Previous
+	Previous Change	Previous Change
+	Previous Comment	Previous Comment
+	Previous Record	Previous Record
+	Previous Section	Previous Section
+	Print	طباعة
+	Print Layout	Print Layout
+	Print\nLayout	Print\nLayout
+	Proofing	Proofing
+	Proofing Issues	Proofing Issues
+	Properties	خصائص
+	Protect	Protect
+	Protect Document	Protect Document
+	Quick Access Toolbar	Quick Access Toolbar
+	Quick Parts	Quick Parts
+	Quick Tables	Quick Tables
+	Read Aloud	Read Aloud
+	Read Mode	Read Mode
+	Read\nAloud	Read\nAloud
+	Read\nMode	Read\nMode
+	Recent	Recent
+	Record Macro	Record Macro
+	Recover Unsaved Documents	Recover Unsaved Documents
+	Rectangle	Rectangle
+	Redo	إعادة
+	Reduce Hanging Indent	Reduce Hanging Indent
+	References	مراجع
+	Reject	Reject
+	Reject All Changes	Reject All Changes
+	Reject Change	Reject Change
+	Relaxed	Relaxed
+	Remove Background	Remove Background
+	Remove Footer	Remove Footer
+	Remove Header	Remove Header
+	Remove Hyperlink	Remove Hyperlink
+	Remove Space After Paragraph	Remove Space After Paragraph
+	Remove Table of Contents	Remove Table of Contents
+	Remove Watermark	Remove Watermark
+	Repeat	Repeat
+	Repeat Header Rows	Repeat Header Rows
+	Replace	استبدال
+	Replace All	Replace All
+	Replace Document Text	Replace Document Text
+	Replace with:	Replace with:
+	Replay	Replay
+	Reply	Reply
+	Report	Report
+	Research	Research
+	Researcher	Researcher
+	Reset Picture	Reset Picture
+	Resolve	Resolve
+	Resolved	Resolved
+	Restart at 1	Restart at 1
+	Restart Each Page	Restart Each Page
+	Restart Each Section	Restart Each Section
+	Restrict Editing	Restrict Editing
+	Restrict\nEditing	Restrict\nEditing
+	Results	Results
+	Reverse the order	Reverse the order
+	Review	مراجعة
+	Reviewing	Reviewing
+	Reviewing Pane	Reviewing Pane
+	Reviewing — edits become suggestions	Reviewing — edits become suggestions
+	Rich Text Format (*.rtf)	Rich Text Format (*.rtf)
+	Right	يمين
+	Right Border	Right Border
+	Right-to-Left Text Direction	اتجاه الكتابة من اليمين إلى اليسار
+	Left-to-Right Text Direction	اتجاه الكتابة من اليسار إلى اليمين
+	Right:	Right:
+	Rotate	Rotate
+	Rounded Rectangle	Rounded Rectangle
+	Rows & Columns	Rows & Columns
+	Ruler	Ruler
+	Rules	Rules
+	Résumé	Résumé
+	Save	حفظ
+	Save a copy in another format. Printing goes through a PDF you can print from any viewer.	Save a copy in another format. Printing goes through a PDF you can print from any viewer.
+	Save As	حفظ باسم
+	Save as Template	Save as Template
+	Saved	Saved
+	Search Commands	Search Commands
+	Search commands and help	Search commands and help
+	Search document	Search document
+	Section Breaks	Section Breaks
+	Section Properties	Section Properties
+	Sections	Sections
+	Select	Select
+	Select All	تحديد الكل
+	Select Cell	Select Cell
+	Select Line	Select Line
+	Select Objects	Select Objects
+	Select Paragraph	Select Paragraph
+	Select Range	Select Range
+	Select Recipients	تحديد المستلمين
+	Select Row	Select Row
+	Select Sentence	Select Sentence
+	Select Table	Select Table
+	Select Text	Select Text
+	Select Text with Similar Formatting	Select Text with Similar Formatting
+	Select Word	Select Word
+	Select\nRecipients	Select\nRecipients
+	Selection	Selection
+	Selection Pane	Selection Pane
+	Send Backward	Send Backward
+	Sentence case.	Sentence case.
+	Set as Default	Set as Default
+	Set Caret	Set Caret
+	Set Character Formatting	Set Character Formatting
+	Set Numbering Value	Set Numbering Value
+	Set Paragraph Formatting	Set Paragraph Formatting
+	Shading	Shading
+	Shadow	Shadow
+	Shape Fill	Shape Fill
+	Shape Format	Shape Format
+	Shape Outline	Shape Outline
+	Shape Styles	Shape Styles
+	Shapes	أشكال
+	Share	Share
+	Shift+Tab	Shift+Tab
+	Show	إظهار
+	Show all formatting marks	Show all formatting marks
+	Show Comments	Show Comments
+	Show Markup	Show Markup
+	Show Notes	Show Notes
+	Show only comments and formatting in balloons	Show only comments and formatting in balloons
+	Show revisions in balloons	Show revisions in balloons
+	Show rulers	Show rulers
+	Show the community button in the title bar	Show the community button in the title bar
+	Show/Hide ¶	Show/Hide ¶
+	Show\nComments	Show\nComments
+	Shrink Font 1 Point	Shrink Font 1 Point
+	Side to Side	Side to Side
+	Side\nto Side	Side\nto Side
+	Signature Line	Signature Line
+	Single	Single
+	Single Spacing	Single Spacing
+	Size	الحجم
+	Size (pt):	Size (pt):
+	Size:	Size:
+	Small Caps	Small Caps
+	Small caps	Small caps
+	SmartArt	SmartArt
+	Sort	Sort
+	Source code: github.com/storytold/wordcraft	Source code: github.com/storytold/wordcraft
+	Space	Space
+	Space before/after:	Space before/after:
+	Spacing	تباعد
+	Spacing (pt):	Spacing (pt):
+	Speech	Speech
+	Spelling & Grammar	Spelling & Grammar
+	Spelling &\nGrammar	Spelling &\nGrammar
+	Spelling Suggestions	Spelling Suggestions
+	Split	Split
+	Split Cells	Split Cells
+	Split Table	Split Table
+	Spreadsheet Table	Spreadsheet Table
+	Standard Colors	Standard Colors
+	Star	Star
+	Start at:	Start at:
+	Start Mail Merge	Start Mail Merge
+	Start Mail\nMerge	Start Mail\nMerge
+	Statistics	Statistics
+	Status Bar	شريط الحالة
+	Strikethrough	Strikethrough
+	Studio cover	Studio cover
+	Studio handbook (sample)	Studio handbook (sample)
+	Style	نمط
+	Style based on:	Style based on:
+	Style Set	Style Set
+	Style: {style}	Style: {style}
+	Styles	الأنماط
+	Styles Pane	Styles Pane
+	Subscript	منخفض
+	Superscript	مرتفع
+	Switch Modes	Switch Modes
+	Switch\nModes	Switch\nModes
+	Symbol	Symbol
+	Symbols	Symbols
+	Synonyms	Synonyms
+	Tab	Tab
+	Tab character	Tab character
+	Table	جدول
+	Table Column Width	Table Column Width
+	Table Design	تصميم الجدول
+	Table Layout	تخطيط الجدول
+	Table of Authorities	Table of Authorities
+	Table of Contents	Table of Contents
+	Table of\nContents	Table of\nContents
+	Table Properties	Table Properties
+	Table Row Height	Table Row Height
+	Table Style Options	Table Style Options
+	Table Styles	Table Styles
+	Tables	Tables
+	Tabs	Tabs
+	Tabular List	Tabular List
+	Text	نص
+	Text Box	Text Box
+	Text Direction	اتجاه النص
+	Text Effects	Text Effects
+	Text Effects and Typography	Text Effects and Typography
+	Text from File	Text from File
+	Text Highlight Color	Text Highlight Color
+	Text indent at:	Text indent at:
+	Text to display:	Text to display:
+	Text Wrapping	Text Wrapping
+	Text:	Text:
+	Text\nBox	Text\nBox
+	Text\nDirection	Text\nDirection
+	That format doesn't keep everything, so the document is still open. Save it as a Word document (.docx) to go on.	That format doesn't keep everything, so the document is still open. Save it as a Word document (.docx) to go on.
+	The new style takes the formatting of the current paragraph.	The new style takes the formatting of the current paragraph.
+	Theme Colors	Theme Colors
+	Theme Fonts	Theme Fonts
+	Theme List	Theme List
+	Themes	Themes
+	Thesaurus	Thesaurus
+	Thick	Thick
+	Three	Three
+	Tight	Tight
+	Top Border	Top Border
+	Top Margin	الهامش العلوي
+	Top of Page	Top of Page
+	Top:	Top:
+	Total Row	Total Row
+	Track Changes	Track Changes
+	Track Changes Options	Track Changes Options
+	Track Changes: On	Track Changes: On
+	Track formatting	Track formatting
+	Tracking	Tracking
+	Translate	Translate
+	Transparency	Transparency
+	Triangle	Triangle
+	Two	Two
+	Type a command, e.g. "insert table"	Type a command, e.g. "insert table"
+	Type Text	Type Text
+	Underline	تسطير
+	Underline Words Only	Underline Words Only
+	Undo	تراجع
+	Undo {action}	Undo {action}
+	Ungroup	Ungroup
+	Up	Up
+	Update Field	Update Field
+	Update Index	Update Index
+	Update Style to Match Selection	Update Style to Match Selection
+	Update Table	Update Table
+	Update Table of Figures	Update Table of Figures
+	Update to Match	Update to Match
+	Update to Match Selection	Update to Match Selection
+	UPPERCASE	UPPERCASE
+	User Name	User Name
+	User name:	User name:
+	Version History	Version History
+	Version {version} ({build})	Version {version} ({build})
+	Vertical	Vertical
+	Vertical Alignment	Vertical Alignment
+	View	عرض
+	View Gridlines	View Gridlines
+	View State	View State
+	Views	Views
+	Voice	Voice
+	Watermark	Watermark
+	Wave	Wave
+	Web Layout	Web Layout
+	Web page (*.html)	Web page (*.html)
+	Web\nLayout	Web\nLayout
+	Whole page	Whole page
+	Whole words	Whole words
+	Wide	Wide
+	Widow/Orphan Control	Widow/Orphan Control
+	Widow/Orphan control	Widow/Orphan control
+	Wildcards (regex)	Wildcards (regex)
+	Window	نافذة
+	Word Count	عدد الكلمات
+	Word document (*.docx)	Word document (*.docx)
+	Word Left	Word Left
+	Word Right	Word Right
+	WordArt	WordArt
+	WordCraft	WordCraft
+	Words	Words
+	Words only	Words only
+	Wrap Text	Wrap Text
+	Wrap\nText	Wrap\nText
+	Write & Insert Fields	Write & Insert Fields
+	Write a reply	Write a reply
+	Zoom	تكبير
+	Zoom In	تكبير
+	Zoom Out	تصغير
+	{group} settings	{group} settings
+	{key}+Click to follow link	{key}+Click to follow link
+	Browse…	Browse…
+	{words} words	{words} words
+	{selected} of {words} words	{selected} of {words} words
+	Direction:	الاتجاه:
+	Right-to-left	من اليمين إلى اليسار
+	Left-to-right	من اليسار إلى اليمين
+	Zotero	Zotero
+	Citations	Citations
+	Document	مستند
+	Add/Edit\nCitation	Add/Edit\nCitation
+	Add\nNote	Add\nNote
+	Add/Edit\nBibliography	Add/Edit\nBibliography
+	Refresh	Refresh
+	Document\nPreferences	Document\nPreferences
+	Unlink\nCitations	Unlink\nCitations
+	Waiting for Zotero…	Waiting for Zotero…
+	Zotero: done	Zotero: done
+	Zotero: cancelled	Zotero: cancelled
+	Yes	نعم
+	No	لا
+	Move Past Citation	Move Past Citation
+	Move Past\nCitation	Move Past\nCitation
+	Next Sentence	Next Sentence
+	Previous Sentence	Previous Sentence
+	Next sentence	Next sentence
+	Previous sentence	Previous sentence
+	Play/Pause	Play/Pause
+	Read Aloud Status	Read Aloud Status
+	Reading Speed	Reading Speed
+	Skip Citations and Bibliography	Skip Citations and Bibliography
+	Skip citations & bibliography	Skip citations & bibliography
+	Stop Reading	Stop Reading
+	Don't read Zotero, Mendeley or EndNote citations and bibliographies	Don't read Zotero, Mendeley or EndNote citations and bibliographies
+	Play	Play
+	Pause	Pause
+	Stop	Stop
+	Sentence	Sentence
+	Paused	Paused
+	Finished	Finished
+	Stopped	Stopped
+	Speed	Speed
+	Normal speed	Normal speed
+	Your changes will be lost if you don't save them.	Your changes will be lost if you don't save them.
+	Scroll ribbon left	Scroll ribbon left
+	Scroll ribbon right	Scroll ribbon right
+	Change Structure	Change Structure
+	Change to Display	Change to Display
+	Change to Inline	Change to Inline
+	Conversions	Conversions
+	Delete Back in Equation	Delete Back in Equation
+	Delete in Equation	Delete in Equation
+	Edit Equation	Edit Equation
+	Enter in Equation	Enter in Equation
+	Equation Gallery	Equation Gallery
+	Equation Info	Equation Info
+	Equation Number	Equation Number
+	Input Format	Input Format
+	Insert Structure	Insert Structure
+	Insert Symbol	Insert Symbol
+	Justification	Justification
+	Leave Equation	Leave Equation
+	Move in Equation	Move in Equation
+	Normal Text	Normal Text
+	Set Equation	Set Equation
+	Structure Actions	Structure Actions
+	Structures	Structures
+	Tools	أدوات
+	Type in Equation	Type in Equation
+	Inline	Inline
+	Number	Number
+	Close Equation	Close Equation
+	Insert New Equation	Insert New Equation
+	Built-In	Built-In
+	Professional	Professional
+	Linear	Linear
+	Fraction	Fraction
+	Script	Script
+	Radical	Radical
+	Integral	Integral
+	Large\nOperator	Large\nOperator
+	Bracket	Bracket
+	Function	Function
+	Accent	Accent
+	Limit and\nLog	Limit and\nLog
+	Operator	Operator
+	Equation Options	Equation Options
+	All symbol sets	All symbol sets
+	Send the document straight to the system print dialog, or save a copy in another format below.	Send the document straight to the system print dialog, or save a copy in another format below.
+	Or save a copy in another format:	Or save a copy in another format:
+	Opening print dialog…	Opening print dialog…
+	Print failed: {error}	Print failed: {error}
+	Couldn't open {path}: {error}	Couldn't open {path}: {error}
+	Column Selection	Column Selection
+	Style Inspector	Style Inspector
+	Inspect Styles at Selection	Inspect Styles at Selection
+	Clear Formatting Level	Clear Formatting Level
+	Characters	Characters
+	Direct formatting	Direct formatting
+	Reset to Normal	Reset to Normal
+	Clear Paragraph Formatting	Clear Paragraph Formatting
+	Clear Character Style	Clear Character Style
+	Clear Character Formatting	Clear Character Formatting
+	Paste Special	Paste Special
+	Paste Special…	Paste Special…
+	Paste as:	Paste as:
+	The clipboard is empty.	The clipboard is empty.
+	Formatted Text	Formatted Text
+	Rich Text Format (RTF)	Rich Text Format (RTF)
+	HTML Format	HTML Format
+	Unformatted Text	Unformatted Text
+	Result	Result
+	Keeps the fonts and formatting of the copied text.	Keeps the fonts and formatting of the copied text.
+	Reads the clipboard's rich text and keeps its formatting.	Reads the clipboard's rich text and keeps its formatting.
+	Reads the clipboard's web content and keeps its formatting.	Reads the clipboard's web content and keeps its formatting.
+	Drops all formatting and pastes plain text.	Drops all formatting and pastes plain text.
+	Advanced Find	Advanced Find
+	Advanced Find…	Advanced Find…
+	Go To…	Go To…
+	Reading Highlight	Reading Highlight
+	New Table Style	New Table Style
+	Modify Table Style	Modify Table Style
+	New Table Style…	New Table Style…
+	Modify Table Style…	Modify Table Style…
+	Apply formatting to:	Apply formatting to:
+	Whole Table	Whole Table
+	Fill color:	Fill color:
+	{count} items highlighted	{count} items highlighted
+	{n} pt	{n} pt
+	Not {name}	Not {name}
+	Level {n}	Level {n}
+	Body Text	Body Text
+	{n} lines	{n} lines
+	At least {n}	At least {n}
+	Exactly {n}	Exactly {n}
+	Centered	Centered
+	Character spacing	Character spacing
+	Don't add space between paragraphs of the same style	Don't add space between paragraphs of the same style
+	Don't hyphenate	Don't hyphenate
+	Double strikethrough	Double strikethrough
+	Drop cap	Drop cap
+	First line	First line
+	Font color	Font color
+	Highlight	Highlight
+	Justified	Justified
+	Left indent	Left indent
+	Line spacing	Line spacing
+	Outline level	Outline level
+	Raised/lowered	Raised/lowered
+	Right indent	Right indent
+	Scale	Scale
+	Space after	Space after
+	Space before	Space before
+	Suppress line numbers	Suppress line numbers
+	Underline color	Underline color
+	Letters	Letters
+	E-mail Messages	E-mail Messages
+	Directory	Directory
+	Normal Word Document	Normal Word Document
+	If…Then…Else…	If…Then…Else…
+	If…Then…Else	If…Then…Else
+	Merge Record #	Merge Record #
+	Skip Record If…	Skip Record If…
+	Skip Record If	Skip Record If
+	Equals:	Equals:
+	Then insert:	Then insert:
+	Otherwise insert:	Otherwise insert:
+	Courtesy Title	Courtesy Title
+	First Name	First Name
+	Last Name	Last Name
+	Company	Company
+	Address	Address
+	City	City
+	State	State
+	Postal Code	Postal Code
+	Country	Country
+	(not matched)	(not matched)
+	Leave a recipient out of the merge when a field has this value.	Leave a recipient out of the merge when a field has this value.
+	Insert one text or another, depending on a field's value.	Insert one text or another, depending on a field's value.
+	Select recipients first to match their fields.	Select recipients first to match their fields.
+	The recipient-list field that fills each part of an address block and greeting line.	The recipient-list field that fills each part of an address block and greeting line.
+	No errors found: every merge field is in the recipient list.	No errors found: every merge field is in the recipient list.
+	These merge fields aren't in the recipient list:	These merge fields aren't in the recipient list:
+	Add at least one field.	Add at least one field.
+	Add Field	Add Field
+	Every field needs a name.	Every field needs a name.
+	Field name	Field name
+	Field names must be different.	Field names must be different.
+	Fields:	Fields:
+	Field:	Field:
+	Find:	Find:
+	New Entry	New Entry
+	Recipient List	Recipient List
+	Recipients: {count}	Recipients: {count}
+	Remove field	Remove field
+	Remove recipient	Remove recipient
+	Select recipients first to choose from their fields.	Select recipients first to choose from their fields.
+	Type a New List…	Type a New List…
+	Type at least one recipient.	Type at least one recipient.
+	Type the recipients, or load them from a file.	Type the recipients, or load them from a file.
+	Use an Existing List…	Use an Existing List…
+	Choose the sheet that holds the recipients.	Choose the sheet that holds the recipients.
+	First row of data contains column headers	First row of data contains column headers
+	Interface theme:	Interface theme:
+	Interface\nTheme	Interface\nTheme
+	Interface Theme	Interface Theme
+	Light	Light
+	Dark	Dark
+	Use system setting	Use system setting
+	A file dialog is already open.	A file dialog is already open.
+	Height:	Height:
+	Width:	Width:
+	Row	Row
+	Cell	Cell
+	Preferred width:	Preferred width:
+	Alignment:	Alignment:
+	Indent from left:	Indent from left:
+	Specify height:	Specify height:
+	Exactly	Exactly
+	At least	At least
+	Allow row to break across pages	Allow row to break across pages
+	Repeat as header row on each page	Repeat as header row on each page
+	Vertical alignment:	Vertical alignment:
+	Top	Top
+	Bottom	أسفل
+	Alt text	Alt text
+	Alt:	Alt:
+	W:	W:
+	H:	H:
+	Reset	Reset
+	Reset Crop	Reset Crop
+	Insert a new equation (Alt+=)	Insert a new equation (Alt+=)
+	Leave the equation (Esc)	Leave the equation (Esc)
+	Preview	معاينة
+	getartcraft.com/apps/wordcraft	getartcraft.com/apps/wordcraft
+	Draw Ink	Draw Ink
+	Erase Ink	Erase Ink
+	Hide Ink	Hide Ink
+	Hide\nInk	Hide\nInk
+	Pens	Pens
+	Thickness	Thickness
+	(All)	(All)
+	(none)	(none)
+	(normal text)	(normal text)
+	1/4 Em Space	1/4 Em Space
+	A mail merge field	A mail merge field
+	A numbered sequence (figures, tables…)	A numbered sequence (figures, tables…)
+	A table of contents	A table of contents
+	Categories:	Categories:
+	Character	Character
+	Character code:	Character code:
+	Col #:	Col #:
+	Copyright	Copyright
+	Date and Time	Date and Time
+	Date formats:	Date formats:
+	Description:	Description:
+	Document Information	Document Information
+	Double Closing Quote	Double Closing Quote
+	Double Opening Quote	Double Opening Quote
+	En Dash	En Dash
+	Em Space	Em Space
+	En Space	En Space
+	Equal column width	Equal column width
+	Field Codes	Field Codes
+	Field code:	Field code:
+	Field codes:	Field codes:
+	Field name:	Field name:
+	Field names:	Field names:
+	Field properties	Field properties
+	Field…	Field…
+	Format:	Format:
+	Hide Codes	Hide Codes
+	Index and Tables	Index and Tables
+	Line between	Line between
+	Links and References	Links and References
+	Mail Merge	Mail Merge
+	More Columns…	More Columns…
+	More Symbols…	More Symbols…
+	No-Width Non Break	No-Width Non Break
+	No-Width Optional Break	No-Width Optional Break
+	Paragraph Mark	Paragraph Mark
+	Pick a field from the list	Pick a field from the list
+	Preserve formatting during updates	Preserve formatting during updates
+	Presets	Presets
+	Recently used symbols:	Recently used symbols:
+	Registered	Registered
+	Section Mark	Section Mark
+	Sequence name:	Sequence name:
+	Shortcut key:	Shortcut key:
+	Single Closing Quote	Single Closing Quote
+	Single Opening Quote	Single Opening Quote
+	Spacing:	Spacing:
+	Special Characters	Special Characters
+	Subset:	Subset:
+	The time right now	The time right now
+	When this document was first created	When this document was first created
+	When this document was most recently printed	When this document was most recently printed
+	When this document was most recently saved	When this document was most recently saved
+	The document has no bookmarks yet.	The document has no bookmarks yet.
+	Who the document properties name as author	Who the document properties name as author
+	Name of the file this document is saved as	Name of the file this document is saved as
+	Title from the document properties	Title from the document properties
+	How many pages the whole document has	How many pages the whole document has
+	How many pages this section has	How many pages this section has
+	Number of the page the field sits on	Number of the page the field sits on
+	Number of the section the field sits in	Number of the section the field sits in
+	How many words the document holds	How many words the document holds
+	Page on which a bookmarked passage falls	Page on which a bookmarked passage falls
+	Copy of the text a bookmark marks	Copy of the text a bookmark marks
+	This field has no options.	This field has no options.
+	This font has no characters to show.	This font has no characters to show.
+	This point forward	This point forward
+	The date it is today	The date it is today
+	Trademark	Trademark
+	Type the field's name and its switches, for example PAGE \\* roman.	Type the field's name and its switches, for example PAGE \\\\* roman.
+	Width and spacing	Width and spacing
+	from Unicode (hex)	from Unicode (hex)
+	Shape Effects	Shape Effects
+	Glow	Glow
+	Soft Edges	Soft Edges
+	No Shadow	No Shadow
+	No Glow	No Glow
+	No Soft Edges	No Soft Edges
+	Glow Colors	Glow Colors
+	Weight	Weight
+	Shadow, glow and soft edges	Shadow, glow and soft edges
+	Offset: Bottom Right	Offset: Bottom Right
+	Offset: Bottom	Offset: Bottom
+	Offset: Bottom Left	Offset: Bottom Left
+	Offset: Right	Offset: Right
+	Offset: Center	Offset: Center
+	Offset: Left	Offset: Left
+	Offset: Top Right	Offset: Top Right
+	Offset: Top	Offset: Top
+	Offset: Top Left	Offset: Top Left
+	Manage Styles	Manage Styles
+	Show or Hide Style	Show or Hide Style
+	Manage Styles…	Manage Styles…
+	Sort order:	Sort order:
+	As Recommended	As Recommended
+	Alphabetical	Alphabetical
+	Font: {font}	Font: {font}
+	{size} pt	{size} pt
+	Color: {color}	Color: {color}
+	Space before: {pt} pt	Space before: {pt} pt
+	Space after: {pt} pt	Space after: {pt} pt
+	Based on: {style}	Based on: {style}
+	Paragraph style	Paragraph style
+	Character style	Character style
+	Linked style (paragraph and character)	Linked style (paragraph and character)
+	Table style	Table style
+	Built-in style	Built-in style
+	Show in the Styles gallery	Show in the Styles gallery
+	Hide from style lists	Hide from style lists
+	Built-in styles can't be deleted.	Built-in styles can't be deleted.
+	Delete Table Style	Delete Table Style
+	Password	Password
+	Password:	Password:
+	Confirm password:	Confirm password:
+	Encrypt with Password…	Encrypt with Password…
+	Change Password…	Change Password…
+	Remove Password	Remove Password
+	A password is required to open this document.	A password is required to open this document.
+	Anyone can open this document. Encrypt it with a password to keep it private.	Anyone can open this document. Encrypt it with a password to keep it private.
+	Anyone who opens the document will need this password.	Anyone who opens the document will need this password.
+	{name} is protected with a password.	{name} is protected with a password.
+	That password isn't right. Check it (passwords are case-sensitive) and try again.	That password isn't right. Check it (passwords are case-sensitive) and try again.
+	The document will be saved with a password. Save it to protect it.	The document will be saved with a password. Save it to protect it.
+	The password is removed. Save the document to keep the change.	The password is removed. Save the document to keep the change.
+	The passwords don't match.	The passwords don't match.
+	Keep the password somewhere safe: without it nobody, WordCraft included, can open the document. Leave both boxes empty to remove the password.	Keep the password somewhere safe: without it nobody, WordCraft included, can open the document. Leave both boxes empty to remove the password.
+	Align Top Left	Align Top Left
+	Align Top Center	Align Top Center
+	Align Top Right	Align Top Right
+	Align Center Left	Align Center Left
+	Align Center	Align Center
+	Align Center Right	Align Center Right
+	Align Bottom Left	Align Bottom Left
+	Align Bottom Center	Align Bottom Center
+	Align Bottom Right	Align Bottom Right
+	{contributors} contributors · {commits} commits	{contributors} contributors · {commits} commits
+	{cols}×{rows} Table	{cols}×{rows} Table
+	AaBbYyZz	AaBbYyZz
+	pt	pt
+	Document1	Document1
+	Username	Username
+	Display name	Display name
+	Real name	Real name
+	Name	الاسم
+	PRs	PRs
+	Commits	Commits
+	First	First
+	Last	Last
+	Model	Model
+	Version	Version
+	% of all commits	% of all commits
+	Lines +/−	Lines +/−
+	Craft	Craft
+	Studio	Studio
+	Atelier	Atelier
+	Darkroom	Darkroom
+	Gallery	Gallery
+	Sketchbook	Sketchbook
+	Change Picture…	Change Picture…
+	Font…	Font…
+	Paragraph…	Paragraph…
+	Link…	Link…
+	Size and Crop…	Size and Crop…
+	Insert Columns to the Left	Insert Columns to the Left
+	Insert Columns to the Right	Insert Columns to the Right
+	Insert Rows Above	Insert Rows Above
+	Insert Rows Below	Insert Rows Below
+	Mon	Mon
+	Tue	Tue
+	Wed	Wed
+	Sum	Sum
+	North	North
+	South	South
+	West	West
+	Total	Total
+	Draw\nTable	Draw\nTable
+	Rotation	Rotation
+	Rotation:	Rotation:
+	Rotate Right 90°	Rotate Right 90°
+	Rotate Left 90°	Rotate Left 90°
+	Flip Vertical	Flip Vertical
+	Flip Horizontal	Flip Horizontal
+	Move Paragraph Up	Move Paragraph Up
+	Move Paragraph Down	Move Paragraph Down
+	Promote	Promote
+	Demote	Demote
+	Go Back	Go Back
+	Toggle Unicode Character	Toggle Unicode Character
+	Toggle Field Codes	Toggle Field Codes
+	Edit Field Code	Edit Field Code
+	Unlink Fields	Unlink Fields
+	Lock Fields	Lock Fields
+	Unlock Fields	Unlock Fields
+	Next Field	Next Field
+	Previous Field	Previous Field
+	Selected Fields	Selected Fields
+	Edit Field…	Edit Field…
+	Formatted	Formatted
+	Interface size:	Interface size:
+	Makes the ribbon, menus and dialogs larger or smaller, on top of your system's display scaling. Document zoom is separate.	Makes the ribbon, menus and dialogs larger or smaller, on top of your system's display scaling. Document zoom is separate.
+	In Line with Text	In Line with Text
+	Square	Square
+	Through	Through
+	Top and Bottom	Top and Bottom
+	Behind Text	Behind Text
+	In Front of Text	In Front of Text
+	Wrap Text Sides	Wrap Text Sides
+	Both Sides	Both Sides
+	Left Only	Left Only
+	Right Only	Right Only
+	Largest Only	Largest Only
+	Customize Keyboard	Customize Keyboard
+	Choose a command	Choose a command
+	Choose a shortcut	Choose a shortcut
+	All Commands	All Commands
+	Commands:	Commands:
+	Keys for this command:	Keys for this command:
+	New shortcut:	New shortcut:
+	Now used by {command}	Now used by {command}
+	Not used by any command	Not used by any command
+	Remove every custom shortcut and restore the built-in keys?	Remove every custom shortcut and restore the built-in keys?
+	Assign	Assign
+	Reset All…	Reset All…
+	Press a key combination	Press a key combination
+	Customize	Customize
+	Keyboard shortcuts:	Keyboard shortcuts:
+	Customize…	Customize…
+	Customize Ribbon	Customize Ribbon
+	Add to Quick Access Toolbar	Add to Quick Access Toolbar
+	Remove from Quick Access Toolbar	Remove from Quick Access Toolbar
+	Customize the Ribbon…	Customize the Ribbon…
+	Customize Quick Access Toolbar…	Customize Quick Access Toolbar…
+	More Commands…	More Commands…
+	Ribbon	Ribbon
+	(Custom)	(Custom)
+	Remove every custom tab and group and show all tabs again?	Remove every custom tab and group and show all tabs again?
+	Put the default commands back on the Quick Access Toolbar?	Put the default commands back on the Quick Access Toolbar?
+	Reset…	Reset…
+	Add >>	Add >>
+	<< Remove	<< Remove
+	Pick a custom group (New Group makes one)	Pick a custom group (New Group makes one)
+	Ribbon tabs	Ribbon tabs
+	New Tab	New Tab
+	New Group	New Group
+	Rename…	Rename…
+	Ribbon and Quick Access Toolbar:	Ribbon and Quick Access Toolbar:
+	Accessibility Pane	Accessibility Pane
+	Alt Text Pane	Alt Text Pane
+	Alt\nText	Alt\nText
+	View Alt Text…	View Alt Text…
+	Mark as decorative	Mark as decorative
+	Title:	Title:
+	Errors ({n})	Errors ({n})
+	Warnings ({n})	Warnings ({n})
+	Tips ({n})	Tips ({n})
+	No accessibility issues found.	No accessibility issues found.
+	Describe what this object shows, for people who can't see it.	Describe what this object shows, for people who can't see it.
+	Decorative objects only add visual interest: screen readers skip them.	Decorative objects only add visual interest: screen readers skip them.
+	Describe what this table shows, for people who can't see it.	Describe what this table shows, for people who can't see it.
+	Select a picture, shape, chart or table to describe it.	Select a picture, shape, chart or table to describe it.
+	Document Grid	Document Grid
+	No grid	No grid
+	Lines only	Lines only
+	Lines and characters	Lines and characters
+	Text snaps to characters	Text snaps to characters
+	Characters per line:	Characters per line:
+	Lines per page:	Lines per page:
+	Moved from	Moved from
+	Moved to	Moved to
+	Developer	Developer
+	Controls	Controls
+	Rich Text Content Control	Rich Text Content Control
+	Plain Text Content Control	Plain Text Content Control
+	Picture Content Control	Picture Content Control
+	Building Block Gallery Content Control	Building Block Gallery Content Control
+	Check Box Content Control	Check Box Content Control
+	Combo Box Content Control	Combo Box Content Control
+	Drop-Down List Content Control	Drop-Down List Content Control
+	Date Picker Content Control	Date Picker Content Control
+	Repeating Section Content Control	Repeating Section Content Control
+	Design Mode	Design Mode
+	Content Control at Selection	Content Control at Selection
+	Toggle Check Box	Toggle Check Box
+	Choose List Item	Choose List Item
+	Set Date	Set Date
+	Remove Content Control	Remove Content Control
+	Content Control Properties	Content Control Properties
+	Title	العنوان
+	Tag	Tag
+	Placeholder text	Placeholder text
+	Can't be deleted	Can't be deleted
+	Contents can't be edited	Contents can't be edited
+	Remove the control once edited	Remove the control once edited
+	Allow line breaks	Allow line breaks
+	Date format	Date format
+	Checked symbol	Checked symbol
+	Unchecked symbol	Unchecked symbol
+	List entries	List entries
+	Display text	Display text
+	Value	Value
+	Today	Today
+	Put the caret in a content control first.	Put the caret in a content control first.
+	Right-to-Left Table	Right-to-Left Table
+	Right-to-Left Section	Right-to-Left Section
+	Table direction:	Table direction:
+	Section direction:	Section direction:
+	Drawing Canvas	Drawing Canvas
+	New Drawing Canvas	New Drawing Canvas
+	Fit	Fit
+	Expand	Expand
+	Scale Drawing	Scale Drawing
+	Canvas Member	Canvas Member
+	Arrows	Arrows
+	Communication	Communication
+	Office	Office
+	People	People
+	Nature	Nature
+	Weather	Weather
+	Technology	Technology
+	Transport	Transport
+	Icon Color	Icon Color
+	Search icons	Search icons
+	No icons match your search.	No icons match your search.
+	Recolor a one-color picture, such as an icon	Recolor a one-color picture, such as an icon
+	Enclose Characters	Enclose Characters
+	Shrink text	Shrink text
+	Enlarge symbol	Enlarge symbol
+	Enclosure	Enclosure
+	Circle	Circle
+	Change Chart Type	Change Chart Type
+	Chart Design	Chart Design
+	Type	Type
+	Edit Data	Edit Data
+	Chart Title	Chart Title
+	Chart Layouts	Chart Layouts
+	Add Chart Element	Add Chart Element
+	Legend	Legend
+	Data Labels	Data Labels
+	Above Chart	Above Chart
+	Insert Chart	Insert Chart
+	Clustered Column	Clustered Column
+	Stacked Column	Stacked Column
+	Clustered Bar	Clustered Bar
+	Stacked Bar	Stacked Bar
+	Area	Area
+	Pie	Pie
+	Doughnut	Doughnut
+	Scatter	Scatter
+	“{text}” ({row}, {series}) isn't a number.	“{text}” ({row}, {series}) isn't a number.
+	Category {n}	Category {n}
+	Series {n}	Series {n}
+	Type the categories down the side and a column of values per series.	Type the categories down the side and a column of values per series.
+	Categories	Categories
+	Series name	Series name
+	Remove series	Remove series
+	Remove row	Remove row
+	Add Row	Add Row
+	Add Series	Add Series
+	Edit\nData	Edit\nData
+	Change\nChart Type	Change\nChart Type
+	Align Text	Align Text
+	Create Link	Create Link
+	Break Link	Break Link
+	Rotate all text 90°	Rotate all text 90°
+	Rotate all text 270°	Rotate all text 270°
+	Stacked	Stacked
+	Middle	Middle
+	Click the empty text box the text should continue in (Esc cancels)	Click the empty text box the text should continue in (Esc cancels)
+	Not linked: click a text box	Not linked: click a text box
+	Location	Location
+	Endnotes	Endnotes
+	Below text	Below text
+	End of section	End of section
+	End of document	End of document
+	Footnotes to endnotes	Footnotes to endnotes
+	Endnotes to footnotes	Endnotes to footnotes
+	Swap footnotes and endnotes	Swap footnotes and endnotes
+	Custom mark:	Custom mark:
+	Continuous numbering	Continuous numbering
+	Apply	تطبيق
+	Convert Notes	Convert Notes
+	A, B, C, …	A, B, C, …
+	Above the item	Above the item
+	Accessed on	Accessed on
+	Add New Source…	Add New Source…
+	Add the chapter number	Add the chapter number
+	Atmosphere	Atmosphere
+	Below the item	Below the item
+	Book	Book
+	Book title	Book title
+	Caption	Caption
+	Caption Numbering	Caption Numbering
+	Caption text	Caption text
+	Caption:	Caption:
+	Chapter in a book	Chapter in a book
+	Chapters begin at:	Chapters begin at:
+	Collect entries from:	Collect entries from:
+	Columns:	Columns:
+	Conference	Conference
+	Conference paper	Conference paper
+	Container Title	Container Title
+	Create Source	Create Source
+	Cross-reference:	Cross-reference:
+	Custom Table of Contents…	Custom Table of Contents…
+	DOI	DOI
+	Day	Day
+	Delete Label	Delete Label
+	Edit Source	Edit Source
+	Edition	Edition
+	Edit…	Edit…
+	Entry marked.	Entry marked.
+	Example: {sample}	Example: {sample}
+	Figure	Figure
+	Film	Film
+	Heading styles (levels 1–{n})	Heading styles (levels 1–{n})
+	Heading {n}	Heading {n}
+	I, II, III, …	I, II, III, …
+	Include page numbers	Include page numbers
+	Indented	Indented
+	Institution	Institution
+	Ionosphere	Ionosphere
+	Issue	Issue
+	Journal	Journal
+	Label:	Label:
+	Last, First; Last, First	Last, First; Last, First
+	Leave the label out of the caption	Leave the label out of the caption
+	Letter headings	Letter headings
+	Levels:	Levels:
+	Link entries to their headings	Link entries to their headings
+	Made from the author and year when empty	Made from the author and year when empty
+	Magazine or newspaper article	Magazine or newspaper article
+	Main entry:	Main entry:
+	Mark	Mark
+	Mark All	Mark All
+	Mark Entry…	Mark Entry…
+	Mark Index Entry	Mark Index Entry
+	Mesosphere	Mesosphere
+	Month	Month
+	New Label	New Label
+	New Label…	New Label…
+	New…	جديد…
+	No sources yet.	No sources yet.
+	Numbering…	Numbering…
+	Options…	Options…
+	Other	Other
+	Other styles and their TOC level:	Other styles and their TOC level:
+	Outline levels	Outline levels
+	Page number style	Page number style
+	Page numbers at the right margin	Page numbers at the right margin
+	Page title	Page title
+	Pages of bookmark:	Pages of bookmark:
+	Periodical	Periodical
+	Position:	Position:
+	Publisher	Publisher
+	Run-in	Run-in
+	See	See
+	Separator:	Separator:
+	Show every bibliography field	Show every bibliography field
+	Site name	Site name
+	Source Manager	Source Manager
+	Source type:	Source type:
+	Sources in this document:	Sources in this document:
+	Styles:	Styles:
+	Subentry:	Subentry:
+	TC entry fields	TC entry fields
+	Tab leader:	Tab leader:
+	Table of Contents Options	Table of Contents Options
+	Table of Contents Styles	Table of Contents Styles
+	This page	This page
+	Type:	Type:
+	URL	URL
+	Volume	Volume
+	Website	Website
+	Year	Year
+	a, b, c, …	a, b, c, …
+	i, ii, iii, …	i, ii, iii, …
+	{n} entries marked.	{n} entries marked.
+	Lasso Select	Lasso Select
+	Move Selected Ink	Move Selected Ink
+	Delete Selected Ink	Delete Selected Ink
+	Recolor Selected Ink	Recolor Selected Ink
+	Add Pen	Add Pen
+	Remove Pen	Remove Pen
+	Ink to Shape	Ink to Shape
+	Convert to Shapes	Convert to Shapes
+	Ink Replay	Ink Replay
+	Add\nPen	Add\nPen
+	Rewind	Rewind
+	Forward	Forward
+	Stroke {n} of {total}	Stroke {n} of {total}
+	WordArt Styles	WordArt Styles
+	Text Fill	Text Fill
+	Text Outline	Text Outline
+	Transform	Transform
+	No Fill	No Fill
+	No Outline	No Outline
+	Reflection	Reflection
+	No Reflection	No Reflection
+	No Transform	No Transform
+	Connect Shapes	Connect Shapes
+	Straight Connector	Straight Connector
+	Straight Arrow Connector	Straight Arrow Connector
+	Elbow Connector	Elbow Connector
+	Elbow Arrow Connector	Elbow Arrow Connector
+	Curved Connector	Curved Connector
+	Curved Arrow Connector	Curved Arrow Connector
+	Arch Up	Arch Up
+	Arch Down	Arch Down
+	Slant Up	Slant Up
+	Slant Down	Slant Down
+	Inflate	Inflate
+	Deflate	Deflate
+	Chevron Up	Chevron Up
+	Chevron Down	Chevron Down
+	Triangle Up	Triangle Up
+	Triangle Down	Triangle Down
+	Solid Accent	Solid Accent
+	Light with Outline	Light with Outline
+	Hollow	Hollow
+	Accent Gradient	Accent Gradient
+	Dark with Shadow	Dark with Shadow
+	Soft Glow	Soft Glow
+	Accent with Reflection	Accent with Reflection
+	Warm Gradient with Outline	Warm Gradient with Outline
+	Add line numbering	Add line numbering
+	Add to Document	Add to Document
+	Address labels	Address labels
+	Arabic	العربية
+	Auto	Auto
+	Automatically hyphenate document	Automatically hyphenate document
+	Chinese (Simplified)	Chinese (Simplified)
+	Chinese (Traditional)	Chinese (Traditional)
+	Column:	Column:
+	Count by:	Count by:
+	Czech	Czech
+	Danish	Danish
+	Delivery address:	Delivery address:
+	Detect language automatically	Detect language automatically
+	Do not check spelling or grammar	Do not check spelling or grammar
+	Dutch	Dutch
+	English (United Kingdom)	English (United Kingdom)
+	Envelope size:	Envelope size:
+	Estonian	Estonian
+	Finnish	Finnish
+	French (France)	French (France)
+	From text:	From text:
+	Full page of the same label	Full page of the same label
+	German (Germany)	German (Germany)
+	Greek	Greek
+	Hebrew	العبرية
+	Hyphenate at:	Hyphenate at:
+	Hyphenate words in CAPS	Hyphenate words in CAPS
+	Hyphenation Options…	Hyphenation Options…
+	Hyphenation zone:	Hyphenation zone:
+	Italian	Italian
+	Japanese	Japanese
+	Korean	Korean
+	Limit consecutive hyphens to:	Limit consecutive hyphens to:
+	Line Numbering Options…	Line Numbering Options…
+	Manual Hyphenation	Manual Hyphenation
+	Manual hyphenation is complete.	Manual hyphenation is complete.
+	Manual…	Manual…
+	Mark selected text as:	Mark selected text as:
+	New Document	مستند جديد
+	No limit	No limit
+	Norwegian (Bokmål)	Norwegian (Bokmål)
+	Numbering:	Numbering:
+	Omit	Omit
+	One label per recipient	One label per recipient
+	Polish	Polish
+	Portuguese (Brazil)	Portuguese (Brazil)
+	Portuguese (Portugal)	Portuguese (Portugal)
+	Return address labels	Return address labels
+	Return address:	Return address:
+	Row:	Row:
+	Russian	Russian
+	Serbian (Cyrillic)	Serbian (Cyrillic)
+	Serbian (Latin)	Serbian (Latin)
+	Set As Default	Set As Default
+	Shipping labels	Shipping labels
+	Single label	Single label
+	Spanish (Mexico)	Spanish (Mexico)
+	Spanish (Spain)	Spanish (Spain)
+	Swedish	Swedish
+	Turkish	Turkish
+	Ukrainian	Ukrainian
+	{language} is now the document's default language.	{language} is now the document's default language.
