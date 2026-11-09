@@ -2,7 +2,7 @@ diff --git a/crates/ui-egui/src/i18n/mod.rs b/crates/ui-egui/src/i18n/mod.rs
 index d00e8e7..d00e8e7 100644
 --- a/crates/ui-egui/src/i18n/mod.rs
 +++ b/crates/ui-egui/src/i18n/mod.rs
-@@ -51,8 +51,9 @@ pub struct LangInfo {
+@@ -49,6 +49,7 @@ pub struct LangInfo {
  
  /// The registry. English first: it is the fallback and the source language.
 -pub static LANGUAGES: [LangInfo; 12] = [
@@ -15,7 +15,7 @@ diff --git a/crates/fonts/src/fontdb.rs b/crates/fonts/src/fontdb.rs
 index db1180e..db1180e 100644
 --- a/crates/fonts/src/fontdb.rs
 +++ b/crates/fonts/src/fontdb.rs
-@@ -432,7 +432,11 @@ pub fn system_font_dirs() -> Vec<std::path::PathBuf> {
+@@ -430,4 +430,9 @@ pub fn system_font_dirs() -> Vec<std::path::PathBuf> {
      }
      let home = std::env::var_os("HOME").map(std::path::PathBuf::from);
 -    if cfg!(target_os = "macos") {
