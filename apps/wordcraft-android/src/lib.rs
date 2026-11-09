@@ -107,6 +107,13 @@ fn load_prefs(app: &mut WordApp) {
     }
 }
 
+/// Android opens on WordCraft's existing Open page so saved recent documents are immediately
+/// available. The page already supports reopening a path through the normal document command.
+fn show_recent_documents(app: &mut WordApp) {
+    app.ui.backstage = true;
+    app.ui.backstage_page = "open".into();
+}
+
 /// How often the preferences are looked at; a change is written at the next look. Short enough
 /// that nothing a user would miss is stale, long enough to cost nothing while the app is idle.
 const PREFS_EVERY: Duration = Duration::from_secs(2);
@@ -357,6 +364,7 @@ pub fn android_main(app: winit::platform::android::activity::AndroidApp) {
         Box::new(|cc| {
             let mut app = WordApp::new(Session::new(wordcraft_doc::Document::new()), android_services());
             load_prefs(&mut app);
+            show_recent_documents(&mut app);
             // No caption buttons: the app draws its own title bar (Quick Access Toolbar, ribbon).
             // `integrated_titlebar` is the macOS switch that leaves room for the traffic lights
             // inside that bar; on Android nothing draws them, so it stays off.
@@ -503,6 +511,30 @@ mod tests {
         assert!(documents.contains(&"docx".to_string()));
         assert!(documents.contains(&"odt".to_string()));
         assert!(!documents.contains(&"png".to_string()));
+    }
+
+    #[test]
+    fn startup_shows_saved_recent_documents_on_the_open_page() {
+        let mut first = WordApp::new(
+            Session::new(wordcraft_doc::Document::new()),
+            Services::default(),
+        );
+        first.ui.recent = vec![
+            "/storage/emulated/0/Documents/بحث.docx".into(),
+            "/storage/emulated/0/Documents/Notes.odt".into(),
+        ];
+
+        let saved = serde_json::to_vec(&first.prefs()).unwrap();
+        let mut restored = WordApp::new(
+            Session::new(wordcraft_doc::Document::new()),
+            Services::default(),
+        );
+        restored.apply_prefs(serde_json::from_slice::<UiState>(&saved).unwrap());
+        show_recent_documents(&mut restored);
+
+        assert!(restored.ui.backstage);
+        assert_eq!(restored.ui.backstage_page, "open");
+        assert_eq!(restored.ui.recent, first.ui.recent);
     }
 
     #[test]
