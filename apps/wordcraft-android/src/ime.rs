@@ -297,6 +297,7 @@ fn selection_within(
 ) -> Option<Range<usize>> {
     let start = selection.start.min(selection.end);
     let end = selection.start.max(selection.end);
+    let composition = ordered(composition);
     (start >= composition.start && end <= composition.end)
         .then_some(start - composition.start..end - composition.start)
 }
