@@ -69,6 +69,7 @@ use wordcraft_engine::Session;
 use wordcraft_ui_egui::{FileDialogRequest, Services, UiState, WordApp};
 
 mod file_picker;
+mod ime;
 mod modifiers;
 mod prefs_watch;
 mod touch_scroll;
