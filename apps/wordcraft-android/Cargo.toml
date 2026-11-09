@@ -45,7 +45,7 @@ serde_json = { workspace = true }
 eframe = { workspace = true, features = ["default_fonts", "wgpu", "android-native-activity"] }
 # Needed to name `AndroidApp` for `NativeOptions::android_app`; eframe does not re-export
 # winit. Pinned to the exact version eframe/egui-winit build against.
-winit = { version = "=0.30.13", default-features = false, features = ["android-native-activity"] }
+winit = { version = "=0.30.13", default-features = false, features = ["android-native-activity", "x11"] }
 
 [package.metadata.android]
 package = "ai.storyteller.wordcraft"
