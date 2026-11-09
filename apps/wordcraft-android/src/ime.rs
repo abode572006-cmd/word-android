@@ -495,7 +495,7 @@ mod tests {
     #[test]
     fn snapshot_bridge_uses_selection_to_disambiguate_repeated_character_insert() {
         let base = ImeSnapshot::from_utf16("aaaaa".into(), (2, 2), None).unwrap();
-        let inserted = ImeSnapshot::from_utf16("aXaaaa".into(), (2, 2), None).unwrap();
+        let inserted = ImeSnapshot::from_utf16("aaXaaa".into(), (3, 3), None).unwrap();
         let mut bridge = SnapshotBridge::default();
         bridge.reset(base);
         let update = bridge.update(inserted).unwrap();
