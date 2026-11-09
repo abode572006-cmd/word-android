@@ -96,6 +96,8 @@ struct Pending {
     dir: PathBuf,
     /// File name for a Save dialog.
     name: String,
+    /// Case-insensitive name filter for the current folder.
+    search: String,
     /// Chosen files, for a multi-select dialog.
     picked: Vec<PathBuf>,
     /// Existing file awaiting explicit overwrite confirmation.
@@ -144,6 +146,7 @@ pub fn request(kind: Kind, title: &str, extensions: Option<Vec<String>>, suggest
             extensions,
             dir: PathBuf::new(),
             name: suggested.unwrap_or_default(),
+            search: String::new(),
             picked: Vec::new(),
             overwrite: None,
             note: None,
@@ -171,6 +174,17 @@ pub fn cancel() {
             let _ = tx.send(Vec::new());
         }
     });
+}
+
+/// Match a folder or file name against the current folder's search query.
+/// Lowercase matching works with Unicode names, including Arabic filenames.
+fn name_matches(path: &Path, query: &str) -> bool {
+    if query.trim().is_empty() {
+        return true;
+    }
+    path.file_name()
+        .map(|name| name.to_string_lossy().to_lowercase().contains(&query.trim().to_lowercase()))
+        .unwrap_or(false)
 }
 
 /// Roots to offer, as (label, path).
@@ -353,6 +367,15 @@ pub fn draw(ctx: &egui::Context) {
             }
 
             ui.separator();
+            ui.horizontal(|ui| {
+                ui.label("Search:");
+                ui.add(egui::TextEdit::singleline(&mut pending.search)
+                    .hint_text("Find a file or folder")
+                    .desired_width((w - 150.0).max(140.0)));
+                if !pending.search.is_empty() && ui.small_button("Clear").clicked() {
+                    pending.search.clear();
+                }
+            });
             let list_h = (h - 190.0).max(120.0);
             egui::ScrollArea::vertical().max_height(list_h).show(ui, |ui| match &listing {
                 Err(e) => {
@@ -361,6 +384,9 @@ pub fn draw(ctx: &egui::Context) {
                     ui.label("Grant \"All files access\" in Settings \u{25B8} Apps \u{25B8} Special access to browse shared storage.");
                 }
                 Ok((dirs, files)) => {
+                    let query = pending.search.trim();
+                    let dirs: Vec<_> = dirs.iter().filter(|p| name_matches(p, query)).collect();
+                    let files: Vec<_> = files.iter().filter(|p| name_matches(p, query)).collect();
                     if dirs.is_empty() && files.is_empty() {
                         ui.label("(empty \u{2014} no matching files)");
                     }
@@ -488,6 +514,16 @@ mod tests {
             std::process::id(),
             NEXT.fetch_add(1, Ordering::Relaxed)
         ))
+    }
+
+    #[test]
+    fn search_matches_unicode_file_and_folder_names_case_insensitively() {
+        assert!(name_matches(Path::new("/docs/مستند جديد.docx"), "مستند"));
+        assert!(name_matches(Path::new("/docs/Report.DOCX"), "report"));
+        assert!(name_matches(Path::new("/docs/Folder"), "FOLD"));
+        assert!(!name_matches(Path::new("/docs/notes.txt"), "report"));
+        assert!(name_matches(Path::new("/docs/notes.txt"), ""));
+        assert!(name_matches(Path::new("/docs/notes.txt"), "   "));
     }
 
     #[test]
