@@ -63,19 +63,11 @@ jobs:
           source = main.read_text()
           source = source.replace(
               "mod file_dialogs;",
-              """#[cfg(not(target_os = "android"))]
-mod file_dialogs;
-#[cfg(target_os = "android")]
-#[path = "file_dialogs_android.rs"]
-mod file_dialogs;"""
+              '#[cfg(not(target_os = "android"))]\nmod file_dialogs;\n#[cfg(target_os = "android")]\n#[path = "file_dialogs_android.rs"]\nmod file_dialogs;'
           )
           source = source.replace(
               "mod clipboard;",
-              """#[cfg(not(target_os = "android"))]
-mod clipboard;
-#[cfg(target_os = "android")]
-#[path = "clipboard_android.rs"]
-mod clipboard;"""
+              '#[cfg(not(target_os = "android"))]\nmod clipboard;\n#[cfg(target_os = "android")]\n#[path = "clipboard_android.rs"]\nmod clipboard;'
           )
           if "file_dialogs_android.rs" not in source or "clipboard_android.rs" not in source:
               raise SystemExit("Could not install Android host adapters")
