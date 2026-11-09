@@ -93,8 +93,9 @@ jobs:
         run: |
           APK="$(find target/release/apk -type f -name '*.apk' -print -quit)"
           test -n "$APK"
-          apksigner verify --verbose "$APK"
-          aapt dump badging "$APK" | grep -E "package: name='ai.storyteller.wordcraft'|native-code: 'arm64-v8a'"
+          BUILD_TOOLS_DIR="$(find "$ANDROID_HOME/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n1)"
+          "$BUILD_TOOLS_DIR/apksigner" verify --verbose "$APK"
+          "$BUILD_TOOLS_DIR/aapt" dump badging "$APK" | grep -E "package: name='ai.storyteller.wordcraft'|native-code: 'arm64-v8a'"
           mkdir -p ../artifacts
           cp "$APK" ../artifacts/wordcraft-android-arm64.apk
 
