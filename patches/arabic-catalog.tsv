@@ -1390,95 +1390,95 @@
 	Ribbon and Quick Access Toolbar:	الشريط وشريط أدوات الوصول السريع:
 	Accessibility Pane	جزء إمكانية الوصول
 	Alt Text Pane	جزء النص البديل
-	Alt\nText	Alt\nText
-	View Alt Text…	View Alt Text…
-	Mark as decorative	Mark as decorative
-	Title:	Title:
-	Errors ({n})	Errors ({n})
-	Warnings ({n})	Warnings ({n})
-	Tips ({n})	Tips ({n})
-	No accessibility issues found.	No accessibility issues found.
-	Describe what this object shows, for people who can't see it.	Describe what this object shows, for people who can't see it.
-	Decorative objects only add visual interest: screen readers skip them.	Decorative objects only add visual interest: screen readers skip them.
-	Describe what this table shows, for people who can't see it.	Describe what this table shows, for people who can't see it.
-	Select a picture, shape, chart or table to describe it.	Select a picture, shape, chart or table to describe it.
-	Document Grid	Document Grid
-	No grid	No grid
-	Lines only	Lines only
-	Lines and characters	Lines and characters
-	Text snaps to characters	Text snaps to characters
-	Characters per line:	Characters per line:
-	Lines per page:	Lines per page:
-	Moved from	Moved from
-	Moved to	Moved to
-	Developer	Developer
-	Controls	Controls
-	Rich Text Content Control	Rich Text Content Control
-	Plain Text Content Control	Plain Text Content Control
-	Picture Content Control	Picture Content Control
-	Building Block Gallery Content Control	Building Block Gallery Content Control
-	Check Box Content Control	Check Box Content Control
-	Combo Box Content Control	Combo Box Content Control
-	Drop-Down List Content Control	Drop-Down List Content Control
-	Date Picker Content Control	Date Picker Content Control
-	Repeating Section Content Control	Repeating Section Content Control
-	Design Mode	Design Mode
-	Content Control at Selection	Content Control at Selection
-	Toggle Check Box	Toggle Check Box
-	Choose List Item	Choose List Item
-	Set Date	Set Date
-	Remove Content Control	Remove Content Control
-	Content Control Properties	Content Control Properties
+	Alt\nText	النص\nالبديل
+	View Alt Text…	عرض النص البديل…
+	Mark as decorative	وضع علامة على أنه عنصر زخرفي
+	Title:	العنوان:
+	Errors ({n})	الأخطاء ({n})
+	Warnings ({n})	التحذيرات ({n})
+	Tips ({n})	التلميحات ({n})
+	No accessibility issues found.	لم يتم العثور على مشكلات في إمكانية الوصول.
+	Describe what this object shows, for people who can't see it.	صف ما يعرضه هذا الكائن للأشخاص الذين لا يستطيعون رؤيته.
+	Decorative objects only add visual interest: screen readers skip them.	تضيف العناصر الزخرفية قيمة جمالية فقط؛ وتتجاوزها قارئات الشاشة.
+	Describe what this table shows, for people who can't see it.	صف ما يعرضه هذا الجدول للأشخاص الذين لا يستطيعون رؤيته.
+	Select a picture, shape, chart or table to describe it.	حدد صورة أو شكلًا أو مخططًا أو جدولًا لوصفه.
+	Document Grid	شبكة المستند
+	No grid	بلا شبكة
+	Lines only	أسطر فقط
+	Lines and characters	أسطر ومحارف
+	Text snaps to characters	محاذاة النص إلى المحارف
+	Characters per line:	عدد المحارف في السطر:
+	Lines per page:	عدد الأسطر في الصفحة:
+	Moved from	نُقل من
+	Moved to	نُقل إلى
+	Developer	المطوّر
+	Controls	عناصر التحكم
+	Rich Text Content Control	عنصر تحكم محتوى نص منسق
+	Plain Text Content Control	عنصر تحكم محتوى نص عادي
+	Picture Content Control	عنصر تحكم محتوى صورة
+	Building Block Gallery Content Control	عنصر تحكم محتوى معرض الكتل الإنشائية
+	Check Box Content Control	عنصر تحكم محتوى مربع اختيار
+	Combo Box Content Control	عنصر تحكم محتوى مربع تحرير وسرد
+	Drop-Down List Content Control	عنصر تحكم محتوى قائمة منسدلة
+	Date Picker Content Control	عنصر تحكم محتوى منتقي التاريخ
+	Repeating Section Content Control	عنصر تحكم محتوى قسم متكرر
+	Design Mode	وضع التصميم
+	Content Control at Selection	عنصر تحكم المحتوى عند التحديد
+	Toggle Check Box	تبديل حالة مربع الاختيار
+	Choose List Item	اختيار عنصر من القائمة
+	Set Date	تعيين التاريخ
+	Remove Content Control	إزالة عنصر تحكم المحتوى
+	Content Control Properties	خصائص عنصر تحكم المحتوى
 	Title	العنوان
-	Tag	Tag
-	Placeholder text	Placeholder text
-	Can't be deleted	Can't be deleted
-	Contents can't be edited	Contents can't be edited
-	Remove the control once edited	Remove the control once edited
-	Allow line breaks	Allow line breaks
-	Date format	Date format
-	Checked symbol	Checked symbol
-	Unchecked symbol	Unchecked symbol
-	List entries	List entries
-	Display text	Display text
-	Value	Value
-	Today	Today
-	Put the caret in a content control first.	Put the caret in a content control first.
-	Right-to-Left Table	Right-to-Left Table
-	Right-to-Left Section	Right-to-Left Section
-	Table direction:	Table direction:
-	Section direction:	Section direction:
-	Drawing Canvas	Drawing Canvas
-	New Drawing Canvas	New Drawing Canvas
-	Fit	Fit
-	Expand	Expand
-	Scale Drawing	Scale Drawing
-	Canvas Member	Canvas Member
-	Arrows	Arrows
-	Communication	Communication
-	Office	Office
-	People	People
-	Nature	Nature
-	Weather	Weather
-	Technology	Technology
-	Transport	Transport
-	Icon Color	Icon Color
-	Search icons	Search icons
-	No icons match your search.	No icons match your search.
-	Recolor a one-color picture, such as an icon	Recolor a one-color picture, such as an icon
-	Enclose Characters	Enclose Characters
-	Shrink text	Shrink text
-	Enlarge symbol	Enlarge symbol
-	Enclosure	Enclosure
-	Circle	Circle
-	Change Chart Type	Change Chart Type
-	Chart Design	Chart Design
-	Type	Type
-	Edit Data	Edit Data
-	Chart Title	Chart Title
-	Chart Layouts	Chart Layouts
-	Add Chart Element	Add Chart Element
-	Legend	Legend
+	Tag	وسم
+	Placeholder text	نص نائب
+	Can't be deleted	لا يمكن حذفه
+	Contents can't be edited	لا يمكن تحرير المحتويات
+	Remove the control once edited	إزالة عنصر التحكم بعد تحريره
+	Allow line breaks	السماح بفواصل الأسطر
+	Date format	تنسيق التاريخ
+	Checked symbol	رمز التحديد
+	Unchecked symbol	رمز عدم التحديد
+	List entries	عناصر القائمة
+	Display text	نص العرض
+	Value	القيمة
+	Today	اليوم
+	Put the caret in a content control first.	ضع مؤشر الكتابة داخل عنصر تحكم المحتوى أولًا.
+	Right-to-Left Table	جدول من اليمين إلى اليسار
+	Right-to-Left Section	قسم من اليمين إلى اليسار
+	Table direction:	اتجاه الجدول:
+	Section direction:	اتجاه القسم:
+	Drawing Canvas	لوحة الرسم
+	New Drawing Canvas	لوحة رسم جديدة
+	Fit	احتواء
+	Expand	توسيع
+	Scale Drawing	تحجيم الرسم
+	Canvas Member	عنصر لوحة الرسم
+	Arrows	أسهم
+	Communication	اتصال
+	Office	مكتب
+	People	أشخاص
+	Nature	طبيعة
+	Weather	طقس
+	Technology	تقنية
+	Transport	نقل
+	Icon Color	لون الأيقونة
+	Search icons	البحث عن أيقونات
+	No icons match your search.	لا توجد أيقونات تطابق بحثك.
+	Recolor a one-color picture, such as an icon	إعادة تلوين صورة أحادية اللون، مثل الأيقونة
+	Enclose Characters	إحاطة المحارف
+	Shrink text	تصغير النص
+	Enlarge symbol	تكبير الرمز
+	Enclosure	إحاطة
+	Circle	دائرة
+	Change Chart Type	تغيير نوع المخطط
+	Chart Design	تصميم المخطط
+	Type	النوع
+	Edit Data	تحرير البيانات
+	Chart Title	عنوان المخطط
+	Chart Layouts	تخطيطات المخطط
+	Add Chart Element	إضافة عنصر إلى المخطط
+	Legend	وسيلة الإيضاح
 	Data Labels	Data Labels
 	Above Chart	Above Chart
 	Insert Chart	Insert Chart
