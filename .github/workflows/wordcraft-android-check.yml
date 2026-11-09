@@ -107,8 +107,46 @@ jobs:
         run: |
           sed -i 's/"links"/"links", "android-game-activity"/' apps/wordcraft/Cargo.toml
 
-      - name: Check complete WordCraft application for Android
+      - name: Prepare native Android library entrypoint
+        run: |
+          cp patches/android-lib.rs upstream-wordcraft/apps/wordcraft/src/android_lib.rs
+          cd upstream-wordcraft
+          python3 - <<'PY'
+          from pathlib import Path
+          cargo = Path("apps/wordcraft/Cargo.toml")
+          manifest = cargo.read_text()
+          manifest += """
+
+          [lib]
+          path = "src/android_lib.rs"
+          crate-type = ["cdylib", "lib"]
+
+          [features]
+          default = ["desktop"]
+          desktop = []
+
+          [[bin]]
+          name = "wordcraft"
+          path = "src/main.rs"
+          required-features = ["desktop"]
+
+          [target.'cfg(target_os = "android")'.dependencies]
+          android_logger = "0.15.1"
+
+          [package.metadata.android]
+          package = "ai.storyteller.wordcraft"
+          label = "WordCraft"
+          build_targets = ["aarch64-linux-android"]
+          min_sdk_version = 23
+          target_sdk_version = 35
+          """
+          if '[lib]' not in manifest or 'android_logger = "0.15.1"' not in manifest:
+              raise SystemExit("Android library target or logger dependency was not configured")
+          cargo.write_text(manifest)
+          PY
+
+      - name: Check native Android library and entrypoint
         working-directory: upstream-wordcraft
         run: |
           export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
-          cargo ndk -t arm64-v8a check --package wordcraft
+          cargo ndk -t arm64-v8a check --no-default-features --lib --package wordcraft
