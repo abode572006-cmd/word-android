@@ -485,6 +485,24 @@ mod tests {
     /// vendored-winit assertion was stale: the pinned upstream workspace resolves
     /// winit 0.30.13 from crates.io and does not contain vendor/winit.
     #[test]
+    fn file_dialog_filters_match_each_workflow() {
+        let pictures = open_extensions("picture").unwrap();
+        assert!(pictures.contains(&"png".to_string()));
+        assert!(pictures.contains(&"webp".to_string()));
+        assert!(!pictures.contains(&"docx".to_string()));
+
+        let recipients = open_extensions("recipients").unwrap();
+        assert!(recipients.contains(&"csv".to_string()));
+        assert!(recipients.contains(&"xlsx".to_string()));
+        assert!(!recipients.contains(&"png".to_string()));
+
+        let documents = open_extensions("document").unwrap();
+        assert!(documents.contains(&"docx".to_string()));
+        assert!(documents.contains(&"odt".to_string()));
+        assert!(!documents.contains(&"png".to_string()));
+    }
+
+    #[test]
     fn winit_enables_android_and_host_backends() {
         let manifest = std::fs::read_to_string(
             std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("Cargo.toml")
