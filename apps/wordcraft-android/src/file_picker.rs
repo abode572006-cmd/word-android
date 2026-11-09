@@ -98,6 +98,8 @@ struct Pending {
     name: String,
     /// Chosen files, for a multi-select dialog.
     picked: Vec<PathBuf>,
+    /// Existing file awaiting explicit overwrite confirmation.
+    overwrite: Option<PathBuf>,
     /// A message to show inside the picker (usually a permission problem).
     note: Option<String>,
     /// Whether the starting directory was already applied.
@@ -143,6 +145,7 @@ pub fn request(kind: Kind, title: &str, extensions: Option<Vec<String>>, suggest
             dir: PathBuf::new(),
             name: suggested.unwrap_or_default(),
             picked: Vec::new(),
+            overwrite: None,
             note: None,
             started: false,
             answer: Some(tx),
@@ -266,6 +269,14 @@ fn file_label(path: &Path) -> String {
     path.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default()
 }
 
+/// A Save As name must be one filename, not an absolute path or a path traversal.
+fn safe_file_name(name: &str) -> bool {
+    let path = Path::new(name);
+    path.components().count() == 1
+        && matches!(path.components().next(), Some(std::path::Component::Normal(_)))
+        && !name.contains('\\')
+}
+
 /// Draw the picker if this window has a dialog queued. Called from the shell's
 /// `ui`, *after* forwarding to the app's own `ui`, so the window floats above
 /// the editor.
@@ -365,6 +376,7 @@ pub fn draw(ctx: &egui::Context) {
                             if ui.button(label).clicked() {
                                 if kind == Kind::Save {
                                     pending.name = file_label(f);
+                                    pending.overwrite = None;
                                 } else if multi {
                                     if chosen {
                                         pending.picked.retain(|p| p != f);
@@ -384,13 +396,35 @@ pub fn draw(ctx: &egui::Context) {
             ui.horizontal_wrapped(|ui| match kind {
                 Kind::Save => {
                     ui.label("File name:");
-                    ui.add(egui::TextEdit::singleline(&mut pending.name).desired_width((w - 260.0).max(160.0)));
-                    if ui.button("Save").clicked() {
+                    let changed = ui.add(egui::TextEdit::singleline(&mut pending.name)
+                        .desired_width((w - 260.0).max(160.0))).changed();
+                    if changed {
+                        pending.overwrite = None;
+                    }
+                    if let Some(existing) = pending.overwrite.clone() {
+                        ui.colored_label(egui::Color32::from_rgb(220, 160, 60),
+                            format!("{} already exists. Replace it?", file_label(&existing)));
+                        if ui.button("Replace").clicked() {
+                            answer = Some(vec![existing]);
+                        }
+                        if ui.button("Back").clicked() {
+                            pending.overwrite = None;
+                        }
+                    } else if ui.button("Save").clicked() {
                         let name = pending.name.trim().to_string();
                         if name.is_empty() {
                             pending.note = Some("Enter a file name.".to_string());
+                        } else if !safe_file_name(&name) {
+                            pending.note = Some("Enter a file name without a folder path.".to_string());
                         } else {
-                            answer = Some(vec![dir.join(name)]);
+                            let target = dir.join(name);
+                            if target.is_file() {
+                                pending.overwrite = Some(target);
+                            } else if target.exists() {
+                                pending.note = Some("The selected name is a folder, not a file.".to_string());
+                            } else {
+                                answer = Some(vec![target]);
+                            }
                         }
                     }
                 }
@@ -457,5 +491,54 @@ mod tests {
     fn fonts_folder_is_named_consistently() {
         let media = Path::new("/storage/emulated/0/Android/media/ai.storyteller.wordcraft");
         assert_eq!(media.join("Fonts"), PathBuf::from("/storage/emulated/0/Android/media/ai.storyteller.wordcraft/Fonts"));
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::sync::atomic::{AtomicUsize, Ordering};
+
+    fn scratch() -> PathBuf {
+        static NEXT: AtomicUsize = AtomicUsize::new(0);
+        std::env::temp_dir().join(format!(
+            "wordcraft-picker-{}-{}",
+            std::process::id(),
+            NEXT.fetch_add(1, Ordering::Relaxed)
+        ))
+    }
+
+    #[test]
+    fn save_names_cannot_escape_the_selected_directory() {
+        for name in ["", ".", "..", "../outside.docx", "/tmp/outside.docx", "folder/file.docx", "folder\\file.docx"] {
+            assert!(!safe_file_name(name), "unsafe filename accepted: {name:?}");
+        }
+        assert!(safe_file_name("draft.docx"));
+        assert!(safe_file_name("مستند جديد.docx"));
+    }
+
+    #[test]
+    fn listing_filters_extensions_case_insensitively_and_hides_dotfiles() {
+        let dir = scratch();
+        std::fs::create_dir_all(dir.join("Folder")).unwrap();
+        std::fs::write(dir.join("draft.DOCX"), b"docx").unwrap();
+        std::fs::write(dir.join("picture.png"), b"png").unwrap();
+        std::fs::write(dir.join(".hidden.docx"), b"hidden").unwrap();
+
+        let filters = vec!["docx".to_string()];
+        let (dirs, files) = entries(&dir, Some(&filters)).unwrap();
+        assert_eq!(dirs, vec![dir.join("Folder")]);
+        assert_eq!(files, vec![dir.join("draft.DOCX")]);
+
+        std::fs::remove_dir_all(dir).unwrap();
+    }
+
+    #[test]
+    fn media_fonts_folder_is_derived_from_android_external_files_path() {
+        let external = Path::new("/storage/emulated/0/Android/data/ai.storyteller.wordcraft/files");
+        assert_eq!(
+            media_dir_from(external),
+            Some(PathBuf::from("/storage/emulated/0/Android/media/ai.storyteller.wordcraft"))
+        );
     }
 }
