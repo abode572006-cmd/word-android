@@ -1,0 +1,8 @@
+diff --git a/crates/ui-egui/src/backstage.rs b/crates/ui-egui/src/backstage.rs
+--- a/crates/ui-egui/src/backstage.rs
++++ b/crates/ui-egui/src/backstage.rs
+@@ -197,2 +197,2 @@ fn home_page(app: &mut WordApp, ui: &mut Ui) {
+-    ui.horizontal(|ui| {
+-        ui.spacing_mut().item_spacing = vec2(18.0, 0.0);
++    ui.horizontal_wrapped(|ui| {
++        ui.spacing_mut().item_spacing = vec2(18.0, 12.0);
