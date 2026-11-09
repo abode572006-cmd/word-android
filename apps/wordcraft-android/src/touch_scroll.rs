@@ -50,6 +50,12 @@ pub struct TouchScroll {
     /// A two-finger gesture has scrolled and has not ended: the apps are coasting on the last
     /// `TouchPhase::End` and must be told when this one finishes.
     scrolling: bool,
+    /// Suppress emulated pointer buttons from the start of a multi-touch gesture until all fingers lift.
+    suppress_pointer: bool,
+    /// Whether a single-finger pointer press was already delivered to egui.
+    pointer_down: bool,
+    /// Last pointer position, used to cancel a press when a second finger joins.
+    pointer_pos: egui::Pos2,
 }
 
 impl TouchScroll {
@@ -59,11 +65,15 @@ impl TouchScroll {
     /// itself (and the platform never reports modifiers — see `modifiers.rs`).
     pub fn apply(&mut self, raw: &mut egui::RawInput, modifiers: egui::Modifiers) {
         let events = std::mem::take(&mut raw.events);
+        let old_count = self.fingers.len();
+        let mut count_changed = false;
+        let mut gesture_seen = false;
 
-        // First the finger bookkeeping, over the whole batch: the events of one frame arrive in
-        // order, and the delta wanted is between this frame's centroid and the last one.
+        // Update touch state in event order. A change in finger count resets the centroid
+        // baseline: adding/removing a finger must not be mistaken for a swipe.
         for event in &events {
             if let egui::Event::Touch { id, phase, pos, .. } = event {
+                let before = self.fingers.len();
                 match phase {
                     egui::TouchPhase::Start | egui::TouchPhase::Move => {
                         self.fingers.insert(id.0, *pos);
@@ -72,24 +82,53 @@ impl TouchScroll {
                         self.fingers.remove(&id.0);
                     }
                 }
+                let after = self.fingers.len();
+                count_changed |= before != after;
+                gesture_seen |= after >= 2;
             }
         }
 
         let centroid = self.centroid();
         let gesture = self.fingers.len() >= 2;
-        // Positive is "the content moves down/right", which is what egui documents and what a finger
-        // dragged down the screen means.
-        let delta = match (gesture, centroid, self.last) {
+        let stable_count = !count_changed && old_count == self.fingers.len();
+        let delta = match (gesture && stable_count, centroid, self.last) {
             (true, Some(now), Some(prev)) => now - prev,
             _ => egui::Vec2::ZERO,
         };
 
-        let mut out = Vec::with_capacity(events.len() + 1);
+        // If the second finger joins while the first is dragging, release the emulated mouse
+        // press once. Otherwise its eventual release can look like a tap and activate a button
+        // after a two-finger scroll. Suppress pointer buttons for the whole gesture, including
+        // the frame in which the last finger lifts.
+        let suppress_buttons = self.suppress_pointer || gesture_seen || gesture;
+        let mut out = Vec::with_capacity(events.len() + 2);
+        if suppress_buttons && self.pointer_down {
+            out.push(egui::Event::PointerButton {
+                pos: self.pointer_pos,
+                button: egui::PointerButton::Primary,
+                pressed: false,
+                modifiers,
+            });
+            self.pointer_down = false;
+        }
+
         for event in events {
-            if gesture && matches!(event, egui::Event::PointerButton { .. }) {
-                continue;
+            match &event {
+                egui::Event::PointerMoved(pos) => {
+                    self.pointer_pos = *pos;
+                    out.push(event);
+                }
+                egui::Event::PointerButton { pos, pressed, .. } if suppress_buttons => {
+                    self.pointer_pos = *pos;
+                    let _ = pressed;
+                }
+                egui::Event::PointerButton { pos, pressed, .. } => {
+                    self.pointer_pos = *pos;
+                    self.pointer_down = *pressed;
+                    out.push(event);
+                }
+                _ => out.push(event),
             }
-            out.push(event);
         }
 
         if gesture && delta != egui::Vec2::ZERO {
@@ -101,8 +140,6 @@ impl TouchScroll {
                 modifiers,
             });
         } else if self.scrolling && !gesture {
-            // The fingers lifted. The apps' momentum code coasts from this, and a flick that was
-            // fast enough keeps the page moving after the hand is off it.
             self.scrolling = false;
             out.push(egui::Event::MouseWheel {
                 unit: egui::MouseWheelUnit::Point,
@@ -113,6 +150,7 @@ impl TouchScroll {
         }
 
         self.last = if gesture { centroid } else { None };
+        self.suppress_pointer = gesture;
         raw.events = out;
     }
 
@@ -216,6 +254,78 @@ mod tests {
         let mut raw = batch(vec![touch(1, egui::TouchPhase::Start, 100.0, 100.0)]);
         s.apply(&mut raw, Default::default());
         assert!(wheels(&raw).is_empty());
+    }
+
+    #[test]
+    fn a_two_finger_gesture_cancels_the_single_finger_press_and_suppresses_release() {
+        let mut s = TouchScroll::default();
+        let mut raw = batch(vec![
+            touch(1, egui::TouchPhase::Start, 100.0, 100.0),
+            press(100.0, 100.0),
+        ]);
+        s.apply(&mut raw, Default::default());
+        assert!(raw.events.iter().any(|e| matches!(e, egui::Event::PointerButton { pressed: true, .. })));
+
+        let mut raw = batch(vec![touch(2, egui::TouchPhase::Start, 200.0, 100.0)]);
+        s.apply(&mut raw, Default::default());
+        assert!(raw.events.iter().any(|e| matches!(e, egui::Event::PointerButton { pressed: false, .. })),
+            "joining a second finger cancels the earlier press");
+
+        let mut raw = batch(vec![
+            touch(1, egui::TouchPhase::Move, 100.0, 130.0),
+            touch(2, egui::TouchPhase::Move, 200.0, 130.0),
+            press(100.0, 130.0),
+        ]);
+        s.apply(&mut raw, Default::default());
+        assert_eq!(wheels(&raw).len(), 1);
+        assert!(!raw.events.iter().any(|e| matches!(e, egui::Event::PointerButton { .. })));
+
+        let mut raw = batch(vec![
+            touch(1, egui::TouchPhase::End, 100.0, 130.0),
+            touch(2, egui::TouchPhase::End, 200.0, 130.0),
+            egui::Event::PointerButton {
+                pos: egui::pos2(100.0, 130.0),
+                button: egui::PointerButton::Primary,
+                pressed: false,
+                modifiers: Default::default(),
+            },
+        ]);
+        s.apply(&mut raw, Default::default());
+        assert!(!raw.events.iter().any(|e| matches!(e, egui::Event::PointerButton { .. })),
+            "the platform's final release must not become a click");
+        assert_eq!(wheels(&raw).last().unwrap().1, egui::TouchPhase::End);
+    }
+
+    #[test]
+    fn changing_finger_count_does_not_create_a_scroll_jump() {
+        let mut s = TouchScroll::default();
+        s.apply(&mut batch(vec![
+            touch(1, egui::TouchPhase::Start, 100.0, 100.0),
+            touch(2, egui::TouchPhase::Start, 200.0, 100.0),
+        ]), Default::default());
+
+        let mut raw = batch(vec![
+            touch(1, egui::TouchPhase::Move, 100.0, 110.0),
+            touch(2, egui::TouchPhase::Move, 200.0, 110.0),
+        ]);
+        s.apply(&mut raw, Default::default());
+        assert_eq!(wheels(&raw).len(), 1);
+
+        let mut raw = batch(vec![touch(3, egui::TouchPhase::Start, 300.0, 110.0)]);
+        s.apply(&mut raw, Default::default());
+        assert!(wheels(&raw).is_empty(), "a third finger changes the centroid but is not a swipe");
+
+        let mut raw = batch(vec![
+            touch(1, egui::TouchPhase::Move, 100.0, 120.0),
+            touch(2, egui::TouchPhase::Move, 200.0, 120.0),
+            touch(3, egui::TouchPhase::Move, 300.0, 120.0),
+        ]);
+        s.apply(&mut raw, Default::default());
+        assert_eq!(wheels(&raw).len(), 1);
+
+        let mut raw = batch(vec![touch(3, egui::TouchPhase::End, 300.0, 120.0)]);
+        s.apply(&mut raw, Default::default());
+        assert!(wheels(&raw).is_empty(), "removing a finger must not jump the page");
     }
 
     #[test]
