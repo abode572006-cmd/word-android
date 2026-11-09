@@ -68,6 +68,12 @@ use std::time::Duration;
 use wordcraft_engine::Session;
 use wordcraft_ui_egui::{FileDialogRequest, Services, UiState, WordApp};
 
+#[cfg(target_os = "android")]
+use winit::platform::android::activity::{
+    input::{TextInputState, TextSpan},
+    AndroidApp,
+};
+
 mod file_picker;
 mod ime;
 mod modifiers;
@@ -380,6 +386,10 @@ pub fn android_main(app: winit::platform::android::activity::AndroidApp) {
                 modifiers: modifiers::Tracked::default(),
                 touch: touch_scroll::TouchScroll::default(),
                 prefs: prefs_watch::Writer::new(prefs_file(), PREFS_EVERY),
+                #[cfg(target_os = "android")]
+                ime: ime::SnapshotBridge::default(),
+                #[cfg(target_os = "android")]
+                ime_context: None,
             }))
         }),
     );
@@ -411,6 +421,77 @@ struct Shell {
     /// gives that ending, so a swipe from Recents would otherwise take every preference with it
     /// (see [`prefs_watch`]).
     prefs: prefs_watch::Writer,
+    /// GameActivity's text buffer is polled here because winit 0.30.13 drops TextEvent.
+    #[cfg(target_os = "android")]
+    ime: ime::SnapshotBridge,
+    /// Last document context published to GameTextInput.
+    #[cfg(target_os = "android")]
+    ime_context: Option<AndroidImeContext>,
+}
+
+#[cfg(target_os = "android")]
+#[derive(Clone, Debug, PartialEq, Eq)]
+struct AndroidImeContext {
+    snapshot: ime::ImeSnapshot,
+    story: wordcraft_engine::doc::StoryRef,
+    path: wordcraft_engine::doc::Path,
+    /// False for cross-paragraph selections and non-canvas fields.
+    map_selection: bool,
+}
+
+#[cfg(target_os = "android")]
+impl AndroidImeContext {
+    fn from_word_app(app: &WordApp) -> Self {
+        let focus = &app.session.sel.focus;
+        let paragraph = (app.canvas.focused && app.session.math.is_none())
+            .then(|| app.session.doc.para_at(focus))
+            .flatten();
+        let (text, map_selection) = match paragraph {
+            Some(paragraph) => (
+                paragraph.text.clone(),
+                app.session.sel.anchor.story == focus.story
+                    && app.session.sel.anchor.path == focus.path,
+            ),
+            None => (String::new(), false),
+        };
+        let anchor_off = if map_selection {
+            app.session.sel.anchor.off.min(text.len())
+        } else {
+            focus.off.min(text.len())
+        };
+        let focus_off = focus.off.min(text.len());
+        let anchor_utf16 = ime::byte_offset_to_utf16(&text, anchor_off).unwrap_or(0);
+        let focus_utf16 = ime::byte_offset_to_utf16(&text, focus_off).unwrap_or(anchor_utf16);
+        let _ = (anchor_utf16, focus_utf16);
+        Self {
+            snapshot: ime::ImeSnapshot {
+                text,
+                selection: anchor_off..focus_off,
+                composition: None,
+            },
+            story: focus.story,
+            path: focus.path.clone(),
+            map_selection,
+        }
+    }
+
+    fn android_state(&self) -> TextInputState {
+        let start = ime::byte_offset_to_utf16(
+            &self.snapshot.text,
+            self.snapshot.selection.start,
+        )
+        .unwrap_or(0);
+        let end = ime::byte_offset_to_utf16(
+            &self.snapshot.text,
+            self.snapshot.selection.end,
+        )
+        .unwrap_or(start);
+        TextInputState {
+            text: self.snapshot.text.clone(),
+            selection: TextSpan { start, end },
+            compose_region: None,
+        }
+    }
 }
 
 impl Shell {
@@ -428,6 +509,64 @@ impl Shell {
     /// Nothing can be unsaved by this point: `quit_requested` is only set once the "save
     /// changes?" prompt has been answered, so what is left is what `on_exit` would have done —
     /// save the preferences — and it is done here because a process exit runs no `on_exit`.
+    #[cfg(target_os = "android")]
+    fn poll_android_ime(&mut self, android: &AndroidApp, raw: &mut egui::RawInput) {
+        let context = AndroidImeContext::from_word_app(&self.inner);
+        if self.ime_context.as_ref() != Some(&context) {
+            android.set_text_input_state(context.android_state());
+            self.ime.reset(context.snapshot.clone());
+            self.ime_context = Some(context);
+            return;
+        }
+
+        let state = android.text_input_state();
+        let Some(snapshot) = ime::ImeSnapshot::from_utf16(
+            state.text,
+            (state.selection.start, state.selection.end),
+            state.compose_region.map(|span| (span.start, span.end)),
+        ) else {
+            log::warn!("ignoring Android IME snapshot with an invalid UTF-16 boundary");
+            return;
+        };
+
+        if let Some(update) = self.ime.update(snapshot) {
+            if let Some(replacement) = update.replacement {
+                if context.map_selection {
+                    self.inner.session.sel = wordcraft_engine::Selection {
+                        anchor: wordcraft_engine::doc::Pos::new(
+                            context.story,
+                            context.path.clone(),
+                            replacement.start,
+                        ),
+                        focus: wordcraft_engine::doc::Pos::new(
+                            context.story,
+                            context.path.clone(),
+                            replacement.end,
+                        ),
+                    };
+                }
+            } else if let Some(selection) = update.selection {
+                if context.map_selection {
+                    self.inner.session.sel = wordcraft_engine::Selection {
+                        anchor: wordcraft_engine::doc::Pos::new(
+                            context.story,
+                            context.path.clone(),
+                            selection.start,
+                        ),
+                        focus: wordcraft_engine::doc::Pos::new(
+                            context.story,
+                            context.path.clone(),
+                            selection.end,
+                        ),
+                    };
+                }
+            }
+            if let Some(event) = update.event {
+                raw.events.push(event);
+            }
+        }
+    }
+
     fn quit_if_asked(&mut self, ctx: &egui::Context) {
         if !self.inner.quit_requested {
             return;
@@ -469,6 +608,10 @@ impl eframe::App for Shell {
         // `touch_scroll`).
         self.touch.apply(raw, modifiers);
         self.inner.raw_input_hook(raw);
+        #[cfg(target_os = "android")]
+        if let Some(android) = APP.with(|slot| slot.borrow().clone()) {
+            self.poll_android_ime(&android, raw);
+        }
     }
 
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
