@@ -85,6 +85,73 @@ pub(crate) fn diff_text(previous: &str, current: &str) -> Option<TextDelta> {
     })
 }
 
+fn ordered(range: &Range<usize>) -> Range<usize> {
+    range.start.min(range.end)..range.start.max(range.end)
+}
+
+/// Diff two snapshots using their known cursor/selection positions before falling back to a
+/// text-only diff. This disambiguates repeated characters: deleting the second of "aaaa" must
+/// not be mistaken for deleting the last one.
+fn diff_snapshots(previous: &ImeSnapshot, current: &ImeSnapshot) -> Option<TextDelta> {
+    if previous.text == current.text {
+        return None;
+    }
+    let old_selection = ordered(&previous.selection);
+    if current.selection.start == current.selection.end {
+        let cursor = current.selection.end;
+        if old_selection.end <= previous.text.len()
+            && old_selection.start <= cursor
+            && cursor <= current.text.len()
+            && previous.text.get(..old_selection.start) == current.text.get(..old_selection.start)
+            && previous.text.get(old_selection.end..) == current.text.get(cursor..)
+        {
+            return Some(TextDelta {
+                replaced: old_selection.clone(),
+                inserted: current.text[old_selection.start..cursor].to_owned(),
+            });
+        }
+
+        if old_selection.start == old_selection.end {
+            if let Some(removed) = previous.text.len().checked_sub(current.text.len()) {
+                if removed > 0 {
+                    let end = cursor.checked_add(removed)?;
+                    if end <= previous.text.len()
+                        && previous.text.get(..cursor) == current.text.get(..cursor)
+                        && previous.text.get(end..) == current.text.get(cursor..)
+                    {
+                        return Some(TextDelta {
+                            replaced: cursor..end,
+                            inserted: String::new(),
+                        });
+                    }
+                }
+            }
+        }
+    }
+    diff_text(&previous.text, &current.text)
+}
+
+/// Composition spans identify the exact new preedit text even when the IME cursor is inside it.
+fn diff_composition(
+    previous: &ImeSnapshot,
+    current: &ImeSnapshot,
+    composition: &Range<usize>,
+) -> Option<TextDelta> {
+    let replaced = ordered(&previous.selection);
+    let composition = ordered(composition);
+    if replaced.end <= previous.text.len()
+        && composition.end <= current.text.len()
+        && previous.text.get(..replaced.start) == current.text.get(..composition.start)
+        && previous.text.get(replaced.end..) == current.text.get(composition.end..)
+    {
+        return Some(TextDelta {
+            replaced,
+            inserted: current.text[composition].to_owned(),
+        });
+    }
+    diff_text(&previous.text, &current.text)
+}
+
 /// A validated GameTextInput snapshot. All spans are UTF-8 byte ranges into `text`.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub(crate) struct ImeSnapshot {
@@ -148,10 +215,14 @@ impl SnapshotBridge {
         }
         let baseline = self.baseline.as_ref()?.clone();
         let previous = self.last_observed.as_ref()?.clone();
-        let delta = diff_text(&baseline.text, &current.text);
+        let delta = current
+            .composition
+            .as_ref()
+            .map(|composition| diff_composition(&baseline, &current, composition))
+            .unwrap_or_else(|| diff_snapshots(&baseline, &current));
 
         if let Some(composition) = current.composition.clone() {
-            let preedit = current.text.get(composition.clone())?.to_owned();
+            let preedit = current.text.get(ordered(&composition))?.to_owned();
             let active_range_chars = selection_within(&current.selection, &composition)
                 .and_then(|range| byte_range_to_chars(&preedit, range));
             self.last_observed = Some(current);
@@ -401,6 +472,37 @@ mod tests {
                 before_chars: 1,
                 after_chars: 0,
             }))
+        );
+    }
+
+    #[test]
+    fn snapshot_bridge_uses_selection_to_disambiguate_repeated_character_deletion() {
+        let base = ImeSnapshot::from_utf16("aaaaa".into(), (2, 2), None).unwrap();
+        let deleted_before = ImeSnapshot::from_utf16("aaaa".into(), (1, 1), None).unwrap();
+        let mut bridge = SnapshotBridge::default();
+        bridge.reset(base);
+        let update = bridge.update(deleted_before).unwrap();
+        assert_eq!(update.replacement, Some(1..2));
+        assert_eq!(
+            update.event,
+            Some(egui::Event::Ime(egui::ImeEvent::DeleteSurrounding {
+                before_chars: 1,
+                after_chars: 0,
+            }))
+        );
+    }
+
+    #[test]
+    fn snapshot_bridge_uses_selection_to_disambiguate_repeated_character_insert() {
+        let base = ImeSnapshot::from_utf16("aaaaa".into(), (2, 2), None).unwrap();
+        let inserted = ImeSnapshot::from_utf16("aXaaaa".into(), (2, 2), None).unwrap();
+        let mut bridge = SnapshotBridge::default();
+        bridge.reset(base);
+        let update = bridge.update(inserted).unwrap();
+        assert_eq!(update.replacement, Some(2..2));
+        assert_eq!(
+            update.event,
+            Some(egui::Event::Ime(egui::ImeEvent::Commit("X".into())))
         );
     }
 
