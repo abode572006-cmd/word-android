@@ -63,29 +63,29 @@ jobs:
           source = path.read_text(encoding="utf-8")
 
           equation_anchor = """                egui::Event::Paste(t) => {
-                              let _ = app.run("equation.type", json!({"text": t}));
-                              continue;
-                          }"""
+                      let _ = app.run("equation.type", json!({"text": t}));
+                      continue;
+                  }"""
           equation_insert = """                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
-                              for _ in 0..(*before_chars).min(256) {
-                                  let _ = app.run("equation.backspace", json!({}));
-                              }
-                              for _ in 0..(*after_chars).min(256) {
-                                  let _ = app.run("equation.delete", json!({}));
-                              }
-                              continue;
-                          }
+                      for _ in 0..(*before_chars).min(256) {
+                          let _ = app.run("equation.backspace", json!({}));
+                      }
+                      for _ in 0..(*after_chars).min(256) {
+                          let _ = app.run("equation.delete", json!({}));
+                      }
+                      continue;
+                  }
           """
           body_anchor = """            egui::Event::Paste(t) => {
-                          // Mod+Alt+V arrives as a paste too (the shell reads the clipboard): Paste Special."""
+                  // Mod+Alt+V arrives as a paste too (the shell reads the clipboard): Paste Special."""
           body_insert = """            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
-                          for _ in 0..before_chars.min(256) {
-                              let _ = app.run("text.backspace", json!({}));
-                          }
-                          for _ in 0..after_chars.min(256) {
-                              let _ = app.run("text.delete", json!({}));
-                          }
-                      }
+                  for _ in 0..before_chars.min(256) {
+                      let _ = app.run("text.backspace", json!({}));
+                  }
+                  for _ in 0..after_chars.min(256) {
+                      let _ = app.run("text.delete", json!({}));
+                  }
+              }
           """
           assert source.count(equation_anchor) == 1, "pinned equation IME insertion point changed"
           assert source.count(body_anchor) == 1, "pinned body IME insertion point changed"
