@@ -60,36 +60,43 @@ jobs:
           from pathlib import Path
 
           path = Path("upstream-wordcraft/crates/ui-egui/src/keys.rs")
-          source = path.read_text(encoding="utf-8")
+          lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
 
-          equation_anchor = "                egui::Event::Paste(t) => {"
-          equation_insert = (
-              "                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\n"
-              "                    for _ in 0..(*before_chars).min(256) {\n"
-              "                        let _ = app.run(\"equation.backspace\", json!({}));\n"
-              "                    }\n"
-              "                    for _ in 0..(*after_chars).min(256) {\n"
-              "                        let _ = app.run(\"equation.delete\", json!({}));\n"
-              "                    }\n"
-              "                    continue;\n"
-              "                }\n"
+          def insert_before_exact_line(target, addition, description):
+              matches = [i for i, line in enumerate(lines) if line.rstrip("\\r\\n") == target]
+              assert len(matches) == 1, f"pinned {description} insertion point changed: {len(matches)} matches"
+              lines[matches[0]:matches[0]] = addition.splitlines(keepends=True)
+
+          insert_before_exact_line(
+              "                egui::Event::Paste(t) => {",
+              (
+                  "                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\\n"
+                  "                    for _ in 0..(*before_chars).min(256) {\\n"
+                  "                        let _ = app.run(\\\"equation.backspace\\\", json!({}));\\n"
+                  "                    }\\n"
+                  "                    for _ in 0..(*after_chars).min(256) {\\n"
+                  "                        let _ = app.run(\\\"equation.delete\\\", json!({}));\\n"
+                  "                    }\\n"
+                  "                    continue;\\n"
+                  "                }\\n"
+              ),
+              "equation IME",
           )
-          body_anchor = "            egui::Event::Paste(t) => {"
-          body_insert = (
-              "            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\n"
-              "                for _ in 0..before_chars.min(256) {\n"
-              "                    let _ = app.run(\"text.backspace\", json!({}));\n"
-              "                }\n"
-              "                for _ in 0..after_chars.min(256) {\n"
-              "                    let _ = app.run(\"text.delete\", json!({}));\n"
-              "                }\n"
-              "            }\n"
+          insert_before_exact_line(
+              "            egui::Event::Paste(t) => {",
+              (
+                  "            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\\n"
+                  "                for _ in 0..before_chars.min(256) {\\n"
+                  "                    let _ = app.run(\\\"text.backspace\\\", json!({}));\\n"
+                  "                }\\n"
+                  "                for _ in 0..after_chars.min(256) {\\n"
+                  "                    let _ = app.run(\\\"text.delete\\\", json!({}));\\n"
+                  "                }\\n"
+                  "            }\\n"
+              ),
+              "body IME",
           )
-          assert source.count(equation_anchor) == 1, "pinned equation IME insertion point changed"
-          assert source.count(body_anchor) == 1, "pinned body IME insertion point changed"
-          source = source.replace(equation_anchor, equation_insert + equation_anchor, 1)
-          source = source.replace(body_anchor, body_insert + body_anchor, 1)
-          path.write_text(source, encoding="utf-8")
+          path.write_text("".join(lines), encoding="utf-8")
           print("Added bounded DeleteSurrounding handling to the pinned WordCraft editor")
           PY
           test -f apps/wordcraft-android/res/values/styles.xml
