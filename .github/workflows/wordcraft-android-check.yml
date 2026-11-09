@@ -8,6 +8,7 @@ on:
       - ".github/workflows/wordcraft-android-check.yml"
       - "patches/0002-arabic-localization.patch"
       - "patches/0003-arabic-interface-bidi.patch"
+      - "patches/0004-responsive-home-template-gallery.patch"
       - "patches/arabic-catalog.tsv"
       - "apps/wordcraft-android/**"
       - "patches/0001-wordcraft-android-port.patch"
@@ -67,6 +68,8 @@ jobs:
           git -C upstream-wordcraft apply ../patches/0002-arabic-localization.patch
           git -C upstream-wordcraft apply --check ../patches/0003-arabic-interface-bidi.patch
           git -C upstream-wordcraft apply ../patches/0003-arabic-interface-bidi.patch
+          git -C upstream-wordcraft apply --check ../patches/0004-responsive-home-template-gallery.patch
+          git -C upstream-wordcraft apply ../patches/0004-responsive-home-template-gallery.patch
           cp patches/arabic-catalog.tsv upstream-wordcraft/crates/ui-egui/src/i18n/ar.tsv
           cp -R apps/wordcraft-android upstream-wordcraft/apps/
           python3 - <<'PY'
