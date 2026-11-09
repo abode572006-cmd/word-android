@@ -5,11 +5,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
 import android.view.WindowManager;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.PickVisualMediaRequest;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
@@ -23,10 +25,9 @@ import java.io.InputStream;
 
 /** AndroidX GameActivity host for WordCraft's Rust/winit GameActivity backend. */
 public final class MainActivity extends GameActivity {
-    private static final int REQUEST_PICK_IMAGE = 4103;
-
     private boolean photoPickerResultReady = false;
     private String photoPickerResult = null;
+    private ActivityResultLauncher<PickVisualMediaRequest> photoPickerLauncher;
 
     static {
         System.loadLibrary("wordcraft");
@@ -43,8 +44,9 @@ public final class MainActivity extends GameActivity {
     }
 
     /**
-     * Open Android's native Photo Picker on Android 13+, with the system document picker
-     * as a compatibility fallback on older versions. No photo-library permission is needed.
+     * Open AndroidX's recommended Photo Picker contract. It prefers the native system picker,
+     * then uses the available system/Google fallback or ACTION_OPEN_DOCUMENT on older devices.
+     * The picker grants access only to the item selected; no photo-library permission is needed.
      */
     public void pickImage() {
         runOnUiThread(() -> {
@@ -52,46 +54,33 @@ public final class MainActivity extends GameActivity {
                 photoPickerResultReady = false;
                 photoPickerResult = null;
             }
-
-            Intent intent;
-            if (Build.VERSION.SDK_INT >= 33) {
-                intent = new Intent(MediaStore.ACTION_PICK_IMAGES);
-            } else {
-                intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                intent.setType("image/*");
-            }
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             try {
-                startActivityForResult(intent, REQUEST_PICK_IMAGE);
+                photoPickerLauncher.launch(
+                        new PickVisualMediaRequest.Builder()
+                                .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
+                                .build()
+                );
             } catch (RuntimeException error) {
                 Log.e("WordCraft", "Could not launch Android Photo Picker", error);
-                synchronized (this) {
-                    photoPickerResult = "";
-                    photoPickerResultReady = true;
-                }
+                completePhotoPickerResult(null);
             }
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode != REQUEST_PICK_IMAGE) {
+    private void handlePhotoPickerResult(Uri uri) {
+        if (uri == null) {
+            completePhotoPickerResult(null);
             return;
         }
+        // Cloud-backed or very large images can take time to stream. Never copy them on
+        // Android's main thread; WordCraft receives the result when the copy has completed.
+        new Thread(() -> completePhotoPickerResult(copyPickedImageToCache(uri)),
+                "wordcraft-photo-copy").start();
+    }
 
-        String path = null;
-        if (resultCode == RESULT_OK && data != null) {
-            Uri uri = data.getData();
-            if (uri != null) {
-                path = copyPickedImageToCache(uri);
-            }
-        }
-        synchronized (this) {
-            photoPickerResult = path;
-            photoPickerResultReady = true;
-        }
+    private synchronized void completePhotoPickerResult(String path) {
+        photoPickerResult = path;
+        photoPickerResultReady = true;
     }
 
     /** Null means no result yet; an empty string means cancelled or copy failed. */
@@ -165,6 +154,10 @@ public final class MainActivity extends GameActivity {
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         hideSystemBars();
         super.onCreate(savedInstanceState);
+        photoPickerLauncher = registerForActivityResult(
+                new ActivityResultContracts.PickVisualMedia(),
+                this::handlePhotoPickerResult
+        );
     }
 
     @Override

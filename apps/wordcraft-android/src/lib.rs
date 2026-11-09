@@ -844,8 +844,8 @@ mod tests {
             root.join("game-activity/app/src/main/AndroidManifest.xml")
         ).unwrap();
 
-        assert!(activity.contains("MediaStore.ACTION_PICK_IMAGES"));
-        assert!(activity.contains("Intent.ACTION_OPEN_DOCUMENT"));
+        assert!(activity.contains("ActivityResultContracts.PickVisualMedia"));
+        assert!(activity.contains("PickVisualMedia.ImageOnly.INSTANCE"));
         assert!(activity.contains("copyPickedImageToCache"));
         assert!(activity.contains("takePhotoPickerResult"));
         assert!(!activity.contains("requestImageReadAccess"));

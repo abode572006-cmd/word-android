@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation "androidx.activity:activity:1.9.3"
     implementation "androidx.games:games-activity:4.4.0"
     implementation "androidx.core:core:1.15.0"
     // GameActivity extends AppCompatActivity; declare AppCompat explicitly.
