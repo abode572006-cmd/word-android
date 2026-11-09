@@ -460,9 +460,6 @@ impl AndroidImeContext {
             focus.off.min(text.len())
         };
         let focus_off = focus.off.min(text.len());
-        let anchor_utf16 = ime::byte_offset_to_utf16(&text, anchor_off).unwrap_or(0);
-        let focus_utf16 = ime::byte_offset_to_utf16(&text, focus_off).unwrap_or(anchor_utf16);
-        let _ = (anchor_utf16, focus_utf16);
         Self {
             snapshot: ime::ImeSnapshot {
                 text,
@@ -530,35 +527,41 @@ impl Shell {
         };
 
         if let Some(update) = self.ime.update(snapshot) {
-            if let Some(replacement) = update.replacement {
-                if context.map_selection {
-                    self.inner.session.sel = wordcraft_engine::Selection {
-                        anchor: wordcraft_engine::doc::Pos::new(
-                            context.story,
-                            context.path.clone(),
-                            replacement.start,
-                        ),
-                        focus: wordcraft_engine::doc::Pos::new(
-                            context.story,
-                            context.path.clone(),
-                            replacement.end,
-                        ),
-                    };
-                }
-            } else if let Some(selection) = update.selection {
-                if context.map_selection {
-                    self.inner.session.sel = wordcraft_engine::Selection {
-                        anchor: wordcraft_engine::doc::Pos::new(
-                            context.story,
-                            context.path.clone(),
-                            selection.start,
-                        ),
-                        focus: wordcraft_engine::doc::Pos::new(
-                            context.story,
-                            context.path.clone(),
-                            selection.end,
-                        ),
-                    };
+            let is_preedit = matches!(
+                update.event.as_ref(),
+                Some(egui::Event::Ime(egui::ImeEvent::Preedit { .. }))
+            );
+            if !is_preedit {
+                if let Some(replacement) = update.replacement {
+                    if context.map_selection {
+                        self.inner.session.sel = wordcraft_engine::Selection {
+                            anchor: wordcraft_engine::doc::Pos::new(
+                                context.story,
+                                context.path.clone(),
+                                replacement.start,
+                            ),
+                            focus: wordcraft_engine::doc::Pos::new(
+                                context.story,
+                                context.path.clone(),
+                                replacement.end,
+                            ),
+                        };
+                    }
+                } else if let Some(selection) = update.selection {
+                    if context.map_selection {
+                        self.inner.session.sel = wordcraft_engine::Selection {
+                            anchor: wordcraft_engine::doc::Pos::new(
+                                context.story,
+                                context.path.clone(),
+                                selection.start,
+                            ),
+                            focus: wordcraft_engine::doc::Pos::new(
+                                context.story,
+                                context.path.clone(),
+                                selection.end,
+                            ),
+                        };
+                    }
                 }
             }
             if let Some(event) = update.event {
