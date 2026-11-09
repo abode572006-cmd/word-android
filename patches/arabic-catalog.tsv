@@ -684,121 +684,121 @@
 	Rows & Columns	الصفوف والأعمدة
 	Ruler	المسطرة
 	Rules	القواعد
-	Résumé	Résumé
+	Résumé	السيرة الذاتية
 	Save	حفظ
-	Save a copy in another format. Printing goes through a PDF you can print from any viewer.	Save a copy in another format. Printing goes through a PDF you can print from any viewer.
+	Save a copy in another format. Printing goes through a PDF you can print from any viewer.	احفظ نسخة بتنسيق آخر. تتم الطباعة عبر ملف PDF يمكنك طباعته باستخدام أي عارض.
 	Save As	حفظ باسم
-	Save as Template	Save as Template
-	Saved	Saved
-	Search Commands	Search Commands
-	Search commands and help	Search commands and help
-	Search document	Search document
-	Section Breaks	Section Breaks
-	Section Properties	Section Properties
-	Sections	Sections
-	Select	Select
+	Save as Template	حفظ كقالب
+	Saved	تم الحفظ
+	Search Commands	البحث في الأوامر
+	Search commands and help	البحث في الأوامر والمساعدة
+	Search document	البحث في المستند
+	Section Breaks	فواصل المقاطع
+	Section Properties	خصائص المقطع
+	Sections	مقاطع
+	Select	تحديد
 	Select All	تحديد الكل
-	Select Cell	Select Cell
-	Select Line	Select Line
-	Select Objects	Select Objects
-	Select Paragraph	Select Paragraph
-	Select Range	Select Range
+	Select Cell	تحديد خلية
+	Select Line	تحديد سطر
+	Select Objects	تحديد الكائنات
+	Select Paragraph	تحديد فقرة
+	Select Range	تحديد نطاق
 	Select Recipients	تحديد المستلمين
-	Select Row	Select Row
-	Select Sentence	Select Sentence
-	Select Table	Select Table
-	Select Text	Select Text
-	Select Text with Similar Formatting	Select Text with Similar Formatting
-	Select Word	Select Word
-	Select\nRecipients	Select\nRecipients
-	Selection	Selection
-	Selection Pane	Selection Pane
-	Send Backward	Send Backward
-	Sentence case.	Sentence case.
-	Set as Default	Set as Default
-	Set Caret	Set Caret
-	Set Character Formatting	Set Character Formatting
-	Set Numbering Value	Set Numbering Value
-	Set Paragraph Formatting	Set Paragraph Formatting
-	Shading	Shading
-	Shadow	Shadow
-	Shape Fill	Shape Fill
-	Shape Format	Shape Format
-	Shape Outline	Shape Outline
-	Shape Styles	Shape Styles
+	Select Row	تحديد صف
+	Select Sentence	تحديد جملة
+	Select Table	تحديد جدول
+	Select Text	تحديد النص
+	Select Text with Similar Formatting	تحديد النص ذي التنسيق المماثل
+	Select Word	تحديد كلمة
+	Select\nRecipients	تحديد\nالمستلمين
+	Selection	التحديد
+	Selection Pane	جزء التحديد
+	Send Backward	إرسال إلى الخلف
+	Sentence case.	حالة الجملة
+	Set as Default	تعيين كافتراضي
+	Set Caret	تعيين موضع المؤشر
+	Set Character Formatting	تعيين تنسيق الأحرف
+	Set Numbering Value	تعيين قيمة الترقيم
+	Set Paragraph Formatting	تعيين تنسيق الفقرة
+	Shading	تظليل
+	Shadow	ظل
+	Shape Fill	تعبئة الشكل
+	Shape Format	تنسيق الشكل
+	Shape Outline	مخطط الشكل
+	Shape Styles	أنماط الأشكال
 	Shapes	أشكال
-	Share	Share
+	Share	مشاركة
 	Shift+Tab	Shift+Tab
 	Show	إظهار
-	Show all formatting marks	Show all formatting marks
-	Show Comments	Show Comments
-	Show Markup	Show Markup
-	Show Notes	Show Notes
-	Show only comments and formatting in balloons	Show only comments and formatting in balloons
-	Show revisions in balloons	Show revisions in balloons
-	Show rulers	Show rulers
-	Show the community button in the title bar	Show the community button in the title bar
-	Show/Hide ¶	Show/Hide ¶
-	Show\nComments	Show\nComments
-	Shrink Font 1 Point	Shrink Font 1 Point
-	Side to Side	Side to Side
-	Side\nto Side	Side\nto Side
-	Signature Line	Signature Line
-	Single	Single
-	Single Spacing	Single Spacing
+	Show all formatting marks	إظهار جميع علامات التنسيق
+	Show Comments	إظهار التعليقات
+	Show Markup	إظهار علامات المراجعة
+	Show Notes	إظهار الملاحظات
+	Show only comments and formatting in balloons	إظهار التعليقات والتنسيقات في الفقاعات فقط
+	Show revisions in balloons	إظهار المراجعات في الفقاعات
+	Show rulers	إظهار المساطر
+	Show the community button in the title bar	إظهار زر المجتمع في شريط العنوان
+	Show/Hide ¶	إظهار/إخفاء ¶
+	Show\nComments	إظهار\nالتعليقات
+	Shrink Font 1 Point	تصغير الخط نقطة واحدة
+	Side to Side	من جانب إلى جانب
+	Side\nto Side	من جانب\nإلى جانب
+	Signature Line	سطر التوقيع
+	Single	مفرد
+	Single Spacing	تباعد مفرد
 	Size	الحجم
-	Size (pt):	Size (pt):
-	Size:	Size:
-	Small Caps	Small Caps
-	Small caps	Small caps
-	SmartArt	SmartArt
-	Sort	Sort
-	Source code: github.com/storytold/wordcraft	Source code: github.com/storytold/wordcraft
-	Space	Space
-	Space before/after:	Space before/after:
+	Size (pt):	الحجم (نقطة):
+	Size:	الحجم:
+	Small Caps	أحرف استهلالية صغيرة
+	Small caps	أحرف استهلالية صغيرة
+	SmartArt	رسومات SmartArt
+	Sort	فرز
+	Source code: github.com/storytold/wordcraft	الشيفرة المصدرية: github.com/storytold/wordcraft
+	Space	مسافة
+	Space before/after:	المسافة قبل/بعد:
 	Spacing	تباعد
-	Spacing (pt):	Spacing (pt):
-	Speech	Speech
-	Spelling & Grammar	Spelling & Grammar
-	Spelling &\nGrammar	Spelling &\nGrammar
-	Spelling Suggestions	Spelling Suggestions
-	Split	Split
-	Split Cells	Split Cells
-	Split Table	Split Table
-	Spreadsheet Table	Spreadsheet Table
-	Standard Colors	Standard Colors
-	Star	Star
-	Start at:	Start at:
-	Start Mail Merge	Start Mail Merge
-	Start Mail\nMerge	Start Mail\nMerge
-	Statistics	Statistics
+	Spacing (pt):	التباعد (نقطة):
+	Speech	الكلام
+	Spelling & Grammar	التدقيق الإملائي والنحوي
+	Spelling &\nGrammar	التدقيق الإملائي\nوالنحوي
+	Spelling Suggestions	اقتراحات إملائية
+	Split	تقسيم
+	Split Cells	تقسيم الخلايا
+	Split Table	تقسيم الجدول
+	Spreadsheet Table	جدول بيانات
+	Standard Colors	الألوان القياسية
+	Star	نجمة
+	Start at:	البدء عند:
+	Start Mail Merge	بدء دمج المراسلات
+	Start Mail\nMerge	بدء دمج\nالمراسلات
+	Statistics	إحصاءات
 	Status Bar	شريط الحالة
-	Strikethrough	Strikethrough
-	Studio cover	Studio cover
-	Studio handbook (sample)	Studio handbook (sample)
+	Strikethrough	يتوسطه خط
+	Studio cover	غلاف الاستوديو
+	Studio handbook (sample)	دليل الاستوديو (نموذج)
 	Style	نمط
-	Style based on:	Style based on:
-	Style Set	Style Set
-	Style: {style}	Style: {style}
+	Style based on:	النمط المستند إلى:
+	Style Set	مجموعة الأنماط
+	Style: {style}	النمط: {style}
 	Styles	الأنماط
-	Styles Pane	Styles Pane
+	Styles Pane	جزء الأنماط
 	Subscript	منخفض
 	Superscript	مرتفع
-	Switch Modes	Switch Modes
-	Switch\nModes	Switch\nModes
-	Symbol	Symbol
-	Symbols	Symbols
-	Synonyms	Synonyms
-	Tab	Tab
-	Tab character	Tab character
+	Switch Modes	تبديل الأوضاع
+	Switch\nModes	تبديل\nالأوضاع
+	Symbol	رمز
+	Symbols	رموز
+	Synonyms	مرادفات
+	Tab	علامة تبويب
+	Tab character	محرف الجدولة
 	Table	جدول
-	Table Column Width	Table Column Width
+	Table Column Width	عرض عمود الجدول
 	Table Design	تصميم الجدول
 	Table Layout	تخطيط الجدول
-	Table of Authorities	Table of Authorities
-	Table of Contents	Table of Contents
-	Table of\nContents	Table of\nContents
-	Table Properties	Table Properties
+	Table of Authorities	جدول المراجع القانونية
+	Table of Contents	جدول المحتويات
+	Table of\nContents	جدول\nالمحتويات
+	Table Properties	خصائص الجدول
 	Table Row Height	Table Row Height
 	Table Style Options	Table Style Options
 	Table Styles	Table Styles
