@@ -493,6 +493,37 @@ mod tests {
     }
 
     #[test]
+    fn snapshot_bridge_maps_forward_delete_after_the_caret() {
+        let base = ImeSnapshot::from_utf16("abc".into(), (2, 2), None).unwrap();
+        let deleted = ImeSnapshot::from_utf16("ab".into(), (2, 2), None).unwrap();
+        let mut bridge = SnapshotBridge::default();
+        bridge.reset(base);
+        let update = bridge.update(deleted).unwrap();
+        assert_eq!(update.replacement, Some(2..3));
+        assert_eq!(
+            update.event,
+            Some(egui::Event::Ime(egui::ImeEvent::DeleteSurrounding {
+                before_chars: 0,
+                after_chars: 1,
+            }))
+        );
+    }
+
+    #[test]
+    fn snapshot_bridge_commits_replacement_of_selected_arabic_text() {
+        let base = ImeSnapshot::from_utf16("abcXYZdef".into(), (3, 6), None).unwrap();
+        let replaced = ImeSnapshot::from_utf16("abcمdef".into(), (4, 4), None).unwrap();
+        let mut bridge = SnapshotBridge::default();
+        bridge.reset(base);
+        let update = bridge.update(replaced).unwrap();
+        assert_eq!(update.replacement, Some(3..6));
+        assert_eq!(
+            update.event,
+            Some(egui::Event::Ime(egui::ImeEvent::Commit("م".into())))
+        );
+    }
+
+    #[test]
     fn snapshot_bridge_uses_selection_to_disambiguate_repeated_character_insert() {
         let base = ImeSnapshot::from_utf16("aaaaa".into(), (2, 2), None).unwrap();
         let inserted = ImeSnapshot::from_utf16("aaXaaa".into(), (3, 3), None).unwrap();
