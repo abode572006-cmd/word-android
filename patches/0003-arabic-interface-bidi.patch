@@ -29,7 +29,7 @@ diff --git a/crates/ui-egui/src/i18n/mod.rs b/crates/ui-egui/src/i18n/mod.rs
 diff --git a/crates/ui-egui/src/i18n/catalog.rs b/crates/ui-egui/src/i18n/catalog.rs
 --- a/crates/ui-egui/src/i18n/catalog.rs
 +++ b/crates/ui-egui/src/i18n/catalog.rs
-@@ -112,12 +112,19 @@ impl Catalog {
+@@ -112,12 +112,18 @@ impl Catalog {
      /// Build a catalog from its valid entries; the errors of the skipped lines come back too.
      pub fn parse(text: &str) -> (Catalog, Vec<String>) {
 +        Self::parse_with_rtl(text, false)
@@ -176,7 +176,7 @@ new file mode 100644
 diff --git a/crates/fonts/src/ui_fallback.rs b/crates/fonts/src/ui_fallback.rs
 --- a/crates/fonts/src/ui_fallback.rs
 +++ b/crates/fonts/src/ui_fallback.rs
-@@ -72,8 +72,23 @@ pub fn system_cjk_ui_font(hans: bool) -> Option<SystemUiFont> {
+@@ -72,6 +72,23 @@ pub fn system_cjk_ui_font(hans: bool) -> Option<SystemUiFont> {
      find_ui_font(&crate::system_font_dirs(), &candidates(hans), probe(hans), hans)
  }
  
