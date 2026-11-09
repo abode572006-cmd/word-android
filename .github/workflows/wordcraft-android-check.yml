@@ -60,6 +60,14 @@ jobs:
           cp patches/arabic-catalog.tsv upstream-wordcraft/crates/ui-egui/src/i18n/ar.tsv
           cp -R apps/wordcraft-android upstream-wordcraft/apps/
           test -f apps/wordcraft-android/res/values/styles.xml
+          # cargo-apk resolves the Android resource directory from the workspace
+          # working directory when building a selected workspace package. Mirror
+          # the package-owned styles into that resource root so the manifest's
+          # @style/WordcraftFullscreen reference is available to aapt.
+          mkdir -p upstream-wordcraft/res/values
+          cp apps/wordcraft-android/res/values/styles.xml upstream-wordcraft/res/values/styles.xml
+          test -f upstream-wordcraft/res/values/styles.xml
+          grep -F 'style name="WordcraftFullscreen"' upstream-wordcraft/res/values/styles.xml
           grep -F 'theme = "@style/WordcraftFullscreen"' apps/wordcraft-android/Cargo.toml
           python3 - <<'PY'
           from pathlib import Path
