@@ -72,12 +72,12 @@ jobs:
           if "file_dialogs_android.rs" not in source or "clipboard_android.rs" not in source:
               raise SystemExit("Could not install Android host adapters")
           # X11 event-loop setup is desktop-only; Android has its own activity backend.
-          x11_cfg = '#[cfg(all(unix, not(target_os = "macos")))]'
-          if x11_cfg not in source:
-              raise SystemExit("Could not find the Unix desktop X11 setup")
+          x11_block_cfg = '    #[cfg(all(unix, not(target_os = "macos")))]\n    {'
+          if x11_block_cfg not in source:
+              raise SystemExit("Could not find the Unix desktop X11 event-loop block")
           source = source.replace(
-              x11_cfg,
-              '#[cfg(all(unix, not(target_os = "macos"), not(target_os = "android")))]',
+              x11_block_cfg,
+              '    #[cfg(all(unix, not(target_os = "macos"), not(target_os = "android")))]\n    {',
               1
           )
           main.write_text(source)
