@@ -224,7 +224,7 @@ diff --git a/crates/ui-egui/src/theme.rs b/crates/ui-egui/src/theme.rs
 diff --git a/crates/layout/src/tests_bidi.rs b/crates/layout/src/tests_bidi.rs
 --- a/crates/layout/src/tests_bidi.rs
 +++ b/crates/layout/src/tests_bidi.rs
-@@ -520,2 +520,20 @@ fn rtl_section_puts_its_first_column_on_the_right() {
+@@ -520,2 +520,22 @@ fn rtl_section_puts_its_first_column_on_the_right() {
      assert_eq!(sep, vec![72.0 + 234.0], "line between the columns");
  }
 +
