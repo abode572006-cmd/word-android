@@ -1,7 +1,7 @@
 diff --git a/crates/ui-egui/src/keys.rs b/crates/ui-egui/src/keys.rs
 --- a/crates/ui-egui/src/keys.rs
 +++ b/crates/ui-egui/src/keys.rs
-@@ -208,6 +208,15 @@ pub fn canvas_events(app: &mut WordApp, ctx: &egui::Context) {
+@@ -208,5 +208,14 @@ pub fn canvas_events(app: &mut WordApp, ctx: &egui::Context) {
                      continue;
                  }
 +                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
