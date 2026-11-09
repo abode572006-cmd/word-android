@@ -1,9 +1,7 @@
 diff --git a/crates/ui-egui/src/keys.rs b/crates/ui-egui/src/keys.rs
 --- a/crates/ui-egui/src/keys.rs
 +++ b/crates/ui-egui/src/keys.rs
-@@ -208,5 +208,14 @@ pub fn canvas_events(app: &mut WordApp, ctx: &egui::Context) {
-                     continue;
-                 }
+@@ -209,0 +210,9 @@
 +                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
 +                    for _ in 0..before_chars.min(256) {
 +                        let _ = app.run("equation.backspace", json!({}));
@@ -13,11 +11,7 @@ diff --git a/crates/ui-egui/src/keys.rs b/crates/ui-egui/src/keys.rs
 +                    }
 +                    continue;
 +                }
-                 egui::Event::Paste(t) => {
-                     let _ = app.run("equation.type", json!({"text": t}));
-                     continue;
-@@ -236,2 +245,10 @@ pub fn canvas_events(app: &mut WordApp, ctx: &egui::Context) {
-             }
+@@ -236,0 +246,8 @@
 +            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {
 +                for _ in 0..before_chars.min(256) {
 +                    let _ = app.run("text.backspace", json!({}));
@@ -26,4 +20,3 @@ diff --git a/crates/ui-egui/src/keys.rs b/crates/ui-egui/src/keys.rs
 +                    let _ = app.run("text.delete", json!({}));
 +                }
 +            }
-             egui::Event::Paste(t) => {
