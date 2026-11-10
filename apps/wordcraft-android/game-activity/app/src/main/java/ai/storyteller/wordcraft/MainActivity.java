@@ -155,7 +155,7 @@ public final class MainActivity extends GameActivity {
             }
             Log.e("WordCraft", "Could not copy selected image into app cache", error);
             runOnUiThread(() -> Toast.makeText(this,
-                    "صيغة الصورة غير مدعومة. استخدم PNG أو JPEG أو WebP أو GIF أو BMP أو TIFF.",
+                    "تعذرت قراءة الصورة أو أن صيغتها غير مدعومة. جرّب PNG أو JPEG أو WebP أو GIF أو BMP أو TIFF.",
                     Toast.LENGTH_LONG).show());
             return null;
         }
