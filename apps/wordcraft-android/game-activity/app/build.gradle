@@ -35,6 +35,14 @@ android {
     }
 }
 
+// Kotlin 1.8+ folds the legacy jdk7/jdk8 extension classes into kotlin-stdlib.
+// Older AndroidX transitive dependencies can still request the split 1.6.x artifacts;
+// exclude those obsolete jars to prevent duplicate classes at D8 time.
+configurations.configureEach {
+    exclude group: "org.jetbrains.kotlin", module: "kotlin-stdlib-jdk7"
+    exclude group: "org.jetbrains.kotlin", module: "kotlin-stdlib-jdk8"
+}
+
 dependencies {
     implementation "androidx.activity:activity:1.9.3"
     implementation "androidx.games:games-activity:4.4.0"
