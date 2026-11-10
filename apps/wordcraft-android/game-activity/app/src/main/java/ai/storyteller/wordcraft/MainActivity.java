@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.widget.Toast;
 import android.webkit.MimeTypeMap;
 import android.view.WindowManager;
 
@@ -94,6 +95,26 @@ public final class MainActivity extends GameActivity {
         return result == null ? "" : result;
     }
 
+    /** MIME types enabled by WordCraft's bounded image decoder. Unknown MIME types are
+     * left to magic-byte detection; known unsupported formats are rejected before insertion. */
+    private boolean isSupportedImageMimeType(String mimeType) {
+        if (mimeType == null) return true;
+        switch (mimeType.toLowerCase(java.util.Locale.ROOT)) {
+            case "image/png":
+            case "image/jpeg":
+            case "image/pjpeg":
+            case "image/gif":
+            case "image/webp":
+            case "image/bmp":
+            case "image/x-ms-bmp":
+            case "image/tiff":
+            case "image/x-tiff":
+                return true;
+            default:
+                return false;
+        }
+    }
+
     /** Copy the temporary content-URI grant into app-private cache for the path-based engine. */
     private String copyPickedImageToCache(Uri uri) {
         File target = null;
@@ -103,6 +124,9 @@ public final class MainActivity extends GameActivity {
             // notified instead of leaving the pending insert dialog waiting forever.
             String extension = "img";
             String mimeType = getContentResolver().getType(uri);
+            if (!isSupportedImageMimeType(mimeType)) {
+                throw new IOException("Unsupported image format: " + mimeType);
+            }
             if (mimeType != null) {
                 String candidate = MimeTypeMap.getSingleton().getExtensionFromMimeType(mimeType);
                 if (candidate != null && !candidate.isEmpty()) {
@@ -130,6 +154,9 @@ public final class MainActivity extends GameActivity {
                 target.delete();
             }
             Log.e("WordCraft", "Could not copy selected image into app cache", error);
+            runOnUiThread(() -> Toast.makeText(this,
+                    "صيغة الصورة غير مدعومة. استخدم PNG أو JPEG أو WebP أو GIF أو BMP أو TIFF.",
+                    Toast.LENGTH_LONG).show());
             return null;
         }
     }
