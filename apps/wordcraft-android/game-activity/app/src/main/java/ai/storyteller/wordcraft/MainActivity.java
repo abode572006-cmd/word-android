@@ -30,10 +30,6 @@ public final class MainActivity extends GameActivity {
     private String photoPickerResult = null;
     private ActivityResultLauncher<PickVisualMediaRequest> photoPickerLauncher;
 
-    static {
-        System.loadLibrary("wordcraft");
-    }
-
     private void hideSystemBars() {
         getWindow().getAttributes().layoutInDisplayCutoutMode =
                 WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS;
@@ -181,13 +177,26 @@ public final class MainActivity extends GameActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
-        hideSystemBars();
-        super.onCreate(savedInstanceState);
-        photoPickerLauncher = registerForActivityResult(
-                new ActivityResultContracts.PickVisualMedia(),
-                this::handlePhotoPickerResult
-        );
+        try {
+            // Load before GameActivity's native initialization, but inside a guarded block:
+            // a missing/incompatible .so should produce a visible diagnostic instead of
+            // silently closing the launcher Activity.
+            System.loadLibrary("wordcraft");
+            WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+            hideSystemBars();
+            super.onCreate(savedInstanceState);
+            photoPickerLauncher = registerForActivityResult(
+                    new ActivityResultContracts.PickVisualMedia(),
+                    this::handlePhotoPickerResult
+            );
+        } catch (UnsatisfiedLinkError | RuntimeException error) {
+            Log.e("WordCraft", "Startup failed before the native editor became visible", error);
+            Toast.makeText(this,
+                    "تعذر تشغيل WordCraft: " + error.getClass().getSimpleName()
+                            + (error.getMessage() == null ? "" : " — " + error.getMessage()),
+                    Toast.LENGTH_LONG).show();
+            finish();
+        }
     }
 
     @Override
