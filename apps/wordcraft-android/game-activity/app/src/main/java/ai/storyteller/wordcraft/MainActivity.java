@@ -96,17 +96,20 @@ public final class MainActivity extends GameActivity {
 
     /** Copy the temporary content-URI grant into app-private cache for the path-based engine. */
     private String copyPickedImageToCache(Uri uri) {
-        String extension = "img";
-        String mimeType = getContentResolver().getType(uri);
-        if (mimeType != null) {
-            String candidate = MimeTypeMap.getSingleton().getExtensionFromMimeType(mimeType);
-            if (candidate != null && !candidate.isEmpty()) {
-                extension = candidate;
-            }
-        }
-
         File target = null;
         try {
+            // ContentResolver calls can also throw SecurityException for a revoked or
+            // unavailable URI grant. Keep them inside the failure path so Rust is always
+            // notified instead of leaving the pending insert dialog waiting forever.
+            String extension = "img";
+            String mimeType = getContentResolver().getType(uri);
+            if (mimeType != null) {
+                String candidate = MimeTypeMap.getSingleton().getExtensionFromMimeType(mimeType);
+                if (candidate != null && !candidate.isEmpty()) {
+                    extension = candidate;
+                }
+            }
+
             target = File.createTempFile("wordcraft-image-", "." + extension, getCacheDir());
             try (InputStream input = getContentResolver().openInputStream(uri);
                  FileOutputStream output = new FileOutputStream(target)) {
@@ -121,7 +124,7 @@ public final class MainActivity extends GameActivity {
                 output.flush();
             }
             return target.getAbsolutePath();
-        } catch (IOException error) {
+        } catch (IOException | RuntimeException error) {
             if (target != null) {
                 //noinspection ResultOfMethodCallIgnored
                 target.delete();
