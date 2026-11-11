@@ -1,0 +1,1731 @@
+# Arabic (ar) interface catalog. English fallback remains for entries not yet translated.
+# context<TAB>English source<TAB>Arabic translation
+	(no style)	(بلا نمط)
+	(no suggestions)	(لا توجد اقتراحات)
+	1.5 Line Spacing	تباعد الأسطر 1.5
+	A free, open-source word processor written from scratch in Rust.\nPart of the Crafting Apps from the ArtCraft team.	معالج نصوص مجاني ومفتوح المصدر كُتب من الصفر بلغة Rust.\nأحد تطبيقات Crafting Apps من فريق ArtCraft.
+	About	حول البرنامج
+	About WordCraft	حول WordCraft
+	Accept	قبول
+	Accept All Changes	قبول جميع التغييرات
+	Accept This Change	قبول هذا التغيير
+	Accessibility	إمكانية الوصول
+	Add	إضافة
+	Add a comment	إضافة تعليق
+	Add a Table	إدراج جدول
+	Add Object to Selection	إضافة كائن إلى التحديد
+	Add Space Before Paragraph	إضافة مسافة قبل الفقرة
+	Add space between Asian and Latin text	إضافة مسافة بين النصوص الآسيوية واللاتينية
+	Add space between Asian text and numbers	إضافة مسافة بين النصوص الآسيوية والأرقام
+	Add tab stop at:	إضافة علامة جدولة عند:
+	Add Text	إضافة نص
+	Add to Dictionary	إضافة إلى القاموس
+	Add to Style Gallery	إضافة إلى معرض الأنماط
+	Address Block	كتلة العنوان
+	Address:	العنوان:
+	Address\nBlock	كتلة\nالعنوان
+	Adjust	ضبط
+	Advanced	متقدم
+	After:	بعد:
+	Agents	الوكلاء
+	Align	محاذاة
+	Align Left	محاذاة إلى اليسار
+	Align Right	محاذاة إلى اليمين
+	Aligned at:	محاذاة عند:
+	Alignment	المحاذاة
+	All Borders	كل الحدود
+	All Caps	أحرف كبيرة
+	All caps	أحرف كبيرة
+	All Markup	كل التغييرات
+	Allow hanging punctuation	السماح بتجاوز علامات الترقيم
+	Allow Latin text to wrap in the middle of a word	السماح بالتفاف النص اللاتيني في منتصف الكلمة
+	Alt Text	النص البديل
+	Apply Asian line-breaking rules (kinsoku)	تطبيق قواعد تقسيم الأسطر الآسيوية (Kinsoku)
+	Apply Character Style	تطبيق نمط الأحرف
+	Apply Style	تطبيق النمط
+	Apply Styles	تطبيق الأنماط
+	Arrange	ترتيب
+	Arrange\nAll	ترتيب\nالكل
+	Arrow	سهم
+	Artistic Effects	تأثيرات فنية
+	Asian Typography	الطباعة الآسيوية
+	Author	المؤلف
+	AutoCorrect Options	خيارات التصحيح التلقائي
+	AutoFit	احتواء تلقائي
+	AutoFit Contents	احتواء المحتويات تلقائيًا
+	AutoFit Window	احتواء النافذة تلقائيًا
+	Automatic	تلقائي
+	Automatic ({language})	تلقائي ({language})
+	Automatic follows your system's language. Menus and commands change; your documents don't.	يتبع الخيار التلقائي لغة نظامك. تتغير القوائم والأوامر، ولا يتغير محتوى مستنداتك.
+	Automatic Table 1 (3 levels)	جدول تلقائي 1 (ثلاثة مستويات)
+	Automatic Table 2 (2 levels)	جدول تلقائي 2 (مستويان)
+	AutoSave	الحفظ التلقائي
+	AutoSave documents you have saved in WordCraft	حفظ المستندات المحفوظة في WordCraft تلقائيًا
+	AutoSave failed: {error}. Save the document to turn AutoSave back on.	فشل الحفظ التلقائي: {error}. احفظ المستند لإعادة تفعيل الحفظ التلقائي.
+	Balloons	فقاعات التعليقات
+	Bottom Margin	الهامش السفلي
+	Click a border between two cells to merge them. Esc stops.	انقر على الحد الفاصل بين خليتين لدمجهما. اضغط Esc للإيقاف.
+	Bullet	تعداد نقطي
+	By author	حسب المؤلف
+	Changed lines:	الأسطر المتغيرة:
+	Click level to modify:	انقر على المستوى المطلوب تعديله:
+	Color only	اللون فقط
+	Compress punctuation at the start of a line	ضغط علامات الترقيم في بداية السطر
+	Dark page (white text on black)	صفحة داكنة (نص أبيض على خلفية سوداء)
+	Drag a rectangle to draw a table, or a line across cells to split them. Esc stops.	اسحب مستطيلًا لرسم جدول، أو خطًا عبر الخلايا لتقسيمها. اضغط Esc للإيقاف.
+	Draw Table	رسم جدول
+	Define New Multilevel List	تعريف قائمة جديدة متعددة المستويات
+	Define New Multilevel List…	تعريف قائمة جديدة متعددة المستويات…
+	Deletions:	عمليات الحذف:
+	Edit Comment	تحرير التعليق
+	Enter formatting for number:	أدخل تنسيق الترقيم:
+	Follow number with:	ما الذي يلي الرقم:
+	Formatting	التنسيق
+	Include level number from:	تضمين رقم المستوى من:
+	Ink	الحبر
+	Insertions and Deletions	الإدراجات والحذوفات
+	Insertions:	عمليات الإدراج:
+	Left border	الحد الأيسر
+	Left Margin	الهامش الأيسر
+	Indents and Spacing	المسافات البادئة والتباعد
+	Legal style numbering	ترقيم بالنمط القانوني
+	Line breaking	تقسيم الأسطر
+	Link level to style:	ربط المستوى بالنمط:
+	List Definition	تعريف القائمة
+	More templates →	مزيد من القوالب →
+	No templates match your search.	لا توجد قوالب تطابق بحثك.
+	Nothing	لا شيء
+	Number alignment:	محاذاة الرقم:
+	Number format	تنسيق الرقم
+	Number style for this level:	نمط الترقيم لهذا المستوى:
+	Outside border	الحد الخارجي
+	Reopen	إعادة فتح
+	Restart list after:	إعادة بدء القائمة بعد:
+	Right border	الحد الأيمن
+	Right Margin	الهامش الأيمن
+	Base text:	النص الأساسي:
+	Distribute letters	توزيع الأحرف
+	Distribute spacing	توزيع المسافات
+	Offset (pt):	الإزاحة (نقطة):
+	Phonetic Guide	دليل النطق
+	Remove	إزالة
+	Right (vertical)	يمين (عمودي)
+	Ruby text:	النص الصوتي (Ruby):
+	Search for templates	البحث عن قوالب
+	Show all revisions inline	إظهار جميع المراجعات ضمن النص
+	Show documents with their colours inverted, like View › Switch Modes. Saving, printing and PDFs are unchanged.	عرض المستندات بألوان معكوسة، مثل عرض › تبديل الأوضاع. لا يتغير الحفظ أو الطباعة أو ملفات PDF.
+	AutoSave saves every change to the file (needs a saved document)	يحفظ الحفظ التلقائي كل تغيير في الملف (يتطلب أن يكون المستند محفوظًا)
+	AutoSave isn't available in the browser: it can't write to your files. Save downloads a copy.	الحفظ التلقائي غير متاح في المتصفح؛ إذ لا يمكنه الكتابة إلى ملفاتك. يؤدي الحفظ إلى تنزيل نسخة.
+	AutoSave only keeps .docx, .odt and .rtf files; {name} can't keep all formatting. Save as .docx to turn on AutoSave.	يدعم الحفظ التلقائي ملفات .docx و.odt و.rtf فقط؛ ولا يمكن للملف {name} الاحتفاظ بكل التنسيقات. احفظ بصيغة .docx لتفعيل الحفظ التلقائي.
+	Save the document to turn on AutoSave	احفظ المستند لتفعيل الحفظ التلقائي
+	Save the document to turn on AutoSave (a file you have only opened isn't rewritten until you save it)	احفظ المستند لتفعيل الحفظ التلقائي (لن يُعاد حفظ الملف الذي فتحته إلا بعد أن تحفظه)
+	AutoText	نص تلقائي
+	Backspace	مسافة للخلف
+	Banded Columns	أعمدة متناوبة التظليل
+	Banded Rows	صفوف متناوبة التظليل
+	Before:	قبل:
+	Bibliography	قائمة المراجع
+	Binary assets added	الأصول الثنائية المضافة
+	Binary assets removed	الأصول الثنائية المحذوفة
+	Blank	فارغ
+	Blank (Three Columns)	فارغ (ثلاثة أعمدة)
+	Blank document	مستند فارغ
+	Blank Page	صفحة فارغة
+	Block\nAuthors	حظر\nالمؤلفين
+	Bold	غامق
+	Bookmark	إشارة مرجعية
+	Bookmark name:	اسم الإشارة المرجعية:
+	Border Painter	ناسخ الحدود
+	Border\nPainter	ناسخ\nالحدود
+	Borders	الحدود
+	Tab stop position:	موضع علامة الجدولة:
+	Default tab stops:	علامات الجدولة الافتراضية:
+	Tab stops to be cleared:	علامات الجدولة المطلوب مسحها:
+	All	الكل
+	Decimal	عشري
+	Bar	شريط
+	Leader	نمط التعبئة
+	Set	تعيين
+	Page Border	حدود الصفحة
+	Apply to:	تطبيق على:
+	Whole document	المستند بأكمله
+	This section	هذا القسم
+	Fill	تعبئة
+	Setting:	الإعداد:
+	3-D	ثلاثي الأبعاد
+	Custom	مخصص
+	Style:	النمط:
+	Dot dash	شرطة ونقطة
+	Triple	ثلاثي
+	Between	بين
+	Borders and Shading	الحدود والتظليل
+	Tabs…	علامات الجدولة…
+	Borders and Shading…	الحدود والتظليل…
+	Bottom Border	حد سفلي
+	Bottom of Page	أسفل الصفحة
+	Bottom:	السفل:
+	Box	إطار
+	Breaks	فواصل
+	Bring Forward	إحضار إلى الأمام
+	Bullet Library	مكتبة التعداد النقطي
+	Bullets	تعداد نقطي
+	Calendar	التقويم
+	Cancel	إلغاء
+	Capitalize Each Word	كتابة الحرف الأول من كل كلمة كبيرًا
+	Captions	التسميات التوضيحية
+	Cell Margins	هوامش الخلية
+	Cell Size	حجم الخلية
+	Cell\nMargins	هوامش\nالخلية
+	Center	توسيط
+	Change	تغيير
+	Change Case	تغيير حالة الأحرف
+	Change List Level	تغيير مستوى القائمة
+	Change Picture	تغيير الصورة
+	Change Shape	تغيير الشكل
+	Changes	التغييرات
+	Character Position	موضع الأحرف
+	Character Scale	مقياس الأحرف
+	Character Shading	تظليل الأحرف
+	Character Spacing	تباعد الأحرف
+	Character Border	حدود الأحرف
+	Characters (no spaces)	الأحرف (من دون مسافات)
+	Characters (with spaces)	الأحرف (مع المسافات)
+	Chart	مخطط
+	Check Accessibility	التحقق من إمكانية الوصول
+	Check Compatibility	التحقق من التوافق
+	Check for Errors	التحقق من الأخطاء
+	Check Spelling as You Type	التدقيق الإملائي أثناء الكتابة
+	Check\nAccessibility	التحقق من\nإمكانية الوصول
+	Citation Style	نمط الاستشهاد
+	Citations & Bibliography	الاستشهادات والمراجع
+	Clear	مسح
+	Clear All Formatting	مسح كافة التنسيقات
+	Clipboard	الحافظة
+	Clipboard Pane	جزء الحافظة
+	Clipboard Items	عناصر الحافظة
+	Paste Clipboard Item	لصق عنصر من الحافظة
+	Paste All	لصق الكل
+	Delete Clipboard Item	حذف عنصر من الحافظة
+	Clear All	مسح الكل
+	Click an item to paste it.	اضغط على عنصر للصقه.
+	Nothing collected yet. Items you copy or cut appear here.	لا توجد عناصر بعد. ستظهر هنا العناصر التي تنسخها أو تقصها.
+	(picture or object)	(صورة أو كائن)
+	Close	إغلاق
+	Close Header and Footer	إغلاق الرأس والتذييل
+	Collapse Selection	طيّ التحديد
+	Color	اللون
+	Color:	اللون:
+	Colors	الألوان
+	Column	عمود
+	Column Break	فاصل عمود
+	Columns	أعمدة
+	Combine	دمج
+	Commands	الأوامر
+	Comment	تعليق
+	Comments	التعليقات
+	Comments Pane	جزء التعليقات
+	Community\nDiscord	مجتمع\nDiscord
+	Compact	مضغوط
+	Compare	مقارنة
+	Compress Pictures	ضغط الصور
+	Continuous	مستمر
+	Convert	تحويل
+	Convert Text to Table	تحويل النص إلى جدول
+	Convert Text to Table…	تحويل النص إلى جدول…
+	Convert to Text	تحويل إلى نص
+	Copy	نسخ
+	Copy Formatting	نسخ التنسيق
+	Corrections	التصحيحات
+	Count words in text boxes and notes	احتساب الكلمات في مربعات النص والملاحظات
+	Couldn't download {name}: {error}	تعذر تنزيل {name}: {error}
+	Cover Page	صفحة غلاف
+	Create	إنشاء
+	Create a Style	إنشاء نمط
+	Create an interactive outline of your document.\n\nIt's a great way to keep track of where you are or quickly move your content around.\n\nTo get started, go to the Home tab and apply Heading styles to the headings in your document.	أنشئ مخططًا تفاعليًا لمستندك.\n\nيساعدك ذلك على متابعة موضعك أو نقل أجزاء المحتوى بسرعة وسهولة.\n\nللبدء، انتقل إلى علامة تبويب الرئيسية وطبّق أنماط العناوين على عناوين المستند.
+	Create New Style	إنشاء نمط جديد
+	Crop	اقتصاص
+	Cross-reference	إحالة مرجعية
+	Current Position	الموضع الحالي
+	Current style: {style}	النمط الحالي: {style}
+	Custom Margins…	هوامش مخصصة…
+	Custom Watermark	علامة مائية مخصصة
+	Custom Watermark…	علامة مائية مخصصة…
+	Customize Quick Access Toolbar	تخصيص شريط أدوات الوصول السريع
+	Cut	قص
+	Dark Mode	الوضع الداكن
+	Dashed	متقطع
+	Data	البيانات
+	Date & Time	التاريخ والوقت
+	Decrease Font Size	تصغير حجم الخط
+	Decrease Indent	تقليل المسافة البادئة
+	Default	افتراضي
+	Define New Bullet	تعريف تعداد نقطي جديد
+	Define New Number Format	تعريف تنسيق ترقيم جديد
+	Delete	حذف
+	Delete Cells	حذف الخلايا
+	Delete Columns	حذف الأعمدة
+	Delete Comment	حذف التعليق
+	Delete Next Word	حذف الكلمة التالية
+	Delete Previous Word	حذف الكلمة السابقة
+	Delete Rows	حذف الصفوف
+	Delete Style	حذف النمط
+	Delete Table	حذف الجدول
+	Design	تصميم
+	development build	إصدار قيد التطوير
+	Diagonal	قطري
+	Diamond	مُعين
+	Dictate	إملاء صوتي
+	Different First Page	صفحة أولى مختلفة
+	Different Odd & Even Pages	صفحات فردية وزوجية مختلفة
+	Discord	Discord
+	Discord community	مجتمع Discord
+	Display	عرض
+	Display for Review	العرض للمراجعة
+	Distribute Columns	توزيع الأعمدة
+	Distribute Rows	توزيع الصفوف
+	Distributed	موزّع
+	Do Not Show in TOC	عدم الإظهار في جدول المحتويات
+	Do you want to save changes to {name}?	هل تريد حفظ التغييرات على {name}؟
+	Don't Save	عدم الحفظ
+	Document End	نهاية المستند
+	Document Formatting	تنسيق المستند
+	Document Property	خاصية المستند
+	Document Start	بداية المستند
+	Document Text	نص المستند
+	Document Title	عنوان المستند
+	Documents you open will show up here.	ستظهر هنا المستندات التي تفتحها.
+	Dot-dash	نقطة وشرطة
+	Dotted	منقّط
+	Double	مزدوج
+	Double Spacing	تباعد مزدوج
+	Double Strikethrough	يتوسطه خط مزدوج
+	Double Underline	تسطير مزدوج
+	Down	أسفل
+	Draft	مسودة
+	Draw	رسم
+	Drawing Tools	أدوات الرسم
+	Drawing\nCanvas	لوحة\nالرسم
+	Drop Cap	حرف استهلالي كبير
+	Edit Footer	تحرير تذييل الصفحة
+	Edit Header	تحرير رأس الصفحة
+	Edit Recipient List	تحرير قائمة المستلمين
+	Edit\nRecipient List	تحرير\nقائمة المستلمين
+	Edited	مُحرَّر
+	Editing	تحرير
+	Editing header/footer	تحرير الرأس والتذييل
+	Editing — edit the document directly	وضع التحرير — تعديل المستند مباشرة
+	Editor	المحرر
+	Effects	تأثيرات
+	Emboss	نقش بارز
+	Encrypt with Password	تشفير بكلمة مرور
+	English (United States)	الإنجليزية (الولايات المتحدة)
+	Engrave	نقش غائر
+	Enter page number:	أدخل رقم الصفحة:
+	Envelopes	المظاريف
+	Equation	معادلة
+	Eraser	ممحاة
+	Even Page	صفحة زوجية
+	Every command is available to scripts and AI agents: run `wordcraft-cli mcp` for an MCP server, or start the app with `--control <port>` for the JSON control channel.	جميع الأوامر متاحة للبرامج النصية ووكلاء الذكاء الاصطناعي: شغّل `wordcraft-cli mcp` لتشغيل خادم MCP، أو ابدأ التطبيق باستخدام `--control <port>` لقناة التحكم بصيغة JSON.
+	Export	تصدير
+	Export a copy to share (PDF, Word document)	تصدير نسخة للمشاركة (PDF أو مستند Word)
+	Export Page as PNG	تصدير الصفحة بصيغة PNG
+	Export PDF	تصدير PDF
+	Exported {path}	تم تصدير {path}
+	Extend Selection	توسيع التحديد
+	Field	حقل
+	File	ملف
+	Find	بحث
+	Find and Replace	بحث واستبدال
+	Find Next	بحث عن التالي
+	Find Previous	بحث عن السابق
+	Find Recipient	العثور على مستلم
+	Find what:	البحث عن:
+	Finish	إنهاء
+	Finish & Merge	إنهاء ودمج
+	Finish &\nMerge	إنهاء و\nدمج
+	First Column	العمود الأول
+	First commit	أول إيداع برمجي
+	First line:	السطر الأول:
+	Fixed Column Width	عرض عمود ثابت
+	Focus	تركيز
+	Font	الخط
+	Font Color	لون الخط
+	Font color:	لون الخط:
+	Font Dialog	مربع حوار الخط
+	Font Size	حجم الخط
+	Font:	الخط:
+	Fonts	الخطوط
+	Footer	تذييل الصفحة
+	Footnote and Endnote	حاشية سفلية وحاشية ختامية
+	Footnotes	الحواشي السفلية
+	Format	تنسيق
+	Format Page Numbers	تنسيق أرقام الصفحات
+	Format Page Numbers…	تنسيق أرقام الصفحات…
+	Format Painter	نسخ التنسيق
+	Formatting at Selection	تنسيق التحديد
+	Formula	صيغة
+	General	عام
+	Go To	انتقال إلى
+	Go to	انتقال إلى
+	Go To (⌘⌥G)	انتقال إلى (⌘⌥G)
+	Grab bag	متفرقات
+	Greeting Line	سطر التحية
+	Greeting\nLine	سطر\nالتحية
+	Gridlines	خطوط الشبكة
+	Group	تجميع
+	Grow Font 1 Point	تكبير الخط نقطة واحدة
+	Hanging Indent	مسافة بادئة معلّقة
+	Header	رأس الصفحة
+	Header & Footer	رأس الصفحة وتذييلها
+	Header Row	صف الرأس
+	Header/Footer Position	موضع الرأس والتذييل
+	Heading 1	عنوان 1
+	Heading 2	عنوان 2
+	Heading 3	عنوان 3
+	Headings	العناوين
+	Heart	قلب
+	Help	مساعدة
+	Hidden	مخفي
+	Highlight Merge Fields	تمييز حقول الدمج
+	Highlight\nMerge Fields	تمييز\nحقول الدمج
+	Highlighter	قلم تمييز
+	Home	الرئيسية
+	Horizontal	أفقي
+	Horizontal Line	خط أفقي
+	Hyphenation	تقسيم الكلمات بالواصلة
+	Icons	أيقونات
+	Ignore All	تجاهل الكل
+	Illustrations	رسوم توضيحية
+	Immersive	وضع الانغماس
+	Immersive Reader	القارئ الغامر
+	Immersive\nReader	القارئ\nالغامر
+	Increase Font Size	تكبير حجم الخط
+	Increase Indent	زيادة المسافة البادئة
+	Indent	مسافة بادئة
+	Indentation	المسافة البادئة
+	Indents	المسافات البادئة
+	Index	الفهرس
+	Info	معلومات
+	Ink to\nMath	تحويل الحبر إلى\nمعادلة رياضية
+	Ink to\nShape	تحويل الحبر إلى\nشكل
+	Ink\nReplay	إعادة تشغيل\nالحبر
+	Insert	إدراج
+	Insert Above	إدراج أعلاه
+	Insert Below	إدراج أدناه
+	Insert Caption	إدراج تسمية توضيحية
+	Insert Citation	إدراج استشهاد
+	Insert Endnote	إدراج حاشية ختامية
+	Insert Footnote	إدراج حاشية سفلية
+	Insert Hyperlink	إدراج ارتباط تشعبي
+	Insert Index	إدراج فهرس
+	Insert Left	إدراج إلى اليسار
+	Insert Merge Field	إدراج حقل دمج
+	Insert Merge\nField	إدراج\nحقل دمج
+	Insert Right	إدراج إلى اليمين
+	Insert Shapes	إدراج أشكال
+	Insert Table	إدراج جدول
+	Insert Table of Authorities	إدراج جدول المراجع القانونية
+	Insert Table of Figures	إدراج جدول الأشكال
+	Insert Table…	إدراج جدول…
+	Insert\nAbove	إدراج\nأعلى
+	Insert\nCaption	إدراج\nتسمية توضيحية
+	Insert\nCitation	إدراج\nاستشهاد
+	Insert\nFootnote	إدراج\nحاشية سفلية
+	Inside Borders	الحدود الداخلية
+	Inspect Document	فحص المستند
+	Interface language:	لغة الواجهة:
+	Italic	مائل
+	Join the ArtCraft community on Discord	انضم إلى مجتمع ArtCraft على Discord
+	Join us on Discord: discord.gg/artcraft	انضم إلينا على Discord: discord.gg/artcraft
+	Justify	ضبط النص
+	Keep Lines Together	إبقاء الأسطر معًا
+	Keep lines together	إبقاء الأسطر معًا
+	Keep Text Only	الاحتفاظ بالنص فقط
+	Keep with Next	إبقاء الفقرة مع التالية
+	Keep with next	إبقاء الفقرة مع التالية
+	Labels	تسميات
+	Landscape	أفقي
+	Language	اللغة
+	Lasso	تحديد حر
+	Last Column	العمود الأخير
+	Last commit	آخر إيداع برمجي
+	Layout	تخطيط
+	Layout Summary	ملخص التخطيط
+	Left	يسار
+	Left Border	الحد الأيسر
+	Left:	اليسار:
+	Letter	حجم Letter
+	Line	سطر
+	Line and Page Breaks	فواصل الأسطر والصفحات
+	Line and Paragraph Spacing	تباعد الأسطر والفقرات
+	Line Break	فاصل سطر
+	Line delta	فرق الأسطر
+	Line End	نهاية السطر
+	Line Numbers	أرقام الأسطر
+	Line Spacing	تباعد الأسطر
+	Line Spacing Options…	خيارات تباعد الأسطر…
+	Line spacing:	تباعد الأسطر:
+	Line Start	بداية السطر
+	Lines	أسطر
+	Lines added	الأسطر المضافة
+	Lines deleted	الأسطر المحذوفة
+	Link	رابط
+	Link to Previous	ارتباط بالسابق
+	Links	روابط
+	Location: {path}	الموقع: {path}
+	lowercase	أحرف صغيرة
+	Macros	وحدات الماكرو
+	Mailings	مراسلات
+	Manage Sources	إدارة المصادر
+	Many pages	صفحات متعددة
+	Margins	هوامش
+	Mark Citation	تمييز الاستشهاد
+	Mark Entry	تمييز المدخل
+	Mark\nCitation	تمييز\nالاستشهاد
+	Mark\nEntry	تمييز\nالمدخل
+	Markdown (*.md)	ماركداون (*.md)
+	Match case	مطابقة حالة الأحرف
+	Match Fields	مطابقة الحقول
+	Matrix	مصفوفة
+	Merge	دمج
+	Merge Cells	دمج الخلايا
+	Merge Formatting	دمج التنسيق
+	Merged PRs	طلبات السحب المدمجة
+	Mirrored	معكوس
+	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT أو Apache-2.0. حقوق النشر © 2026 لفريق ArtCraft والمساهمين في WordCraft.
+	Moderate	متوسط
+	Modify Style	تعديل النمط
+	Modify…	تعديل…
+	Move or Resize	نقل أو تغيير الحجم
+	Multilevel List	قائمة متعددة المستويات
+	Multiple Pages	صفحات متعددة
+	Name (A–Z)	الاسم (أ–ي)
+	Name:	الاسم:
+	Narrow  0.5" all	ضيّق 0.5 بوصة من جميع الجهات
+	Navigation	تنقّل
+	Navigation Pane	جزء التنقل
+	New	جديد
+	New Comment	تعليق جديد
+	New from Template	إنشاء من قالب
+	New Paragraph	فقرة جديدة
+	New Style…	نمط جديد…
+	New Window	نافذة جديدة
+	New\nComment	تعليق\nجديد
+	New\nWindow	نافذة\nجديدة
+	Next	التالي
+	Next Change	التغيير التالي
+	Next Comment	التعليق التالي
+	Next Footnote	الحاشية السفلية التالية
+	Next Page	الصفحة التالية
+	Next Record	السجل التالي
+	Next Section	القسم التالي
+	No Border	بلا حدود
+	No Color	بلا لون
+	No contributor data was built into this copy.	لم تُضمَّن بيانات المساهمين في هذه النسخة.
+	No Markup	بلا علامات مراجعة
+	No model credits were built into this copy.	لم تُضمَّن بيانات نماذج الذكاء الاصطناعي في هذه النسخة.
+	No Paragraph Space	بلا مسافة بين الفقرات
+	Nonbreaking Hyphen	واصلة غير قابلة للفصل
+	Nonbreaking Space	مسافة غير قابلة للفصل
+	None	بلا
+	Normal  1" all	عادي 1 بوصة من جميع الجهات
+	Normal Style	النمط العادي
+	Not available right now	غير متاح حاليًا
+	Not saved	غير محفوظ
+	Not saved yet	لم يُحفظ بعد
+	Nudge	تحريك دقيق
+	Number of columns:	عدد الأعمدة:
+	Number of rows:	عدد الصفوف:
+	Numbering	ترقيم
+	Object	كائن
+	Odd Page	صفحة فردية
+	Office 2003 Default	الإعداد الافتراضي لـ Office 2003
+	OK	موافق
+	One	واحد
+	One Page	صفحة واحدة
+	Only web (http, https) and email (mailto) links can be followed	يمكن فتح روابط الويب (http وhttps) والبريد الإلكتروني (mailto) فقط
+	Open	فتح
+	OpenDocument Text (*.odt)	مستند OpenDocument النصي (*.odt)
+	Optional Hyphen	واصلة اختيارية
+	Copyright Sign	علامة حقوق النشر
+	Ellipsis	علامة الحذف
+	Em Dash	شرطة طويلة
+	Insert Date Field	إدراج حقل التاريخ
+	Insert Page Field	إدراج حقل رقم الصفحة
+	Insert Time Field	إدراج حقل الوقت
+	Registered Sign	علامة التسجيل
+	Reset Character Formatting	إعادة تعيين تنسيق الأحرف
+	Reset Paragraph Formatting	إعادة تعيين تنسيق الفقرة
+	Trademark Sign	علامة العلامة التجارية
+	Options	خيارات
+	Orientation	اتجاه الصفحة
+	Outline	مخطط تفصيلي
+	Outline Level	مستوى المخطط التفصيلي
+	Outside Borders	الحدود الخارجية
+	Oval	شكل بيضاوي
+	Page	صفحة
+	Page Background	خلفية الصفحة
+	Page Borders	حدود الصفحة
+	Page Break	فاصل صفحات
+	Page Break Before	فاصل صفحة قبل الفقرة
+	Page break before	فاصل صفحة قبل الفقرة
+	Page Breaks	فواصل الصفحات
+	Page Color	لون الصفحة
+	Page Down	صفحة لأسفل
+	Page image (*.png)	صورة الصفحة (*.png)
+	Page Movement	حركة الصفحة
+	Page Number	رقم الصفحة
+	Page Setup	إعداد الصفحة
+	Page Up	صفحة لأعلى
+	Page Width	عرض الصفحة
+	Page width	عرض الصفحة
+	Page X of Y	الصفحة X من Y
+	Page {page}	الصفحة {page}
+	Page {page} of {pages}	الصفحة {page} من {pages}
+	Page\nBorders	حدود\nالصفحة
+	Page\nColor	لون\nالصفحة
+	Page\nNumber	رقم\nالصفحة
+	Pages	صفحات
+	Paragraph	فقرة
+	Paragraph Details	تفاصيل الفقرة
+	Paragraph Down	الانتقال إلى الفقرة التالية
+	Paragraph Settings	إعدادات الفقرة
+	Paragraph Spacing	تباعد الفقرات
+	Paragraph Up	الانتقال إلى الفقرة السابقة
+	Paragraphs	فقرات
+	Paste	لصق
+	Paste (⌘V)	لصق (⌘V)
+	Paste Formatting	لصق التنسيق
+	Paste: Keep Text Only	لصق: الاحتفاظ بالنص فقط
+	Paste: Merge Formatting	لصق: دمج التنسيق
+	PDF document (*.pdf)	مستند PDF (*.pdf)
+	Pen	قلم
+	Pencil	قلم رصاص
+	Picture Border	حدود الصورة
+	Picture Format	تنسيق الصورة
+	Picture Styles	أنماط الصور
+	Pictures	صور
+	Plain text (*.txt)	نص عادي (*.txt)
+	Portrait	عمودي
+	Position	الموضع
+	Preview Results	معاينة النتائج
+	Preview\nResults	معاينة\nالنتائج
+	Previous	السابق
+	Previous Change	التغيير السابق
+	Previous Comment	التعليق السابق
+	Previous Record	السجل السابق
+	Previous Section	القسم السابق
+	Print	طباعة
+	Print Layout	تخطيط الطباعة
+	Print\nLayout	تخطيط\nالطباعة
+	Proofing	التدقيق
+	Proofing Issues	مشكلات التدقيق
+	Properties	خصائص
+	Protect	حماية
+	Protect Document	حماية المستند
+	Quick Access Toolbar	شريط أدوات الوصول السريع
+	Quick Parts	أجزاء سريعة
+	Quick Tables	جداول سريعة
+	Read Aloud	القراءة بصوت عالٍ
+	Read Mode	وضع القراءة
+	Read\nAloud	القراءة\nبصوت عالٍ
+	Read\nMode	وضع\nالقراءة
+	Recent	الأخيرة
+	Record Macro	تسجيل ماكرو
+	Recover Unsaved Documents	استرداد المستندات غير المحفوظة
+	Rectangle	مستطيل
+	Redo	إعادة
+	Reduce Hanging Indent	تقليل المسافة البادئة المعلّقة
+	References	مراجع
+	Reject	رفض
+	Reject All Changes	رفض جميع التغييرات
+	Reject Change	رفض التغيير
+	Relaxed	متباعد
+	Remove Background	إزالة الخلفية
+	Remove Footer	إزالة التذييل
+	Remove Header	إزالة الرأس
+	Remove Hyperlink	إزالة الارتباط التشعبي
+	Remove Space After Paragraph	إزالة المسافة بعد الفقرة
+	Remove Table of Contents	إزالة جدول المحتويات
+	Remove Watermark	إزالة العلامة المائية
+	Repeat	تكرار
+	Repeat Header Rows	تكرار صفوف الرأس
+	Replace	استبدال
+	Replace All	استبدال الكل
+	Replace Document Text	استبدال نص المستند
+	Replace with:	استبدال بـ:
+	Replay	إعادة تشغيل
+	Reply	رد
+	Report	تقرير
+	Research	بحث
+	Researcher	الباحث
+	Reset Picture	إعادة تعيين الصورة
+	Resolve	حل
+	Resolved	تم الحل
+	Restart at 1	إعادة البدء من 1
+	Restart Each Page	إعادة البدء في كل صفحة
+	Restart Each Section	إعادة البدء في كل قسم
+	Restrict Editing	تقييد التحرير
+	Restrict\nEditing	تقييد\nالتحرير
+	Results	النتائج
+	Reverse the order	عكس الترتيب
+	Review	مراجعة
+	Reviewing	مراجعة
+	Reviewing Pane	جزء المراجعة
+	Reviewing — edits become suggestions	وضع المراجعة — تتحول التعديلات إلى اقتراحات
+	Rich Text Format (*.rtf)	تنسيق النص المنسق (*.rtf)
+	Right	يمين
+	Right Border	الحد الأيمن
+	Right-to-Left Text Direction	اتجاه الكتابة من اليمين إلى اليسار
+	Left-to-Right Text Direction	اتجاه الكتابة من اليسار إلى اليمين
+	Right:	اليمين:
+	Rotate	تدوير
+	Rounded Rectangle	مستطيل مستدير الزوايا
+	Rows & Columns	الصفوف والأعمدة
+	Ruler	المسطرة
+	Rules	القواعد
+	Résumé	السيرة الذاتية
+	Save	حفظ
+	Save a copy in another format. Printing goes through a PDF you can print from any viewer.	احفظ نسخة بتنسيق آخر. تتم الطباعة عبر ملف PDF يمكنك طباعته باستخدام أي عارض.
+	Save As	حفظ باسم
+	Save as Template	حفظ كقالب
+	Saved	تم الحفظ
+	Search Commands	البحث في الأوامر
+	Search commands and help	البحث في الأوامر والمساعدة
+	Search document	البحث في المستند
+	Section Breaks	فواصل المقاطع
+	Section Properties	خصائص المقطع
+	Sections	مقاطع
+	Select	تحديد
+	Select All	تحديد الكل
+	Select Cell	تحديد خلية
+	Select Line	تحديد سطر
+	Select Objects	تحديد الكائنات
+	Select Paragraph	تحديد فقرة
+	Select Range	تحديد نطاق
+	Select Recipients	تحديد المستلمين
+	Select Row	تحديد صف
+	Select Sentence	تحديد جملة
+	Select Table	تحديد جدول
+	Select Text	تحديد النص
+	Select Text with Similar Formatting	تحديد النص ذي التنسيق المماثل
+	Select Word	تحديد كلمة
+	Select\nRecipients	تحديد\nالمستلمين
+	Selection	التحديد
+	Selection Pane	جزء التحديد
+	Send Backward	إرسال إلى الخلف
+	Sentence case.	حالة الجملة
+	Set as Default	تعيين كافتراضي
+	Set Caret	تعيين موضع المؤشر
+	Set Character Formatting	تعيين تنسيق الأحرف
+	Set Numbering Value	تعيين قيمة الترقيم
+	Set Paragraph Formatting	تعيين تنسيق الفقرة
+	Shading	تظليل
+	Shadow	ظل
+	Shape Fill	تعبئة الشكل
+	Shape Format	تنسيق الشكل
+	Shape Outline	مخطط الشكل
+	Shape Styles	أنماط الأشكال
+	Shapes	أشكال
+	Share	مشاركة
+	Shift+Tab	Shift+Tab
+	Show	إظهار
+	Show all formatting marks	إظهار جميع علامات التنسيق
+	Show Comments	إظهار التعليقات
+	Show Markup	إظهار علامات المراجعة
+	Show Notes	إظهار الملاحظات
+	Show only comments and formatting in balloons	إظهار التعليقات والتنسيقات في الفقاعات فقط
+	Show revisions in balloons	إظهار المراجعات في الفقاعات
+	Show rulers	إظهار المساطر
+	Show the community button in the title bar	إظهار زر المجتمع في شريط العنوان
+	Show/Hide ¶	إظهار/إخفاء ¶
+	Show\nComments	إظهار\nالتعليقات
+	Shrink Font 1 Point	تصغير الخط نقطة واحدة
+	Side to Side	من جانب إلى جانب
+	Side\nto Side	من جانب\nإلى جانب
+	Signature Line	سطر التوقيع
+	Single	مفرد
+	Single Spacing	تباعد مفرد
+	Size	الحجم
+	Size (pt):	الحجم (نقطة):
+	Size:	الحجم:
+	Small Caps	أحرف استهلالية صغيرة
+	Small caps	أحرف استهلالية صغيرة
+	SmartArt	رسومات SmartArt
+	Sort	فرز
+	Source code: github.com/storytold/wordcraft	الشيفرة المصدرية: github.com/storytold/wordcraft
+	Space	مسافة
+	Space before/after:	المسافة قبل/بعد:
+	Spacing	تباعد
+	Spacing (pt):	التباعد (نقطة):
+	Speech	الكلام
+	Spelling & Grammar	التدقيق الإملائي والنحوي
+	Spelling &\nGrammar	التدقيق الإملائي\nوالنحوي
+	Spelling Suggestions	اقتراحات إملائية
+	Split	تقسيم
+	Split Cells	تقسيم الخلايا
+	Split Table	تقسيم الجدول
+	Spreadsheet Table	جدول بيانات
+	Standard Colors	الألوان القياسية
+	Star	نجمة
+	Start at:	البدء عند:
+	Start Mail Merge	بدء دمج المراسلات
+	Start Mail\nMerge	بدء دمج\nالمراسلات
+	Statistics	إحصاءات
+	Status Bar	شريط الحالة
+	Strikethrough	يتوسطه خط
+	Studio cover	غلاف الاستوديو
+	Studio handbook (sample)	دليل الاستوديو (نموذج)
+	Style	نمط
+	Style based on:	النمط المستند إلى:
+	Style Set	مجموعة الأنماط
+	Style: {style}	النمط: {style}
+	Styles	الأنماط
+	Styles Pane	جزء الأنماط
+	Subscript	منخفض
+	Superscript	مرتفع
+	Switch Modes	تبديل الأوضاع
+	Switch\nModes	تبديل\nالأوضاع
+	Symbol	رمز
+	Symbols	رموز
+	Synonyms	مرادفات
+	Tab	علامة تبويب
+	Tab character	محرف الجدولة
+	Table	جدول
+	Table Column Width	عرض عمود الجدول
+	Table Design	تصميم الجدول
+	Table Layout	تخطيط الجدول
+	Table of Authorities	جدول المراجع القانونية
+	Table of Contents	جدول المحتويات
+	Table of\nContents	جدول\nالمحتويات
+	Table Properties	خصائص الجدول
+	Table Row Height	ارتفاع صف الجدول
+	Table Style Options	خيارات نمط الجدول
+	Table Styles	أنماط الجداول
+	Tables	جداول
+	Tabs	علامات الجدولة
+	Tabular List	قائمة جدولية
+	Text	نص
+	Text Box	مربع نص
+	Text Direction	اتجاه النص
+	Text Effects	تأثيرات النص
+	Text Effects and Typography	تأثيرات النص والطباعة
+	Text from File	نص من ملف
+	Text Highlight Color	لون تمييز النص
+	Text indent at:	مسافة بادئة للنص عند:
+	Text to display:	النص المراد عرضه:
+	Text Wrapping	التفاف النص
+	Text:	النص:
+	Text\nBox	مربع\nنص
+	Text\nDirection	اتجاه\nالنص
+	That format doesn't keep everything, so the document is still open. Save it as a Word document (.docx) to go on.	هذا التنسيق لا يحتفظ بكل العناصر، لذلك سيظل المستند مفتوحًا. احفظه كمستند Word (.docx) للمتابعة.
+	The new style takes the formatting of the current paragraph.	يأخذ النمط الجديد تنسيق الفقرة الحالية.
+	Theme Colors	ألوان النسق
+	Theme Fonts	خطوط النسق
+	Theme List	قائمة الأنساق
+	Themes	الأنساق
+	Thesaurus	قاموس المرادفات
+	Thick	سميك
+	Three	ثلاثة
+	Tight	متقارب
+	Top Border	الحد العلوي
+	Top Margin	الهامش العلوي
+	Top of Page	أعلى الصفحة
+	Top:	الأعلى:
+	Total Row	الصف الإجمالي
+	Track Changes	تعقب التغييرات
+	Track Changes Options	خيارات تعقب التغييرات
+	Track Changes: On	تعقب التغييرات: مفعّل
+	Track formatting	تعقب التنسيق
+	Tracking	التعقب
+	Translate	ترجمة
+	Transparency	الشفافية
+	Triangle	مثلث
+	Two	اثنان
+	Type a command, e.g. "insert table"	اكتب أمرًا، مثل «إدراج جدول»
+	Type Text	كتابة نص
+	Underline	تسطير
+	Underline Words Only	تسطير الكلمات فقط
+	Undo	تراجع
+	Undo {action}	التراجع عن {action}
+	Ungroup	إلغاء التجميع
+	Up	أعلى
+	Update Field	تحديث الحقل
+	Update Index	تحديث الفهرس
+	Update Style to Match Selection	تحديث النمط لمطابقة التحديد
+	Update Table	تحديث الجدول
+	Update Table of Figures	تحديث جدول الأشكال
+	Update to Match	تحديث لمطابقة التحديد
+	Update to Match Selection	تحديث لمطابقة التحديد
+	UPPERCASE	أحرف كبيرة
+	User Name	اسم المستخدم
+	User name:	اسم المستخدم:
+	Version History	سجل الإصدارات
+	Version {version} ({build})	الإصدار {version} ({build})
+	Vertical	عمودي
+	Vertical Alignment	محاذاة رأسية
+	View	عرض
+	View Gridlines	إظهار خطوط الشبكة
+	View State	حالة العرض
+	Views	طرق العرض
+	Voice	الصوت
+	Watermark	علامة مائية
+	Wave	موجة
+	Web Layout	تخطيط الويب
+	Web page (*.html)	صفحة ويب (*.html)
+	Web\nLayout	تخطيط\nالويب
+	Whole page	الصفحة بأكملها
+	Whole words	كلمات كاملة
+	Wide	عريض
+	Widow/Orphan Control	منع الأسطر اليتيمة والأرامل
+	Widow/Orphan control	منع الأسطر اليتيمة والأرامل
+	Wildcards (regex)	أحرف البدل (التعبيرات النمطية)
+	Window	نافذة
+	Word Count	عدد الكلمات
+	Word document (*.docx)	مستند Word (*.docx)
+	Word Left	الكلمة السابقة
+	Word Right	الكلمة التالية
+	WordArt	فن النص (WordArt)
+	WordCraft	WordCraft
+	Words	كلمات
+	Words only	الكلمات فقط
+	Wrap Text	التفاف النص
+	Wrap\nText	التفاف\nالنص
+	Write & Insert Fields	كتابة الحقول وإدراجها
+	Write a reply	كتابة رد
+	Zoom	تكبير
+	Zoom In	تكبير
+	Zoom Out	تصغير
+	{group} settings	إعدادات {group}
+	{key}+Click to follow link	اضغط على {key} مع النقر لفتح الرابط
+	Browse…	استعراض…
+	{words} words	{words} كلمة
+	{selected} of {words} words	المحدد: {selected} من أصل {words} كلمة
+	Direction:	الاتجاه:
+	Right-to-left	من اليمين إلى اليسار
+	Left-to-right	من اليسار إلى اليمين
+	Zotero	Zotero
+	Citations	الاستشهادات
+	Document	مستند
+	Add/Edit\nCitation	إضافة/تحرير\nاستشهاد
+	Add\nNote	إضافة\nملاحظة
+	Add/Edit\nBibliography	إضافة/تحرير\nقائمة المراجع
+	Refresh	تحديث
+	Document\nPreferences	تفضيلات\nالمستند
+	Unlink\nCitations	إلغاء ربط\nالاستشهادات
+	Waiting for Zotero…	بانتظار Zotero…
+	Zotero: done	Zotero: اكتمل
+	Zotero: cancelled	Zotero: أُلغي
+	Yes	نعم
+	No	لا
+	Move Past Citation	تجاوز الاستشهاد
+	Move Past\nCitation	تجاوز\nالاستشهاد
+	Next Sentence	الجملة التالية
+	Previous Sentence	الجملة السابقة
+	Next sentence	الجملة التالية
+	Previous sentence	الجملة السابقة
+	Play/Pause	تشغيل/إيقاف مؤقت
+	Read Aloud Status	حالة القراءة بصوت عالٍ
+	Reading Speed	سرعة القراءة
+	Skip Citations and Bibliography	تخطي الاستشهادات وقائمة المراجع
+	Skip citations & bibliography	تخطي الاستشهادات والمراجع
+	Stop Reading	إيقاف القراءة
+	Don't read Zotero, Mendeley or EndNote citations and bibliographies	عدم قراءة استشهادات ومراجع Zotero أو Mendeley أو EndNote
+	Play	تشغيل
+	Pause	إيقاف مؤقت
+	Stop	إيقاف
+	Sentence	جملة
+	Paused	متوقف مؤقتًا
+	Finished	اكتمل
+	Stopped	تم الإيقاف
+	Speed	السرعة
+	Normal speed	السرعة العادية
+	Your changes will be lost if you don't save them.	ستفقد تغييراتك إذا لم تحفظها.
+	Scroll ribbon left	تمرير الشريط إلى اليسار
+	Scroll ribbon right	تمرير الشريط إلى اليمين
+	Change Structure	تغيير البنية
+	Change to Display	تحويل إلى معادلة معروضة
+	Change to Inline	تحويل إلى معادلة ضمن السطر
+	Conversions	تحويلات
+	Delete Back in Equation	حذف للخلف داخل المعادلة
+	Delete in Equation	حذف داخل المعادلة
+	Edit Equation	تحرير المعادلة
+	Enter in Equation	إدخال داخل المعادلة
+	Equation Gallery	معرض المعادلات
+	Equation Info	معلومات المعادلة
+	Equation Number	رقم المعادلة
+	Input Format	تنسيق الإدخال
+	Insert Structure	إدراج بنية
+	Insert Symbol	إدراج رمز
+	Justification	ضبط النص
+	Leave Equation	مغادرة المعادلة
+	Move in Equation	التنقل داخل المعادلة
+	Normal Text	نص عادي
+	Set Equation	تعيين المعادلة
+	Structure Actions	إجراءات البنية
+	Structures	البنى
+	Tools	أدوات
+	Type in Equation	الكتابة في المعادلة
+	Inline	ضمن السطر
+	Number	رقم
+	Close Equation	إغلاق المعادلة
+	Insert New Equation	إدراج معادلة جديدة
+	Built-In	مضمّن
+	Professional	احترافي
+	Linear	خطي
+	Fraction	كسر
+	Script	أسّ وفهرس
+	Radical	جذر
+	Integral	تكامل
+	Large\nOperator	عامل\nكبير
+	Bracket	قوس
+	Function	دالة
+	Accent	علامة تشكيل
+	Limit and\nLog	نهاية\nولوغاريتم
+	Operator	عامل
+	Equation Options	خيارات المعادلة
+	All symbol sets	جميع مجموعات الرموز
+	Send the document straight to the system print dialog, or save a copy in another format below.	أرسل المستند مباشرة إلى مربع حوار الطباعة في النظام، أو احفظ نسخة بتنسيق آخر أدناه.
+	Or save a copy in another format:	أو احفظ نسخة بتنسيق آخر:
+	Opening print dialog…	جارٍ فتح مربع حوار الطباعة…
+	Print failed: {error}	فشلت الطباعة: {error}
+	Couldn't open {path}: {error}	تعذر فتح {path}: {error}
+	Column Selection	تحديد العمود
+	Style Inspector	مفتش الأنماط
+	Inspect Styles at Selection	فحص الأنماط عند التحديد
+	Clear Formatting Level	مسح مستوى التنسيق
+	Characters	أحرف
+	Direct formatting	تنسيق مباشر
+	Reset to Normal	إعادة التعيين إلى النمط العادي
+	Clear Paragraph Formatting	مسح تنسيق الفقرة
+	Clear Character Style	مسح نمط الأحرف
+	Clear Character Formatting	مسح تنسيق الأحرف
+	Paste Special	لصق خاص
+	Paste Special…	لصق خاص…
+	Paste as:	لصق كـ:
+	The clipboard is empty.	الحافظة فارغة.
+	Formatted Text	نص منسق
+	Rich Text Format (RTF)	تنسيق النص المنسق (RTF)
+	HTML Format	تنسيق HTML
+	Unformatted Text	نص غير منسق
+	Result	النتيجة
+	Keeps the fonts and formatting of the copied text.	يحتفظ بالخطوط والتنسيق للنص المنسوخ.
+	Reads the clipboard's rich text and keeps its formatting.	يقرأ النص المنسق من الحافظة ويحتفظ بتنسيقه.
+	Reads the clipboard's web content and keeps its formatting.	يقرأ محتوى الويب من الحافظة ويحتفظ بتنسيقه.
+	Drops all formatting and pastes plain text.	يزيل جميع التنسيقات ويلصق النص العادي.
+	Advanced Find	بحث متقدم
+	Advanced Find…	بحث متقدم…
+	Go To…	انتقال إلى…
+	Reading Highlight	تمييز موضع القراءة
+	New Table Style	نمط جدول جديد
+	Modify Table Style	تعديل نمط الجدول
+	New Table Style…	نمط جدول جديد…
+	Modify Table Style…	تعديل نمط الجدول…
+	Apply formatting to:	تطبيق التنسيق على:
+	Whole Table	الجدول بأكمله
+	Fill color:	لون التعبئة:
+	{count} items highlighted	تم تمييز {count} عنصرًا
+	{n} pt	{n} نقطة
+	Not {name}	ليس {name}
+	Level {n}	المستوى {n}
+	Body Text	نص المتن
+	{n} lines	{n} أسطر
+	At least {n}	{n} على الأقل
+	Exactly {n}	{n} تمامًا
+	Centered	توسيط
+	Character spacing	تباعد الأحرف
+	Don't add space between paragraphs of the same style	عدم إضافة مسافة بين فقرات النمط نفسه
+	Don't hyphenate	عدم تقسيم الكلمات بالواصلة
+	Double strikethrough	شطب مزدوج
+	Drop cap	حرف استهلالي
+	First line	السطر الأول
+	Font color	لون الخط
+	Highlight	تمييز
+	Justified	ضبط النص
+	Left indent	المسافة البادئة اليسرى
+	Line spacing	تباعد الأسطر
+	Outline level	مستوى المخطط التفصيلي
+	Raised/lowered	مرتفع/منخفض
+	Right indent	المسافة البادئة اليمنى
+	Scale	مقياس
+	Space after	المسافة بعد
+	Space before	المسافة قبل
+	Suppress line numbers	إخفاء أرقام الأسطر
+	Underline color	لون التسطير
+	Letters	أحرف
+	E-mail Messages	رسائل البريد الإلكتروني
+	Directory	دليل العناوين
+	Normal Word Document	مستند Word عادي
+	If…Then…Else…	إذا…ثم…وإلا…
+	If…Then…Else	إذا…ثم…وإلا
+	Merge Record #	رقم سجل الدمج
+	Skip Record If…	تخطي السجل إذا…
+	Skip Record If	تخطي السجل إذا
+	Equals:	يساوي:
+	Then insert:	ثم أدرج:
+	Otherwise insert:	وإلا فأدرج:
+	Courtesy Title	لقب المخاطبة
+	First Name	الاسم الأول
+	Last Name	اسم العائلة
+	Company	الشركة
+	Address	العنوان
+	City	المدينة
+	State	الولاية
+	Postal Code	الرمز البريدي
+	Country	البلد
+	(not matched)	(غير مطابق)
+	Leave a recipient out of the merge when a field has this value.	استبعاد المستلم من الدمج عندما يحتوي أحد الحقول على هذه القيمة.
+	Insert one text or another, depending on a field's value.	إدراج نص معين أو نص آخر وفقًا لقيمة أحد الحقول.
+	Select recipients first to match their fields.	حدد المستلمين أولًا لمطابقة حقولهم.
+	The recipient-list field that fills each part of an address block and greeting line.	حقل قائمة المستلمين الذي يملأ كل جزء من كتلة العنوان وسطر التحية.
+	No errors found: every merge field is in the recipient list.	لم يتم العثور على أخطاء: جميع حقول الدمج موجودة في قائمة المستلمين.
+	These merge fields aren't in the recipient list:	حقول الدمج التالية غير موجودة في قائمة المستلمين:
+	Add at least one field.	أضف حقلًا واحدًا على الأقل.
+	Add Field	إضافة حقل
+	Every field needs a name.	يجب أن يكون لكل حقل اسم.
+	Field name	اسم الحقل
+	Field names must be different.	يجب أن تكون أسماء الحقول مختلفة.
+	Fields:	الحقول:
+	Field:	الحقل:
+	Find:	بحث عن:
+	New Entry	مدخل جديد
+	Recipient List	قائمة المستلمين
+	Recipients: {count}	المستلمون: {count}
+	Remove field	إزالة الحقل
+	Remove recipient	إزالة المستلم
+	Select recipients first to choose from their fields.	حدد المستلمين أولًا للاختيار من حقولهم.
+	Type a New List…	كتابة قائمة جديدة…
+	Type at least one recipient.	أدخل مستلمًا واحدًا على الأقل.
+	Type the recipients, or load them from a file.	أدخل بيانات المستلمين أو حمّلها من ملف.
+	Use an Existing List…	استخدام قائمة موجودة…
+	Choose the sheet that holds the recipients.	اختر ورقة العمل التي تحتوي على المستلمين.
+	First row of data contains column headers	يحتوي الصف الأول من البيانات على عناوين الأعمدة
+	Interface theme:	سمة الواجهة:
+	Interface\nTheme	سمة\nالواجهة
+	Interface Theme	سمة الواجهة
+	Light	فاتح
+	Dark	داكن
+	Use system setting	استخدام إعداد النظام
+	A file dialog is already open.	يوجد مربع حوار ملفات مفتوح بالفعل.
+	Height:	الارتفاع:
+	Width:	العرض:
+	Row	صف
+	Cell	خلية
+	Preferred width:	العرض المفضل:
+	Alignment:	المحاذاة:
+	Indent from left:	المسافة البادئة من اليسار:
+	Specify height:	تحديد الارتفاع:
+	Exactly	بالضبط
+	At least	على الأقل
+	Allow row to break across pages	السماح بانقسام الصف بين الصفحات
+	Repeat as header row on each page	تكرار الصف كصف رأس في كل صفحة
+	Vertical alignment:	المحاذاة الرأسية:
+	Top	أعلى
+	Bottom	أسفل
+	Alt text	النص البديل
+	Alt:	النص البديل:
+	W:	العرض:
+	H:	الارتفاع:
+	Reset	إعادة تعيين
+	Reset Crop	إعادة تعيين الاقتصاص
+	Insert a new equation (Alt+=)	إدراج معادلة جديدة (Alt+=)
+	Leave the equation (Esc)	مغادرة المعادلة (Esc)
+	Preview	معاينة
+	getartcraft.com/apps/wordcraft	getartcraft.com/apps/wordcraft
+	Draw Ink	الرسم بالحبر
+	Erase Ink	محو الحبر
+	Hide Ink	إخفاء الحبر
+	Hide\nInk	إخفاء\nالحبر
+	Pens	أقلام
+	Thickness	السُمك
+	(All)	(الكل)
+	(none)	(لا شيء)
+	(normal text)	(نص عادي)
+	1/4 Em Space	ربع مسافة Em
+	A mail merge field	حقل دمج مراسلات
+	A numbered sequence (figures, tables…)	تسلسل مرقم (الأشكال والجداول…)
+	A table of contents	جدول محتويات
+	Categories:	الفئات:
+	Character	محرف
+	Character code:	رمز المحرف:
+	Col #:	رقم العمود:
+	Copyright	حقوق النشر
+	Date and Time	التاريخ والوقت
+	Date formats:	تنسيقات التاريخ:
+	Description:	الوصف:
+	Document Information	معلومات المستند
+	Double Closing Quote	علامة اقتباس إغلاق مزدوجة
+	Double Opening Quote	علامة اقتباس فتح مزدوجة
+	En Dash	شرطة متوسطة
+	Em Space	مسافة Em كاملة
+	En Space	مسافة En
+	Equal column width	تساوي عرض الأعمدة
+	Field Codes	رموز الحقول
+	Field code:	رمز الحقل:
+	Field codes:	رموز الحقول:
+	Field name:	اسم الحقل:
+	Field names:	أسماء الحقول:
+	Field properties	خصائص الحقل
+	Field…	حقل…
+	Format:	التنسيق:
+	Hide Codes	إخفاء الرموز
+	Index and Tables	الفهرس والجداول
+	Line between	خط فاصل بين الأعمدة
+	Links and References	الروابط والمراجع
+	Mail Merge	دمج المراسلات
+	More Columns…	مزيد من الأعمدة…
+	More Symbols…	مزيد من الرموز…
+	No-Width Non Break	فاصل غير قابل للكسر بعرض صفري
+	No-Width Optional Break	فاصل اختياري بعرض صفري
+	Paragraph Mark	علامة الفقرة
+	Pick a field from the list	اختر حقلًا من القائمة
+	Preserve formatting during updates	الحفاظ على التنسيق أثناء التحديثات
+	Presets	إعدادات مسبقة
+	Recently used symbols:	الرموز المستخدمة مؤخرًا:
+	Registered	مسجل
+	Section Mark	علامة القسم
+	Sequence name:	اسم التسلسل:
+	Shortcut key:	مفتاح الاختصار:
+	Single Closing Quote	علامة اقتباس إغلاق مفردة
+	Single Opening Quote	علامة اقتباس فتح مفردة
+	Spacing:	التباعد:
+	Special Characters	محارف خاصة
+	Subset:	مجموعة فرعية:
+	The time right now	الوقت الحالي
+	When this document was first created	تاريخ إنشاء هذا المستند لأول مرة
+	When this document was most recently printed	تاريخ آخر طباعة لهذا المستند
+	When this document was most recently saved	تاريخ آخر حفظ لهذا المستند
+	The document has no bookmarks yet.	لا يحتوي المستند على إشارات مرجعية بعد.
+	Who the document properties name as author	اسم المؤلف المحدد في خصائص المستند
+	Name of the file this document is saved as	اسم الملف الذي حُفظ به هذا المستند
+	Title from the document properties	العنوان من خصائص المستند
+	How many pages the whole document has	عدد صفحات المستند بأكمله
+	How many pages this section has	عدد صفحات هذا القسم
+	Number of the page the field sits on	رقم الصفحة التي يوجد فيها الحقل
+	Number of the section the field sits in	رقم القسم الذي يوجد فيه الحقل
+	How many words the document holds	عدد الكلمات في المستند
+	Page on which a bookmarked passage falls	رقم الصفحة التي يقع فيها المقطع ذو الإشارة المرجعية
+	Copy of the text a bookmark marks	نسخة من النص الذي تحدده الإشارة المرجعية
+	This field has no options.	لا توجد خيارات لهذا الحقل.
+	This font has no characters to show.	لا يحتوي هذا الخط على محارف لعرضها.
+	This point forward	من هذه النقطة فصاعدًا
+	The date it is today	تاريخ اليوم
+	Trademark	علامة تجارية
+	Type the field's name and its switches, for example PAGE \\* roman.	Type the field's name and its switches, for example PAGE \\\\* roman.
+	Width and spacing	العرض والتباعد
+	from Unicode (hex)	من يونيكود (ست عشري)
+	Shape Effects	تأثيرات الشكل
+	Glow	توهج
+	Soft Edges	حواف ناعمة
+	No Shadow	بلا ظل
+	No Glow	بلا توهج
+	No Soft Edges	بلا حواف ناعمة
+	Glow Colors	ألوان التوهج
+	Weight	السُمك
+	Shadow, glow and soft edges	الظل والتوهج والحواف الناعمة
+	Offset: Bottom Right	الإزاحة: أسفل اليمين
+	Offset: Bottom	الإزاحة: أسفل
+	Offset: Bottom Left	الإزاحة: أسفل اليسار
+	Offset: Right	الإزاحة: اليمين
+	Offset: Center	الإزاحة: الوسط
+	Offset: Left	الإزاحة: اليسار
+	Offset: Top Right	الإزاحة: أعلى اليمين
+	Offset: Top	الإزاحة: أعلى
+	Offset: Top Left	الإزاحة: أعلى اليسار
+	Manage Styles	إدارة الأنماط
+	Show or Hide Style	إظهار النمط أو إخفاؤه
+	Manage Styles…	إدارة الأنماط…
+	Sort order:	ترتيب الفرز:
+	As Recommended	حسب التوصية
+	Alphabetical	أبجدي
+	Font: {font}	الخط: {font}
+	{size} pt	{size} نقطة
+	Color: {color}	اللون: {color}
+	Space before: {pt} pt	المسافة قبل: {pt} نقطة
+	Space after: {pt} pt	المسافة بعد: {pt} نقطة
+	Based on: {style}	مستند إلى: {style}
+	Paragraph style	نمط الفقرة
+	Character style	نمط الأحرف
+	Linked style (paragraph and character)	نمط مرتبط (فقرة وحرف)
+	Table style	نمط الجدول
+	Built-in style	نمط مضمّن
+	Show in the Styles gallery	إظهار في معرض الأنماط
+	Hide from style lists	إخفاء من قوائم الأنماط
+	Built-in styles can't be deleted.	لا يمكن حذف الأنماط المضمّنة.
+	Delete Table Style	حذف نمط الجدول
+	Password	كلمة المرور
+	Password:	كلمة المرور:
+	Confirm password:	تأكيد كلمة المرور:
+	Encrypt with Password…	تشفير بكلمة مرور…
+	Change Password…	تغيير كلمة المرور…
+	Remove Password	إزالة كلمة المرور
+	A password is required to open this document.	يلزم إدخال كلمة مرور لفتح هذا المستند.
+	Anyone can open this document. Encrypt it with a password to keep it private.	يمكن لأي شخص فتح هذا المستند. شفّره بكلمة مرور للحفاظ على خصوصيته.
+	Anyone who opens the document will need this password.	سيحتاج كل من يفتح المستند إلى كلمة المرور هذه.
+	{name} is protected with a password.	المستند {name} محمي بكلمة مرور.
+	That password isn't right. Check it (passwords are case-sensitive) and try again.	كلمة المرور غير صحيحة. تحقق منها (فكلمات المرور تميّز بين الأحرف الكبيرة والصغيرة) ثم حاول مجددًا.
+	The document will be saved with a password. Save it to protect it.	سيُحفظ المستند بكلمة مرور. احفظه لتفعّل الحماية.
+	The password is removed. Save the document to keep the change.	أُزيلت كلمة المرور. احفظ المستند للاحتفاظ بالتغيير.
+	The passwords don't match.	كلمتا المرور غير متطابقتين.
+	Keep the password somewhere safe: without it nobody, WordCraft included, can open the document. Leave both boxes empty to remove the password.	احتفظ بكلمة المرور في مكان آمن؛ فبدونها لن يتمكن أحد، بما في ذلك WordCraft، من فتح المستند. اترك الحقلين فارغين لإزالة كلمة المرور.
+	Align Top Left	محاذاة إلى أعلى اليسار
+	Align Top Center	محاذاة إلى أعلى الوسط
+	Align Top Right	محاذاة إلى أعلى اليمين
+	Align Center Left	محاذاة إلى وسط اليسار
+	Align Center	محاذاة إلى الوسط
+	Align Center Right	محاذاة إلى وسط اليمين
+	Align Bottom Left	محاذاة إلى أسفل اليسار
+	Align Bottom Center	محاذاة إلى أسفل الوسط
+	Align Bottom Right	محاذاة إلى أسفل اليمين
+	{contributors} contributors · {commits} commits	{contributors} مساهمًا · {commits} إيداعًا
+	{cols}×{rows} Table	جدول {cols}×{rows}
+	AaBbYyZz	AaBbYyZz
+	pt	نقطة
+	Document1	المستند1
+	Username	اسم المستخدم
+	Display name	اسم العرض
+	Real name	الاسم الحقيقي
+	Name	الاسم
+	PRs	طلبات السحب
+	Commits	إيداعات
+	First	الأول
+	Last	الأخير
+	Model	النموذج
+	Version	الإصدار
+	% of all commits	٪ من جميع الإيداعات
+	Lines +/−	الأسطر +/−
+	Craft	Craft
+	Studio	Studio
+	Atelier	Atelier
+	Darkroom	Darkroom
+	Gallery	Gallery
+	Sketchbook	Sketchbook
+	Change Picture…	تغيير الصورة…
+	Font…	الخط…
+	Paragraph…	فقرة…
+	Link…	ارتباط…
+	Size and Crop…	الحجم والاقتصاص…
+	Insert Columns to the Left	إدراج أعمدة إلى اليسار
+	Insert Columns to the Right	إدراج أعمدة إلى اليمين
+	Insert Rows Above	إدراج صفوف أعلى
+	Insert Rows Below	إدراج صفوف أسفل
+	Mon	الاثنين
+	Tue	الثلاثاء
+	Wed	الأربعاء
+	Sum	المجموع
+	North	الشمال
+	South	الجنوب
+	West	الغرب
+	Total	الإجمالي
+	Draw\nTable	رسم\nجدول
+	Rotation	تدوير
+	Rotation:	التدوير:
+	Rotate Right 90°	تدوير 90° إلى اليمين
+	Rotate Left 90°	تدوير 90° إلى اليسار
+	Flip Vertical	قلب عمودي
+	Flip Horizontal	قلب أفقي
+	Move Paragraph Up	نقل الفقرة إلى أعلى
+	Move Paragraph Down	نقل الفقرة إلى أسفل
+	Promote	ترقية المستوى
+	Demote	خفض المستوى
+	Go Back	رجوع
+	Toggle Unicode Character	تبديل محرف يونيكود
+	Toggle Field Codes	تبديل عرض رموز الحقول
+	Edit Field Code	تحرير رمز الحقل
+	Unlink Fields	إلغاء ربط الحقول
+	Lock Fields	تأمين الحقول
+	Unlock Fields	إلغاء تأمين الحقول
+	Next Field	الحقل التالي
+	Previous Field	الحقل السابق
+	Selected Fields	الحقول المحددة
+	Edit Field…	تحرير الحقل…
+	Formatted	منسق
+	Interface size:	حجم الواجهة:
+	Makes the ribbon, menus and dialogs larger or smaller, on top of your system's display scaling. Document zoom is separate.	يغيّر حجم الشريط والقوائم ومربعات الحوار، بالإضافة إلى مقياس العرض في النظام. ويظل تكبير المستند مستقلًا.
+	In Line with Text	ضمن النص
+	Square	مربع
+	Through	من خلال
+	Top and Bottom	أعلى وأسفل
+	Behind Text	خلف النص
+	In Front of Text	أمام النص
+	Wrap Text Sides	التفاف النص حول الجانبين
+	Both Sides	كلا الجانبين
+	Left Only	اليسار فقط
+	Right Only	اليمين فقط
+	Largest Only	الأكبر فقط
+	Customize Keyboard	تخصيص لوحة المفاتيح
+	Choose a command	اختر أمرًا
+	Choose a shortcut	اختر اختصارًا
+	All Commands	جميع الأوامر
+	Commands:	الأوامر:
+	Keys for this command:	مفاتيح هذا الأمر:
+	New shortcut:	اختصار جديد:
+	Now used by {command}	يُستخدم الآن بواسطة {command}
+	Not used by any command	غير مستخدم في أي أمر
+	Remove every custom shortcut and restore the built-in keys?	هل تريد إزالة جميع الاختصارات المخصصة واستعادة المفاتيح الافتراضية؟
+	Assign	تعيين
+	Reset All…	إعادة تعيين الكل…
+	Press a key combination	اضغط مجموعة مفاتيح
+	Customize	تخصيص
+	Keyboard shortcuts:	اختصارات لوحة المفاتيح:
+	Customize…	تخصيص…
+	Customize Ribbon	تخصيص الشريط
+	Add to Quick Access Toolbar	إضافة إلى شريط أدوات الوصول السريع
+	Remove from Quick Access Toolbar	إزالة من شريط أدوات الوصول السريع
+	Customize the Ribbon…	تخصيص الشريط…
+	Customize Quick Access Toolbar…	تخصيص شريط أدوات الوصول السريع…
+	More Commands…	مزيد من الأوامر…
+	Ribbon	الشريط
+	(Custom)	(مخصص)
+	Remove every custom tab and group and show all tabs again?	هل تريد إزالة كل علامات التبويب والمجموعات المخصصة وإظهار جميع علامات التبويب مجددًا؟
+	Put the default commands back on the Quick Access Toolbar?	هل تريد إعادة الأوامر الافتراضية إلى شريط أدوات الوصول السريع؟
+	Reset…	إعادة تعيين…
+	Add >>	إضافة >>
+	<< Remove	<< إزالة
+	Pick a custom group (New Group makes one)	اختر مجموعة مخصصة (ينشئ «مجموعة جديدة» مجموعةً جديدة)
+	Ribbon tabs	علامات تبويب الشريط
+	New Tab	علامة تبويب جديدة
+	New Group	مجموعة جديدة
+	Rename…	إعادة تسمية…
+	Ribbon and Quick Access Toolbar:	الشريط وشريط أدوات الوصول السريع:
+	Accessibility Pane	جزء إمكانية الوصول
+	Alt Text Pane	جزء النص البديل
+	Alt\nText	النص\nالبديل
+	View Alt Text…	عرض النص البديل…
+	Mark as decorative	وضع علامة على أنه عنصر زخرفي
+	Title:	العنوان:
+	Errors ({n})	الأخطاء ({n})
+	Warnings ({n})	التحذيرات ({n})
+	Tips ({n})	التلميحات ({n})
+	No accessibility issues found.	لم يتم العثور على مشكلات في إمكانية الوصول.
+	Describe what this object shows, for people who can't see it.	صف ما يعرضه هذا الكائن للأشخاص الذين لا يستطيعون رؤيته.
+	Decorative objects only add visual interest: screen readers skip them.	تضيف العناصر الزخرفية قيمة جمالية فقط؛ وتتجاوزها قارئات الشاشة.
+	Describe what this table shows, for people who can't see it.	صف ما يعرضه هذا الجدول للأشخاص الذين لا يستطيعون رؤيته.
+	Select a picture, shape, chart or table to describe it.	حدد صورة أو شكلًا أو مخططًا أو جدولًا لوصفه.
+	Document Grid	شبكة المستند
+	No grid	بلا شبكة
+	Lines only	أسطر فقط
+	Lines and characters	أسطر ومحارف
+	Text snaps to characters	محاذاة النص إلى المحارف
+	Characters per line:	عدد المحارف في السطر:
+	Lines per page:	عدد الأسطر في الصفحة:
+	Moved from	نُقل من
+	Moved to	نُقل إلى
+	Developer	المطوّر
+	Controls	عناصر التحكم
+	Rich Text Content Control	عنصر تحكم محتوى نص منسق
+	Plain Text Content Control	عنصر تحكم محتوى نص عادي
+	Picture Content Control	عنصر تحكم محتوى صورة
+	Building Block Gallery Content Control	عنصر تحكم محتوى معرض الكتل الإنشائية
+	Check Box Content Control	عنصر تحكم محتوى مربع اختيار
+	Combo Box Content Control	عنصر تحكم محتوى مربع تحرير وسرد
+	Drop-Down List Content Control	عنصر تحكم محتوى قائمة منسدلة
+	Date Picker Content Control	عنصر تحكم محتوى منتقي التاريخ
+	Repeating Section Content Control	عنصر تحكم محتوى قسم متكرر
+	Design Mode	وضع التصميم
+	Content Control at Selection	عنصر تحكم المحتوى عند التحديد
+	Toggle Check Box	تبديل حالة مربع الاختيار
+	Choose List Item	اختيار عنصر من القائمة
+	Set Date	تعيين التاريخ
+	Remove Content Control	إزالة عنصر تحكم المحتوى
+	Content Control Properties	خصائص عنصر تحكم المحتوى
+	Title	العنوان
+	Tag	وسم
+	Placeholder text	نص نائب
+	Can't be deleted	لا يمكن حذفه
+	Contents can't be edited	لا يمكن تحرير المحتويات
+	Remove the control once edited	إزالة عنصر التحكم بعد تحريره
+	Allow line breaks	السماح بفواصل الأسطر
+	Date format	تنسيق التاريخ
+	Checked symbol	رمز التحديد
+	Unchecked symbol	رمز عدم التحديد
+	List entries	عناصر القائمة
+	Display text	نص العرض
+	Value	القيمة
+	Today	اليوم
+	Put the caret in a content control first.	ضع مؤشر الكتابة داخل عنصر تحكم المحتوى أولًا.
+	Right-to-Left Table	جدول من اليمين إلى اليسار
+	Right-to-Left Section	قسم من اليمين إلى اليسار
+	Table direction:	اتجاه الجدول:
+	Section direction:	اتجاه القسم:
+	Drawing Canvas	لوحة الرسم
+	New Drawing Canvas	لوحة رسم جديدة
+	Fit	احتواء
+	Expand	توسيع
+	Scale Drawing	تحجيم الرسم
+	Canvas Member	عنصر لوحة الرسم
+	Arrows	أسهم
+	Communication	اتصال
+	Office	مكتب
+	People	أشخاص
+	Nature	طبيعة
+	Weather	طقس
+	Technology	تقنية
+	Transport	نقل
+	Icon Color	لون الأيقونة
+	Search icons	البحث عن أيقونات
+	No icons match your search.	لا توجد أيقونات تطابق بحثك.
+	Recolor a one-color picture, such as an icon	إعادة تلوين صورة أحادية اللون، مثل الأيقونة
+	Enclose Characters	إحاطة المحارف
+	Shrink text	تصغير النص
+	Enlarge symbol	تكبير الرمز
+	Enclosure	إحاطة
+	Circle	دائرة
+	Change Chart Type	تغيير نوع المخطط
+	Chart Design	تصميم المخطط
+	Type	النوع
+	Edit Data	تحرير البيانات
+	Chart Title	عنوان المخطط
+	Chart Layouts	تخطيطات المخطط
+	Add Chart Element	إضافة عنصر إلى المخطط
+	Legend	وسيلة الإيضاح
+	Data Labels	تسميات البيانات
+	Above Chart	أعلى المخطط
+	Insert Chart	إدراج مخطط
+	Clustered Column	أعمدة مجمّعة
+	Stacked Column	أعمدة مكدّسة
+	Clustered Bar	أشرطة مجمّعة
+	Stacked Bar	أشرطة مكدّسة
+	Area	مساحي
+	Pie	دائري
+	Doughnut	حلقي
+	Scatter	مبعثر
+	“{text}” ({row}, {series}) isn't a number.	القيمة “{text}” في ({row}, {series}) ليست رقمًا.
+	Category {n}	الفئة {n}
+	Series {n}	السلسلة {n}
+	Type the categories down the side and a column of values per series.	أدخل الفئات في العمود الجانبي، وأدخل عمودًا من القيم لكل سلسلة.
+	Categories	الفئات
+	Series name	اسم السلسلة
+	Remove series	إزالة السلسلة
+	Remove row	إزالة الصف
+	Add Row	إضافة صف
+	Add Series	إضافة سلسلة
+	Edit\nData	تحرير\nالبيانات
+	Change\nChart Type	تغيير\nنوع المخطط
+	Align Text	محاذاة النص
+	Create Link	إنشاء ارتباط
+	Break Link	قطع الارتباط
+	Rotate all text 90°	تدوير النص كله 90°
+	Rotate all text 270°	تدوير النص كله 270°
+	Stacked	مكدّس
+	Middle	الوسط
+	Click the empty text box the text should continue in (Esc cancels)	انقر على مربع النص الفارغ الذي تريد متابعة النص فيه (اضغط Esc للإلغاء)
+	Not linked: click a text box	غير مرتبط: انقر على مربع نص
+	Location	الموقع
+	Endnotes	الحواشي الختامية
+	Below text	أسفل النص
+	End of section	نهاية القسم
+	End of document	نهاية المستند
+	Footnotes to endnotes	تحويل الحواشي السفلية إلى حواشي ختامية
+	Endnotes to footnotes	تحويل الحواشي الختامية إلى حواشي سفلية
+	Swap footnotes and endnotes	تبديل الحواشي السفلية والختامية
+	Custom mark:	علامة مخصصة:
+	Continuous numbering	ترقيم متصل
+	Apply	تطبيق
+	Convert Notes	تحويل الحواشي
+	A, B, C, …	أ، ب، ج، …
+	Above the item	فوق العنصر
+	Accessed on	تاريخ الاطلاع
+	Add New Source…	إضافة مصدر جديد…
+	Add the chapter number	إضافة رقم الفصل
+	Atmosphere	الغلاف الجوي
+	Below the item	أسفل العنصر
+	Book	كتاب
+	Book title	عنوان الكتاب
+	Caption	تسمية توضيحية
+	Caption Numbering	ترقيم التسميات التوضيحية
+	Caption text	نص التسمية التوضيحية
+	Caption:	التسمية التوضيحية:
+	Chapter in a book	فصل في كتاب
+	Chapters begin at:	تبدأ الفصول عند:
+	Collect entries from:	جمع المدخلات من:
+	Columns:	الأعمدة:
+	Conference	مؤتمر
+	Conference paper	ورقة مؤتمر
+	Container Title	عنوان الوعاء
+	Create Source	إنشاء مصدر
+	Cross-reference:	إحالة مرجعية:
+	Custom Table of Contents…	جدول محتويات مخصص…
+	DOI	DOI
+	Day	اليوم
+	Delete Label	حذف التسمية
+	Edit Source	تحرير المصدر
+	Edition	الطبعة
+	Edit…	تحرير…
+	Entry marked.	تم تمييز المدخل.
+	Example: {sample}	مثال: {sample}
+	Figure	شكل
+	Film	فيلم
+	Heading styles (levels 1–{n})	أنماط العناوين (المستويات 1–{n})
+	Heading {n}	العنوان {n}
+	I, II, III, …	I, II, III, …
+	Include page numbers	تضمين أرقام الصفحات
+	Indented	بمسافة بادئة
+	Institution	مؤسسة
+	Ionosphere	الأيونوسفير
+	Issue	عدد
+	Journal	مجلة
+	Label:	التسمية:
+	Last, First; Last, First	اسم العائلة، الاسم الأول؛ اسم العائلة، الاسم الأول
+	Leave the label out of the caption	عدم تضمين التسمية في التسمية التوضيحية
+	Letter headings	عناوين أبجدية
+	Levels:	المستويات:
+	Link entries to their headings	ربط المدخلات بعناوينها
+	Made from the author and year when empty	يُنشأ من اسم المؤلف والسنة عند تركه فارغًا
+	Magazine or newspaper article	مقال في مجلة أو صحيفة
+	Main entry:	المدخل الرئيسي:
+	Mark	تمييز
+	Mark All	تمييز الكل
+	Mark Entry…	تمييز مدخل…
+	Mark Index Entry	تمييز مدخل الفهرس
+	Mesosphere	الميزوسفير
+	Month	الشهر
+	New Label	تسمية جديدة
+	New Label…	تسمية جديدة…
+	New…	جديد…
+	No sources yet.	لا توجد مصادر بعد.
+	Numbering…	الترقيم…
+	Options…	الخيارات…
+	Other	أخرى
+	Other styles and their TOC level:	الأنماط الأخرى ومستوى كل منها في جدول المحتويات:
+	Outline levels	مستويات المخطط التفصيلي
+	Page number style	نمط أرقام الصفحات
+	Page numbers at the right margin	أرقام الصفحات عند الهامش الأيمن
+	Page title	عنوان الصفحة
+	Pages of bookmark:	صفحات الإشارة المرجعية:
+	Periodical	دورية
+	Position:	الموضع:
+	Publisher	الناشر
+	Run-in	متصل
+	See	انظر
+	Separator:	الفاصل:
+	Show every bibliography field	إظهار جميع حقول قائمة المراجع
+	Site name	اسم الموقع
+	Source Manager	إدارة المصادر
+	Source type:	نوع المصدر:
+	Sources in this document:	المصادر في هذا المستند:
+	Styles:	الأنماط:
+	Subentry:	مدخل فرعي:
+	TC entry fields	حقول مدخلات جدول المحتويات
+	Tab leader:	قائد علامة الجدولة:
+	Table of Contents Options	خيارات جدول المحتويات
+	Table of Contents Styles	أنماط جدول المحتويات
+	This page	هذه الصفحة
+	Type:	النوع:
+	URL	URL
+	Volume	المجلد
+	Website	موقع ويب
+	Year	السنة
+	a, b, c, …	أ، ب، ج، …
+	i, ii, iii, …	i, ii, iii, …
+	{n} entries marked.	تم تمييز {n} مدخلًا.
+	Lasso Select	تحديد باللاسو
+	Move Selected Ink	نقل الحبر المحدد
+	Delete Selected Ink	حذف الحبر المحدد
+	Recolor Selected Ink	إعادة تلوين الحبر المحدد
+	Add Pen	إضافة قلم
+	Remove Pen	إزالة القلم
+	Ink to Shape	تحويل الحبر إلى شكل
+	Convert to Shapes	تحويل إلى أشكال
+	Ink Replay	إعادة تشغيل الحبر
+	Add\nPen	إضافة\nقلم
+	Rewind	إرجاع
+	Forward	تقديم
+	Stroke {n} of {total}	الضربة {n} من {total}
+	WordArt Styles	أنماط WordArt
+	Text Fill	تعبئة النص
+	Text Outline	مخطط النص
+	Transform	تحويل
+	No Fill	بلا تعبئة
+	No Outline	بلا مخطط
+	Reflection	انعكاس
+	No Reflection	بلا انعكاس
+	No Transform	بلا تحويل
+	Connect Shapes	وصل الأشكال
+	Straight Connector	موصل مستقيم
+	Straight Arrow Connector	موصل مستقيم بسهم
+	Elbow Connector	موصل بزوايا قائمة
+	Elbow Arrow Connector	موصل بزوايا قائمة وسهم
+	Curved Connector	موصل منحني
+	Curved Arrow Connector	موصل منحني بسهم
+	Arch Up	قوس لأعلى
+	Arch Down	قوس لأسفل
+	Slant Up	ميل لأعلى
+	Slant Down	ميل لأسفل
+	Inflate	انتفاخ
+	Deflate	انكماش
+	Chevron Up	شيفرون لأعلى
+	Chevron Down	شيفرون لأسفل
+	Triangle Up	مثلث لأعلى
+	Triangle Down	مثلث لأسفل
+	Solid Accent	تمييز مصمت
+	Light with Outline	فاتح مع مخطط
+	Hollow	مجوف
+	Accent Gradient	تدرج لوني مميز
+	Dark with Shadow	داكن مع ظل
+	Soft Glow	توهج ناعم
+	Accent with Reflection	تمييز مع انعكاس
+	Warm Gradient with Outline	تدرج دافئ مع مخطط
+	Add line numbering	إضافة ترقيم للأسطر
+	Add to Document	إضافة إلى المستند
+	Address labels	ملصقات العناوين
+	Arabic	العربية
+	Auto	تلقائي
+	Automatically hyphenate document	تقسيم كلمات المستند بالواصلة تلقائيًا
+	Chinese (Simplified)	الصينية (المبسطة)
+	Chinese (Traditional)	الصينية (التقليدية)
+	Column:	العمود:
+	Count by:	الزيادة بمقدار:
+	Czech	التشيكية
+	Danish	الدنماركية
+	Delivery address:	عنوان التسليم:
+	Detect language automatically	اكتشاف اللغة تلقائيًا
+	Do not check spelling or grammar	عدم التدقيق الإملائي أو النحوي
+	Dutch	الهولندية
+	English (United Kingdom)	الإنجليزية (المملكة المتحدة)
+	Envelope size:	حجم الظرف:
+	Estonian	الإستونية
+	Finnish	الفنلندية
+	French (France)	الفرنسية (فرنسا)
+	From text:	من النص:
+	Full page of the same label	صفحة كاملة من الملصق نفسه
+	German (Germany)	الألمانية (ألمانيا)
+	Greek	اليونانية
+	Hebrew	العبرية
+	Hyphenate at:	تقسيم الكلمات عند:
+	Hyphenate words in CAPS	تقسيم الكلمات المكتوبة بأحرف كبيرة
+	Hyphenation Options…	خيارات تقسيم الكلمات…
+	Hyphenation zone:	منطقة تقسيم الكلمات:
+	Italian	الإيطالية
+	Japanese	اليابانية
+	Korean	الكورية
+	Limit consecutive hyphens to:	تحديد عدد الأسطر المتتالية المنتهية بواصلة:
+	Line Numbering Options…	خيارات ترقيم الأسطر…
+	Manual Hyphenation	تقسيم الكلمات يدويًا
+	Manual hyphenation is complete.	اكتمل تقسيم الكلمات يدويًا.
+	Manual…	يدوي…
+	Mark selected text as:	وضع علامة على النص المحدد بوصفه:
+	New Document	مستند جديد
+	No limit	بلا حد
+	Norwegian (Bokmål)	النرويجية (بوكمال)
+	Numbering:	الترقيم:
+	Omit	تجاهل
+	One label per recipient	ملصق واحد لكل مستلم
+	Polish	البولندية
+	Portuguese (Brazil)	البرتغالية (البرازيل)
+	Portuguese (Portugal)	البرتغالية (البرتغال)
+	Return address labels	ملصقات عنوان المرسل
+	Return address:	عنوان المرسل:
+	Row:	الصف:
+	Russian	الروسية
+	Serbian (Cyrillic)	الصربية (السيريلية)
+	Serbian (Latin)	الصربية (اللاتينية)
+	Set As Default	تعيين كافتراضي
+	Shipping labels	ملصقات الشحن
+	Single label	ملصق واحد
+	Spanish (Mexico)	الإسبانية (المكسيك)
+	Spanish (Spain)	الإسبانية (إسبانيا)
+	Swedish	السويدية
+	Turkish	التركية
+	Ukrainian	الأوكرانية
+	{language} is now the document's default language.	أصبحت {language} الآن اللغة الافتراضية للمستند.

@@ -1,0 +1,310 @@
+diff --git a/crates/ui-egui/Cargo.toml b/crates/ui-egui/Cargo.toml
+--- a/crates/ui-egui/Cargo.toml
++++ b/crates/ui-egui/Cargo.toml
+@@ -25,5 +25,6 @@ serde = { workspace = true }
+ serde_json = { workspace = true }
+ log = { workspace = true }
++unicode-bidi = "0.3.18"
+ # Pictures pasted from the system clipboard arrive as pixels and are inserted as PNG (#45).
+ image = { workspace = true }
+ # The system's preferred interface languages (#8). Native: OS APIs; wasm: none (English).
+diff --git a/crates/ui-egui/src/i18n/mod.rs b/crates/ui-egui/src/i18n/mod.rs
+--- a/crates/ui-egui/src/i18n/mod.rs
++++ b/crates/ui-egui/src/i18n/mod.rs
+@@ -25,5 +25,6 @@
+ //! - [`fmt`]: fill `{name}` placeholders after a lookup; translators may reorder them.
+ 
++mod bidi;
+ mod catalog;
+ 
+ use std::cell::Cell;
+@@ -76,6 +77,6 @@ impl LangInfo {
+     fn catalog(&self) -> &Catalog {
+         self.catalog.get_or_init(|| {
+-            let (catalog, errors) = Catalog::parse(self.source);
++            let (catalog, errors) = Catalog::parse_with_rtl(self.source, self.code == "ar");
+             for error in errors {
+                 log::warn!("{} interface catalog: {error}; that entry shows in English", self.code);
+             }
+diff --git a/crates/ui-egui/src/i18n/catalog.rs b/crates/ui-egui/src/i18n/catalog.rs
+--- a/crates/ui-egui/src/i18n/catalog.rs
++++ b/crates/ui-egui/src/i18n/catalog.rs
+@@ -112,12 +112,18 @@ impl Catalog {
+     /// Build a catalog from its valid entries; the errors of the skipped lines come back too.
+     pub fn parse(text: &str) -> (Catalog, Vec<String>) {
++        Self::parse_with_rtl(text, false)
++    }
++
++    /// Parse a catalog and, for an RTL interface, reorder translated labels for egui's layout.
++    pub fn parse_with_rtl(text: &str, rtl: bool) -> (Catalog, Vec<String>) {
+         let (entries, errors) = parse_entries(text);
+         let mut catalog = Catalog::default();
+         for e in entries {
++            let translation = if rtl { super::bidi::visual_rtl(&e.translation) } else { e.translation };
+             if e.context.is_empty() {
+-                catalog.plain.insert(e.source, e.translation);
++                catalog.plain.insert(e.source, translation);
+             } else {
+-                catalog.contextual.insert((e.context, e.source), e.translation);
++                catalog.contextual.insert((e.context, e.source), translation);
+             }
+         }
+         (catalog, errors)
+diff --git a/crates/ui-egui/src/i18n/bidi.rs b/crates/ui-egui/src/i18n/bidi.rs
+new file mode 100644
+--- /dev/null
++++ b/crates/ui-egui/src/i18n/bidi.rs
+@@ -0,0 +1,118 @@
++//! egui lays a label out run by run and puts the runs left to right in the order it met them.
++//! It does not run the Unicode bidirectional algorithm, so an Arabic label can read with its
++//! words in reverse order. Reorder catalog labels into visual order before egui sees them.
++//!
++//! Characters inside an Arabic run remain in logical order because egui's text shaper shapes
++//! right-to-left runs itself. Latin words and numbers remain left-to-right. Brackets are mirrored
++//! as UAX #9 L4 requires. Only catalog lookups pass through this module: text a user types into
++//! a document or field remains in logical order.
++
++use unicode_bidi::{BidiClass, BidiInfo, Level};
++
++/// Arabic/Hebrew strong characters and nonspacing marks that belong to their shaping run.
++fn is_rtl_shaped(c: char) -> bool {
++    matches!(unicode_bidi::bidi_class(c), BidiClass::R | BidiClass::AL | BidiClass::NSM)
++}
++
++fn mirror(c: char) -> char {
++    match c {
++        '(' => ')',
++        ')' => '(',
++        '[' => ']',
++        ']' => '[',
++        '{' => '}',
++        '}' => '{',
++        '<' => '>',
++        '>' => '<',
++        _ => c,
++    }
++}
++
++/// Convert a logical-order label into the visual run order expected by egui 0.36.
++/// Newlines are reordered independently; labels without RTL characters are unchanged.
++pub fn visual_rtl(label: &str) -> String {
++    if !label.chars().any(is_rtl_shaped) {
++        return label.into();
++    }
++    let mut out = String::with_capacity(label.len());
++    let mut first = true;
++    for line in label.split('\n') {
++        if !first {
++            out.push('\n');
++        }
++        first = false;
++        visual_rtl_line(line, &mut out);
++    }
++    out
++}
++
++fn visual_rtl_line(line: &str, out: &mut String) {
++    let bidi = BidiInfo::new(line, Some(Level::rtl()));
++    let Some(para) = bidi.paragraphs.first() else {
++        out.push_str(line);
++        return;
++    };
++    let chars: Vec<char> = line.chars().collect();
++    let levels = bidi.reordered_levels_per_char(para, para.range.clone());
++    let order = BidiInfo::reorder_visual(&levels);
++    let mut p = 0;
++    while p < order.len() {
++        let i = order[p];
++        if is_rtl_shaped(chars[i]) {
++            // Emit each RTL shaping run in logical order, even though the run itself moved.
++            let (mut lo, mut hi) = (i, i);
++            let mut end = p + 1;
++            loop {
++                if let Some(&j) = order.get(end)
++                    && is_rtl_shaped(chars[j])
++                    && (j + 1 == lo || j == hi + 1)
++                {
++                    lo = lo.min(j);
++                    hi = hi.max(j);
++                    end += 1;
++                } else {
++                    break;
++                }
++            }
++            let mut j = lo;
++            while j <= hi {
++                out.push(chars[j]);
++                j += 1;
++            }
++            p = end;
++        } else {
++            let c = chars[i];
++            out.push(if levels[i].is_rtl() { mirror(c) } else { c });
++            p += 1;
++        }
++    }
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    #[test]
++    fn runs_are_in_visual_order_and_letters_stay_logical() {
++        assert_eq!(visual_rtl("إعداد المستند"), "المستند إعداد");
++        assert_eq!(visual_rtl("تحرير لوحات الرسم"), "الرسم لوحات تحرير");
++        assert_eq!(visual_rtl("المعاينة"), "المعاينة");
++        assert_eq!(visual_rtl("عنصراً جديد"), "جديد عنصراً");
++    }
++
++    #[test]
++    fn latin_numbers_and_punctuation_keep_their_own_order() {
++        assert_eq!(visual_rtl("حفظ كـ PDF…"), "…PDF كـ حفظ");
++        assert_eq!(visual_rtl("تصدير كـ SVG"), "SVG كـ تصدير");
++        assert_eq!(visual_rtl("إنشاء 3 نسخ"), "نسخ 3 إنشاء");
++        assert_eq!(visual_rtl("حفظ (النسخة الحالية)"), "(الحالية النسخة) حفظ");
++    }
++
++    #[test]
++    fn lines_are_reordered_independently_and_ltr_is_unchanged() {
++        assert_eq!(visual_rtl("سطر أول\nسطر ثانٍ"), "أول سطر\nثانٍ سطر");
++        assert_eq!(visual_rtl("سطر أول\nPDF"), "أول سطر\nPDF");
++        assert_eq!(visual_rtl("Plain label, 3 of them."), "Plain label, 3 of them.");
++        assert_eq!(visual_rtl(""), "");
++    }
++}
+diff --git a/crates/ui-egui/src/theme.rs b/crates/ui-egui/src/theme.rs
+--- a/crates/ui-egui/src/theme.rs
++++ b/crates/ui-egui/src/theme.rs
+@@ -321,5 +321,11 @@ pub fn font_definitions(prefer_hans: bool, system_cjk: bool) -> FontDefinitions {
+         data.index = f.index;
+         add_cjk(&mut fonts, format!("system {}", f.family), data);
+     }
++    // Add a system Arabic face after the Latin and CJK faces, for Arabic UI labels and file names.
++    #[cfg(not(target_arch = "wasm32"))]
++    if let Some(bytes) = system_arabic_font() {
++        let data = FontData::from_owned(bytes.clone());
++        add_cjk(&mut fonts, "system Arabic".into(), data);
++    }
+     #[cfg(target_arch = "wasm32")]
+     let _ = system_cjk;
+@@ -336,6 +342,32 @@ fn system_cjk_font(hans: bool) -> Option<&'static wordcraft_fonts::SystemUiFont> {
+     (if hans { &ZH } else { &OTHER }).get_or_init(|| wordcraft_fonts::system_cjk_ui_font(hans)).as_ref()
+ }
+ 
++#[cfg(not(target_arch = "wasm32"))]
++fn system_arabic_font() -> Option<&'static Vec<u8>> {
++    static FONT: std::sync::OnceLock<Option<Vec<u8>>> = std::sync::OnceLock::new();
++    FONT.get_or_init(|| {
++        const NAMES: &[&str] = &[
++            "NotoSansArabicUI-VF.ttf",
++            "NotoSansArabicUI-Regular.ttf",
++            "NotoNaskhArabicUI-VF.ttf",
++            "NotoNaskhArabicUI-Regular.ttf",
++            "NotoSansArabic-Regular.ttf",
++            "NotoNaskhArabic-Regular.ttf",
++            "NotoKufiArabic-Regular.ttf",
++            "DroidNaskh-Regular.ttf",
++            "DroidSansArabic.ttf",
++            "SamsungOneArabic-Regular.ttf",
++        ];
++        wordcraft_fonts::system_font_dirs().iter()
++            .flat_map(|dir| NAMES.iter().map(move |name| dir.join(name)))
++            .find_map(|path| {
++                let size = std::fs::metadata(&path).ok()?.len();
++                if size > (128 << 20) { return None; }
++                std::fs::read(path).ok()
++            })
++    }).as_ref()
++}
++
+ pub fn medium(size: f32) -> FontId {
+     FontId::new(size, FontFamily::Name("medium".into()))
+ }
+diff --git a/crates/layout/src/tests_bidi.rs b/crates/layout/src/tests_bidi.rs
+--- a/crates/layout/src/tests_bidi.rs
++++ b/crates/layout/src/tests_bidi.rs
+@@ -520,2 +520,22 @@ fn rtl_section_puts_its_first_column_on_the_right() {
+     assert_eq!(sep, vec![72.0 + 234.0], "line between the columns");
+ }
++
++/// Arabic with vowel marks, Arabic-Indic digits and embedded Latin text follows UAX #9.
++#[test]
++fn arabic_paragraph_handles_marks_and_mixed_direction_runs() {
++    let text = "السَّلَامُ عَلَيْكُمْ WordCraft \u{0661}\u{0662}\u{0663}، PDF 2026";
++    let levels = bidi_levels(text, true);
++    assert_eq!(levels.len(), text.len());
++    assert_eq!(levels[0] % 2, 1, "Arabic starts in an RTL run");
++    let latin = text.find("WordCraft").unwrap();
++    assert_eq!(levels[latin] % 2, 0, "Latin brand name stays LTR");
++    let pdf = text.find("PDF").unwrap();
++    assert_eq!(levels[pdf] % 2, 0, "Latin abbreviation stays LTR");
++    let doc = doc_of(&[(text, true)]);
++    let layout = lay(&doc);
++    let (_, line_left) = first_line(&layout, 0);
++    // The line box's x is its left edge, not the visual start of RTL text.
++    assert!((line_left - 72.0).abs() < 1.0, "line box retains the page's left margin: {line_left}");
++    let caret = layout.caret(&Pos::body(0, 0)).unwrap();
++    assert!(caret.x > 500.0, "the initial RTL caret belongs at the right margin");
++}
+diff --git a/crates/ui-egui/src/i18n/tests.rs b/crates/ui-egui/src/i18n/tests.rs
+--- a/crates/ui-egui/src/i18n/tests.rs
++++ b/crates/ui-egui/src/i18n/tests.rs
+@@ -614,2 +614,17 @@ fn bundled_interface_fonts_cover_turkish_without_system_fallbacks() {
+     assert!(!lang("tr").uses_cjk());
+ }
++
++#[test]
++fn arabic_catalog_is_complete_and_uses_visual_order_for_egui() {
++    let ar = Lang::from_code("ar").expect("Arabic is registered");
++    let (entries, errors) = super::catalog::parse_entries(ar.0.source);
++    assert!(errors.is_empty(), "{errors:?}");
++    assert_eq!(entries.len(), 1729, "all upstream interface keys are present");
++    let translated = entries.iter().filter(|entry| entry.source != entry.translation).count();
++    assert_eq!(translated, 1713, "only product names, shortcuts and technical abbreviations remain unchanged");
++    assert_eq!(tr(ar, "Home"), "الرئيسية");
++    assert_eq!(tr(ar, "File"), "ملف");
++    assert_eq!(tr(ar, "Save"), "حفظ");
++    assert_eq!(tr(ar, "Right-to-Left Text Direction"), "اليسار إلى اليمين من الكتابة اتجاه");
++    assert_eq!(super::bidi::visual_rtl("حفظ كـ PDF…"), "…PDF كـ حفظ");
++}
+diff --git a/crates/ui-egui/src/lib.rs b/crates/ui-egui/src/lib.rs
+--- a/crates/ui-egui/src/lib.rs
++++ b/crates/ui-egui/src/lib.rs
+@@ -2789,3 +2789,36 @@ fn an_existing_list_picked_on_the_web_loads_recipients() {
+         assert!(!a.recipient_list_pending);
+     }
++
++    /// Simulate the text event Android's keyboard adapter sends to the focused document canvas.
++    #[test]
++    fn arabic_keyboard_text_is_inserted_into_the_document() {
++        let ctx = egui::Context::default();
++        let mut a = app();
++        a.run("ui.language", json!({"value": "ar"})).unwrap();
++        a.run("para.rtl", json!({})).unwrap();
++        let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(1280.0, 800.0));
++        let mut t = 0.0;
++        let mut frame = |a: &mut WordApp, events: Vec<egui::Event>| {
++            t += 1.0 / 60.0;
++            let input = egui::RawInput { events, time: Some(t), screen_rect: Some(screen), ..Default::default() };
++            ctx.run_ui(input, |ui| {
++                a.logic(ui.ctx());
++                a.ui(ui);
++            })
++            .drop_without_applying_deltas();
++        };
++        for _ in 0..3 {
++            frame(&mut a, Vec::new());
++        }
++        let at = a.canvas.canvas_rect.unwrap().center();
++        frame(&mut a, vec![egui::Event::PointerMoved(at), egui::Event::PointerButton {
++            pos: at, button: egui::PointerButton::Primary, pressed: true, modifiers: egui::Modifiers::NONE,
++        }]);
++        frame(&mut a, vec![egui::Event::PointerButton {
++            pos: at, button: egui::PointerButton::Primary, pressed: false, modifiers: egui::Modifiers::NONE,
++        }]);
++        let arabic = "السَّلَامُ عَلَيْكُمْ WordCraft \u{0661}\u{0662}\u{0663}";
++        frame(&mut a, vec![egui::Event::Text(arabic.into())]);
++        assert!(body_text(&a).contains(arabic), "typed Arabic must remain in logical order");
++    }
+ }

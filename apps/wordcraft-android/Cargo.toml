@@ -1,0 +1,49 @@
+[package]
+name = "wordcraft-android"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "WordCraft on Android: the real engine and egui shell on winit's GameActivity backend"
+publish = false
+
+# cargo-apk turns this cdylib into the APK's lib/arm64-v8a/libwordcraft.so, and the artifact
+# name is what the injected `android.app.lib_name` meta-data points at (with `-` → `_`). A
+# mismatch yields an APK that installs and then dies on launch, so the lib name is deliberate:
+# the same shape `apps/vectorcraft-android` and `apps/photocraft-android` use.
+[lib]
+name = "wordcraft"
+crate-type = ["cdylib"]
+
+# Omit `[lints] workspace = true`: the workspace forbids unsafe_code, which trips on the
+# `#[unsafe(no_mangle)]` entry point this crate needs, and nothing else here wants the lints.
+[dependencies]
+# `jni` is the same 0.22 android-activity itself depends on, so this unifies rather than
+# compiling a second JNI layer. It is used for exactly one thing: sending the intent that opens a
+# second window (`new_window`), which no manifest metadata can express (see `src/lib.rs`).
+jni = "0.22"
+wordcraft-doc = { workspace = true }
+wordcraft-engine = { workspace = true }
+wordcraft-ui-egui = { workspace = true }
+egui = { workspace = true }
+log = { workspace = true }
+serde_json = { workspace = true }
+
+# `android-game-activity` is the backend selected for the Gradle-hosted GameActivity build. Without a backend feature,
+# `android-activity` is pulled with no backend at all and eframe fails with
+# `file not found for module activity_impl` plus
+# `Either "game-activity" or "native-activity" must be enabled as features` — a missing
+# feature, not a code problem.
+#
+# `accesskit` is deliberately absent. WordCraft's `ui-egui` has no eframe dependency at all
+# (the desktop shell is the eframe user), so accesskit is nowhere in this crate's graph and
+# eframe's `compile_error!("\`accesskit\` feature is only available with
+# \`android-game-activity\`")` cannot be reached — the same situation as VectorCraft.
+#
+# The android-* features are inert elsewhere (winit only binds android-activity under
+# cfg(target_os = "android")), so the host workspace is unaffected.
+eframe = { workspace = true, features = ["default_fonts", "wgpu", "android-game-activity"] }
+# Needed to name `AndroidApp` for `NativeOptions::android_app`; eframe does not re-export
+# winit. Pinned to the exact version eframe/egui-winit build against.
+winit = { version = "=0.30.13", default-features = false, features = ["android-game-activity", "x11"] }
+

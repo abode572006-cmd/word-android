@@ -1,0 +1,200 @@
+name: WordCraft Android development checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [wordcraft-desktop-android-port]
+    paths:
+      - ".github/workflows/wordcraft-android-check.yml"
+      - "patches/0002-arabic-localization.patch"
+      - "patches/0003-arabic-interface-bidi.patch"
+      - "patches/0004-responsive-home-template-gallery.patch"
+      - "patches/arabic-catalog.tsv"
+      - "apps/wordcraft-android/**"
+      - "patches/0001-wordcraft-android-port.patch"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out Android port workspace
+        uses: actions/checkout@v4
+
+      - name: Check out pinned upstream WordCraft
+        uses: actions/checkout@v4
+        with:
+          repository: storytold/wordcraft
+          ref: 2ffba93b5189410a415970be179dcf481092d756
+          path: upstream-wordcraft
+          persist-credentials: false
+
+      - name: Install Rust and Android target
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android
+
+      - name: Cache Rust dependencies and build artifacts
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            upstream-wordcraft -> target
+          cache-all-crates: "true"
+
+      - name: Cache cargo-ndk binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin/cargo-ndk
+          key: cargo-ndk-${{ runner.os }}-v3.5.4
+
+      - name: Set up Android SDK and NDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+
+      - name: Install Android platform and NDK packages
+        run: |
+          yes | sdkmanager --licenses
+          sdkmanager "platforms;android-35" "build-tools;35.0.0" "ndk;27.2.12479018"
+
+      - name: Assemble Android shell against pinned upstream
+        run: |
+          git -C upstream-wordcraft apply --check ../patches/0001-wordcraft-android-port.patch
+          git -C upstream-wordcraft apply ../patches/0001-wordcraft-android-port.patch
+          git -C upstream-wordcraft apply --check ../patches/0002-arabic-localization.patch
+          git -C upstream-wordcraft apply ../patches/0002-arabic-localization.patch
+          git -C upstream-wordcraft apply --check ../patches/0003-arabic-interface-bidi.patch
+          git -C upstream-wordcraft apply ../patches/0003-arabic-interface-bidi.patch
+          git -C upstream-wordcraft apply --check ../patches/0004-responsive-home-template-gallery.patch
+          git -C upstream-wordcraft apply ../patches/0004-responsive-home-template-gallery.patch
+          cp patches/arabic-catalog.tsv upstream-wordcraft/crates/ui-egui/src/i18n/ar.tsv
+          cp -R apps/wordcraft-android upstream-wordcraft/apps/
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path("upstream-wordcraft/crates/ui-egui/src/keys.rs")
+          lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+
+          def insert_before_exact_line(target, addition, description):
+              matches = [i for i, line in enumerate(lines) if line.rstrip("\r\n") == target]
+              assert len(matches) == 1, f"pinned {description} insertion point changed: {len(matches)} matches"
+              lines[matches[0]:matches[0]] = addition.splitlines(keepends=True)
+
+          insert_before_exact_line(
+              "                egui::Event::Paste(t) => {",
+              (
+                  "                egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\n"
+                  "                    for _ in 0..(*before_chars).min(256) {\n"
+                  "                        let _ = app.run(\"equation.backspace\", json!({}));\n"
+                  "                    }\n"
+                  "                    for _ in 0..(*after_chars).min(256) {\n"
+                  "                        let _ = app.run(\"equation.delete\", json!({}));\n"
+                  "                    }\n"
+                  "                    continue;\n"
+                  "                }\n"
+              ),
+              "equation IME",
+          )
+          insert_before_exact_line(
+              "            egui::Event::Paste(t) => {",
+              (
+                  "            egui::Event::Ime(egui::ImeEvent::DeleteSurrounding { before_chars, after_chars }) => {\n"
+                  "                if app.canvas.focused {\n"
+                  "                    if !app.session.sel.is_collapsed() {\n"
+                  "                        let _ = app.run(\"text.backspace\", json!({}));\n"
+                  "                    } else {\n"
+                  "                        for _ in 0..before_chars.min(256) {\n"
+                  "                            let _ = app.run(\"text.backspace\", json!({}));\n"
+                  "                        }\n"
+                  "                        for _ in 0..after_chars.min(256) {\n"
+                  "                            let _ = app.run(\"text.delete\", json!({}));\n"
+                  "                        }\n"
+                  "                    }\n"
+                  "                }\n"
+                  "            }\n"
+              ),
+              "body IME",
+          )
+          path.write_text("".join(lines), encoding="utf-8")
+          print("Added bounded DeleteSurrounding handling to the pinned WordCraft editor")
+          PY
+          test -f apps/wordcraft-android/res/values/styles.xml
+          test -f apps/wordcraft-android/game-activity/app/src/main/res/values/styles.xml
+          grep -F 'style name="WordcraftFullscreen"' apps/wordcraft-android/game-activity/app/src/main/res/values/styles.xml
+          grep -F 'androidx.games:games-activity:4.4.0' apps/wordcraft-android/game-activity/app/build.gradle
+          grep -F 'extends GameActivity' apps/wordcraft-android/game-activity/app/src/main/java/ai/storyteller/wordcraft/MainActivity.java
+          grep -F 'android-game-activity' apps/wordcraft-android/Cargo.toml
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def entries(path):
+              rows = []
+              for line in Path(path).read_text(encoding="utf-8").splitlines():
+                  if not line.strip() or line.startswith("#"):
+                      continue
+                  cols = line.split("\t")
+                  assert len(cols) == 3, f"malformed TSV row in {path}: {line!r}"
+                  rows.append(cols)
+              return rows
+
+          source = entries("upstream-wordcraft/crates/ui-egui/src/i18n/zh-hans.tsv")
+          arabic = entries("upstream-wordcraft/crates/ui-egui/src/i18n/ar.tsv")
+          source_keys = {(row[0], row[1]) for row in source}
+          arabic_keys = {(row[0], row[1]) for row in arabic}
+          assert len(source) == len(source_keys) == 1729
+          assert len(arabic) == len(arabic_keys) == 1729
+          assert source_keys == arabic_keys, "Arabic catalog keys differ from the pinned upstream catalog"
+          translated = sum(row[1] != row[2] for row in arabic)
+          assert translated == 1713, f"expected 1713 translated entries, got {translated}"
+          print(f"Arabic catalog verified: {len(arabic)} exact keys, {translated} translated")
+          PY
+
+      - name: Cross-compile Android shell
+        working-directory: upstream-wordcraft
+        run: |
+          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/27.2.12479018"
+          export PATH="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH"
+          export CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER=aarch64-linux-android26-clang
+          export CC_aarch64_linux_android=aarch64-linux-android26-clang
+          export CXX_aarch64_linux_android=aarch64-linux-android26-clang++
+          export AR_aarch64_linux_android=llvm-ar
+          cargo check -p wordcraft-android --target aarch64-linux-android
+
+      - name: Set up Java and Gradle
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+
+      - name: Build GameActivity native library
+        working-directory: upstream-wordcraft
+        run: |
+          if ! command -v cargo-ndk >/dev/null 2>&1; then
+            cargo install cargo-ndk --locked --version 3.5.4
+          fi
+          export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/27.2.12479018"
+          cargo ndk -t arm64-v8a -o apps/wordcraft-android/game-activity/app/src/main/jniLibs build --release -p wordcraft-android
+          test -f apps/wordcraft-android/game-activity/app/src/main/jniLibs/arm64-v8a/libwordcraft.so
+
+      - name: Run document, format, UI, and Arabic regression suites
+        working-directory: upstream-wordcraft
+        run: |
+          cargo test -p wordcraft-doc -p wordcraft-layout -p wordcraft-docx -p wordcraft-formats -p wordcraft-engine -p wordcraft-ui-egui -p wordcraft
+
+      - name: Run Android shell unit tests on host
+        working-directory: upstream-wordcraft
+        run: cargo test -p wordcraft-android
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AppCompat is required by MainActivity's Activity Result / AppCompat dependencies. -->
+<resources>
+
+    <!-- Keep the notification bar and let the platform fit the activity below it. -->
+    <style name="WordcraftStatusBar" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <!-- Immersive editor: hide the status bar while retaining AppCompat's required theme. -->
+    <style name="WordcraftFullscreen" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+</resources>
